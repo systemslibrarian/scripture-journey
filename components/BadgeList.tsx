@@ -1,10 +1,13 @@
-export default function BadgeList({ badges }: { badges: string[] }) {
+import type { Badge } from '@/lib/types';
+
+export default function BadgeList({ badges }: { badges: Badge[] }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="grid gap-3">
       {badges.map((badge) => (
-        <span key={badge} className="rounded-full bg-amber-50 px-3 py-2 text-sm font-medium text-amber-900 ring-1 ring-amber-200">
-          {badge}
-        </span>
+        <article key={badge.id} className="rounded-2xl border border-[#d9ccb8] bg-[#fef8ec] p-3">
+          <h3 className="text-sm font-semibold text-[#6f5424]">{badge.title}</h3>
+          <p className="mt-1 text-xs text-[#5f5548]">{badge.description}</p>
+        </article>
       ))}
     </div>
   );

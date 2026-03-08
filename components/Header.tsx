@@ -10,14 +10,19 @@ const links = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <Link href="/" className="font-bold text-slate-900">
-          Scripture Journey
+    <header className="sticky top-0 z-30 border-b border-[#d8ccb8] bg-[#fefcf8]/90 backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
+        <Link href="/" className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7e622a]">
+          <span className="block text-xs uppercase tracking-[0.26em] text-[#7e622a]">Scripture</span>
+          <span className="block text-2xl font-semibold leading-none text-[#1b1a17]">Journey</span>
         </Link>
-        <nav className="flex gap-4 text-sm text-slate-600">
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#4a4338] sm:gap-3">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-slate-900">
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-full border border-transparent px-3 py-1.5 transition hover:border-[#d8ccb8] hover:bg-[#fbf7ee] hover:text-[#1b1a17]"
+            >
               {link.label}
             </Link>
           ))}

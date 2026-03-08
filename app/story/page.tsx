@@ -4,11 +4,15 @@ import { lessons } from '@/data/lessons';
 export default function StoryPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
-      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">Story Mode</p>
-        <h1 className="mt-2 text-3xl font-bold">The First Lessons</h1>
-        <p className="mt-3 text-slate-600">See how the Bible points to Jesus from Genesis to the resurrection.</p>
+      <div className="glass-card rounded-[2rem] p-6">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7e622a]">Story Path</p>
+        <h1 className="mt-2 text-4xl font-semibold text-[#1b1a17]">From Promise to Fulfillment</h1>
+        <p className="mt-3 max-w-3xl text-[#4a4338]">
+          Move through short lessons that connect the storyline of Scripture from Eden, to covenant, to cross, to
+          resurrection.
+        </p>
       </div>
+
       <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {lessons.map((lesson) => (
           <LessonCard key={lesson.slug} lesson={lesson} />

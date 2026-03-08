@@ -1,7 +1,7 @@
 export type QuizQuestion = {
-  prompt: string;
+  question: string;
   choices: string[];
-  answerIndex: number;
+  answer: number;
 };
 
 export type Lesson = {
@@ -13,6 +13,32 @@ export type Lesson = {
   ntReference: string;
   ntText: string;
   summary: string;
-  whyItMatters: string;
+  keyIdea: string;
+  durationMinutes: number;
   quiz: QuizQuestion;
+};
+
+export type Prophecy = {
+  id: number;
+  title: string;
+  category: 'Promise' | 'Prophecy' | 'Pattern';
+  otReference: string;
+  otText: string;
+  ntReference: string;
+  ntText: string;
+  significance: string;
+};
+
+export type Track = {
+  slug: string;
+  title: string;
+  description: string;
+  href: string;
+  totalSteps: number;
+};
+
+export type Badge = {
+  id: string;
+  title: string;
+  description: string;
 };
