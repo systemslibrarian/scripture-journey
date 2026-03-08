@@ -2,42 +2,32 @@
 
 Discover how the whole Bible points to Jesus.
 
-Scripture Journey is a Next.js web app designed to help people learn Scripture through promises, prophecies, patterns, and fulfillment centered on Jesus Christ.
-
 ## Stack
-- Next.js (App Router)
+- Next.js 14
 - TypeScript
 - Tailwind CSS
 
-## Current V1 scope
-- Marketing landing page
-- Dashboard
-- Story Mode track
-- Individual lesson pages
-- Prophecy map
-- Static lesson data for first 10 lessons
+## Run locally
 
-## Getting started
 ```bash
 npm install
 npm run dev
 ```
 
-## Initial GitHub push
-```bash
-git init
-git add .
-git commit -m "Initial Scripture Journey scaffold"
-git branch -M main
-git remote add origin YOUR_GITHUB_REPO_URL
-git push -u origin main
-```
+## Pages
+- `/` Home
+- `/dashboard` Dashboard
+- `/story` Story mode
+- `/prophecies` Top prophecies
+- `/map` Prophecy map
+- `/lessons/the-first-promise` Lesson example
 
-## Next build priorities
-1. Add authentication
-2. Add PostgreSQL + Prisma
-3. Persist user progress
-4. Add admin content editor
-5. Deploy to Render
+## GitHub upload order on Chromebook
+1. Upload the root files
+2. Upload the `app` folder
+3. Upload the `components` folder
+4. Upload the `data` folder
+5. Upload `public` and `styles`
 
-> To God be the glory.
+## Notes
+This is a starter scaffold for the Scripture Journey web app.
