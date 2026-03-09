@@ -22,6 +22,13 @@ npm install
 npm run dev
 ```
 
+## Verification
+
+```bash
+npm run lint
+npm run build
+```
+
 ## Production Build
 
 ```bash
@@ -36,6 +43,16 @@ npm start
 - `/prophecies` Prophecy path
 - `/map` Prophecy map
 - `/lessons/[slug]` Lesson detail page
+
+## Folder Structure
+
+```text
+app/
+components/
+data/
+lib/
+public/
+```
 
 ## Deploy on Render
 1. Create a new `Web Service` from this repository.

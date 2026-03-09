@@ -6,7 +6,7 @@ export const tracks: Track[] = [
     title: 'Story Path',
     description: 'Move from Genesis to Resurrection with short, connected lessons.',
     href: '/story',
-    totalSteps: 6,
+    totalSteps: 10,
   },
   {
     slug: 'prophecies',

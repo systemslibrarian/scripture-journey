@@ -35,8 +35,8 @@ export default function HomePage() {
         <article className="rounded-[2rem] border border-[#dbcdb5] bg-[#fffaf0] p-6 shadow-[0_10px_28px_rgba(90,51,47,0.08)]">
           <p className="text-sm uppercase tracking-[0.18em] text-[#7e622a]">Scripture Focus</p>
           <blockquote className="mt-3 text-2xl font-semibold leading-tight text-[#1b1a17]">
-            "Beginning with Moses and all the Prophets, he interpreted to them in all the Scriptures the things concerning
-            himself."
+            &ldquo;Beginning with Moses and all the Prophets, he interpreted to them in all the Scriptures the things concerning
+            himself.&rdquo;
           </blockquote>
           <p className="mt-2 text-[#5f5548]">Luke 24:27</p>
           <Link

@@ -2,10 +2,12 @@ import Link from 'next/link';
 import BadgeList from '@/components/BadgeList';
 import ProgressBar from '@/components/ProgressBar';
 import { badges } from '@/data/badges';
+import { lessons } from '@/data/lessons';
 import { tracks } from '@/data/tracks';
 
 export default function DashboardPage() {
   const completedLessons = 3;
+  const totalLessons = lessons.length;
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
@@ -14,15 +16,17 @@ export default function DashboardPage() {
           <div className="glass-card rounded-[2rem] p-6">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7e622a]">Welcome back</p>
             <h1 className="mt-2 text-4xl font-semibold text-[#1b1a17]">Continue your journey through Scripture</h1>
-            <p className="mt-3 text-[#4a4338]">Learn how the Bible's promises, prophecies, and patterns point to Jesus Christ.</p>
+            <p className="mt-3 text-[#4a4338]">Learn how the Bible&apos;s promises, prophecies, and patterns point to Jesus Christ.</p>
           </div>
 
           <div className="glass-card rounded-[2rem] p-6">
             <h2 className="text-2xl font-semibold text-[#1b1a17]">Current Lesson Progress</h2>
             <div className="mt-4">
-              <ProgressBar current={completedLessons} total={6} />
+              <ProgressBar current={completedLessons} total={totalLessons} />
             </div>
-            <p className="mt-3 text-sm text-[#5f5548]">{completedLessons} of 6 starter lessons complete</p>
+            <p className="mt-3 text-sm text-[#5f5548]">
+              {completedLessons} of {totalLessons} starter lessons complete
+            </p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3">

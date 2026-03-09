@@ -10,7 +10,7 @@ export default function Hero() {
           <span className="block text-[#7e622a]">Through the Whole Bible</span>
         </h1>
         <p className="mt-5 max-w-xl text-lg leading-8 text-[#4a4338]">
-          Walk through promises, prophecies, and patterns in short lessons that connect the Old Testament to Christ's life,
+          Walk through promises, prophecies, and patterns in short lessons that connect the Old Testament to Christ&apos;s life,
           death, and resurrection.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="mt-5 rounded-2xl bg-white/10 p-4">
             <p className="text-xs uppercase tracking-wide text-[#eadfca]">Old Testament</p>
             <p className="mt-2 font-semibold">Genesis 3:15</p>
-            <p className="mt-2 text-sm text-[#f4efe0]">"He will crush your head, and you will strike his heel."</p>
+            <p className="mt-2 text-sm text-[#f4efe0]">&ldquo;He will crush your head, and you will strike his heel.&rdquo;</p>
           </div>
           <div className="mt-4 rounded-2xl border border-white/20 p-4">
             <p className="text-xs uppercase tracking-wide text-[#eadfca]">New Testament</p>
