@@ -49,8 +49,13 @@ export default function ProphecySearch() {
           >
 
             <div className="flex items-center justify-between gap-3">
-              <div className="text-sm font-semibold text-[#7e622a]">
-                Lesson {lesson.id}
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-[#7e622a]">
+                  Lesson {lesson.id}
+                </span>
+                <span className="rounded-full border border-[#d8ccb8] bg-[#fbf7ee] px-2 py-0.5 text-[10px] font-medium text-[#7e622a]">
+                  {lesson.category}
+                </span>
               </div>
 
               <CompletedIndicator slug={lesson.slug} />

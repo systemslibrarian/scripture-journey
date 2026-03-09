@@ -11,10 +11,14 @@ Scripture Journey is a Christ-centered app that helps users explore how the whol
 - Each lesson includes Old Testament prophecy, New Testament fulfillment, a unique "Why This Matters" reflection, and a quiz
 - Scholarly attribution badges from three academic sources (see below)
 - Home page with live search/filter by title, Scripture reference, or theme
-- Visual Map grouping lessons by category (Identity, Ministry, Rejection, Passion, Resurrection)
-- Dashboard with progress tracking
-- Individual lesson pages with Scripture blocks, reflection, and quiz
+- Visual Map grouping lessons by 7 categories: Lineage, Identity, Ministry, Rejection, Passion, Resurrection, Kingdom
+- Dashboard with progress tracking, quiz performance stats, and study streak
+- Individual lesson pages with Scripture blocks, reflection, category badge, and quiz
+- Quiz scoring system with per-lesson results and overall accuracy tracking
+- Study streak tracking (current and best consecutive days)
 - Local progress tracking (`localStorage`) with completion state and dashboard stats
+- Progressive Web App (PWA) — installable on mobile and desktop with offline support
+- Accessibility: ARIA roles/labels, skip-to-content link, focus-visible styles
 - Reverent, warm, readable design for desktop and mobile
 
 ## Scholarly Sources
@@ -28,12 +32,27 @@ Lesson scholarship is attributed to three foundational works on messianic prophe
 
 Lessons display 📘 Payne, 📚 Edersheim, and 📖 McDowell badges when attested by one or more sources.
 
+## Categories
+
+Lessons are organized into 7 prophetic categories, each with a key verse:
+
+| Category | Description |
+|---|---|
+| Lineage | Ancestry, genealogy, and bloodline of the Messiah |
+| Identity | Names, titles, divinity, and nature of the Messiah |
+| Ministry | Teaching, miracles, mission, and public works |
+| Rejection | Opposition, betrayal, and denial |
+| Passion | Suffering, crucifixion, and atoning sacrifice |
+| Resurrection | Rising from the dead and post-resurrection appearances |
+| Kingdom | Reign, return, eternal dominion, and new covenant |
+
 ## Tech Stack
 
 - Next.js 14 (App Router)
 - TypeScript
 - Tailwind CSS
 - Static Site Generation (SSG) — deployed to GitHub Pages
+- PWA with service worker (network-first HTML, cache-first assets)
 
 ## Local Development
 
@@ -69,11 +88,12 @@ npm run lint
 - Home (Prophecy Search): `/`
 - Dashboard: `/dashboard`
 - Visual Map: `/map`
-- Sources: `/sources`
 - Lesson detail: `/lessons/[slug]`
 - Example lessons:
   - `/lessons/seed-of-the-woman`
   - `/lessons/son-of-the-father`
+
+The Map page supports deep links to each category section (e.g., `/map#lineage`, `/map#kingdom`).
 
 Unknown lesson slugs render the custom `notFound()` page.
 
@@ -81,10 +101,10 @@ Unknown lesson slugs render the custom `notFound()` page.
 
 ```text
 app/           # Next.js App Router pages
-components/    # Reusable UI components
+components/    # Reusable UI components (quiz, search, progress, etc.)
 data/          # Lesson data (prophecies.ts is the single source of truth)
-lib/           # Types, utilities, progress tracking
-public/        # Static assets
+lib/           # Types, utilities, progress & streak tracking
+public/        # Static assets, PWA manifest, service worker, icons
 ```
 
 ## Deployment
@@ -97,9 +117,11 @@ Scripture quotations taken from The Holy Bible, New International Version® NIV�
 
 After deploy, verify:
 
-- `/`, `/dashboard`, `/map`, `/sources`
+- `/`, `/dashboard`, `/map`
 - `/lessons/seed-of-the-woman`
 - `/lessons/son-of-the-father`
+- PWA install prompt on mobile
+- Category deep links (e.g., `/map#lineage`)
 
 ## Mission
 

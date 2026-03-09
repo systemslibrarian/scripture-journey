@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import Link from "next/link"
 import ScriptureBlock from "@/components/ScriptureBlock"
 import MarkCompleteButton from "@/components/MarkCompleteButton"
 import CompletedIndicator from "@/components/CompletedIndicator"
@@ -28,8 +29,16 @@ export default function LessonPage({ params }: Props) {
     <div className="space-y-8">
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="flex items-center justify-between gap-3">
-          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
-            Lesson {lesson.id}
+          <div className="flex items-center gap-3">
+            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
+              Lesson {lesson.id}
+            </span>
+            <Link
+              href={`/map#${lesson.category.toLowerCase()}`}
+              className="rounded-full border border-[#d8ccb8] bg-[#fbf7ee] px-2.5 py-0.5 text-xs font-medium text-[#7e622a] transition hover:bg-[#f0e8d8]"
+            >
+              {lesson.category}
+            </Link>
           </div>
 
           <CompletedIndicator slug={lesson.slug} compact />

@@ -1,9 +1,11 @@
 export type LessonCategory =
+  | 'Lineage'
   | 'Identity'
   | 'Ministry'
   | 'Rejection'
   | 'Passion'
-  | 'Resurrection';
+  | 'Resurrection'
+  | 'Kingdom';
 
 export interface QuizData {
   question: string;
