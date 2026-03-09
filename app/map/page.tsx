@@ -75,6 +75,11 @@ export default function MapPage() {
                     {lesson.otReference} → {lesson.ntReference}
                   </span>
                   <span className="mt-1 flex flex-wrap gap-1">
+                    {lesson.scholarship?.payne?.attested && (
+                      <span className="inline-flex items-center rounded-full bg-[#efe8fb] px-1.5 py-0.5 text-[10px] font-medium text-[#5f3a8a]">
+                        📘 Payne ✓
+                      </span>
+                    )}
                     {lesson.scholarship?.edersheim?.attested && (
                       <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-1.5 py-0.5 text-[10px] font-medium text-[#7e622a]">
                         📚 Edersheim ✓
@@ -104,12 +109,36 @@ export default function MapPage() {
         </h2>
 
         <p className="mt-4 text-sm text-[#4a4338]">
-          Many lessons in this map are attested by leading scholars who have traced
-          Old Testament messianic prophecies through ancient Rabbinic literature and
-          historical-critical analysis.
+          Lessons in this map are cross-referenced with three major scholarship streams:
+          Payne for canonical prophecy numbering, Edersheim for pre-Christian Jewish
+          messianic interpretation, and McDowell for apologetic fulfillment analysis.
         </p>
 
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          {/* Payne Card */}
+          <div className="rounded-2xl border border-[#d9c9ee] bg-[#fbf8ff] p-6">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">📘</span>
+              <div>
+                <h3 className="text-base font-bold text-[#1b1a17]">
+                  <em>Encyclopedia of Biblical Prophecy</em>
+                </h3>
+                <p className="mt-1 text-sm font-semibold text-[#5f3a8a]">
+                  J. Barton Payne (Harper &amp; Row, 1973)
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm leading-6 text-[#4a4338]">
+              Payne&apos;s numbering system (#1-191) is used to tag and cross-reference
+              core messianic prophecy entries throughout Scripture Journey.
+            </p>
+            <div className="mt-3">
+              <span className="inline-flex items-center rounded-full bg-[#efe8fb] px-2 py-1 text-xs font-medium text-[#5f3a8a]">
+                📘 Payne ✓ = Encyclopedia Attestation
+              </span>
+            </div>
+          </div>
+
           {/* Edersheim Card */}
           <div className="rounded-2xl border border-[#d8ccb8] bg-[#fffdf8] p-6">
             <div className="flex items-start gap-3">
@@ -124,9 +153,8 @@ export default function MapPage() {
               </div>
             </div>
             <p className="mt-4 text-sm leading-6 text-[#4a4338]">
-              71 of the 100 lessons in this map are attested in Appendix IX of this work,
-              which catalogs 456 Old Testament passages applied to the Messiah in ancient
-              Rabbinic writings.
+              Appendix IX catalogs 456 Old Testament passages applied to the Messiah
+              in ancient Rabbinic writings, grounding Jewish messianic expectation.
             </p>
             <div className="mt-3">
               <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-2 py-1 text-xs font-medium text-[#7e622a]">
@@ -149,8 +177,8 @@ export default function MapPage() {
               </div>
             </div>
             <p className="mt-4 text-sm leading-6 text-[#4a4338]">
-              48 of the 61 messianic prophecies in McDowell&apos;s Chapter 8 are covered in this
-              map, with 10 additional lessons drawn from his prophetic list.
+              McDowell synthesizes historical and textual arguments around messianic
+              prophecy fulfillment and its apologetic significance.
             </p>
             <div className="mt-3">
               <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-2 py-1 text-xs font-medium text-[#2a5a7e]">
@@ -159,6 +187,10 @@ export default function MapPage() {
             </div>
           </div>
         </div>
+
+        <p className="mt-5 text-sm text-[#4a4338]">
+          See the full bibliography and methodology on the <Link href="/sources" className="font-semibold text-[#7e622a] underline decoration-[#c7b598] underline-offset-4">Sources page</Link>.
+        </p>
       </div>
     </div>
   )

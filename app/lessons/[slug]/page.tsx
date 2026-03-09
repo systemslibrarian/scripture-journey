@@ -2,6 +2,8 @@ import { notFound } from "next/navigation"
 import ScriptureBlock from "@/components/ScriptureBlock"
 import MarkCompleteButton from "@/components/MarkCompleteButton"
 import CompletedIndicator from "@/components/CompletedIndicator"
+import ScholarCredits from "@/components/ScholarCredits"
+import QuizCard from "@/components/QuizCard"
 import { getLessonBySlug, getLessonSlugs } from "@/data/lessons"
 
 export function generateStaticParams() {
@@ -41,6 +43,11 @@ export default function LessonPage({ params }: Props) {
         </p>
 
         <div className="mt-3 flex flex-wrap gap-2">
+          {lesson.scholarship?.payne?.attested && (
+            <span className="inline-flex items-center rounded-full bg-[#efe8fb] px-2 py-1 text-xs font-medium text-[#5f3a8a]">
+              📘 Payne ✓
+            </span>
+          )}
           {lesson.scholarship?.edersheim?.attested && (
             <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-2 py-1 text-xs font-medium text-[#7e622a]">
               📚 Edersheim ✓
@@ -69,6 +76,10 @@ export default function LessonPage({ params }: Props) {
         reference={lesson.ntReference}
         text={lesson.ntText}
       />
+
+      <ScholarCredits scholarship={lesson.scholarship} />
+
+      <QuizCard quiz={lesson.quiz} />
 
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import "./globals.css"
 import Header from "@/components/Header"
 
@@ -27,6 +28,11 @@ export default function RootLayout({
           Scripture quotations taken from The Holy Bible, New International
           Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™
           Used by permission. All rights reserved worldwide.
+          <div className="mt-3">
+            <Link href="/sources" className="underline decoration-[#bba989] underline-offset-4 hover:text-[#7e622a]">
+              Sources and Methodology
+            </Link>
+          </div>
         </footer>
 
       </body>

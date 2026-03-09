@@ -3,13 +3,13 @@
 > *"And beginning with Moses and all the Prophets, he explained to them what was said in all the Scriptures concerning himself."*
 > — **Luke 24:27 (NIV)**
 
-Scripture Journey is a Christ-centered Next.js app that helps users explore how the whole Bible points to Jesus through 227 messianic prophecy lessons, each with NIV scripture text, scholarly attribution, and reflective content. Inspired by Luke 24:27, this project exists to trace every thread of Scripture that points to Christ.
+Scripture Journey is a Christ-centered app that helps users explore how the whole Bible points to Jesus through 233 messianic prophecy lessons, each with NIV scripture text, scholarly attribution, and reflective content. Inspired by Luke 24:27.
 
 ## What This App Includes
 
-- 227 messianic prophecy lessons, each fully developed
+- 233 messianic prophecy lessons, each fully developed
 - Each lesson includes Old Testament prophecy, New Testament fulfillment, a unique "Why This Matters" reflection, and a quiz
-- Scholarly attribution badges from two academic sources (see below)
+- Scholarly attribution badges from three academic sources (see below)
 - Home page with live search/filter by title, Scripture reference, or theme
 - Visual Map grouping lessons by category (Identity, Ministry, Rejection, Passion, Resurrection)
 - Dashboard with progress tracking
@@ -19,12 +19,14 @@ Scripture Journey is a Christ-centered Next.js app that helps users explore how 
 
 ## Scholarly Sources
 
-Lesson scholarship is attributed to two foundational works on messianic prophecy:
+Lesson scholarship is attributed to three foundational works on messianic prophecy:
+
+- **J. Barton Payne** — *Encyclopedia of Biblical Prophecy* (Harper & Row, 1973). Payne catalogs 191 messianic prophecies and provides the numbering system (#1–191) used in this app for cross-reference. 59 lessons currently carry Payne attestation.
 
 - **Alfred Edersheim** — *The Life and Times of Jesus the Messiah* (1883). Appendix IX catalogues 456 Old Testament passages the ancient Rabbis applied to the Messiah. 186 lessons in Scripture Journey are attested by Edersheim.
 - **Josh McDowell** — *The New Evidence That Demands a Verdict* (1999). Chapter 8 presents detailed evidence for messianic prophecy fulfillment. 58 lessons carry McDowell attestation.
 
-Lessons display 📚 Edersheim and 📖 McDowell badges when attested by either or both sources.
+Lessons display 📘 Payne, 📚 Edersheim, and 📖 McDowell badges when attested by one or more sources.
 
 ## Tech Stack
 
@@ -67,10 +69,11 @@ npm run lint
 - Home (Prophecy Search): `/`
 - Dashboard: `/dashboard`
 - Visual Map: `/map`
+- Sources: `/sources`
 - Lesson detail: `/lessons/[slug]`
 - Example lessons:
   - `/lessons/seed-of-the-woman`
-  - `/lessons/sons-of-the-living-god`
+  - `/lessons/son-of-the-father`
 
 Unknown lesson slugs render the custom `notFound()` page.
 
@@ -94,9 +97,9 @@ Scripture quotations taken from The Holy Bible, New International Version® NIV�
 
 After deploy, verify:
 
-- `/`, `/dashboard`, `/story`, `/prophecies`, `/map`
+- `/`, `/dashboard`, `/map`, `/sources`
 - `/lessons/seed-of-the-woman`
-- `/lessons/eternal-king`
+- `/lessons/son-of-the-father`
 
 ## Mission
 

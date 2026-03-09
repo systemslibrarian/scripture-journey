@@ -9,6 +9,11 @@ export interface QuizData {
   question: string;
   choices: string[];
   answer: number;
+  fillInBlank?: {
+    prompt: string;
+    answer: string;
+    acceptableAnswers?: string[];
+  };
 }
 
 export interface EdersheimData {
@@ -26,7 +31,16 @@ export interface McDowellData {
   note: string;
 }
 
+export interface PayneData {
+  attested: boolean;
+  work: string;
+  encyclopediaNumber: number;
+  prophecyReference: string;
+  note: string;
+}
+
 export interface Scholarship {
+  payne?: PayneData;
   edersheim?: EdersheimData;
   mcdowell?: McDowellData;
 }

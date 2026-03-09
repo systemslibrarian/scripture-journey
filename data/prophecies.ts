@@ -1,4 +1,4 @@
-import type { Lesson, Scholarship } from "@/lib/types"
+import type { Lesson, PayneData, Scholarship } from "@/lib/types"
 
 function makeLesson(
   id:number,
@@ -29,7 +29,12 @@ reflection:`Lord Jesus, help me see You more clearly through Your Word.`,
 quiz:{
 question:"Which Old Testament reference connects to this lesson?",
 choices:[otReference,"Isaiah 53","Psalm 22","Genesis 3:15"],
-answer:0
+answer:0,
+fillInBlank: {
+prompt: "Fill in the blank: The Old Testament reference for this lesson is ____.",
+answer: otReference,
+acceptableAnswers: [otReference.replace(/–/g, "-")]
+}
 },
 ...(status ? { status } : {}),
 ...(scholarship ? { scholarship } : {})
@@ -55,6 +60,18 @@ function mcdowell(prophecyNumber: number, prophecyTitle: string, note: string): 
       work: "The New Evidence That Demands a Verdict",
       prophecyNumber,
       prophecyTitle,
+      note
+    }
+  };
+}
+
+function payne(encyclopediaNumber: number, prophecyReference: string, note: string): { payne: PayneData } {
+  return {
+    payne: {
+      attested: true,
+      work: "Encyclopedia of Biblical Prophecy",
+      encyclopediaNumber,
+      prophecyReference,
       note
     }
   };
@@ -665,68 +682,73 @@ makeLesson(100,"sons-of-the-living-god","Sons of the Living God","Resurrection",
 
 
 // === SCHOLARSHIP ATTRIBUTION ===
+// J. Barton Payne, Encyclopedia of Biblical Prophecy (Harper & Row, 1973)
 // Alfred Edersheim, The Life and Times of Jesus the Messiah (1883), Appendix IX
 // Josh McDowell, The New Evidence That Demands a Verdict (Thomas Nelson, 1999), Chapter 8
 
 const _scholarshipMap: Record<number, Scholarship> = {
-  1: { ...edersheim("Paraphrased with express reference to the Messiah in Targum Pseudo-Jonathan; the seed crushing the serpent's head applied to Messiah in multiple Midrashim"), ...mcdowell(1, "Born of the Seed of Woman", "First Messianic promise; seed of woman crushes serpent — cited with Targum Jonathan") },
+  1: { ...payne(1, "Gen 3:15", "Seed of woman crushing serpent; Payne treats this as foundational messianic promise opening all redemptive history"), ...edersheim("Paraphrased with express reference to the Messiah in Targum Pseudo-Jonathan; the seed crushing the serpent's head applied to Messiah in multiple Midrashim"), ...mcdowell(1, "Born of the Seed of Woman", "First Messianic promise; seed of woman crushes serpent — cited with Targum Jonathan") },
   2: { ...mcdowell(4, "Seed of Abraham", "Galatians 3:16 — 'seed' singular; Matthew Henry cited on universal blessing through one descendant") },
-  3: { ...edersheim("Extensively discussed; Shiloh applied directly to Messiah in Targum Pseudo-Jon. with full Rabbinic commentary in Sanh. 98b"), ...mcdowell(7, "Tribe of Judah", "Scepter passage with Targum Jonathan cited verbatim; Hengstenberg commentary included") },
-  4: { ...mcdowell(16, "Shall Be a Prophet", "Maimonides letter to Yemen cited; Kligerman on Jewish expectation of Messianic prophet") },
+  3: { ...payne(3, "Gen 49:10", "Scepter not departing from Judah until Shiloh comes; ruler from Judah lineage narrowed to Christ"), ...edersheim("Extensively discussed; Shiloh applied directly to Messiah in Targum Pseudo-Jon. with full Rabbinic commentary in Sanh. 98b"), ...mcdowell(7, "Tribe of Judah", "Scepter passage with Targum Jonathan cited verbatim; Hengstenberg commentary included") },
+  4: { ...payne(5, "Deut 18:15–18", "Prophet like Moses raised up; Payne notes Jewish expectation of a second Moses fulfilled in Christ"), ...mcdowell(16, "Shall Be a Prophet", "Maimonides letter to Yemen cited; Kligerman on Jewish expectation of Messianic prophet") },
   5: { ...edersheim("Passover lamb typology connected to Messianic redemption in Talmudic sources") },
-  7: { ...edersheim("Cited in Messianic context; sign applied to the Messianic era in Targum and Talmudic sources"), ...mcdowell(2, "Born of a Virgin", "Greek LXX uses parthenos; Targum Isaiah cited; Immanuel also listed separately as #15") },
-  8: { ...edersheim("Applied to Messianic times and the light of the Messiah in Yalkut and Talmud"), ...mcdowell(23, "Ministry to Begin in Galilee", "Galilee of Gentiles illuminated; Capernaum as fulfillment — Matt 4:12 cited") },
-  9: { ...mcdowell(26, "He Was to Enter the Temple", "Lord suddenly coming to His temple; John 1:14 and 2:19-21 cited as fulfillments") },
-  10: { ...edersheim("Bethlehem as Messiah's birthplace attested via Gen 35:21 in Targum Pseudo-Jon.; Mic 5:2 cited in Talmudic discussion of Messianic origin"), ...mcdowell(10, "Born at Bethlehem", "Scribes cited in Matt 2:4; Hengstenberg commentary; pre-existence in same verse noted as #13") },
-  11: { ...edersheim("Psalm 110 treated as Messianic throughout; eternal priesthood applied to Messiah in Rabbinic writings"), ...mcdowell(17, "Priest", "Eternal Melchizedek priesthood; oath of God distinguishes from Aaronic priesthood") },
-  12: { ...edersheim("Explicitly quoted as Messianic in Talmud (Sukk. 52a); applied to the King Messiah in Midrash"), ...mcdowell(3, "Son of God", "Quoted as Messianic in Talmud (Sukk. 52a); Father's declaration at baptism") },
-  13: { ...edersheim("Applied in context of Messiah's betrayal; Psalm 41 cited in Messianic discussions in Talmud"), ...mcdowell(33, "Betrayed by a Friend", "Familiar friend who ate bread; 'man of my peace' — Judas's kiss of betrayal") },
-  14: { ...edersheim("Messianically explained in Ber. R. 98; thirty pieces of silver applied to Messiah's betrayal"), ...mcdowell(34, "Sold for Thirty Pieces of Silver", "Seven precise details fulfilled: friend, 30 pieces, silver, thrown, house of Lord, potter") },
-  15: { ...edersheim("Continuation of Zech 11 Messianic discourse; potter's field in Rabbinic sources"), ...mcdowell(35, "Money Thrown into God's House", "Thrown (not placed) into the temple — Matt 27:5 exact fulfillment; also #36 Price Given for Potter's Field") },
-  16: { ...edersheim("Psalm 22 treated as Messianic Passion Psalm; verse cited in Yalkut on Messiah's sufferings"), ...mcdowell(44, "Hands and Feet Pierced", "Roman crucifixion method; large dull spikes; Zech 12:10 cited as parallel") },
-  17: { ...edersheim("Garments and lots within the Messianic Psalm 22; cited in Rabbinic writings on Messiah's derision") },
-  18: { ...edersheim("Mocking expressly applied to Messiah's sufferings and derision from enemies in ancient Synagogue commentary"), ...mcdowell(42, "Mocked", "Shoot out the lip, shake the head — Psalm 22 treated as full Passion Psalm by McDowell") },
-  19: { ...mcdowell(53, "To Suffer Thirst", "Vinegar for thirst; John 19:28 — 'I thirst'; also covered by #54 Gall and Vinegar Offered") },
-  20: { ...mcdowell(59, "His Side Pierced", "Laetsch — LORD Jehovah speaks of Himself as pierced; 'thrust through' appears 9x in OT") },
-  21: { ...edersheim("Isaiah 53 treated as most significant Messianic chapter; Messiah's silence before accusers cited in Yalkut"), ...mcdowell(39, "Silent before Accusers", "Oppressed and afflicted, opened not His mouth; Matt 27:12 fulfillment noted") },
-  22: { ...edersheim("Stripes and healing applied to Messiah bearing Israel's sins in Talmud (Sanh. 98b) and Yalkut"), ...mcdowell(40, "Wounded and Bruised", "Stripes for our healing; Henry cited; Zech 13:6 as parallel") },
-  23: { ...edersheim("Burial with the rich in Messianic application of Isa 53 in ancient Rabbinic commentary"), ...mcdowell(61, "Buried in a Rich Man's Tomb", "Grave with wicked but tomb with rich; Joseph of Arimathea — Stoner probability cited") },
-  24: { ...edersheim("Not suffering corruption applied to Messiah; cited in Rabbinic sources on resurrection hope"), ...mcdowell(30, "Resurrection", "Soul not left in Sheol; Friedlaender on Ibn Ezra's belief in resurrection; Acts 2:31") },
+  6: { ...payne(6, "2 Sam 7:12–13", "Davidic throne established forever; Payne treats as foundational covenant for all Davidic messianism") },
+  7: { ...payne(23, "Isa 7:14", "Virgin conceives Immanuel; Payne argues almah requires virgin, not merely young woman"), ...edersheim("Cited in Messianic context; sign applied to the Messianic era in Targum and Talmudic sources"), ...mcdowell(2, "Born of a Virgin", "Greek LXX uses parthenos; Targum Isaiah cited; Immanuel also listed separately as #15") },
+  8: { ...payne(24, "Isa 9:1–2", "Galilee region sees great light; Payne notes geographic specificity as confirming mark"), ...edersheim("Applied to Messianic times and the light of the Messiah in Yalkut and Talmud"), ...mcdowell(23, "Ministry to Begin in Galilee", "Galilee of Gentiles illuminated; Capernaum as fulfillment — Matt 4:12 cited") },
+  9: { ...payne(50, "Mal 3:1", "Messenger prepares the way; Payne identifies John the Baptist as direct fulfillment"), ...mcdowell(26, "He Was to Enter the Temple", "Lord suddenly coming to His temple; John 1:14 and 2:19-21 cited as fulfillments") },
+  10: { ...payne(45, "Mic 5:2", "Ruler from Bethlehem of ancient origins; Payne emphasizes eternal origin clause as divine"), ...edersheim("Bethlehem as Messiah's birthplace attested via Gen 35:21 in Targum Pseudo-Jon.; Mic 5:2 cited in Talmudic discussion of Messianic origin"), ...mcdowell(10, "Born at Bethlehem", "Scribes cited in Matt 2:4; Hengstenberg commentary; pre-existence in same verse noted as #13") },
+  11: { ...payne(19, "Ps 110:4", "Priest forever in Melchizedek order; Payne notes this requires a priest outside the Levitical line"), ...edersheim("Psalm 110 treated as Messianic throughout; eternal priesthood applied to Messiah in Rabbinic writings"), ...mcdowell(17, "Priest", "Eternal Melchizedek priesthood; oath of God distinguishes from Aaronic priesthood") },
+  12: { ...payne(9, "Ps 2:6–7", "God's king installed on Zion; You are My Son declared at coronation; fulfilled at baptism and resurrection"), ...edersheim("Explicitly quoted as Messianic in Talmud (Sukk. 52a); applied to the King Messiah in Midrash"), ...mcdowell(3, "Son of God", "Quoted as Messianic in Talmud (Sukk. 52a); Father's declaration at baptism") },
+  13: { ...payne(16, "Ps 41:9", "Close friend betrays the psalmist; Payne notes Jesus' explicit citation at Last Supper (John 13:18)"), ...edersheim("Applied in context of Messiah's betrayal; Psalm 41 cited in Messianic discussions in Talmud"), ...mcdowell(33, "Betrayed by a Friend", "Familiar friend who ate bread; 'man of my peace' — Judas's kiss of betrayal") },
+  14: { ...payne(47, "Zech 11:12–13", "Thirty pieces of silver; Payne calls this one of the most statistically improbable fulfillments"), ...edersheim("Messianically explained in Ber. R. 98; thirty pieces of silver applied to Messiah's betrayal"), ...mcdowell(34, "Sold for Thirty Pieces of Silver", "Seven precise details fulfilled: friend, 30 pieces, silver, thrown, house of Lord, potter") },
+  15: { ...payne(47, "Zech 11:12–13", "Thirty pieces thrown to potter; same passage as L14, second half of the fulfillment"), ...edersheim("Continuation of Zech 11 Messianic discourse; potter's field in Rabbinic sources"), ...mcdowell(35, "Money Thrown into God's House", "Thrown (not placed) into the temple — Matt 27:5 exact fulfillment; also #36 Price Given for Potter's Field") },
+  16: { ...payne(13, "Ps 22:16", "Hands and feet pierced; Payne notes crucifixion unknown in David's era, making this highly specific"), ...edersheim("Psalm 22 treated as Messianic Passion Psalm; verse cited in Yalkut on Messiah's sufferings"), ...mcdowell(44, "Hands and Feet Pierced", "Roman crucifixion method; large dull spikes; Zech 12:10 cited as parallel") },
+  17: { ...payne(14, "Ps 22:18", "Garments divided and lots cast; Payne cites John 19:24 as word-for-word fulfillment"), ...edersheim("Garments and lots within the Messianic Psalm 22; cited in Rabbinic writings on Messiah's derision") },
+  18: { ...payne(12, "Ps 22:7–8", "Mockers shake their heads; Payne notes mocking language matches Matthew 27:39–43 precisely"), ...edersheim("Mocking expressly applied to Messiah's sufferings and derision from enemies in ancient Synagogue commentary"), ...mcdowell(42, "Mocked", "Shoot out the lip, shake the head — Psalm 22 treated as full Passion Psalm by McDowell") },
+  19: { ...payne(17, "Ps 69:21", "Gall and vinegar offered; Payne cites Matthew 27:34 and John 19:29–30 as dual fulfillments"), ...mcdowell(53, "To Suffer Thirst", "Vinegar for thirst; John 19:28 — 'I thirst'; also covered by #54 Gall and Vinegar Offered") },
+  20: { ...payne(48, "Zech 12:10", "Look on the one they pierced; Payne notes the first-person divine speaker makes this theologically remarkable"), ...mcdowell(59, "His Side Pierced", "Laetsch — LORD Jehovah speaks of Himself as pierced; 'thrust through' appears 9x in OT") },
+  21: { ...payne(36, "Isa 53:7", "Silent before accusers like a lamb; Payne notes the voluntary silence distinguishes this from ordinary suffering"), ...edersheim("Isaiah 53 treated as most significant Messianic chapter; Messiah's silence before accusers cited in Yalkut"), ...mcdowell(39, "Silent before Accusers", "Oppressed and afflicted, opened not His mouth; Matt 27:12 fulfillment noted") },
+  22: { ...payne(35, "Isa 53:4–5", "Pierced for transgressions; Payne calls Isaiah 53 the most complete messianic prophecy in the OT"), ...edersheim("Stripes and healing applied to Messiah bearing Israel's sins in Talmud (Sanh. 98b) and Yalkut"), ...mcdowell(40, "Wounded and Bruised", "Stripes for our healing; Henry cited; Zech 13:6 as parallel") },
+  23: { ...payne(37, "Isa 53:9", "Grave with wicked yet rich in death; Payne notes the double prediction (wicked/rich) uniquely fulfilled at Calvary"), ...edersheim("Burial with the rich in Messianic application of Isa 53 in ancient Rabbinic commentary"), ...mcdowell(61, "Buried in a Rich Man's Tomb", "Grave with wicked but tomb with rich; Joseph of Arimathea — Stoner probability cited") },
+  24: { ...payne(10, "Ps 16:10", "Not abandoned to grave nor decay; Payne cites Peter's Pentecost sermon as definitive interpretation"), ...edersheim("Not suffering corruption applied to Messiah; cited in Rabbinic sources on resurrection hope"), ...mcdowell(30, "Resurrection", "Soul not left in Sheol; Friedlaender on Ibn Ezra's belief in resurrection; Acts 2:31") },
   25: { ...edersheim("Ascent on high and captivity applied to Messianic triumph in Talmud and Midrash"), ...mcdowell(31, "Ascension", "Ascended on high; Acts 1:9 fulfillment; captivity led captive") },
-  26: { ...edersheim("Ps 110:1 explicitly Messianic; 'Sit at My right hand' applied to Messiah in Talmudic debate (Sanh. 38a)"), ...mcdowell(14, "He Shall Be Called Lord", "Midrash Tehillim cited; Matt 22:43-45 — David calls Him Lord in the Spirit; also #32 Seated at Right Hand") },
+  26: { ...payne(18, "Ps 110:1", "Lord says to my Lord: sit at my right hand; Payne notes Jesus' use of this in Matt 22:44 as self-identification"), ...edersheim("Ps 110:1 explicitly Messianic; 'Sit at My right hand' applied to Messiah in Talmudic debate (Sanh. 38a)"), ...mcdowell(14, "He Shall Be Called Lord", "Midrash Tehillim cited; Matt 22:43-45 — David calls Him Lord in the Spirit; also #32 Seated at Right Hand") },
   27: { ...edersheim("Servant as light to nations applied to Messianic era in Targum and Midrash") },
   28: { ...edersheim("Opening of blind eyes and ears cited in Messianic context in Yalkut on Isaiah"), ...mcdowell(24, "Ministry of Miracles", "Blind, deaf, lame, mute healed; Isaiah 32:3-4 also cited; Matt 11:4 fulfillment") },
   29: { ...mcdowell(25, "Teacher of Parables", "Parable method predicted; Matt 13:34 — without a parable He did not speak") },
   30: { ...mcdowell(21, "His Zeal for God", "Fausset cited on John 2:17 as specimen of Messiah's zeal; reproaches falling on Him") },
-  31: { ...edersheim("Rejected stone becoming cornerstone cited as Messianic in Talmud and applied to Messiah in multiple Midrashim"), ...mcdowell(29, "Rejected Cornerstone", "Stone builders rejected became chief cornerstone; Matt 21:42 fulfillment") },
-  32: { ...edersheim("Humble King on donkey explicitly applied to Messiah in Talmud (Sanh. 98a) and Midrash with variant readings"), ...mcdowell(27, "He Was to Enter Jerusalem on a Donkey", "Humble King; Talmud (Sanh. 98a) cited — if Israel worthy, He comes on clouds; if not, on donkey") },
-  33: { ...mcdowell(37, "Forsaken by His Disciples", "Laetsch cited on Zech 13:7 as clear prophecy; Christ's own interpretation in Matt 26:31") },
-  35: { ...edersheim("Righteous Branch (Tsemach) is one of the best-known Messianic designations; applied in Targum and multiple Midrashim"), ...mcdowell(9, "House of David", "Righteous Branch; Messiah called Son of David throughout both Talmuds") },
-  36: { ...edersheim("Son of Man receiving everlasting dominion applied to the Messiah in Talmud and Targum on Daniel") },
-  40: { ...edersheim("Despised and rejected applied to Messiah's suffering in Yalkut and Talmud (Sanh. 98b)"), ...mcdowell(47, "Rejected by His Own People", "Henry cited; own brethren disbelieved (John 7:5); own received Him not (John 1:11)") },
-  41: { ...edersheim("Numbered with transgressors in Messianic application of Isa 53 in Talmud"), ...mcdowell(45, "Crucified with Thieves", "Numbered with transgressors; crucifixion unknown in Jewish law — Blinzler cited") },
-  42: { ...edersheim("Intercession for transgressors applied to Messiah's work on behalf of the living and dead in Yalkut"), ...mcdowell(46, "Made Intercession for Persecutors", "Fausset — began on cross (Luke 23:34), continues in heaven (Heb 9:24; 1 John 2:1)") },
+  31: { ...payne(20, "Ps 118:22", "Rejected stone becomes cornerstone; Payne treats rejection by builders as symbolic of religious establishment's rejection"), ...edersheim("Rejected stone becoming cornerstone cited as Messianic in Talmud and applied to Messiah in multiple Midrashim"), ...mcdowell(29, "Rejected Cornerstone", "Stone builders rejected became chief cornerstone; Matt 21:42 fulfillment") },
+  32: { ...payne(46, "Zech 9:9", "King comes humble on a donkey; Payne calls the donkey detail a uniquely verifiable fulfillment"), ...edersheim("Humble King on donkey explicitly applied to Messiah in Talmud (Sanh. 98a) and Midrash with variant readings"), ...mcdowell(27, "He Was to Enter Jerusalem on a Donkey", "Humble King; Talmud (Sanh. 98a) cited — if Israel worthy, He comes on clouds; if not, on donkey") },
+  33: { ...payne(49, "Zech 13:7", "Strike the shepherd and sheep scatter; Payne notes Jesus cited this before Gethsemane (Matt 26:31)"), ...mcdowell(37, "Forsaken by His Disciples", "Laetsch cited on Zech 13:7 as clear prophecy; Christ's own interpretation in Matt 26:31") },
+  35: { ...payne(41, "Jer 23:5–6", "Righteous Branch of David called The LORD Our Righteousness; Payne notes the divine name given to the Branch"), ...edersheim("Righteous Branch (Tsemach) is one of the best-known Messianic designations; applied in Targum and multiple Midrashim"), ...mcdowell(9, "House of David", "Righteous Branch; Messiah called Son of David throughout both Talmuds") },
+  36: { ...payne(43, "Dan 7:13–14", "Son of Man on clouds given everlasting dominion; Payne sees this as messianic throne-room investiture scene"), ...edersheim("Son of Man receiving everlasting dominion applied to the Messiah in Talmud and Targum on Daniel") },
+  37: { ...payne(44, "Dan 9:24–26", "Seventy sevens and the Anointed One; Payne provides detailed chronological argument for first-century arrival") },
+  38: { ...payne(44, "Dan 9:24–26", "Messiah cut off and has nothing; Payne connects cutting off to Isaiah 53:8 as confirming the death of Messiah") },
+  39: { ...payne(42, "Ezek 34:23–24", "One shepherd over the flock; Payne sees Ezekiel's shepherd-David as typologically fulfilled by Christ") },
+  40: { ...payne(34, "Isa 53:3", "Despised and rejected, man of sorrows; Payne notes the social dimension of rejection as distinctive Servant trait"), ...edersheim("Despised and rejected applied to Messiah's suffering in Yalkut and Talmud (Sanh. 98b)"), ...mcdowell(47, "Rejected by His Own People", "Henry cited; own brethren disbelieved (John 7:5); own received Him not (John 1:11)") },
+  41: { ...payne(39, "Isa 53:12", "Numbered with transgressors; Payne connects this to crucifixion between rebels as literal fulfillment"), ...edersheim("Numbered with transgressors in Messianic application of Isa 53 in Talmud"), ...mcdowell(45, "Crucified with Thieves", "Numbered with transgressors; crucifixion unknown in Jewish law — Blinzler cited") },
+  42: { ...payne(39, "Isa 53:12", "Made intercession for transgressors; Payne notes the present-tense intercession continues beyond the cross"), ...edersheim("Intercession for transgressors applied to Messiah's work on behalf of the living and dead in Yalkut"), ...mcdowell(46, "Made Intercession for Persecutors", "Fausset — began on cross (Luke 23:34), continues in heaven (Heb 9:24; 1 John 2:1)") },
   43: { ...edersheim("Swallowing up of death applied to Messianic era in Talmud (Moed Katan 28b) and Midrash") },
   44: { ...edersheim("Kingdom given to the people of the Most High applied to Messianic reign in Talmudic commentary") },
-  45: { ...edersheim("Cornerstone in Zion applied to Messiah by Targum; noted by Rashi; Messiah as crown of glory (Isa 28:5)") },
+  45: { ...payne(28, "Isa 28:16", "Tested cornerstone laid in Zion; Payne links this cornerstone to Ps 118:22 and Isa 8:14 as a stone trilogy"), ...edersheim("Cornerstone in Zion applied to Messiah by Targum; noted by Rashi; Messiah as crown of glory (Isa 28:5)") },
   47: { ...edersheim("Everlasting light replacing sun and moon applied to Messianic era and the light of the Messiah in Yalkut") },
-  48: { ...edersheim("Righteous Servant justifying many cited in Messianic application of Isaiah 53") },
+  48: { ...payne(38, "Isa 53:10–11", "He will see his offspring and prolong his days; Payne calls the post-death life described here a resurrection prediction"), ...edersheim("Righteous Servant justifying many cited in Messianic application of Isaiah 53") },
   49: { ...edersheim("Redeemer coming to Zion applied to Messianic times in Sanh. 98a and Pesiqta 166b") },
-  50: { ...edersheim("Child born, Son given; names of the Messiah extensively discussed in Talmud (Debarim R.) and Midrash") },
-  51: { ...edersheim("Throne established forever applied to Messiah's eternal kingdom in Talmudic and Midrashic sources") },
-  52: { ...edersheim("Servant upheld by God applied to Messiah in Targum and Midrash on Psalm 2") },
-  53: { ...edersheim("Gentle servant applied to Messiah's ministry manner in Messianic commentary") },
+  50: { ...payne(25, "Isa 9:6–7", "Child born, Son given, Wonderful Counselor; Payne treats the divine names as evidence of Messiah's divine nature"), ...edersheim("Child born, Son given; names of the Messiah extensively discussed in Talmud (Debarim R.) and Midrash") },
+  51: { ...payne(25, "Isa 9:6–7", "Government on his shoulders; peace without end; Payne notes the eschatological fullness awaits second advent"), ...edersheim("Throne established forever applied to Messiah's eternal kingdom in Talmudic and Midrashic sources") },
+  52: { ...payne(30, "Isa 42:1–4", "Servant upheld by God, Spirit upon him; Payne sees the four Servant Songs as a progressive messianic portrait"), ...edersheim("Servant upheld by God applied to Messiah in Targum and Midrash on Psalm 2") },
+  53: { ...payne(30, "Isa 42:1–4", "Will not shout in the streets; Payne contrasts the quiet Servant with false messiahs who sought spectacle"), ...edersheim("Gentle servant applied to Messiah's ministry manner in Messianic commentary") },
   54: { ...edersheim("Opening blind eyes applied to Messiah's healing ministry in Yalkut on Isaiah 42") },
-  55: { ...edersheim("Good news to the poor and liberty to captives applied to Messianic era in Talmud") },
-  56: { ...edersheim("Year of the Lord's favor applied to Messianic proclamation in Rabbinic commentary") },
+  55: { ...payne(40, "Isa 61:1–2", "Spirit anoints to preach good news; Payne notes Jesus stopped reading mid-verse in Nazareth to separate advents"), ...edersheim("Good news to the poor and liberty to captives applied to Messianic era in Talmud") },
+  56: { ...payne(40, "Isa 61:1–2", "Year of the LORD's favor; Payne argues the partial reading in Luke 4 is itself prophetically significant"), ...edersheim("Year of the Lord's favor applied to Messianic proclamation in Rabbinic commentary") },
   57: { ...edersheim("New covenant promise applied to Messianic era; Jer 31:33-34 also cited in Yalkut") },
-  58: { ...edersheim("'The LORD our Righteousness' cited as one of the Messiah's names in Talmud (Bava Batra 75b)") },
-  59: { ...edersheim("Son of Man on clouds applied to Messiah in Talmud (Sanh. 98a) and Targum on Daniel") },
+  58: { ...payne(41, "Jer 23:5–6", "The LORD Our Righteousness; Payne sees the divine name as the strongest Davidic messianic title in Jeremiah"), ...edersheim("'The LORD our Righteousness' cited as one of the Messiah's names in Talmud (Bava Batra 75b)") },
+  59: { ...payne(43, "Dan 7:13–14", "Son of Man coming on clouds; Payne connects this to the Olivet Discourse and Christ's self-identification throughout the Gospels"), ...edersheim("Son of Man on clouds applied to Messiah in Talmud (Sanh. 98a) and Targum on Daniel") },
   60: { ...edersheim("Breaking of covenant staff in Messianic context of the rejected shepherd") },
   61: { ...mcdowell(60, "Darkness over the Land", "Sun darkened at noon; sixth hour = noon, ninth = 3pm by Jewish reckoning; Matt 27:45") },
-  63: { ...edersheim("Opening cry of Psalm 22 applied to Messiah's suffering; entire psalm treated as Messianic in ancient Synagogue"), ...mcdowell(55, "His Forsaken Cry", "Double cry 'My God' implies clinging to God while forsaken; Matt 27:46 verbatim") },
+  63: { ...payne(11, "Ps 22:1", "My God why have you forsaken me; Payne argues this cry prefigures both the suffering and the ultimate vindication of Ps 22"), ...edersheim("Opening cry of Psalm 22 applied to Messiah's suffering; entire psalm treated as Messianic in ancient Synagogue"), ...mcdowell(55, "His Forsaken Cry", "Double cry 'My God' implies clinging to God while forsaken; Matt 27:46 verbatim") },
   64: { ...edersheim("God will provide the lamb connected to Messianic redemption; Isaac as type of Messiah in Talmud and Midrash") },
-  65: { ...edersheim("Star out of Jacob applied to the Messiah in Talmud; associated with Bar Kokhba as false messiah (Num. Rab.)"), ...mcdowell(6, "Son of Jacob", "Star out of Jacob applied to Messiah; eliminates half of Abraham's lineage toward Christ") },
+  65: { ...payne(4, "Num 24:17", "Star from Jacob, scepter from Israel; Payne treats Balaam's oracle as one of the earliest royal messianic predictions"), ...edersheim("Star out of Jacob applied to the Messiah in Talmud; associated with Bar Kokhba as false messiah (Num. Rab.)"), ...mcdowell(6, "Son of Jacob", "Star out of Jacob applied to Messiah; eliminates half of Abraham's lineage toward Christ") },
   67: { ...edersheim("Curse of one hanged on a tree in Messianic/atonement context in Talmudic sources") },
   69: { ...edersheim("Nations conspiring against God's anointed applied to opposition to the Messiah in Talmud") },
   71: { ...edersheim("Into Your hands cited in Messianic context of suffering and trust in Midrash"), ...mcdowell(56, "Committed Himself to God", "Into Your hand I commit my spirit; Luke 23:46 — last words on the cross") },
@@ -737,13 +759,13 @@ const _scholarshipMap: Record<number, Scholarship> = {
   76: { ...edersheim("Kings bringing gifts applied to the Messiah; entire Psalm 72 viewed as Messianic in Yalkut"), ...mcdowell(11, "Presented with Gifts", "Kings of Sheba bringing gifts fulfilled by Magi; Isaiah 60:6 cited as parallel") },
   77: { ...edersheim("Unchanging Creator applied to Messiah in Talmud; Ps 102:16 applied to Messianic times in Bereshith R.") },
   79: { ...edersheim("Ever hearing never understanding applied to those rejecting Messiah's message in Midrash") },
-  80: { ...edersheim("Branch from Jesse and Spirit of the LORD extensively applied to Messiah in Targum, Talmud, and Midrash"), ...mcdowell(8, "Family Line of Jesse", "Targum Isaiah: 'A King shall come forth from the sons of Jesse'; also #20 Special Anointing of Holy Spirit") },
-  81: { ...edersheim("Root of Jesse as signal to nations applied to Messianic gathering in Talmud and Yalkut") },
-  82: { ...edersheim("Voice in the wilderness preparing the way applied to Messianic forerunner in Rabbinic commentary"), ...mcdowell(22, "Preceded by Messenger", "John Baptist as forerunner; Mal 3:1 cited in parallel; Luke 1:17 included") },
-  83: { ...edersheim("Light for the Gentiles applied to Messiah's universal mission in Talmud and Midrash") },
-  84: { ...edersheim("Back given to those who strike applied to Messiah's suffering in Yalkut on Isaiah 50"), ...mcdowell(41, "Smitten and Spit Upon", "Back to strikers, cheeks to beard-pluckers; Henry commentary; Matt 26:67 fulfillment") },
-  85: { ...edersheim("Disfigured appearance applied to Messiah's suffering; Isa 52-53 treated as continuous Messianic passage") },
-  86: { ...edersheim("Taking our infirmities applied to Messiah bearing Israel's diseases in Talmud (Sanh. 98b)") },
+  80: { ...payne(26, "Isa 11:1–2", "Shoot from Jesse's stump; Payne notes the stump imagery implies a dynasty cut down before the Messiah emerges"), ...edersheim("Branch from Jesse and Spirit of the LORD extensively applied to Messiah in Targum, Talmud, and Midrash"), ...mcdowell(8, "Family Line of Jesse", "Targum Isaiah: 'A King shall come forth from the sons of Jesse'; also #20 Special Anointing of Holy Spirit") },
+  81: { ...payne(27, "Isa 11:10", "Root of Jesse as banner for peoples; Payne connects this to Gentile inclusion in the messianic community"), ...edersheim("Root of Jesse as signal to nations applied to Messianic gathering in Talmud and Yalkut") },
+  82: { ...payne(29, "Isa 40:3–5", "Voice in wilderness, prepare the way; Payne calls this the most explicit forerunner prophecy in the OT"), ...edersheim("Voice in the wilderness preparing the way applied to Messianic forerunner in Rabbinic commentary"), ...mcdowell(22, "Preceded by Messenger", "John Baptist as forerunner; Mal 3:1 cited in parallel; Luke 1:17 included") },
+  83: { ...payne(31, "Isa 49:6", "Light to the Gentiles; Payne calls this the clearest statement of universal messianic salvation in the Servant Songs"), ...edersheim("Light for the Gentiles applied to Messiah's universal mission in Talmud and Midrash") },
+  84: { ...payne(32, "Isa 50:6", "Back given to those who beat me; Payne connects to the Sanhedrin trial and Roman scourging as fulfillment"), ...edersheim("Back given to those who strike applied to Messiah's suffering in Yalkut on Isaiah 50"), ...mcdowell(41, "Smitten and Spit Upon", "Back to strikers, cheeks to beard-pluckers; Henry commentary; Matt 26:67 fulfillment") },
+  85: { ...payne(33, "Isa 52:13–15", "Servant raised and highly exalted; disfigured appearance; Payne treats 52:13–15 as the heading of the Suffering Servant poem"), ...edersheim("Disfigured appearance applied to Messiah's suffering; Isa 52-53 treated as continuous Messianic passage") },
+  86: { ...payne(35, "Isa 53:4–5", "He took up our pain and bore our suffering; Payne calls this the substitutionary heart of all OT atonement imagery"), ...edersheim("Taking our infirmities applied to Messiah bearing Israel's diseases in Talmud (Sanh. 98b)") },
   87: { ...edersheim("Beautiful feet of herald applied to Messianic proclamation; cited in Yalkut with three-day Elijah scenario") },
   88: { ...edersheim("Everlasting covenant and sure mercies of David applied to Messianic era in Talmud") },
   89: { ...edersheim("Rachel weeping cited in Messianic context of exile and return in Midrash Rabbah"), ...mcdowell(12, "Herod Kills Children", "Rachel weeping; Laetsch cited defending Matthew's typological application of Jeremiah 31") },
@@ -752,12 +774,10 @@ const _scholarshipMap: Record<number, Scholarship> = {
   98: { ...edersheim("Feet on Mount of Olives applied to Messianic advent in Targum on Zechariah 14") },
   99: { ...edersheim("Cut off from the living in full Messianic treatment of Isaiah 53") },
   100: { ...edersheim("Sons of the living God applied to Messianic restoration of Israel in Midrash") },
+  220: { ...payne(2, "Gen 22:18", "Through Abraham's seed all nations blessed; Payne points to the singular 'seed' as anticipating Gal 3:16") },
+  222: { ...payne(5, "Deut 18:18", "God will put His words in the prophet's mouth; Payne sees this fulfilled in Jesus' claim to speak only what the Father gives") },
+  229: { ...payne(15, "Ps 34:20", "Not one bone broken; Payne connects this to the Passover lamb's bones (Exod 12:46) as a dual fulfillment") },
 };
-
-for (const p of prophecies) {
-  const s = _scholarshipMap[p.id];
-  if (s) p.scholarship = s;
-}
 
 // === NEW COMING-SOON LESSONS (Edersheim) ===
 
@@ -1393,4 +1413,26 @@ prophecies.push(makeLesson(230, "heart-poured-out", "Heart Poured Out", "Passion
   "Psalm 22:14", "John 19:34", "All my bones are out of joint. My heart has turned to wax; it has melted within me.", "Instead, one of the soldiers pierced Jesus' side with a spear, bringing a sudden flow of blood and water.", "The psalmist described a heart melted like wax within him. When the soldier pierced Jesus' side, blood and water flowed — medical evidence of a heart that literally burst. Psalm 22 described the Messiah's death a thousand years before the cross.",
   undefined,
   { ...mcdowell(58, "Heartbroken", "Heart like wax melted within; blood and water from the pierced side are evidence the heart had literally burst") }));
+
+// === NEW COMING-SOON LESSONS (Payne Gap Coverage) ===
+
+prophecies.push(makeLesson(231, "son-of-the-father", "Son of the Father", "Identity",
+  "2 Samuel 7:14", "Hebrews 1:5", "I will be his father, and he will be my son.", "For to which of the angels did God ever say, 'You are my Son; today I have become your Father'?", "God's covenant with David included a father-son relationship with his successor. The author of Hebrews applies this promise exclusively to Jesus — not to angels, not to any earthly king — as evidence of the Son's unique divine status.",
+  undefined,
+  { ...payne(7, "2 Sam 7:14", "Father-son covenant relationship; Payne sees this as the relational heart of the Davidic covenant, fulfilled uniquely in the incarnate Son") }));
+
+prophecies.push(makeLesson(232, "blessed-is-he-who-comes", "Blessed Is He Who Comes", "Identity",
+  "Psalm 118:26", "Matthew 21:9", "Blessed is he who comes in the name of the LORD. From the house of the LORD we bless you.", "Blessed is he who comes in the name of the Lord! Hosanna in the highest heaven!", "Psalm 118 was sung at Passover as pilgrims processed to the temple. When the crowd greeted Jesus with these exact words on Palm Sunday, they were identifying him as the expected king coming in God's name — a fulfillment the religious leaders understood immediately.",
+  undefined,
+  { ...payne(21, "Ps 118:26", "Blessed is He who comes in the LORD's name; Payne notes the Hallel psalm was the Passover processional, making the Palm Sunday crowd's use of it a conscious messianic declaration") }));
+
+prophecies.push(makeLesson(233, "throne-of-his-body", "Throne of His Body", "Identity",
+  "Psalm 132:11", "Acts 2:30", "The LORD swore an oath to David, a sure oath he will not revoke: 'One of your own descendants I will place on your throne.'", "But he was a prophet and knew that God had promised him on oath that he would place one of his descendants on his throne.", "Psalm 132 affirms the unconditional nature of the Davidic covenant — God swore an oath that David's bodily descendant would occupy his throne. Peter at Pentecost declared that Jesus' resurrection fulfilled this oath, establishing the Davidic heir on an eternal throne beyond the reach of death.",
+  undefined,
+  { ...payne(22, "Ps 132:11", "Bodily descendant of David placed on the throne; Payne connects the oath-formula here to the unbreakable permanence of the Davidic covenant") }));
+
+for (const p of prophecies) {
+  const s = _scholarshipMap[p.id];
+  if (s) p.scholarship = { ...(p.scholarship ?? {}), ...s };
+}
 

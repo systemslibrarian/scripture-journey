@@ -64,6 +64,9 @@ export default function ProphecySearch() {
             </p>
 
             <div className="mt-2 flex flex-wrap gap-1">
+              {lesson.scholarship?.payne?.attested && (
+                <span className="inline-flex items-center rounded-full bg-[#efe8fb] px-1.5 py-0.5 text-[10px] font-medium text-[#5f3a8a]">📘 Payne ✓</span>
+              )}
               {lesson.scholarship?.edersheim?.attested && (
                 <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-1.5 py-0.5 text-[10px] font-medium text-[#7e622a]">📚 Edersheim ✓</span>
               )}
