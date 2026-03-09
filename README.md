@@ -5,7 +5,7 @@
 
 Scripture Journey is a Christ-centered app that helps users explore how the whole Bible points to Jesus through 233 messianic prophecy lessons, each with NIV scripture text, scholarly attribution, and reflective content. Inspired by Luke 24:27.
 
-**[Live Demo](https://systemslibrarian.github.io/scripture-journey/)**
+**[Live Demo](https://www.scripturejourney.com/)**
 
 ## What This App Includes
 
