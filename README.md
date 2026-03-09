@@ -53,7 +53,8 @@ Lessons are organized into 7 prophetic categories, each with a key verse:
 - Next.js 14 (App Router)
 - TypeScript
 - Tailwind CSS
-- Static Site Generation (SSG) — deployed to GitHub Pages
+- Prisma ORM with PostgreSQL
+- Render web service deployment
 - PWA with service worker (network-first HTML, cache-first assets)
 
 ## Local Development
@@ -111,7 +112,19 @@ public/        # Static assets, PWA manifest, service worker, icons
 
 ## Deployment
 
-Deployed to GitHub Pages at [systemslibrarian.github.io/scripture-journey](https://systemslibrarian.github.io/scripture-journey/).
+Configured for Render using `render.yaml` with a managed PostgreSQL database.
+
+Required environment variables:
+
+- `DATABASE_URL`: Render PostgreSQL connection string
+- `NEXTAUTH_URL`: Public app URL (for example, `https://scripture-journey.onrender.com`)
+- `NEXTAUTH_SECRET`: Random secret used by NextAuth
+- `EMAIL_SERVER`: SMTP URL (for example, `smtp://user@gmail.com:app_password@smtp.gmail.com:587`)
+- `EMAIL_FROM`: Sender email address only (for example, `user@gmail.com`)
+
+Database bootstrapping:
+
+- Startup runs `prisma migrate deploy`.
 
 ## Scripture Attribution
 
