@@ -10,7 +10,7 @@ export default function DashboardPage() {
   const totalLessons = lessons.length;
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10">
+    <div className="mx-auto max-w-6xl">
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <section className="space-y-6">
           <div className="glass-card rounded-[2rem] p-6">
@@ -55,6 +55,6 @@ export default function DashboardPage() {
           </div>
         </aside>
       </div>
-    </main>
+    </div>
   );
 }

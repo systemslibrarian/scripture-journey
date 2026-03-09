@@ -1,52 +1,105 @@
-import Hero from '@/components/Hero';
-import Link from 'next/link';
-import { tracks } from '@/data/tracks';
+import Link from "next/link"
+import { prophecies } from "@/data/prophecies"
 
-export default function HomePage() {
+export default function DashboardPage() {
+
+  const firstLesson = prophecies[0]
+  const todayLesson = prophecies[24]
+
   return (
-    <main className="mx-auto max-w-6xl px-4 pb-16">
-      <Hero />
-      <section className="mt-2 grid gap-4 md:grid-cols-3">
-        {tracks.map((track, index) => (
-          <Link
-            key={track.slug}
-            href={`/${track.slug}`}
-            className="glass-card rise-in rounded-[1.7rem] p-5 transition hover:-translate-y-0.5"
-            style={{ animationDelay: `${200 + index * 80}ms` }}
-          >
-            <p className="text-xs uppercase tracking-[0.2em] text-[#7e622a]">{track.lessonCount} steps</p>
-            <h2 className="mt-2 text-2xl font-semibold text-[#1b1a17]">{track.name}</h2>
-            <p className="mt-2 leading-7 text-[#4a4338]">{track.description}</p>
-          </Link>
-        ))}
-      </section>
+    <div className="space-y-8">
 
-      <section className="mt-8 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-        <article className="glass-card rounded-[2rem] p-6">
-          <p className="text-sm uppercase tracking-[0.18em] text-[#7e622a]">How It Works</p>
-          <h2 className="mt-2 text-3xl font-semibold text-[#1b1a17]">A clear path for beginners</h2>
-          <ul className="mt-4 space-y-3 text-[#4a4338]">
-            <li>Read one short Old Testament promise or prophecy.</li>
-            <li>See the New Testament fulfillment in Jesus.</li>
-            <li>Answer one quick question to strengthen retention.</li>
-            <li>Track your progress and keep moving forward.</li>
-          </ul>
-        </article>
-        <article className="rounded-[2rem] border border-[#dbcdb5] bg-[#fffaf0] p-6 shadow-[0_10px_28px_rgba(90,51,47,0.08)]">
-          <p className="text-sm uppercase tracking-[0.18em] text-[#7e622a]">Scripture Focus</p>
-          <blockquote className="mt-3 text-2xl font-semibold leading-tight text-[#1b1a17]">
-            &ldquo;Beginning with Moses and all the Prophets, he interpreted to them in all the Scriptures the things concerning
-            himself.&rdquo;
-          </blockquote>
-          <p className="mt-2 text-[#5f5548]">Luke 24:27</p>
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+
+        <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
+          Dashboard
+        </div>
+
+        <h1 className="mt-3 text-3xl font-bold text-[#1b1a17]">
+          Scripture Journey
+        </h1>
+
+        <p className="mt-4 max-w-2xl text-[#4a4338]">
+          This project explores 100 Old Testament prophecies and how
+          Christians understand them as fulfilled in Jesus.
+        </p>
+
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2">
+
+        <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm">
+
+          <div className="text-sm font-semibold text-[#7e622a]">
+            Start at the Beginning
+          </div>
+
+          <h2 className="mt-2 text-xl font-bold text-[#1b1a17]">
+            {firstLesson.title}
+          </h2>
+
+          <p className="mt-3 text-sm text-[#4a4338]">
+            {firstLesson.summary}
+          </p>
+
           <Link
-            href="/prophecies"
-            className="mt-6 inline-flex rounded-xl border border-[#cab187] px-4 py-2.5 font-semibold text-[#5a332f] transition hover:bg-[#f4ead8]"
+            href={`/lessons/${firstLesson.slug}`}
+            className="mt-4 inline-block rounded-xl bg-[#1b1a17] px-4 py-2 text-white text-sm font-semibold"
           >
-            View Key Prophecies
+            Open Lesson
           </Link>
-        </article>
-      </section>
-    </main>
-  );
+
+        </div>
+
+        <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm">
+
+          <div className="text-sm font-semibold text-[#7e622a]">
+            Today’s Discovery
+          </div>
+
+          <h2 className="mt-2 text-xl font-bold text-[#1b1a17]">
+            {todayLesson.title}
+          </h2>
+
+          <p className="mt-3 text-sm text-[#4a4338]">
+            {todayLesson.summary}
+          </p>
+
+          <Link
+            href={`/lessons/${todayLesson.slug}`}
+            className="mt-4 inline-block rounded-xl border border-[#d8ccb8] px-4 py-2 text-sm font-semibold"
+          >
+            Open Lesson
+          </Link>
+
+        </div>
+
+      </div>
+
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm">
+
+        <div className="text-sm font-semibold text-[#7e622a]">
+          Prophecy Track
+        </div>
+
+        <div className="mt-2 text-2xl font-bold text-[#1b1a17]">
+          100 Lessons
+        </div>
+
+        <p className="mt-2 text-[#4a4338]">
+          Explore identity, ministry, rejection, the passion,
+          and resurrection prophecies connected to Jesus.
+        </p>
+
+        <Link
+          href="/prophecies"
+          className="mt-4 inline-block text-sm font-semibold text-[#7e622a] hover:underline"
+        >
+          Browse all lessons →
+        </Link>
+
+      </div>
+
+    </div>
+  )
 }

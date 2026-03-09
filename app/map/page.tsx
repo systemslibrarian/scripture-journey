@@ -1,67 +1,109 @@
-const mapData = [
-  {
-    title: 'Torah',
-    items: ['Genesis 3:15', 'Abraham', 'Judah', 'Passover', 'Prophet Like Moses'],
-  },
-  {
-    title: 'Kings',
-    items: ['Davidic Covenant', 'Everlasting Throne', 'Righteous Branch'],
-  },
-  {
-    title: 'Psalms',
-    items: ['Psalm 2', 'Psalm 16', 'Psalm 22', 'Psalm 41', 'Psalm 69', 'Psalm 110'],
-  },
-  {
-    title: 'Prophets',
-    items: ['Isaiah 7', 'Isaiah 9', 'Isaiah 35', 'Isaiah 42', 'Isaiah 53', 'Micah 5', 'Zechariah 9', 'Zechariah 11', 'Zechariah 12', 'Malachi 3'],
-  },
-  {
-    title: 'Gospels',
-    items: ['Birth', 'Ministry', 'Rejection', 'Cross', 'Burial', 'Resurrection', 'Ascension'],
-  },
-];
-
 export default function MapPage() {
+
+  const sections = [
+    {
+      title: "Torah",
+      items: [
+        "Genesis 3:15 — First Promise",
+        "Genesis 12:3 — Blessing Through Abraham",
+        "Genesis 49:10 — Judah's Scepter",
+        "Exodus 12 — Passover Lamb",
+        "Deuteronomy 18:15 — Prophet Like Moses",
+      ],
+    },
+    {
+      title: "Kings",
+      items: [
+        "2 Samuel 7 — Davidic Covenant",
+        "Psalm 2 — Son of God",
+        "Psalm 16 — Resurrection Hope",
+        "Psalm 22 — Suffering King",
+        "Psalm 110 — Priest King",
+      ],
+    },
+    {
+      title: "Prophets",
+      items: [
+        "Isaiah 7 — Virgin Birth",
+        "Isaiah 9 — Mighty God",
+        "Isaiah 35 — Healing Ministry",
+        "Isaiah 42 — Servant of the Lord",
+        "Isaiah 53 — Suffering Servant",
+        "Micah 5 — Bethlehem Birth",
+        "Zechariah 9 — Humble King",
+        "Zechariah 12 — Pierced One",
+        "Malachi 3 — Messenger Before Messiah",
+      ],
+    },
+    {
+      title: "Gospels",
+      items: [
+        "Birth of Jesus",
+        "Ministry in Galilee",
+        "Triumphal Entry",
+        "Crucifixion",
+        "Burial",
+        "Resurrection",
+        "Ascension",
+      ],
+    },
+  ]
+
   return (
-    <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+    <div className="space-y-8">
+
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+
+        <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Prophecy Map
         </div>
-        <h1 className="mt-2 text-3xl font-bold">A Visual Map of Scripture</h1>
-        <p className="mt-3 max-w-3xl text-slate-600">
-          This page gives a simple visual overview of how promises, prophecies,
-          and patterns across Scripture are fulfilled in Jesus.
+
+        <h1 className="mt-2 text-3xl font-bold text-[#1b1a17]">
+          A Visual Map of Scripture
+        </h1>
+
+        <p className="mt-4 max-w-2xl text-[#4a4338]">
+          The story of Scripture unfolds through promises, patterns,
+          and prophecies that Christians believe ultimately point to Jesus.
+          This page gives a simple overview of that journey.
         </p>
+
       </div>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-5">
-        {mapData.map((section, index) => (
+      <div className="grid gap-6 lg:grid-cols-4">
+
+        {sections.map((section) => (
+
           <div
             key={section.title}
-            className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm"
+            className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm"
           >
-            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-              {section.title}
-            </div>
 
-            <div className="mt-4 space-y-3">
+            <h2 className="text-lg font-bold text-[#1b1a17]">
+              {section.title}
+            </h2>
+
+            <ul className="mt-4 space-y-3 text-sm text-[#4a4338]">
+
               {section.items.map((item) => (
-                <div
+
+                <li
                   key={item}
-                  className={`rounded-2xl px-4 py-3 text-sm font-medium ${
-                    index === 4
-                      ? 'bg-amber-100 text-amber-900'
-                      : 'bg-slate-50 text-slate-700'
-                  }`}
+                  className="rounded-xl bg-[#fbf7ee] px-3 py-2"
                 >
                   {item}
-                </div>
+                </li>
+
               ))}
-            </div>
+
+            </ul>
+
           </div>
+
         ))}
+
       </div>
-    </main>
-  );
+
+    </div>
+  )
 }

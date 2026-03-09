@@ -22,7 +22,7 @@ export default function LessonPage({ params }: Props) {
   }
 
   return (
-    <main className="mx-auto max-w-4xl px-6 py-12">
+    <div className="mx-auto max-w-4xl">
 
       <div className="mb-8">
 
@@ -82,6 +82,6 @@ export default function LessonPage({ params }: Props) {
 
       </div>
 
-    </main>
+    </div>
   )
 }

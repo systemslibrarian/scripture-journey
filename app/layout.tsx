@@ -1,33 +1,29 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Cormorant_Garamond, Source_Sans_3 } from 'next/font/google';
-import Header from '@/components/Header';
-
-const headingFont = Cormorant_Garamond({
-  subsets: ['latin'],
-  variable: '--font-heading',
-  weight: ['500', '600', '700'],
-});
-
-const bodyFont = Source_Sans_3({
-  subsets: ['latin'],
-  variable: '--font-body',
-  weight: ['400', '500', '600', '700'],
-});
+import type { Metadata } from "next"
+import "./globals.css"
+import Header from "@/components/Header"
 
 export const metadata: Metadata = {
-  title: 'Scripture Journey | Discover Christ Through Scripture',
+  title: "Scripture Journey",
   description:
-    'A guided journey through promises, prophecies, patterns, and fulfillment to see how the whole Bible points to Jesus.',
-};
+    "Explore how the promises, prophecies, and story of Scripture point to Jesus.",
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={`${headingFont.variable} ${bodyFont.variable}`}>
+      <body className="min-h-screen bg-[#fefcf8] text-[#1b1a17] antialiased">
+
         <Header />
-        <div className="site-shell">{children}</div>
+
+        <main className="mx-auto w-full max-w-6xl px-4 py-10">
+          {children}
+        </main>
+
       </body>
     </html>
-  );
+  )
 }

@@ -1,11 +1,14 @@
-import type { Prophecy } from '@/lib/types';
+import type { Lesson, LessonCategory } from '@/lib/types';
 
-export default function ProphecyTimeline({ entries }: { entries: Prophecy[] }) {
-  const columns = [
-    { label: 'Promise', category: 'Promise' as const },
-    { label: 'Prophecy', category: 'Prophecy' as const },
-    { label: 'Pattern', category: 'Pattern' as const },
-  ];
+export default function ProphecyTimeline({ entries }: { entries: Lesson[] }) {
+  const seen = new Set<LessonCategory>();
+  const columns: { label: string; category: LessonCategory }[] = [];
+  for (const entry of entries) {
+    if (!seen.has(entry.category)) {
+      seen.add(entry.category);
+      columns.push({ label: entry.category, category: entry.category });
+    }
+  }
 
   return (
     <div className="grid gap-4 lg:grid-cols-3">

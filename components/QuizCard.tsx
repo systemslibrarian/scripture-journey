@@ -3,16 +3,15 @@
 import { useState } from 'react'
 
 type QuizCardProps = {
-  question: string
-  choices: string[]
-  answer: number
+  quiz: {
+    question: string
+    choices: string[]
+    answer: number
+  }
 }
 
-export default function QuizCard({
-  question,
-  choices,
-  answer,
-}: QuizCardProps) {
+export default function QuizCard({ quiz }: QuizCardProps) {
+  const { question, choices, answer } = quiz
   const [selected, setSelected] = useState<number | null>(null)
   const [submitted, setSubmitted] = useState(false)
 

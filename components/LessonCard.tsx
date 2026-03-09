@@ -13,7 +13,6 @@ export default function LessonCard({ lesson }: { lesson: Lesson }) {
         {lesson.otReference} to {lesson.ntReference}
       </p>
       <p className="mt-4 text-sm leading-7 text-[#4a4338]">{lesson.summary}</p>
-      <p className="mt-4 border-t border-[#e7dcc9] pt-3 text-sm font-medium text-[#2f3e36]">{lesson.durationMinutes} min read</p>
     </Link>
   );
 }

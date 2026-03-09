@@ -25,3 +25,9 @@ export interface Lesson {
   reflection: string;
   quiz: QuizData;
 }
+
+export interface Badge {
+  id: string;
+  title: string;
+  description: string;
+}

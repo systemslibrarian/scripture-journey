@@ -11,7 +11,7 @@ const categories = [
 
 export default function PropheciesPage() {
   return (
-    <main className="mx-auto max-w-7xl px-6 py-12">
+    <div className="mx-auto max-w-7xl">
       <div className="rounded-3xl border bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-wide text-amber-700">
           Top 100 Prophecies
@@ -83,6 +83,6 @@ export default function PropheciesPage() {
           )
         })}
       </div>
-    </main>
+    </div>
   )
 }
