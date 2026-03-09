@@ -119,8 +119,24 @@ Required environment variables:
 - `DATABASE_URL`: Render PostgreSQL connection string
 - `NEXTAUTH_URL`: Public app URL (for example, `https://scripture-journey.onrender.com`)
 - `NEXTAUTH_SECRET`: Random secret used by NextAuth
-- `EMAIL_SERVER`: SMTP URL (for example, `smtp://user@gmail.com:app_password@smtp.gmail.com:587`)
 - `EMAIL_FROM`: Sender email address only (for example, `user@gmail.com`)
+
+Email provider setup (choose one approach):
+
+- URL-based SMTP: `EMAIL_SERVER` (for example, `smtp://user@gmail.com:app_password@smtp.gmail.com:587`)
+- Split SMTP vars (recommended on Render):
+  - `EMAIL_SERVER_HOST` (for Gmail: `smtp.gmail.com`)
+  - `EMAIL_SERVER_PORT` (for Gmail TLS: `587`)
+  - `EMAIL_SERVER_USER` (full Gmail address)
+  - `EMAIL_SERVER_PASSWORD` (Google app password)
+  - `EMAIL_SERVER_SECURE` (`false` for port 587, `true` for port 465)
+
+Gmail notes:
+
+- Use a Google app password (16 characters) with 2-Step Verification enabled.
+- Do not use your normal Gmail account password.
+- If you use `EMAIL_SERVER` URL format, URL-encode special characters in the password.
+- If sign-in says email was sent but none arrives, check Render logs for `SIGNIN_EMAIL_ERROR` and SMTP `535` errors.
 
 Database bootstrapping:
 

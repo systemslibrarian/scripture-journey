@@ -6,12 +6,33 @@ import { useState } from 'react'
 export default function SignInPage() {
   const [email, setEmail] = useState('')
   const [sent, setSent] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!email.trim()) return
-    await signIn('email', { email, redirect: false })
-    setSent(true)
+
+    const trimmedEmail = email.trim()
+    if (!trimmedEmail || isSubmitting) return
+
+    setErrorMessage(null)
+    setIsSubmitting(true)
+
+    try {
+      const result = await signIn('email', { email: trimmedEmail, redirect: false })
+      if (result?.error || result?.ok === false) {
+        setSent(false)
+        setErrorMessage('We could not send the sign-in email. Please try again in a moment.')
+        return
+      }
+
+      setSent(true)
+    } catch {
+      setSent(false)
+      setErrorMessage('We could not send the sign-in email. Please try again in a moment.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -27,6 +48,12 @@ export default function SignInPage() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+          {errorMessage ? (
+            <div className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-900">
+              {errorMessage}
+            </div>
+          ) : null}
+
           <label htmlFor="email" className="block text-sm font-semibold text-[#1b1a17]">
             Email address
           </label>
@@ -41,9 +68,10 @@ export default function SignInPage() {
           />
           <button
             type="submit"
+            disabled={isSubmitting}
             className="w-full rounded-xl bg-[#1b1a17] px-4 py-3 text-sm font-semibold text-white hover:bg-[#2c2a25] transition"
           >
-            Send Sign-In Link
+            {isSubmitting ? 'Sending...' : 'Send Sign-In Link'}
           </button>
         </form>
       )}
