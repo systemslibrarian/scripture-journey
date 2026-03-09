@@ -1,13 +1,15 @@
 # Scripture Journey
 
-Scripture Journey is a Christ-centered Next.js app that helps users explore how the whole Bible points to Jesus through prophecy and fulfillment.
+Scripture Journey is a Christ-centered Next.js app that helps users explore how the whole Bible points to Jesus through 100 Old Testament prophecies and their New Testament fulfillments, with full NIV scripture text.
 
 ## What This App Includes
 
-- 100 prophecy-centered lessons (single source of truth: `data/prophecies.ts`)
-- Story mode with the first 10 lessons
-- Prophecies page with live search by title, OT reference, NT reference, and summary
-- Individual lesson pages with Scripture, reflection, and quiz
+- 100 unique messianic prophecy lessons with full NIV scripture text
+- Each lesson includes Old Testament prophecy, New Testament fulfillment, a unique "Why This Matters" reflection, and a quiz
+- Home page with live search/filter by title, Scripture reference, or theme
+- Visual Map grouping all 100 lessons by category (Identity, Ministry, Rejection, Passion, Resurrection) with links to each lesson
+- Dashboard with progress tracking
+- Individual lesson pages with Scripture blocks, reflection, and quiz
 - Local progress tracking (`localStorage`) with completion state and dashboard stats
 - Reverent, warm, readable design for desktop and mobile
 
@@ -16,6 +18,7 @@ Scripture Journey is a Christ-centered Next.js app that helps users explore how 
 - Next.js 14 (App Router)
 - TypeScript
 - Tailwind CSS
+- Static Site Generation (SSG) — deployed to GitHub Pages
 
 ## Local Development
 
@@ -48,35 +51,33 @@ npm run lint
 
 ## Main Routes
 
-- Home: `/`
+- Home (Prophecy Search): `/`
 - Dashboard: `/dashboard`
-- Story Mode: `/story`
-- Prophecies: `/prophecies`
-- Prophecy Map: `/map`
+- Visual Map: `/map`
 - Lesson detail: `/lessons/[slug]`
 - Example lessons:
   - `/lessons/seed-of-the-woman`
-  - `/lessons/eternal-king`
+  - `/lessons/sons-of-the-living-god`
 
 Unknown lesson slugs render the custom `notFound()` page.
 
 ## Project Structure
 
 ```text
-app/
-components/
-data/
-lib/
-public/
+app/           # Next.js App Router pages
+components/    # Reusable UI components
+data/          # Lesson data (prophecies.ts is the single source of truth)
+lib/           # Types, utilities, progress tracking
+public/        # Static assets
 ```
 
-## Render Deployment (Basics)
+## Deployment
 
-Use a Render Web Service with a Node environment.
+Deployed to GitHub Pages at [systemslibrarian.github.io/scripture-journey](https://systemslibrarian.github.io/scripture-journey/).
 
-- Build Command: `npm install && npm run build`
-- Start Command: `npm run start`
-- Node version: 18+ (20 recommended)
+## Scripture Attribution
+
+Scripture quotations taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used for educational and devotional purposes.
 
 After deploy, verify:
 
