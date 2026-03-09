@@ -1,59 +1,40 @@
-export default function MapPage() {
+import Link from "next/link"
+import { prophecies } from "@/data/prophecies"
+import type { LessonCategory } from "@/lib/types"
 
-  const sections = [
-    {
-      title: "Torah",
-      items: [
-        "Genesis 3:15 — First Promise",
-        "Genesis 12:3 — Blessing Through Abraham",
-        "Genesis 49:10 — Judah's Scepter",
-        "Exodus 12 — Passover Lamb",
-        "Deuteronomy 18:15 — Prophet Like Moses",
-      ],
-    },
-    {
-      title: "Kings",
-      items: [
-        "2 Samuel 7 — Davidic Covenant",
-        "Psalm 2 — Son of God",
-        "Psalm 16 — Resurrection Hope",
-        "Psalm 22 — Suffering King",
-        "Psalm 110 — Priest King",
-      ],
-    },
-    {
-      title: "Prophets",
-      items: [
-        "Isaiah 7 — Virgin Birth",
-        "Isaiah 9 — Mighty God",
-        "Isaiah 35 — Healing Ministry",
-        "Isaiah 42 — Servant of the Lord",
-        "Isaiah 53 — Suffering Servant",
-        "Micah 5 — Bethlehem Birth",
-        "Zechariah 9 — Humble King",
-        "Zechariah 12 — Pierced One",
-        "Malachi 3 — Messenger Before Messiah",
-      ],
-    },
-    {
-      title: "Gospels",
-      items: [
-        "Birth of Jesus",
-        "Ministry in Galilee",
-        "Triumphal Entry",
-        "Crucifixion",
-        "Burial",
-        "Resurrection",
-        "Ascension",
-      ],
-    },
-  ]
+const categoryOrder: LessonCategory[] = [
+  "Identity",
+  "Ministry",
+  "Rejection",
+  "Passion",
+  "Resurrection",
+]
+
+const categoryColors: Record<LessonCategory, string> = {
+  Identity: "border-amber-300 bg-amber-50",
+  Ministry: "border-sky-300 bg-sky-50",
+  Rejection: "border-rose-300 bg-rose-50",
+  Passion: "border-purple-300 bg-purple-50",
+  Resurrection: "border-emerald-300 bg-emerald-50",
+}
+
+const categoryDescriptions: Record<LessonCategory, string> = {
+  Identity: "Prophecies about who the Messiah would be — his lineage, birthplace, and nature.",
+  Ministry: "Prophecies about what the Messiah would do — healing, teaching, and his mission.",
+  Rejection: "Prophecies about the Messiah being opposed, betrayed, and rejected.",
+  Passion: "Prophecies about the suffering and death of the Messiah.",
+  Resurrection: "Prophecies about the Messiah's victory over death, ascension, and eternal reign.",
+}
+
+export default function MapPage() {
+  const grouped = categoryOrder.map((cat) => ({
+    category: cat,
+    lessons: prophecies.filter((l) => l.category === cat),
+  }))
 
   return (
     <div className="space-y-8">
-
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
-
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Prophecy Map
         </div>
@@ -65,45 +46,40 @@ export default function MapPage() {
         <p className="mt-4 max-w-2xl text-[#4a4338]">
           The story of Scripture unfolds through promises, patterns,
           and prophecies that Christians believe ultimately point to Jesus.
-          This page gives a simple overview of that journey.
+          Click any lesson to explore it in detail.
         </p>
-
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-4">
-
-        {sections.map((section) => (
-
+      <div className="space-y-6">
+        {grouped.map(({ category, lessons }) => (
           <div
-            key={section.title}
+            key={category}
             className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm"
           >
+            <h2 className="text-lg font-bold text-[#1b1a17]">{category}</h2>
+            <p className="mt-1 text-sm text-[#4a4338]">
+              {categoryDescriptions[category]}
+            </p>
 
-            <h2 className="text-lg font-bold text-[#1b1a17]">
-              {section.title}
-            </h2>
-
-            <ul className="mt-4 space-y-3 text-sm text-[#4a4338]">
-
-              {section.items.map((item) => (
-
-                <li
-                  key={item}
-                  className="rounded-xl bg-[#fbf7ee] px-3 py-2"
+            <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {lessons.map((lesson) => (
+                <Link
+                  key={lesson.id}
+                  href={`/lessons/${lesson.slug}`}
+                  className={`rounded-xl border px-3 py-2 text-sm transition hover:shadow-md ${categoryColors[category]}`}
                 >
-                  {item}
-                </li>
-
+                  <span className="font-semibold text-[#1b1a17]">
+                    {lesson.id}. {lesson.title}
+                  </span>
+                  <span className="mt-0.5 block text-xs text-[#4a4338]">
+                    {lesson.otReference} → {lesson.ntReference}
+                  </span>
+                </Link>
               ))}
-
-            </ul>
-
+            </div>
           </div>
-
         ))}
-
       </div>
-
     </div>
   )
 }

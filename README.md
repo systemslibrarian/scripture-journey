@@ -1,110 +1,89 @@
 # Scripture Journey
 
-Scripture Journey is a Christ-centered learning web app designed to help
-people explore how the whole Bible points to Jesus through promise,
-prophecy, pattern, and fulfillment.
+Scripture Journey is a Christ-centered Next.js app that helps users explore how the whole Bible points to Jesus through prophecy and fulfillment.
 
-## Features
+## What This App Includes
 
--   100 prophecy-centered lessons
--   Story Mode with the first 10 foundational lessons
--   Individual lesson pages with reflection and quiz
--   Prophecy map across Scripture
--   Calm, reverent, beginner-friendly design
+- 100 prophecy-centered lessons (single source of truth: `data/prophecies.ts`)
+- Story mode with the first 10 lessons
+- Prophecies page with live search by title, OT reference, NT reference, and summary
+- Individual lesson pages with Scripture, reflection, and quiz
+- Local progress tracking (`localStorage`) with completion state and dashboard stats
+- Reverent, warm, readable design for desktop and mobile
 
 ## Tech Stack
 
--   Next.js
--   TypeScript
--   Tailwind CSS
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
 
-## Local Setup
+## Local Development
 
-Install dependencies:
+1. Install dependencies:
 
-``` bash
+```bash
 npm install
 ```
 
-Run the development server:
+2. Start the dev server:
 
-``` bash
+```bash
 npm run dev
 ```
 
-Open:
+3. Open `http://localhost:3000`.
 
-    http://localhost:3000
+## Build and Run
 
-## Build
-
-Create a production build:
-
-``` bash
+```bash
 npm run build
+npm run start
 ```
 
-Start the production server:
+Optional checks:
 
-``` bash
-npm run start
+```bash
+npm run lint
 ```
 
 ## Main Routes
 
-Home page
+- Home: `/`
+- Dashboard: `/dashboard`
+- Story Mode: `/story`
+- Prophecies: `/prophecies`
+- Prophecy Map: `/map`
+- Lesson detail: `/lessons/[slug]`
+- Example lessons:
+  - `/lessons/seed-of-the-woman`
+  - `/lessons/eternal-king`
 
-    /
-
-Dashboard
-
-    /dashboard
-
-Story Mode
-
-    /story
-
-All Prophecies
-
-    /prophecies
-
-Prophecy Map
-
-    /map
-
-Lesson Page
-
-    /lessons/[slug]
-
-Example:
-
-    /lessons/born-in-bethlehem
+Unknown lesson slugs render the custom `notFound()` page.
 
 ## Project Structure
 
-    app/
-    components/
-    data/
-    lib/
-    public/
+```text
+app/
+components/
+data/
+lib/
+public/
+```
 
-## Deployment
+## Render Deployment (Basics)
 
-Example Render configuration:
+Use a Render Web Service with a Node environment.
 
-Build Command:
+- Build Command: `npm install && npm run build`
+- Start Command: `npm run start`
+- Node version: 18+ (20 recommended)
 
-    npm install && npm run build
+After deploy, verify:
 
-Start Command:
-
-    npm run start
+- `/`, `/dashboard`, `/story`, `/prophecies`, `/map`
+- `/lessons/seed-of-the-woman`
+- `/lessons/eternal-king`
 
 ## Mission
 
-Scripture Journey exists to help people explore the Bible in a
-thoughtful, reverent way and discover how the story of Scripture points
-to Jesus.
-
-> "Whatever you do, do it all for the glory of God."\
-> --- 1 Corinthians 10:31
+Scripture Journey exists to help people explore Scripture thoughtfully and reverently, and to see how the biblical story points to Jesus.

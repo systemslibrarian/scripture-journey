@@ -1,17 +1,23 @@
 const STORAGE_KEY = "scripture_journey_progress"
 
-export function getCompletedLessons(): string[] {
-  if (typeof window === "undefined") return []
-
-  const stored = localStorage.getItem(STORAGE_KEY)
-
-  if (!stored) return []
+function parseStoredProgress(raw: string | null): string[] {
+  if (!raw) return []
 
   try {
-    return JSON.parse(stored)
+    const parsed = JSON.parse(raw)
+
+    if (!Array.isArray(parsed)) return []
+
+    return Array.from(new Set(parsed.filter((entry): entry is string => typeof entry === "string")))
   } catch {
     return []
   }
+}
+
+export function getCompletedLessons(): string[] {
+  if (typeof window === "undefined") return []
+
+  return parseStoredProgress(localStorage.getItem(STORAGE_KEY))
 }
 
 export function markLessonComplete(slug: string) {
@@ -26,12 +32,16 @@ export function markLessonComplete(slug: string) {
 }
 
 export function isLessonComplete(slug: string): boolean {
-  const completed = getCompletedLessons()
-  return completed.includes(slug)
+  return getCompletedLessons().includes(slug)
 }
 
 export function getCompletionCount(): number {
   return getCompletedLessons().length
+}
+
+export function getCompletionPercent(totalLessons: number): number {
+  const safeTotal = Math.max(totalLessons, 1)
+  return Math.round((getCompletionCount() / safeTotal) * 100)
 }
 
 export function clearProgress() {

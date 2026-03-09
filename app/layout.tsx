@@ -23,6 +23,12 @@ export default function RootLayout({
           {children}
         </main>
 
+        <footer className="mx-auto max-w-4xl px-4 py-8 text-center text-xs leading-relaxed text-[#9a8e7e]">
+          Scripture quotations taken from The Holy Bible, New International
+          Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™
+          Used by permission. All rights reserved worldwide.
+        </footer>
+
       </body>
     </html>
   )

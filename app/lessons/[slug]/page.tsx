@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import QuizCard from "@/components/QuizCard"
 import ScriptureBlock from "@/components/ScriptureBlock"
 import MarkCompleteButton from "@/components/MarkCompleteButton"
+import CompletedIndicator from "@/components/CompletedIndicator"
 import { getLessonBySlug, getLessonSlugs } from "@/data/lessons"
 
 export function generateStaticParams() {
@@ -24,8 +25,12 @@ export default function LessonPage({ params }: Props) {
   return (
     <div className="space-y-8">
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
-        <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
-          Lesson {lesson.id}
+        <div className="flex items-center justify-between gap-3">
+          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
+            Lesson {lesson.id}
+          </div>
+
+          <CompletedIndicator slug={lesson.slug} compact />
         </div>
 
         <h1 className="mt-2 text-3xl font-bold text-[#1b1a17]">
@@ -63,11 +68,7 @@ export default function LessonPage({ params }: Props) {
         </p>
       </div>
 
-      <QuizCard
-        question={lesson.quiz.question}
-        choices={lesson.quiz.choices}
-        answer={lesson.quiz.answer}
-      />
+      <QuizCard quiz={lesson.quiz} />
 
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">

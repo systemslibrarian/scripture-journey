@@ -3,16 +3,19 @@
 import { useState } from "react"
 import Link from "next/link"
 import { prophecies } from "@/data/prophecies"
+import CompletedIndicator from "@/components/CompletedIndicator"
 
 export default function ProphecySearch() {
 
   const [query, setQuery] = useState("")
 
+  const normalizedQuery = query.trim().toLowerCase()
+
   const results = prophecies.filter((lesson) => {
 
     const text = `${lesson.title} ${lesson.otReference} ${lesson.ntReference} ${lesson.summary}`.toLowerCase()
 
-    return text.includes(query.toLowerCase())
+    return text.includes(normalizedQuery)
 
   })
 
@@ -45,8 +48,12 @@ export default function ProphecySearch() {
             className="rounded-3xl border border-[#d8ccb8] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
           >
 
-            <div className="text-sm font-semibold text-[#7e622a]">
-              Lesson {lesson.id}
+            <div className="flex items-center justify-between gap-3">
+              <div className="text-sm font-semibold text-[#7e622a]">
+                Lesson {lesson.id}
+              </div>
+
+              <CompletedIndicator slug={lesson.slug} />
             </div>
 
             <h2 className="mt-2 text-xl font-bold text-[#1b1a17]">
@@ -68,6 +75,18 @@ export default function ProphecySearch() {
           </Link>
 
         ))}
+
+        {results.length === 0 && (
+          <div className="md:col-span-2 xl:col-span-3 rounded-3xl border border-dashed border-[#d8ccb8] bg-[#fffdf8] p-8 text-center">
+            <h2 className="text-lg font-semibold text-[#1b1a17]">
+              No matching lessons found
+            </h2>
+
+            <p className="mt-2 text-sm text-[#4a4338]">
+              Try another title, reference, or keyword to explore the prophecy track.
+            </p>
+          </div>
+        )}
 
       </div>
 

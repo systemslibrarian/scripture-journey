@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { prophecies } from "@/data/prophecies"
-import { getCompletionCount } from "@/lib/progress"
+import ProgressBar from "@/components/ProgressBar"
+import { getCompletionCount, getCompletionPercent } from "@/lib/progress"
 
 export default function DashboardPage() {
 
@@ -15,7 +16,7 @@ export default function DashboardPage() {
   }, [])
 
   const total = prophecies.length
-  const percent = Math.round((completed / total) * 100)
+  const percent = getCompletionPercent(total)
 
   const firstLesson = prophecies[0]
 
@@ -52,13 +53,8 @@ export default function DashboardPage() {
           {percent}% complete
         </div>
 
-        <div className="mt-4 h-3 w-full rounded-full bg-[#eee6d8]">
-
-          <div
-            className="h-3 rounded-full bg-[#7e622a]"
-            style={{ width: `${percent}%` }}
-          />
-
+        <div className="mt-4">
+          <ProgressBar current={completed} total={total} />
         </div>
 
       </div>
