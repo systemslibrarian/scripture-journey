@@ -1,24 +1,30 @@
-import type { Badge } from '@/lib/types';
-
-export const badges: Badge[] = [
+export const badges = [
   {
-    id: 'promise-finder',
-    title: 'Promise Finder',
-    description: 'Completed your first prophecy-and-fulfillment lesson.',
+    name: 'Promise Finder',
+    description: 'Complete your first prophecy lesson.',
   },
   {
-    id: 'bethlehem-witness',
-    title: 'Bethlehem Witness',
-    description: 'Learned the Micah 5:2 to Matthew 2 connection.',
+    name: 'Bethlehem Witness',
+    description: 'Complete the birth and identity lessons.',
   },
   {
-    id: 'lamb-of-god',
-    title: 'Lamb of God',
-    description: 'Finished the Passover pattern lesson.',
+    name: 'Lamb of God',
+    description: 'Complete the sacrifice and suffering lessons.',
   },
   {
-    id: 'emmaus-heart',
-    title: 'Emmaus Heart',
-    description: 'Completed 3 lessons in Story Path.',
+    name: 'Prophet Explorer',
+    description: 'Complete 25 prophecy lessons.',
+  },
+  {
+    name: 'Cross Witness',
+    description: 'Complete the crucifixion section.',
+  },
+  {
+    name: 'Resurrection Hope',
+    description: 'Complete the resurrection lessons.',
+  },
+  {
+    name: 'Road to Emmaus',
+    description: 'Complete all 100 prophecy lessons.',
   },
 ];

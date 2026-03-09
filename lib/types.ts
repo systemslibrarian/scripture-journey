@@ -1,44 +1,27 @@
-export type QuizQuestion = {
+export type LessonCategory =
+  | 'Identity'
+  | 'Ministry'
+  | 'Rejection'
+  | 'Passion'
+  | 'Resurrection';
+
+export interface QuizData {
   question: string;
   choices: string[];
   answer: number;
-};
+}
 
-export type Lesson = {
+export interface Lesson {
   id: number;
   slug: string;
   title: string;
+  category: LessonCategory;
   otReference: string;
   otText: string;
   ntReference: string;
   ntText: string;
   summary: string;
-  keyIdea: string;
-  durationMinutes: number;
-  quiz: QuizQuestion;
-};
-
-export type Prophecy = {
-  id: number;
-  title: string;
-  category: 'Promise' | 'Prophecy' | 'Pattern';
-  otReference: string;
-  otText: string;
-  ntReference: string;
-  ntText: string;
-  significance: string;
-};
-
-export type Track = {
-  slug: string;
-  title: string;
-  description: string;
-  href: string;
-  totalSteps: number;
-};
-
-export type Badge = {
-  id: string;
-  title: string;
-  description: string;
-};
+  whyItMatters: string;
+  reflection: string;
+  quiz: QuizData;
+}

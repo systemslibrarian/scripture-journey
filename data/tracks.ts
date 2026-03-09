@@ -1,25 +1,23 @@
-import type { Track } from '@/lib/types';
-
-export const tracks: Track[] = [
+export const tracks = [
   {
-    slug: 'story',
-    title: 'Story Path',
-    description: 'Move from Genesis to Resurrection with short, connected lessons.',
-    href: '/story',
-    totalSteps: 10,
+    slug: 'story-mode',
+    name: 'Story Mode',
+    description:
+      'A guided path through the Bible’s big story, helping users see how the whole story points to Jesus.',
+    lessonCount: 10,
   },
   {
-    slug: 'prophecies',
-    title: 'Prophecy Path',
-    description: 'Follow clear Old Testament prophecies and their New Testament fulfillment.',
-    href: '/prophecies',
-    totalSteps: 6,
+    slug: 'top-100-prophecies',
+    name: 'Top 100 Prophecies',
+    description:
+      'A full 100-lesson journey through major prophecies, promises, and patterns Christians understand as fulfilled in Jesus.',
+    lessonCount: 100,
   },
   {
-    slug: 'map',
-    title: 'Map Path',
-    description: 'See covenant, king, servant, lamb, and resurrection themes in one view.',
-    href: '/map',
-    totalSteps: 5,
+    slug: 'jesus-in-the-old-testament',
+    name: 'Jesus in the Old Testament',
+    description:
+      'A thematic look at how major Old Testament people, events, and symbols point forward to Christ.',
+    lessonCount: 25,
   },
 ];
