@@ -1,17 +1,30 @@
 # Scripture Journey
 
-Scripture Journey is a Christ-centered Next.js app that helps users explore how the whole Bible points to Jesus through 100 Old Testament prophecies and their New Testament fulfillments, with full NIV scripture text.
+> *"And beginning with Moses and all the Prophets, he explained to them what was said in all the Scriptures concerning himself."*
+> — **Luke 24:27 (NIV)**
+
+Scripture Journey is a Christ-centered Next.js app that helps users explore how the whole Bible points to Jesus through 227 messianic prophecy lessons, each with NIV scripture text, scholarly attribution, and reflective content. Inspired by Luke 24:27, this project exists to trace every thread of Scripture that points to Christ.
 
 ## What This App Includes
 
-- 100 unique messianic prophecy lessons with full NIV scripture text
+- 227 messianic prophecy lessons, each fully developed
 - Each lesson includes Old Testament prophecy, New Testament fulfillment, a unique "Why This Matters" reflection, and a quiz
+- Scholarly attribution badges from two academic sources (see below)
 - Home page with live search/filter by title, Scripture reference, or theme
-- Visual Map grouping all 100 lessons by category (Identity, Ministry, Rejection, Passion, Resurrection) with links to each lesson
+- Visual Map grouping lessons by category (Identity, Ministry, Rejection, Passion, Resurrection)
 - Dashboard with progress tracking
 - Individual lesson pages with Scripture blocks, reflection, and quiz
 - Local progress tracking (`localStorage`) with completion state and dashboard stats
 - Reverent, warm, readable design for desktop and mobile
+
+## Scholarly Sources
+
+Lesson scholarship is attributed to two foundational works on messianic prophecy:
+
+- **Alfred Edersheim** — *The Life and Times of Jesus the Messiah* (1883). Appendix IX catalogues 456 Old Testament passages the ancient Rabbis applied to the Messiah. 186 lessons in Scripture Journey are attested by Edersheim.
+- **Josh McDowell** — *The New Evidence That Demands a Verdict* (1999). Chapter 8 presents detailed evidence for messianic prophecy fulfillment. 58 lessons carry McDowell attestation.
+
+Lessons display 📚 Edersheim and 📖 McDowell badges when attested by either or both sources.
 
 ## Tech Stack
 

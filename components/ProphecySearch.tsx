@@ -41,29 +41,6 @@ export default function ProphecySearch() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
         {results.map((lesson) => (
-          lesson.status === "coming-soon" ? (
-            <div
-              key={lesson.slug}
-              className="rounded-3xl border border-dashed border-[#d8ccb8] bg-[#fffdf8] p-6 shadow-sm opacity-75"
-            >
-              <div className="flex items-center justify-between gap-3">
-                <div className="text-sm font-semibold text-[#7e622a]">
-                  Lesson {lesson.id}
-                </div>
-                <span className="rounded-full bg-[#e5e5e5] px-2 py-0.5 text-[10px] font-medium text-[#666]">Coming Soon</span>
-              </div>
-              <h2 className="mt-2 text-xl font-bold text-[#1b1a17]">{lesson.title}</h2>
-              <p className="mt-2 text-sm text-[#4a4338]">{lesson.otReference} → {lesson.ntReference}</p>
-              <div className="mt-2 flex flex-wrap gap-1">
-                {lesson.scholarship?.edersheim?.attested && (
-                  <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-1.5 py-0.5 text-[10px] font-medium text-[#7e622a]">📚 Edersheim</span>
-                )}
-                {lesson.scholarship?.mcdowell?.attested && (
-                  <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-1.5 py-0.5 text-[10px] font-medium text-[#2a5a7e]">📖 McDowell</span>
-                )}
-              </div>
-            </div>
-          ) : (
           <Link
             key={lesson.slug}
             href={`/lessons/${lesson.slug}`}
@@ -104,7 +81,6 @@ export default function ProphecySearch() {
             </div>
 
           </Link>
-          )
         ))}
 
         {results.length === 0 && (

@@ -15,7 +15,7 @@ export default function DashboardPage() {
     setCompleted(count)
   }, [])
 
-  const total = prophecies.filter(p => p.status !== 'coming-soon').length
+  const total = prophecies.length
   const percent = getCompletionPercent(total)
 
   const firstLesson = prophecies[0]
