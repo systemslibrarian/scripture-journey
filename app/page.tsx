@@ -10,12 +10,12 @@ export default function HomePage() {
         {tracks.map((track, index) => (
           <Link
             key={track.slug}
-            href={track.href}
+            href={`/${track.slug}`}
             className="glass-card rise-in rounded-[1.7rem] p-5 transition hover:-translate-y-0.5"
             style={{ animationDelay: `${200 + index * 80}ms` }}
           >
-            <p className="text-xs uppercase tracking-[0.2em] text-[#7e622a]">{track.totalSteps} steps</p>
-            <h2 className="mt-2 text-2xl font-semibold text-[#1b1a17]">{track.title}</h2>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#7e622a]">{track.lessonCount} steps</p>
+            <h2 className="mt-2 text-2xl font-semibold text-[#1b1a17]">{track.name}</h2>
             <p className="mt-2 leading-7 text-[#4a4338]">{track.description}</p>
           </Link>
         ))}
