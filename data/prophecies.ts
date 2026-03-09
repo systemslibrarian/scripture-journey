@@ -6,7 +6,9 @@ function makeLesson(
   title:string,
   category:Lesson["category"],
   otReference:string,
-  ntReference:string
+  ntReference:string,
+  otText:string,
+  ntText:string
 ):Lesson{
 
 return{
@@ -15,9 +17,9 @@ slug,
 title,
 category,
 otReference,
-otText:`See ${otReference}.`,
+otText,
 ntReference,
-ntText:`Fulfillment seen in ${ntReference}.`,
+ntText,
 summary:`This lesson explores how ${otReference} connects to Jesus.`,
 whyItMatters:`Christians understand this passage as pointing forward to Jesus and His mission.`,
 reflection:`Lord Jesus, help me see You more clearly through Your Word.`,
