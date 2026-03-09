@@ -27,10 +27,18 @@ const categoryDescriptions: Record<LessonCategory, string> = {
 }
 
 export default function MapPage() {
+  const activeLessons = prophecies.filter((l) => l.status !== "coming-soon")
+  const comingSoonLessons = prophecies.filter((l) => l.status === "coming-soon")
+
   const grouped = categoryOrder.map((cat) => ({
     category: cat,
-    lessons: prophecies.filter((l) => l.category === cat),
+    lessons: activeLessons.filter((l) => l.category === cat),
   }))
+
+  const comingSoonGrouped = categoryOrder.map((cat) => ({
+    category: cat,
+    lessons: comingSoonLessons.filter((l) => l.category === cat),
+  })).filter(g => g.lessons.length > 0)
 
   return (
     <div className="space-y-8">
@@ -74,11 +82,147 @@ export default function MapPage() {
                   <span className="mt-0.5 block text-xs text-[#4a4338]">
                     {lesson.otReference} → {lesson.ntReference}
                   </span>
+                  <span className="mt-1 flex flex-wrap gap-1">
+                    {lesson.scholarship?.edersheim?.attested && (
+                      <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-1.5 py-0.5 text-[10px] font-medium text-[#7e622a]">
+                        📚 Edersheim ✓
+                      </span>
+                    )}
+                    {lesson.scholarship?.mcdowell?.attested && (
+                      <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-1.5 py-0.5 text-[10px] font-medium text-[#2a5a7e]">
+                        📖 McDowell ✓
+                      </span>
+                    )}
+                  </span>
                 </Link>
               ))}
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Coming Soon Lessons */}
+      {comingSoonLessons.length > 0 && (
+        <div className="space-y-6">
+          <div className="rounded-[2rem] border border-dashed border-[#d8ccb8] bg-[#fffdf8] p-8 shadow-sm">
+            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
+              Coming Soon
+            </div>
+            <h2 className="mt-2 text-2xl font-bold text-[#1b1a17]">
+              {comingSoonLessons.length} Additional Prophecy Lessons
+            </h2>
+            <p className="mt-2 text-sm text-[#4a4338]">
+              These lessons are drawn from scholarly sources and will be fully developed in future updates.
+            </p>
+          </div>
+
+          {comingSoonGrouped.map(({ category, lessons }) => (
+            <div
+              key={`coming-${category}`}
+              className="rounded-[2rem] border border-dashed border-[#d8ccb8] bg-[#fffdf8] p-6 shadow-sm"
+            >
+              <h2 className="text-lg font-bold text-[#1b1a17]">{category}</h2>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {lessons.map((lesson) => (
+                  <div
+                    key={lesson.id}
+                    className="rounded-xl border border-dashed border-[#d8ccb8] px-3 py-2 text-sm opacity-75"
+                  >
+                    <span className="font-semibold text-[#1b1a17]">
+                      {lesson.id}. {lesson.title}
+                    </span>
+                    <span className="mt-0.5 block text-xs text-[#4a4338]">
+                      {lesson.otReference} → {lesson.ntReference}
+                    </span>
+                    <span className="mt-1 flex flex-wrap gap-1">
+                      {lesson.scholarship?.edersheim?.attested && (
+                        <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-1.5 py-0.5 text-[10px] font-medium text-[#7e622a]">
+                          📚 Edersheim
+                        </span>
+                      )}
+                      {lesson.scholarship?.mcdowell?.attested && (
+                        <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-1.5 py-0.5 text-[10px] font-medium text-[#2a5a7e]">
+                          📖 McDowell
+                        </span>
+                      )}
+                      <span className="inline-flex items-center rounded-full bg-[#e5e5e5] px-1.5 py-0.5 text-[10px] font-medium text-[#666]">
+                        Coming Soon
+                      </span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Scholarly Sources Section */}
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+        <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
+          Scholarly Sources
+        </div>
+
+        <h2 className="mt-2 text-2xl font-bold text-[#1b1a17]">
+          Academic Attribution
+        </h2>
+
+        <p className="mt-4 text-sm text-[#4a4338]">
+          Many lessons in this map are attested by leading scholars who have traced
+          Old Testament messianic prophecies through ancient Rabbinic literature and
+          historical-critical analysis.
+        </p>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {/* Edersheim Card */}
+          <div className="rounded-2xl border border-[#d8ccb8] bg-[#fffdf8] p-6">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">📚</span>
+              <div>
+                <h3 className="text-base font-bold text-[#1b1a17]">
+                  <em>The Life and Times of Jesus the Messiah</em>
+                </h3>
+                <p className="mt-1 text-sm text-[#7e622a] font-semibold">
+                  Alfred Edersheim (1883)
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm leading-6 text-[#4a4338]">
+              71 of the 100 lessons in this map are attested in Appendix IX of this work,
+              which catalogs 456 Old Testament passages applied to the Messiah in ancient
+              Rabbinic writings.
+            </p>
+            <div className="mt-3">
+              <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-2 py-1 text-xs font-medium text-[#7e622a]">
+                📚 Edersheim ✓ = Attested in Appendix IX
+              </span>
+            </div>
+          </div>
+
+          {/* McDowell Card */}
+          <div className="rounded-2xl border border-[#d8ccb8] bg-[#f8fafc] p-6">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">📖</span>
+              <div>
+                <h3 className="text-base font-bold text-[#1b1a17]">
+                  <em>The New Evidence That Demands a Verdict</em>
+                </h3>
+                <p className="mt-1 text-sm text-[#2a5a7e] font-semibold">
+                  Josh McDowell (Thomas Nelson, 1999)
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm leading-6 text-[#4a4338]">
+              48 of the 61 messianic prophecies in McDowell&apos;s Chapter 8 are covered in this
+              map, with 10 additional lessons drawn from his prophetic list.
+            </p>
+            <div className="mt-3">
+              <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-2 py-1 text-xs font-medium text-[#2a5a7e]">
+                📖 McDowell ✓ = Attested in Chapter 8
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

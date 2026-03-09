@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation"
-import QuizCard from "@/components/QuizCard"
 import ScriptureBlock from "@/components/ScriptureBlock"
 import MarkCompleteButton from "@/components/MarkCompleteButton"
 import CompletedIndicator from "@/components/CompletedIndicator"
@@ -41,6 +40,19 @@ export default function LessonPage({ params }: Props) {
           {lesson.summary}
         </p>
 
+        <div className="mt-3 flex flex-wrap gap-2">
+          {lesson.scholarship?.edersheim?.attested && (
+            <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-2 py-1 text-xs font-medium text-[#7e622a]">
+              📚 Edersheim ✓
+            </span>
+          )}
+          {lesson.scholarship?.mcdowell?.attested && (
+            <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-2 py-1 text-xs font-medium text-[#2a5a7e]">
+              📖 McDowell ✓
+            </span>
+          )}
+        </div>
+
         <div className="mt-6">
           <MarkCompleteButton slug={lesson.slug} />
         </div>
@@ -67,8 +79,6 @@ export default function LessonPage({ params }: Props) {
           {lesson.whyItMatters}
         </p>
       </div>
-
-      <QuizCard quiz={lesson.quiz} />
 
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">

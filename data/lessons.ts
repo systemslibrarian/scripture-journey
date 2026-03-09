@@ -8,9 +8,11 @@ export function getLessonBySlug(slug: string): Lesson | undefined {
 }
 
 export function getLessonSlugs() {
-  return lessons.map((lesson) => ({
-    slug: lesson.slug,
-  }));
+  return lessons
+    .filter((lesson) => lesson.status !== 'coming-soon')
+    .map((lesson) => ({
+      slug: lesson.slug,
+    }));
 }
 
 export function getAllLessons(): Lesson[] {

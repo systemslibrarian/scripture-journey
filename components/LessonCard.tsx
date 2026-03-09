@@ -29,6 +29,15 @@ export default function LessonCard({ lesson }: Props) {
         {lesson.otReference} → {lesson.ntReference}
       </p>
 
+      <div className="mt-2 flex flex-wrap gap-1">
+        {lesson.scholarship?.edersheim?.attested && (
+          <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-1.5 py-0.5 text-[10px] font-medium text-[#7e622a]">📚 Edersheim ✓</span>
+        )}
+        {lesson.scholarship?.mcdowell?.attested && (
+          <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-1.5 py-0.5 text-[10px] font-medium text-[#2a5a7e]">📖 McDowell ✓</span>
+        )}
+      </div>
+
       <p className="mt-4 text-sm leading-6 text-[#4a4338]">
         {lesson.summary}
       </p>

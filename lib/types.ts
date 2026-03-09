@@ -11,6 +11,26 @@ export interface QuizData {
   answer: number;
 }
 
+export interface EdersheimData {
+  attested: boolean;
+  work: string;
+  appendix: string;
+  note: string;
+}
+
+export interface McDowellData {
+  attested: boolean;
+  work: string;
+  prophecyNumber: number;
+  prophecyTitle: string;
+  note: string;
+}
+
+export interface Scholarship {
+  edersheim?: EdersheimData;
+  mcdowell?: McDowellData;
+}
+
 export interface Lesson {
   id: number;
   slug: string;
@@ -24,6 +44,8 @@ export interface Lesson {
   whyItMatters: string;
   reflection: string;
   quiz: QuizData;
+  status?: 'active' | 'coming-soon';
+  scholarship?: Scholarship;
 }
 
 export interface Badge {
