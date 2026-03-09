@@ -17,9 +17,9 @@ export default function HomePage() {
 
         <p className="mt-4 max-w-3xl text-[#4a4338]">
           Browse the full prophecy track or search by title, Scripture
-          reference, or theme. "And beginning with Moses and all the
+          reference, or theme. &ldquo;And beginning with Moses and all the
           Prophets, he explained to them what was said in all the Scriptures
-          concerning himself." - Luke 24:27 (NIV)
+          concerning himself.&rdquo; - Luke 24:27 (NIV)
         </p>
       </div>
 
