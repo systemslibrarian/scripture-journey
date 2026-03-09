@@ -1,18 +1,41 @@
-import Link from 'next/link';
-import type { Lesson } from '@/lib/types';
+import Link from "next/link"
+import type { Lesson } from "@/lib/types"
 
-export default function LessonCard({ lesson }: { lesson: Lesson }) {
+type Props = {
+  lesson: Lesson
+}
+
+export default function LessonCard({ lesson }: Props) {
   return (
     <Link
       href={`/lessons/${lesson.slug}`}
-      className="glass-card rounded-[2rem] p-6 transition hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(27,26,23,0.1)]"
+      className="rounded-3xl border border-[#d8ccb8] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
     >
-      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#7e622a]">Lesson {lesson.id}</p>
-      <h3 className="mt-2 text-2xl font-semibold text-[#1b1a17]">{lesson.title}</h3>
-      <p className="mt-2 text-sm text-[#5f5548]">
-        {lesson.otReference} to {lesson.ntReference}
+      <div className="flex items-start justify-between gap-3">
+        <div className="text-sm font-semibold text-[#7e622a]">
+          Lesson {lesson.id}
+        </div>
+
+        <span className="rounded-full bg-[#fbf7ee] px-3 py-1 text-xs font-semibold text-[#7e622a]">
+          {lesson.category}
+        </span>
+      </div>
+
+      <h3 className="mt-3 text-xl font-bold text-[#1b1a17]">
+        {lesson.title}
+      </h3>
+
+      <p className="mt-2 text-sm text-[#4a4338]">
+        {lesson.otReference} → {lesson.ntReference}
       </p>
-      <p className="mt-4 text-sm leading-7 text-[#4a4338]">{lesson.summary}</p>
+
+      <p className="mt-4 text-sm leading-6 text-[#4a4338]">
+        {lesson.summary}
+      </p>
+
+      <div className="mt-4 text-sm font-semibold text-[#7e622a]">
+        Open lesson →
+      </div>
     </Link>
-  );
+  )
 }

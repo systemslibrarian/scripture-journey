@@ -1,23 +1,23 @@
 export const tracks = [
   {
-    slug: 'story',
-    name: 'Story Mode',
+    slug: "story-mode",
+    name: "Story Mode",
     description:
-      'A guided path through the Bible’s big story, helping users see how the whole story points to Jesus.',
+      "A guided introduction to the Bible’s big story and how Christians understand it as pointing to Jesus.",
     lessonCount: 10,
   },
   {
-    slug: 'prophecies',
-    name: 'Top 100 Prophecies',
+    slug: "top-100-prophecies",
+    name: "Top 100 Prophecies",
     description:
-      'A full 100-lesson journey through major prophecies, promises, and patterns Christians understand as fulfilled in Jesus.',
+      "A full set of 100 prophecy-centered lessons exploring identity, ministry, rejection, the passion, and resurrection.",
     lessonCount: 100,
   },
   {
-    slug: 'map',
-    name: 'Jesus in the Old Testament',
+    slug: "prophecy-map",
+    name: "Prophecy Map",
     description:
-      'A thematic look at how major Old Testament people, events, and symbols point forward to Christ.',
-    lessonCount: 25,
+      "A visual overview of key promises, prophecies, and patterns across Scripture.",
+    lessonCount: 0,
   },
-];
+]
