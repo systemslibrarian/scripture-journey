@@ -48,3 +48,101 @@ export function clearProgress() {
   if (typeof window === "undefined") return
   localStorage.removeItem(STORAGE_KEY)
 }
+
+/* ── Quiz scoring ── */
+
+const QUIZ_SCORE_KEY = "scripture_journey_quiz_scores"
+const STREAK_KEY = "scripture_journey_streak"
+
+export interface QuizScore {
+  multipleChoice: boolean
+  fillInBlank?: boolean
+  timestamp: number
+}
+
+function getScoreMap(): Record<string, QuizScore> {
+  if (typeof window === "undefined") return {}
+  try {
+    const raw = localStorage.getItem(QUIZ_SCORE_KEY)
+    return raw ? JSON.parse(raw) : {}
+  } catch {
+    return {}
+  }
+}
+
+export function saveQuizScore(slug: string, result: { multipleChoice: boolean; fillInBlank?: boolean }) {
+  if (typeof window === "undefined") return
+  const scores = getScoreMap()
+  scores[slug] = { ...result, timestamp: Date.now() }
+  localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(scores))
+  updateStreak(result.multipleChoice && (result.fillInBlank !== false))
+}
+
+export function getQuizScore(slug: string): QuizScore | null {
+  return getScoreMap()[slug] ?? null
+}
+
+export function getQuizStats(): { total: number; perfect: number; attempted: number } {
+  const scores = getScoreMap()
+  const entries = Object.values(scores)
+  const perfect = entries.filter(
+    (s) => s.multipleChoice && s.fillInBlank !== false
+  ).length
+  return { total: entries.length, perfect, attempted: entries.length }
+}
+
+/* ── Streak tracking ── */
+
+interface StreakData {
+  current: number
+  best: number
+  lastDate: string
+}
+
+function getStreakData(): StreakData {
+  if (typeof window === "undefined") return { current: 0, best: 0, lastDate: "" }
+  try {
+    const raw = localStorage.getItem(STREAK_KEY)
+    return raw ? JSON.parse(raw) : { current: 0, best: 0, lastDate: "" }
+  } catch {
+    return { current: 0, best: 0, lastDate: "" }
+  }
+}
+
+function todayStr(): string {
+  return new Date().toISOString().slice(0, 10)
+}
+
+function updateStreak(correct: boolean) {
+  if (typeof window === "undefined") return
+  const data = getStreakData()
+  const today = todayStr()
+  if (data.lastDate === today) return // already counted today
+
+  if (correct) {
+    const yesterday = new Date()
+    yesterday.setDate(yesterday.getDate() - 1)
+    const yStr = yesterday.toISOString().slice(0, 10)
+
+    data.current = data.lastDate === yStr ? data.current + 1 : 1
+    data.best = Math.max(data.best, data.current)
+  } else {
+    data.current = 0
+  }
+  data.lastDate = today
+  localStorage.setItem(STREAK_KEY, JSON.stringify(data))
+}
+
+export function getStreak(): { current: number; best: number } {
+  const data = getStreakData()
+  const today = todayStr()
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  const yStr = yesterday.toISOString().slice(0, 10)
+
+  // If lastDate is not today or yesterday, streak has been broken
+  if (data.lastDate !== today && data.lastDate !== yStr) {
+    return { current: 0, best: data.best }
+  }
+  return { current: data.current, best: data.best }
+}

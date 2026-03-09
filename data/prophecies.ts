@@ -1,5 +1,59 @@
 import type { Lesson, PayneData, Scholarship } from "@/lib/types"
 
+const reflectionTemplates: Record<Lesson["category"], string[]> = {
+  Identity: [
+    "Lord Jesus, as I study {title}, anchor my identity in You, the promised King revealed from {ot} to {nt}.",
+    "Jesus, teach me to trust who You are, not just what I feel. Let {ot} and {nt} deepen my confidence in Your name.",
+    "Son of God, form my heart around Your truth. Through {title}, help me live as one who belongs to You.",
+    "Christ our King, when my identity feels uncertain, remind me that Your promises in {ot} stand fulfilled in {nt}.",
+    "Lord, as I reflect on {title}, make me steady in faith, humble in spirit, and rooted in Your unchanging identity."
+  ],
+  Ministry: [
+    "Lord Jesus, shape my daily life after Your ministry. As {ot} meets {nt}, teach me to serve with compassion and truth.",
+    "Jesus, send me with Your heart for people. Let {title} move me from admiration into obedience.",
+    "Savior, open my eyes to the people around me. As You fulfilled {ot} in {nt}, make me faithful in small acts of love.",
+    "Lord, give me courage to speak life, mercy, and hope. Through {title}, train my hands and words for Your mission.",
+    "Jesus, keep me close to You in service. Let this lesson turn knowledge into prayerful action."
+  ],
+  Rejection: [
+    "Lord Jesus, You were rejected and still loved to the end. Through {title}, teach me to remain faithful when misunderstood.",
+    "Jesus, when I face disappointment or opposition, remind me that You walked this road first from {ot} to {nt}.",
+    "Merciful Christ, guard my heart from bitterness. Let Your endurance in {title} produce gentleness in me.",
+    "Lord, where others turned away from You, help me draw nearer. Make my loyalty deeper and my worship truer.",
+    "Jesus, in seasons of rejection, keep my eyes on Your kingdom and my spirit steady in grace."
+  ],
+  Passion: [
+    "Lord Jesus, Your suffering was not wasted. As I read {ot} and {nt}, make me reverent before the cost of my redemption.",
+    "Crucified Savior, let {title} humble me. Teach me to hate sin, love holiness, and trust Your mercy fully.",
+    "Jesus, thank You for bearing what I could never bear. Through this lesson, grow gratitude that changes how I live.",
+    "Lamb of God, keep the cross central in my heart. Let {ot} fulfilled in {nt} shape my worship and repentance.",
+    "Lord, as I meditate on Your Passion, make me patient in trials and faithful in love."
+  ],
+  Resurrection: [
+    "Risen Jesus, fill me with resurrection hope. Through {title}, teach me to live in the light of Your victory.",
+    "Lord of Life, where I feel weary, breathe new courage into me. Let {ot} and {nt} remind me death is not the end.",
+    "Jesus, because You rose, my future is secure. Make this truth in {title} reshape my fears and my prayers.",
+    "King eternal, help me walk in resurrection power today - with joy, endurance, and holy expectation.",
+    "Risen Christ, turn this lesson into worship. Let hope rise in me as surely as You rose in glory."
+  ]
+}
+
+function buildReflection(
+  id:number,
+  category:Lesson["category"],
+  title:string,
+  otReference:string,
+  ntReference:string
+): string {
+  const templates = reflectionTemplates[category]
+  const template = templates[(id - 1) % templates.length]
+
+  return template
+    .replace("{title}", title)
+    .replace("{ot}", otReference)
+    .replace("{nt}", ntReference)
+}
+
 function makeLesson(
   id:number,
   slug:string,
@@ -25,7 +79,7 @@ ntReference,
 ntText,
 summary:`This lesson explores how ${otReference} connects to Jesus.`,
 whyItMatters,
-reflection:`Lord Jesus, help me see You more clearly through Your Word.`,
+reflection:buildReflection(id, category, title, otReference, ntReference),
 quiz:{
 question:"Which Old Testament reference connects to this lesson?",
 choices:[otReference,"Isaiah 53","Psalm 22","Genesis 3:15"],

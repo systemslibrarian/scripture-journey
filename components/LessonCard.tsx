@@ -9,6 +9,7 @@ export default function LessonCard({ lesson }: Props) {
   return (
     <Link
       href={`/lessons/${lesson.slug}`}
+      aria-label={`Lesson ${lesson.id}: ${lesson.title}`}
       className="rounded-3xl border border-[#d8ccb8] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-3">

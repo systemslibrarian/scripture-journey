@@ -8,6 +8,7 @@ import CompletedIndicator from "@/components/CompletedIndicator"
 export default function ProphecySearch() {
 
   const [query, setQuery] = useState("")
+  const totalLessons = prophecies.length
 
   const normalizedQuery = query.trim().toLowerCase()
 
@@ -25,7 +26,7 @@ export default function ProphecySearch() {
       <div className="rounded-2xl border border-[#d8ccb8] bg-white p-6 shadow-sm">
 
         <div className="text-sm font-semibold text-[#7e622a]">
-          Search the 100 Prophecies
+          Search the {totalLessons} Prophecies
         </div>
 
         <input

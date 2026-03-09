@@ -2,11 +2,19 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import "./globals.css"
 import Header from "@/components/Header"
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration"
 
 export const metadata: Metadata = {
   title: "Scripture Journey",
   description:
     "Explore how the promises, prophecies, and story of Scripture point to Jesus.",
+  manifest: "/scripture-journey/manifest.json",
+  themeColor: "#7e622a",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Scripture Journey",
+  },
 }
 
 export default function RootLayout({
@@ -18,9 +26,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen bg-[#fefcf8] text-[#1b1a17] antialiased">
 
+        <a href="#main-content" className="skip-link">Skip to content</a>
+
         <Header />
 
-        <main className="mx-auto w-full max-w-6xl px-4 py-10">
+        <main id="main-content" className="mx-auto w-full max-w-6xl px-4 py-10">
           {children}
         </main>
 
@@ -34,6 +44,8 @@ export default function RootLayout({
             </Link>
           </div>
         </footer>
+
+        <ServiceWorkerRegistration />
 
       </body>
     </html>

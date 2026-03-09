@@ -4,6 +4,7 @@ import MarkCompleteButton from "@/components/MarkCompleteButton"
 import CompletedIndicator from "@/components/CompletedIndicator"
 import ScholarCredits from "@/components/ScholarCredits"
 import QuizCard from "@/components/QuizCard"
+import QuizScoreCard from "@/components/QuizScoreCard"
 import { getLessonBySlug, getLessonSlugs } from "@/data/lessons"
 
 export function generateStaticParams() {
@@ -79,7 +80,9 @@ export default function LessonPage({ params }: Props) {
 
       <ScholarCredits scholarship={lesson.scholarship} />
 
-      <QuizCard quiz={lesson.quiz} />
+      <QuizCard quiz={lesson.quiz} lessonSlug={lesson.slug} />
+
+      <QuizScoreCard slug={lesson.slug} />
 
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">

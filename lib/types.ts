@@ -9,6 +9,7 @@ export interface QuizData {
   question: string;
   choices: string[];
   answer: number;
+  explanation?: string;
   fillInBlank?: {
     prompt: string;
     answer: string;

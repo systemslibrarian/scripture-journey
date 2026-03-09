@@ -10,7 +10,7 @@ export default function ScriptureBlock({
   text,
 }: ScriptureBlockProps) {
   return (
-    <section className="rounded-3xl border bg-white p-6 shadow-sm">
+    <section className="rounded-3xl border bg-white p-6 shadow-sm" aria-label={`${label} scripture: ${reference}`}>
 
       <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
         {label}

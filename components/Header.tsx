@@ -15,7 +15,7 @@ export default function Header() {
           <span className="block text-xs uppercase tracking-[0.26em] text-[#7e622a]">Scripture</span>
           <span className="block text-2xl font-semibold leading-none text-[#1b1a17]">Journey</span>
         </Link>
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#4a4338] sm:gap-3">
+        <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-2 text-sm text-[#4a4338] sm:gap-3">
           {links.map((link) => (
             <Link
               key={link.href}

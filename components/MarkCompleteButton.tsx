@@ -23,7 +23,7 @@ export default function MarkCompleteButton({ slug }: Props) {
 
   if (complete) {
     return (
-      <div className="rounded-xl bg-emerald-100 px-4 py-3 text-sm font-semibold text-emerald-900">
+      <div className="rounded-xl bg-emerald-100 px-4 py-3 text-sm font-semibold text-emerald-900" role="status">
         ✓ Lesson Completed
       </div>
     )
@@ -32,6 +32,7 @@ export default function MarkCompleteButton({ slug }: Props) {
   return (
     <button
       onClick={handleClick}
+      aria-label="Mark this lesson as complete"
       className="rounded-xl bg-[#1b1a17] px-5 py-3 text-sm font-semibold text-white hover:opacity-90"
     >
       Mark Lesson Complete
