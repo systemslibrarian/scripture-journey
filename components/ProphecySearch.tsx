@@ -14,7 +14,7 @@ export default function ProphecySearch() {
 
   const results = prophecies.filter((lesson) => {
 
-    const text = `${lesson.title} ${lesson.otReference} ${lesson.ntReference} ${lesson.summary}`.toLowerCase()
+    const text = `${lesson.title} ${lesson.otReference} ${lesson.ntReference} ${lesson.summary} ${lesson.category}`.toLowerCase()
 
     return text.includes(normalizedQuery)
 

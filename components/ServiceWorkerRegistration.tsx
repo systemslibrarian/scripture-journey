@@ -16,7 +16,7 @@ export default function ServiceWorkerRegistration() {
     // Register service worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register('/scripture-journey/sw.js')
+        .register('/sw.js')
         .catch(() => {
           // SW registration failed silently
         })

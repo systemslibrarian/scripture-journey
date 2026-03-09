@@ -28,6 +28,7 @@ export function markLessonComplete(slug: string) {
   if (!completed.includes(slug)) {
     completed.push(slug)
     localStorage.setItem(STORAGE_KEY, JSON.stringify(completed))
+    syncProgressToServer(slug, true)
   }
 }
 
@@ -76,6 +77,7 @@ export function saveQuizScore(slug: string, result: { multipleChoice: boolean; f
   scores[slug] = { ...result, timestamp: Date.now() }
   localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(scores))
   updateStreak(result.multipleChoice && (result.fillInBlank !== false))
+  syncQuizToServer(slug, result)
 }
 
 export function getQuizScore(slug: string): QuizScore | null {
@@ -145,4 +147,82 @@ export function getStreak(): { current: number; best: number } {
     return { current: 0, best: data.best }
   }
   return { current: data.current, best: data.best }
+}
+
+/* ── Server sync (fire-and-forget when logged in) ── */
+
+function syncProgressToServer(slug: string, completed: boolean) {
+  fetch('/api/progress', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ lessonSlug: slug, completed }),
+  }).catch(() => {})
+}
+
+function syncQuizToServer(slug: string, result: { multipleChoice: boolean; fillInBlank?: boolean }) {
+  fetch('/api/quiz-scores', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ lessonSlug: slug, mcCorrect: result.multipleChoice, fibCorrect: result.fillInBlank }),
+  }).catch(() => {})
+}
+
+/** Call on login to merge localStorage ↔ server */
+export async function syncOnLogin(): Promise<void> {
+  if (typeof window === 'undefined') return
+
+  const completedSlugs = getCompletedLessons()
+  const quizScores = getScoreMap()
+  const streakData = getStreakData()
+
+  try {
+    const res = await fetch('/api/sync', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        completedSlugs,
+        quizScores: Object.fromEntries(
+          Object.entries(quizScores).map(([slug, s]) => [
+            slug,
+            { multipleChoice: s.multipleChoice, fillInBlank: s.fillInBlank },
+          ])
+        ),
+        streak: {
+          currentStreak: streakData.current,
+          bestStreak: streakData.best,
+          lastActiveDate: streakData.lastDate || null,
+        },
+      }),
+    })
+
+    if (!res.ok) return
+    const merged = await res.json()
+
+    // Update localStorage with merged server state
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(merged.completedSlugs))
+
+    const mergedScores: Record<string, QuizScore> = {}
+    for (const [slug, s] of Object.entries(merged.quizScores)) {
+      const score = s as { multipleChoice: boolean; fillInBlank?: boolean }
+      mergedScores[slug] = {
+        multipleChoice: score.multipleChoice,
+        fillInBlank: score.fillInBlank,
+        timestamp: quizScores[slug]?.timestamp ?? Date.now(),
+      }
+    }
+    localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(mergedScores))
+
+    if (merged.streak) {
+      localStorage.setItem(
+        STREAK_KEY,
+        JSON.stringify({
+          current: merged.streak.currentStreak,
+          best: merged.streak.bestStreak,
+          lastDate: merged.streak.lastActiveDate ?? '',
+        })
+      )
+    }
+  } catch {
+    // Sync failed silently — localStorage remains source of truth
+  }
 }

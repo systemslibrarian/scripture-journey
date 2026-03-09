@@ -1,4 +1,9 @@
+'use client'
+
 import Link from 'next/link';
+import { useSession, signOut } from 'next-auth/react';
+import { useEffect, useRef } from 'react';
+import { syncOnLogin } from '@/lib/progress';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -8,6 +13,16 @@ const links = [
 ];
 
 export default function Header() {
+  const { data: session, status } = useSession();
+  const hasSynced = useRef(false);
+
+  useEffect(() => {
+    if (session?.user && !hasSynced.current) {
+      hasSynced.current = true;
+      syncOnLogin();
+    }
+  }, [session]);
+
   return (
     <header className="sticky top-0 z-30 border-b border-[#d8ccb8] bg-[#fefcf8]/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
@@ -25,6 +40,22 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+
+          {status === 'loading' ? null : session?.user ? (
+            <button
+              onClick={() => signOut()}
+              className="rounded-full border border-[#d8ccb8] px-3 py-1.5 text-xs font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
+            >
+              Sign Out
+            </button>
+          ) : (
+            <Link
+              href="/auth/signin"
+              className="rounded-full border border-[#7e622a] bg-[#7e622a] px-3 py-1.5 text-xs font-medium text-white transition hover:bg-[#5e4a1f]"
+            >
+              Sign In
+            </Link>
+          )}
         </nav>
       </div>
     </header>

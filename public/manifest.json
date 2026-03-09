@@ -2,15 +2,15 @@
   "name": "Scripture Journey",
   "short_name": "Scripture Journey",
   "description": "Explore how the promises, prophecies, and story of Scripture point to Jesus.",
-  "start_url": "/scripture-journey/",
-  "scope": "/scripture-journey/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#fefcf8",
   "theme_color": "#7e622a",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/scripture-journey/icons/icon.svg",
+      "src": "/icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

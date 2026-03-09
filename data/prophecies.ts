@@ -68,6 +68,74 @@ function buildReflection(
     .replace("{nt}", ntReference)
 }
 
+const otDistractors = [
+  "Genesis 3:15", "Genesis 12:3", "Genesis 49:10", "Exodus 12:46",
+  "Psalm 2:7", "Psalm 16:10", "Psalm 22:1", "Psalm 22:16",
+  "Psalm 110:1", "Isaiah 7:14", "Isaiah 9:6", "Isaiah 11:1",
+  "Isaiah 40:3", "Isaiah 53:3", "Isaiah 53:5", "Isaiah 53:7",
+  "Jeremiah 31:15", "Daniel 7:13", "Micah 5:2", "Zechariah 9:9",
+  "Zechariah 11:12", "Zechariah 12:10", "Malachi 3:1", "Hosea 11:1"
+]
+
+const ntDistractors = [
+  "Matthew 1:23", "Matthew 2:6", "Matthew 4:16", "Matthew 21:5",
+  "Mark 1:2", "Mark 15:34", "Luke 1:32", "Luke 2:7",
+  "Luke 24:27", "John 1:14", "John 12:15", "John 19:36",
+  "Acts 2:31", "Acts 3:22", "Romans 1:3", "Galatians 3:16",
+  "Hebrews 7:14", "1 John 3:8", "Revelation 5:5", "1 Peter 2:24",
+  "Philippians 2:8", "Colossians 1:15", "Hebrews 1:5", "Hebrews 9:28"
+]
+
+function pickDistractors(pool: string[], exclude: string, id: number): string[] {
+  const filtered = pool.filter(
+    (d) => d.toLowerCase() !== exclude.toLowerCase()
+  )
+  const picked: string[] = []
+  let offset = (id * 7 + 3) % filtered.length
+  while (picked.length < 3) {
+    const candidate = filtered[offset % filtered.length]
+    if (!picked.includes(candidate)) picked.push(candidate)
+    offset++
+  }
+  return picked
+}
+
+function buildQuiz(id: number, otReference: string, ntReference: string) {
+  const useOtForMC = id % 2 === 1
+
+  if (useOtForMC) {
+    const distractors = pickDistractors(otDistractors, otReference, id)
+    const answerIndex = id % 4
+    const choices = [...distractors]
+    choices.splice(answerIndex, 0, otReference)
+    return {
+      question: "Which Old Testament reference connects to this lesson?",
+      choices,
+      answer: answerIndex,
+      fillInBlank: {
+        prompt: "Fill in the blank: The New Testament fulfillment for this lesson is ____.",
+        answer: ntReference,
+        acceptableAnswers: [ntReference.replace(/–/g, "-")]
+      }
+    }
+  } else {
+    const distractors = pickDistractors(ntDistractors, ntReference, id)
+    const answerIndex = id % 4
+    const choices = [...distractors]
+    choices.splice(answerIndex, 0, ntReference)
+    return {
+      question: "Which New Testament passage fulfills this prophecy in this lesson?",
+      choices,
+      answer: answerIndex,
+      fillInBlank: {
+        prompt: "Fill in the blank: The Old Testament prophecy for this lesson is ____.",
+        answer: otReference,
+        acceptableAnswers: [otReference.replace(/–/g, "-")]
+      }
+    }
+  }
+}
+
 function makeLesson(
   id:number,
   slug:string,
@@ -94,16 +162,7 @@ ntText,
 summary:`This lesson explores how ${otReference} connects to Jesus.`,
 whyItMatters,
 reflection:buildReflection(id, category, title, otReference, ntReference),
-quiz:{
-question:"Which Old Testament reference connects to this lesson?",
-choices:[otReference,"Isaiah 53","Psalm 22","Genesis 3:15"],
-answer:0,
-fillInBlank: {
-prompt: "Fill in the blank: The Old Testament reference for this lesson is ____.",
-answer: otReference,
-acceptableAnswers: [otReference.replace(/–/g, "-")]
-}
-},
+quiz: buildQuiz(id, otReference, ntReference),
 ...(status ? { status } : {}),
 ...(scholarship ? { scholarship } : {})
 }
