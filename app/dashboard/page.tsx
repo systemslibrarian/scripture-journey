@@ -31,9 +31,9 @@ export default function DashboardPage() {
 
           <div className="grid gap-3 sm:grid-cols-3">
             {tracks.map((track) => (
-              <Link key={track.slug} href={track.href} className="rounded-2xl border border-[#d8ccb8] bg-[#fef9ef] p-4 transition hover:bg-[#f7efdf]">
+              <Link key={track.slug} href={`/${track.slug}`} className="rounded-2xl border border-[#d8ccb8] bg-[#fef9ef] p-4 transition hover:bg-[#f7efdf]">
                 <p className="text-xs uppercase tracking-[0.16em] text-[#7e622a]">Path</p>
-                <h3 className="mt-1 text-lg font-semibold text-[#1b1a17]">{track.title}</h3>
+                <h3 className="mt-1 text-lg font-semibold text-[#1b1a17]">{track.name}</h3>
                 <p className="mt-1 text-sm leading-6 text-[#5f5548]">{track.description}</p>
               </Link>
             ))}
