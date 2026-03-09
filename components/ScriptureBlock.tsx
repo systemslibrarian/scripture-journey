@@ -1,9 +1,29 @@
-export default function ScriptureBlock({ label, reference, text }: { label: string; reference: string; text: string }) {
+type ScriptureBlockProps = {
+  label: string
+  reference: string
+  text: string
+}
+
+export default function ScriptureBlock({
+  label,
+  reference,
+  text,
+}: ScriptureBlockProps) {
   return (
-    <section className="glass-card rounded-[2rem] p-6">
-      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7e622a]">{label}</p>
-      <h2 className="mt-2 text-xl font-semibold text-[#1b1a17]">{reference}</h2>
-      <p className="mt-3 text-lg leading-8 text-[#4a4338]">&ldquo;{text}&rdquo;</p>
+    <section className="rounded-3xl border bg-white p-6 shadow-sm">
+
+      <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+        {label}
+      </div>
+
+      <h3 className="mt-2 text-lg font-bold text-slate-900">
+        {reference}
+      </h3>
+
+      <p className="mt-3 text-lg leading-relaxed text-slate-700">
+        {text}
+      </p>
+
     </section>
-  );
+  )
 }

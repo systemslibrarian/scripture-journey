@@ -1,38 +1,88 @@
-import { prophecies } from '@/data/prophecies';
+import Link from "next/link"
+import { prophecies } from "@/data/prophecies"
+
+const categories = [
+  "Identity",
+  "Ministry",
+  "Rejection",
+  "Passion",
+  "Resurrection",
+] as const
 
 export default function PropheciesPage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10">
-      <div className="glass-card rounded-[2rem] p-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7e622a]">Prophecy Path</p>
-        <h1 className="mt-2 text-4xl font-semibold text-[#1b1a17]">Major Prophecies Fulfilled in Jesus</h1>
-        <p className="mt-3 max-w-3xl text-[#4a4338]">Each card pairs an Old Testament witness with New Testament fulfillment.</p>
+    <main className="mx-auto max-w-7xl px-6 py-12">
+      <div className="rounded-3xl border bg-white p-8 shadow-sm">
+        <div className="text-sm font-semibold uppercase tracking-wide text-amber-700">
+          Top 100 Prophecies
+        </div>
+
+        <h1 className="mt-2 text-4xl font-bold text-slate-900">
+          100 Lessons That Point to Jesus
+        </h1>
+
+        <p className="mt-4 max-w-3xl text-slate-600">
+          Explore 100 prophecy-centered lessons that help show how the Bible’s
+          promises, patterns, and prophetic hope point forward to Jesus Christ.
+        </p>
+
+        <div className="mt-6 inline-flex rounded-full bg-amber-100 px-4 py-2 text-sm font-semibold text-amber-900">
+          {prophecies.length} lessons loaded
+        </div>
       </div>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
-        {prophecies.map((prophecy) => (
-          <article key={prophecy.id} className="glass-card rounded-[2rem] p-6">
-            <p className="gold-pill px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em]">{prophecy.category}</p>
-            <h2 className="mt-3 text-2xl font-semibold text-[#1b1a17]">{prophecy.title}</h2>
+      <div className="mt-10 space-y-12">
+        {categories.map((category) => {
+          const items = prophecies.filter((lesson) => lesson.category === category)
 
-            <div className="mt-4 space-y-3 text-sm leading-6 text-[#4a4338]">
-              <div className="rounded-xl border border-[#dfd2be] bg-[#fffaf0] p-3">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#7e622a]">Old Testament</p>
-                <p className="mt-1 font-semibold text-[#1b1a17]">{prophecy.otReference}</p>
-                <p className="mt-1">{prophecy.otText}</p>
+          return (
+            <section key={category}>
+              <div className="mb-5 flex items-center justify-between gap-4">
+                <h2 className="text-2xl font-bold text-slate-900">{category}</h2>
+                <div className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
+                  {items.length} lessons
+                </div>
               </div>
 
-              <div className="rounded-xl border border-[#d3d7c7] bg-[#f4f8f2] p-3">
-                <p className="text-xs uppercase tracking-[0.14em] text-[#44584d]">New Testament</p>
-                <p className="mt-1 font-semibold text-[#1b1a17]">{prophecy.ntReference}</p>
-                <p className="mt-1">{prophecy.ntText}</p>
-              </div>
-            </div>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {items.map((lesson) => (
+                  <Link
+                    key={lesson.slug}
+                    href={`/lessons/${lesson.slug}`}
+                    className="rounded-3xl border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="text-sm font-semibold text-slate-500">
+                        Lesson {lesson.id}
+                      </div>
 
-            <p className="mt-4 text-sm text-[#5f5548]">{prophecy.significance}</p>
-          </article>
-        ))}
+                      <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-900">
+                        {lesson.category}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-3 text-xl font-bold text-slate-900">
+                      {lesson.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm font-medium text-slate-600">
+                      {lesson.otReference} → {lesson.ntReference}
+                    </p>
+
+                    <p className="mt-4 text-sm leading-6 text-slate-600">
+                      {lesson.summary}
+                    </p>
+
+                    <div className="mt-5 text-sm font-semibold text-slate-900">
+                      Open lesson →
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )
+        })}
       </div>
     </main>
-  );
+  )
 }

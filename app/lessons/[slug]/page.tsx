@@ -1,51 +1,87 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import QuizCard from '@/components/QuizCard';
-import ScriptureBlock from '@/components/ScriptureBlock';
-import { lessons } from '@/data/lessons';
+import { notFound } from "next/navigation"
+import QuizCard from "@/components/QuizCard"
+import ScriptureBlock from "@/components/ScriptureBlock"
+import { getLessonBySlug, getLessonSlugs } from "@/data/lessons"
 
 export function generateStaticParams() {
-  return lessons.map((lesson) => ({ slug: lesson.slug }));
+  return getLessonSlugs()
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const lesson = lessons.find((item) => item.slug === params.slug);
-
-  return {
-    title: lesson ? `${lesson.title} | Scripture Journey` : 'Lesson | Scripture Journey',
-    description: lesson?.summary,
-  };
+type Props = {
+  params: {
+    slug: string
+  }
 }
 
-export default function LessonPage({ params }: { params: { slug: string } }) {
-  const lesson = lessons.find((item) => item.slug === params.slug);
+export default function LessonPage({ params }: Props) {
+
+  const lesson = getLessonBySlug(params.slug)
 
   if (!lesson) {
-    notFound();
+    notFound()
   }
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-10">
-      <div className="glass-card mb-6 rounded-[2rem] p-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7e622a]">Lesson {lesson.id}</p>
-        <h1 className="mt-2 text-4xl font-semibold text-[#1b1a17]">{lesson.title}</h1>
-        <p className="mt-3 text-[#5f5548]">Estimated time: {lesson.durationMinutes} minutes</p>
+    <main className="mx-auto max-w-4xl px-6 py-12">
+
+      <div className="mb-8">
+
+        <div className="text-sm uppercase tracking-wide text-amber-700 font-semibold">
+          Lesson {lesson.id}
+        </div>
+
+        <h1 className="text-3xl font-bold mt-2">
+          {lesson.title}
+        </h1>
+
+        <p className="mt-4 text-slate-600">
+          {lesson.summary}
+        </p>
+
       </div>
 
       <div className="space-y-6">
-        <ScriptureBlock label="The Promise" reference={lesson.otReference} text={lesson.otText} />
-        <ScriptureBlock label="Fulfilled in Jesus" reference={lesson.ntReference} text={lesson.ntText} />
 
-        <section className="glass-card rounded-[2rem] p-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7e622a]">Why this matters</p>
-          <p className="mt-3 leading-7 text-[#4a4338]">{lesson.summary}</p>
-          <p className="mt-4 rounded-xl border border-[#d8ccb8] bg-[#fff8ea] px-4 py-3 text-sm font-medium text-[#5a332f]">
-            Key idea: {lesson.keyIdea}
+        <ScriptureBlock
+          label="Old Testament"
+          reference={lesson.otReference}
+          text={lesson.otText}
+        />
+
+        <ScriptureBlock
+          label="New Testament"
+          reference={lesson.ntReference}
+          text={lesson.ntText}
+        />
+
+        <div className="rounded-3xl border p-6 bg-white shadow-sm">
+
+          <div className="text-xs uppercase tracking-wide text-slate-500 font-semibold">
+            Why This Matters
+          </div>
+
+          <p className="mt-3 text-slate-700 leading-relaxed">
+            {lesson.whyItMatters}
           </p>
-        </section>
+
+        </div>
 
         <QuizCard quiz={lesson.quiz} />
+
+        <div className="rounded-3xl border p-6 bg-white shadow-sm">
+
+          <div className="text-xs uppercase tracking-wide text-slate-500 font-semibold">
+            Reflection
+          </div>
+
+          <p className="mt-3 text-slate-700 leading-relaxed">
+            {lesson.reflection}
+          </p>
+
+        </div>
+
       </div>
+
     </main>
-  );
+  )
 }

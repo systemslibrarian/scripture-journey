@@ -1,51 +1,84 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import type { Lesson } from '@/lib/types';
+import { useState } from 'react'
 
-export default function QuizCard({ quiz }: { quiz: Lesson['quiz'] }) {
-  const [selected, setSelected] = useState<number | null>(null);
-  const [submitted, setSubmitted] = useState(false);
+type QuizCardProps = {
+  question: string
+  choices: string[]
+  answer: number
+}
+
+export default function QuizCard({
+  question,
+  choices,
+  answer,
+}: QuizCardProps) {
+  const [selected, setSelected] = useState<number | null>(null)
+  const [submitted, setSubmitted] = useState(false)
+
+  const isCorrect = selected === answer
 
   return (
-    <div className="glass-card rounded-[2rem] p-6">
-      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7e622a]">Quick Check</p>
-      <h3 className="mt-3 text-2xl font-semibold text-[#1b1a17]">{quiz.question}</h3>
-      <div className="mt-4 grid gap-3">
-        {quiz.choices.map((choice, idx) => {
-          const isCorrect = submitted && idx === quiz.answer;
-          const isWrong = submitted && selected === idx && idx !== quiz.answer;
+    <section className="rounded-3xl border bg-white p-6 shadow-sm">
+      <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+        Quick Check
+      </div>
+
+      <h2 className="mt-2 text-xl font-bold text-slate-900">
+        {question}
+      </h2>
+
+      <div className="mt-5 grid gap-3">
+        {choices.map((choice, index) => {
+          const isSelected = selected === index
+          const showCorrect = submitted && index === answer
+          const showWrong = submitted && isSelected && index !== answer
+
           return (
             <button
-              key={choice}
-              onClick={() => setSelected(idx)}
+              key={`${choice}-${index}`}
+              type="button"
+              onClick={() => setSelected(index)}
               className={`rounded-2xl border px-4 py-3 text-left transition ${
-                isCorrect
-                  ? 'border-emerald-400 bg-emerald-50'
-                  : isWrong
-                    ? 'border-rose-400 bg-rose-50'
-                    : selected === idx
-                      ? 'border-[#cab187] bg-[#fff7e6]'
-                      : 'border-[#d8ccb8] bg-[#fefcf8] hover:bg-[#faf3e4]'
+                showCorrect
+                  ? 'border-emerald-300 bg-emerald-50 text-emerald-900'
+                  : showWrong
+                  ? 'border-rose-300 bg-rose-50 text-rose-900'
+                  : isSelected
+                  ? 'border-slate-900 bg-slate-50 text-slate-900'
+                  : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
               }`}
             >
               {choice}
             </button>
-          );
+          )
         })}
       </div>
-      <button
-        onClick={() => setSubmitted(true)}
-        disabled={selected === null}
-        className="mt-5 rounded-xl bg-[#5a332f] px-4 py-2 font-semibold text-[#fefcf8] disabled:cursor-not-allowed disabled:bg-[#9e8674]"
-      >
-        Submit
-      </button>
-      {submitted && (
-        <p className="mt-4 text-sm text-[#4a4338]">
-          {selected === quiz.answer ? 'Correct - well done.' : 'Not quite. Review the lesson and try again.'}
-        </p>
-      )}
-    </div>
-  );
+
+      <div className="mt-5 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={() => setSubmitted(true)}
+          disabled={selected === null}
+          className="rounded-2xl bg-slate-900 px-5 py-3 font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          Submit Answer
+        </button>
+
+        {submitted && (
+          <div
+            className={`rounded-2xl px-4 py-3 text-sm font-medium ${
+              isCorrect
+                ? 'bg-emerald-100 text-emerald-900'
+                : 'bg-amber-100 text-amber-900'
+            }`}
+          >
+            {isCorrect
+              ? 'Correct — well done.'
+              : 'Not quite. Review the lesson and try again.'}
+          </div>
+        )}
+      </div>
+    </section>
+  )
 }
