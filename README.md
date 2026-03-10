@@ -5,10 +5,13 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-14-black" alt="Next.js">
-  <img src="https://img.shields.io/badge/TypeScript-blue" alt="TypeScript">
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
-  <img src="https://img.shields.io/badge/PWA-installable-orange" alt="PWA">
+  <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 14"></a>
+  &nbsp;
+  <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
+  &nbsp;
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge" alt="MIT License"></a>
+  &nbsp;
+  <img src="https://img.shields.io/badge/PWA-Installable-f97316?style=for-the-badge&logo=pwa&logoColor=white" alt="PWA Installable">
 </p>
 
 <p align="center"><em>A Christ-centered learning app for exploring how the whole Bible points to Jesus.</em></p>
@@ -55,19 +58,32 @@ Inspired by Luke 24:27, the app helps users explore the unfolding promise of the
 
 ## Screenshots
 
-<p align="center">
-  <img src="docs/screenshots/home.png" alt="Homepage" width="47%">
-  <img src="docs/screenshots/map.png" alt="Prophecy Map" width="47%">
-</p>
-<p align="center">
-  <img src="docs/screenshots/timeline.png" alt="Timeline" width="47%">
-  <img src="docs/screenshots/lesson.png" alt="Lesson Page" width="47%">
-</p>
-<p align="center">
-  <img src="docs/screenshots/dashboard.png" alt="Dashboard" width="47%">
-  <img src="docs/screenshots/quiz.png" alt="Quiz" width="47%">
-</p>
-<p align="center"><em>Homepage · Prophecy Map · Timeline · Lesson Page · Dashboard · Quiz</em></p>
+<table align="center">
+  <tr>
+    <td align="center"><strong>Homepage</strong></td>
+    <td align="center"><strong>Prophecy Map</strong></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/home.png" alt="Homepage" width="450"></td>
+    <td><img src="docs/screenshots/map.png" alt="Prophecy Map" width="450"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Timeline</strong></td>
+    <td align="center"><strong>Lesson Page</strong></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/timeline.png" alt="Timeline" width="450"></td>
+    <td><img src="docs/screenshots/lesson.png" alt="Lesson Page" width="450"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Dashboard</strong></td>
+    <td align="center"><strong>Quiz</strong></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/dashboard.png" alt="Dashboard" width="450"></td>
+    <td><img src="docs/screenshots/quiz.png" alt="Quiz" width="450"></td>
+  </tr>
+</table>
 
 ---
 
@@ -125,13 +141,13 @@ Inspired by Luke 24:27, the app helps users explore the unfolding promise of the
 Lessons are attributed to three widely recognized works on messianic prophecy:
 
 ### 📘 J. Barton Payne — *Encyclopedia of Biblical Prophecy* (1973)
-Catalogs 191 messianic prophecies and provides the numbering system used for cross-reference. **62 lessons** carry Payne attestation.
+Catalogs 191 messianic prophecies and provides the numbering system used for cross-reference. Referenced in **62 lessons**.
 
 ### 📚 Alfred Edersheim — *The Life and Times of Jesus the Messiah* (1883)
-Appendix IX catalogs 456 OT passages applied to the Messiah. **176 lessons** carry Edersheim attestation.
+Appendix IX catalogs 456 Old Testament passages applied to the Messiah. Referenced in **176 lessons**.
 
 ### 📖 Josh McDowell — *The New Evidence That Demands a Verdict* (1999)
-Provides detailed evidence for prophecy fulfillment. **60 lessons** carry McDowell attestation.
+Provides detailed evidence for prophecy fulfillment. Referenced in **60 lessons**.
 
 ---
 
