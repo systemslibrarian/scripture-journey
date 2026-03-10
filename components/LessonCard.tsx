@@ -1,5 +1,6 @@
 import Link from "next/link"
 import type { Lesson } from "@/lib/types"
+import ProphecyTypeBadge from "@/components/ProphecyTypeBadge"
 
 type Props = {
   lesson: Lesson
@@ -40,6 +41,10 @@ export default function LessonCard({ lesson }: Props) {
         {lesson.scholarship?.mcdowell?.attested && (
           <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-1.5 py-0.5 text-[10px] font-medium text-[#2a5a7e]">📖 McDowell ✓</span>
         )}
+      </div>
+
+      <div className="mt-2">
+        <ProphecyTypeBadge type={lesson.prophecyType} size="xs" />
       </div>
 
       <p className="mt-4 text-sm leading-6 text-[#4a4338]">

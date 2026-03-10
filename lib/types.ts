@@ -48,6 +48,12 @@ export interface Scholarship {
   mcdowell?: McDowellData;
 }
 
+export type ProphecyType =
+  | 'Direct Prophecy'
+  | 'Messianic Psalm'
+  | 'Typology'
+  | 'Thematic Foreshadowing';
+
 export interface Lesson {
   id: number;
   slug: string;
@@ -61,6 +67,7 @@ export interface Lesson {
   whyItMatters: string;
   reflection: string;
   quiz: QuizData;
+  prophecyType: ProphecyType;
   status?: 'active' | 'coming-soon';
   scholarship?: Scholarship;
 }

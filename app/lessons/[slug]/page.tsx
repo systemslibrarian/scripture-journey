@@ -4,9 +4,8 @@ import ScriptureBlock from "@/components/ScriptureBlock"
 import MarkCompleteButton from "@/components/MarkCompleteButton"
 import CompletedIndicator from "@/components/CompletedIndicator"
 import ScholarCredits from "@/components/ScholarCredits"
-import QuizCard from "@/components/QuizCard"
-import QuizScoreCard from "@/components/QuizScoreCard"
-import { getLessonBySlug, getLessonSlugs } from "@/data/lessons"
+import ProphecyTypeBadge from "@/components/ProphecyTypeBadge"
+import { getLessonBySlug, getLessonSlugs, getAllLessons } from "@/data/lessons"
 
 export function generateStaticParams() {
   return getLessonSlugs()
@@ -25,6 +24,11 @@ export default function LessonPage({ params }: Props) {
     notFound()
   }
 
+  const allLessons = getAllLessons()
+  const currentIndex = allLessons.findIndex(l => l.slug === params.slug)
+  const prevLesson = currentIndex > 0 ? allLessons[currentIndex - 1] : null
+  const nextLesson = currentIndex < allLessons.length - 1 ? allLessons[currentIndex + 1] : null
+
   return (
     <div className="space-y-8">
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
@@ -39,6 +43,7 @@ export default function LessonPage({ params }: Props) {
             >
               {lesson.category}
             </Link>
+            <ProphecyTypeBadge type={lesson.prophecyType} />
           </div>
 
           <CompletedIndicator slug={lesson.slug} compact />
@@ -87,12 +92,6 @@ export default function LessonPage({ params }: Props) {
         text={lesson.ntText}
       />
 
-      <ScholarCredits scholarship={lesson.scholarship} />
-
-      <QuizCard quiz={lesson.quiz} lessonSlug={lesson.slug} />
-
-      <QuizScoreCard slug={lesson.slug} />
-
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Why This Matters
@@ -111,6 +110,31 @@ export default function LessonPage({ params }: Props) {
         <p className="mt-4 leading-7 text-[#4a4338]">
           {lesson.reflection}
         </p>
+      </div>
+
+      <ScholarCredits scholarship={lesson.scholarship} />
+
+      <div className="flex items-stretch gap-4">
+        {prevLesson ? (
+          <Link
+            href={`/lessons/${prevLesson.slug}`}
+            className="flex-1 rounded-2xl border border-[#d8ccb8] bg-white px-6 py-4 transition hover:border-[#c8a84b] hover:shadow-sm"
+          >
+            <span className="text-xs text-[#7e622a]">← Previous</span>
+            <span className="mt-1 block font-semibold text-[#1b1a17]">{prevLesson.title}</span>
+            <span className="mt-0.5 block text-xs text-[#4a4338]">Lesson {prevLesson.id} · {prevLesson.category}</span>
+          </Link>
+        ) : <div className="flex-1" />}
+        {nextLesson ? (
+          <Link
+            href={`/lessons/${nextLesson.slug}`}
+            className="flex-1 rounded-2xl border border-[#d8ccb8] bg-white px-6 py-4 text-right transition hover:border-[#c8a84b] hover:shadow-sm"
+          >
+            <span className="text-xs text-[#7e622a]">Next →</span>
+            <span className="mt-1 block font-semibold text-[#1b1a17]">{nextLesson.title}</span>
+            <span className="mt-0.5 block text-xs text-[#4a4338]">Lesson {nextLesson.id} · {nextLesson.category}</span>
+          </Link>
+        ) : <div className="flex-1" />}
       </div>
     </div>
   )

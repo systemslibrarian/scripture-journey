@@ -4,19 +4,21 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { prophecies } from "@/data/prophecies"
 import ProgressBar from "@/components/ProgressBar"
-import { getCompletionCount, getCompletionPercent, getQuizStats, getStreak } from "@/lib/progress"
+import { getCompletionCount, getCompletionPercent, getQuizStats, getStreak, getCompletedLessons } from "@/lib/progress"
 
 export default function DashboardPage() {
 
   const [completed, setCompleted] = useState(0)
   const [quizStats, setQuizStats] = useState({ total: 0, perfect: 0, attempted: 0 })
   const [streak, setStreak] = useState({ current: 0, best: 0 })
+  const [completedCount, setCompletedCount] = useState(0)
 
   useEffect(() => {
     const count = getCompletionCount()
     setCompleted(count)
     setQuizStats(getQuizStats())
     setStreak(getStreak())
+    setCompletedCount(getCompletedLessons().length)
   }, [])
 
   const total = prophecies.length
@@ -41,6 +43,25 @@ export default function DashboardPage() {
           Track your progress through the {total} prophecy lessons that point to Jesus.
         </p>
 
+      </div>
+
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="rounded-2xl border border-[#d8ccb8] bg-white p-4 text-center">
+          <div className="text-3xl font-bold text-[#1b1a17]">{streak.current}</div>
+          <div className="text-xs uppercase tracking-wide text-[#7e622a]">Day Streak</div>
+        </div>
+        <div className="rounded-2xl border border-[#d8ccb8] bg-white p-4 text-center">
+          <div className="text-3xl font-bold text-[#1b1a17]">{completed}</div>
+          <div className="text-xs uppercase tracking-wide text-[#7e622a]">Lessons Completed</div>
+        </div>
+        <div className="rounded-2xl border border-[#d8ccb8] bg-white p-4 text-center">
+          <div className="text-3xl font-bold text-[#1b1a17]">{quizStats.perfect}</div>
+          <div className="text-xs uppercase tracking-wide text-[#7e622a]">Quiz Correct</div>
+        </div>
+        <div className="rounded-2xl border border-[#d8ccb8] bg-white p-4 text-center">
+          <div className="text-3xl font-bold text-[#1b1a17]">{streak.best}</div>
+          <div className="text-xs uppercase tracking-wide text-[#7e622a]">Best Streak</div>
+        </div>
       </div>
 
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm">
@@ -133,6 +154,18 @@ export default function DashboardPage() {
         </div>
 
       </div>
+
+      <Link href="/quiz">
+        <div className="rounded-[2rem] border border-[#d8ccb8] bg-[#fefcf8] p-6 shadow-sm hover:shadow-md transition">
+          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">Quick Check</div>
+          <div className="mt-2 text-xl font-semibold text-[#1b1a17]">Test Your Knowledge →</div>
+          <div className="mt-1 text-sm text-[#4a4338]">
+            {completedCount > 0
+              ? `${completedCount} lesson${completedCount === 1 ? '' : 's'} completed — quiz yourself on what you've learned.`
+              : 'No lessons completed yet — try 10 random questions to get started.'}
+          </div>
+        </div>
+      </Link>
 
       <div className="grid gap-6 md:grid-cols-2">
 

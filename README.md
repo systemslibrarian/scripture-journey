@@ -10,13 +10,19 @@ Scripture Journey is a Christ-centered app that helps users explore how the whol
 ## What This App Includes
 
 - 211 messianic prophecy lessons, each fully developed
-- Each lesson includes Old Testament prophecy, New Testament fulfillment, a unique "Why This Matters" reflection, and a quiz
+- Each lesson includes Old Testament prophecy, New Testament fulfillment, and a unique "Why This Matters" reflection
+- Prophecy type classification with color-coded badges (see Prophecy Types below)
 - Scholarly attribution badges from three academic sources (see below)
-- Home page with live search/filter by title, Scripture reference, or theme
-- Visual Map grouping lessons by 7 categories: Lineage, Identity, Ministry, Rejection, Passion, Resurrection, Kingdom
-- Dashboard with progress tracking, quiz performance stats, and study streak
-- Individual lesson pages with Scripture blocks, reflection, category badge, and quiz
-- Quiz scoring system with per-lesson results and overall accuracy tracking
+- Home page with live search/filter by title, Scripture reference, theme, prophecy type, and scholar
+- "Continue Where You Left Off" card on the home page showing progress and next lesson
+- Visual Map grouping lessons by 7 categories with per-category progress bars and completion indicators
+- Dashboard with progress tracking, stats row (streak, completed, quiz, best streak), and quiz CTA
+- Streak indicator in the header navigation
+- Individual lesson pages with Scripture blocks, reflection, category badge, prophecy type badge, and prev/next navigation
+- Standalone adaptive quiz page with 10-question sessions drawn from completed lessons
+- Sort and filter controls: sort by default, category, completed/not-completed; filter by prophecy type and scholar
+- "Surprise Me" button to jump to a random unread lesson
+- Sources page with scholar lesson counts and direct links to filtered search results
 - Study streak tracking (current and best consecutive days)
 - Local progress tracking (`localStorage`) with completion state and dashboard stats
 - Progressive Web App (PWA) — installable on mobile and desktop with offline support
@@ -47,6 +53,17 @@ Lessons are organized into 7 prophetic categories, each with a key verse:
 | Passion | Suffering, crucifixion, and atoning sacrifice |
 | Resurrection | Rising from the dead and post-resurrection appearances |
 | Kingdom | Reign, return, eternal dominion, and new covenant |
+
+## Prophecy Types
+
+Every lesson is classified into one of four prophecy types, displayed as a color-coded badge on lesson cards, lesson detail pages, the map, and search results:
+
+| Type | Color | Description |
+|---|---|---|
+| Direct Prophecy | Amber | A clear predictive statement in the Old Testament that is fulfilled literally in Jesus. These are explicit "this will happen" declarations — such as the virgin birth (Isaiah 7:14) or the birthplace of Bethlehem (Micah 5:2). |
+| Messianic Psalm | Blue | A Psalm cited by New Testament authors and applied directly to Christ. These include royal psalms, lament psalms, and enthronement psalms that the early church understood as speaking of Jesus — such as Psalm 22 (crucifixion details) and Psalm 110 (seated at God's right hand). |
+| Typology | Green | A person, event, or institution in the Old Testament that structurally foreshadows Christ. The "type" is not a prediction in the strict sense but a divinely ordered pattern — such as the Passover lamb, the bronze serpent, or Jonah's three days. |
+| Thematic Foreshadowing | Purple | A broader theme, image, or motif that the New Testament or Rabbinic tradition connects to Jesus. These are not single-verse predictions but recurring ideas — such as the Suffering Servant thread, the shepherd motif, or the concept of a new covenant. |
 
 ## Tech Stack
 
@@ -88,15 +105,20 @@ npm run lint
 
 ## Main Routes
 
-- Home (Prophecy Search): `/`
+- Home (Prophecy Search + Continue Card): `/`
 - Dashboard: `/dashboard`
 - Visual Map: `/map`
+- Quiz: `/quiz`
+- Prophecies (Search): `/prophecies`
+- Sources: `/sources`
 - Lesson detail: `/lessons/[slug]`
 - Example lessons:
   - `/lessons/seed-of-the-woman`
   - `/lessons/son-of-the-father`
 
 The Map page supports deep links to each category section (e.g., `/map#lineage`, `/map#kingdom`).
+
+The Prophecies page supports `?scholar=payne`, `?scholar=edersheim`, or `?scholar=mcdowell` query params to pre-filter by scholar.
 
 Unknown lesson slugs render the custom `notFound()` page.
 

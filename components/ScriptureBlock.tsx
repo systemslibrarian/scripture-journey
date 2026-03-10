@@ -10,17 +10,17 @@ export default function ScriptureBlock({
   text,
 }: ScriptureBlockProps) {
   return (
-    <section className="rounded-3xl border bg-white p-6 shadow-sm" aria-label={`${label} scripture: ${reference}`}>
+    <section className="rounded-3xl border border-[#d8ccb8] bg-white p-6 shadow-sm" aria-label={`${label} scripture: ${reference}`}>
 
-      <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+      <div className="text-xs font-semibold uppercase tracking-wide text-[#7e622a]">
         {label}
       </div>
 
-      <h3 className="mt-2 text-lg font-bold text-slate-900">
+      <h3 className="mt-2 text-lg font-bold text-[#1b1a17]">
         {reference}
       </h3>
 
-      <p className="mt-3 text-lg leading-relaxed text-slate-700">
+      <p className="mt-3 text-lg leading-relaxed text-[#4a4338]">
         {text}
       </p>
 

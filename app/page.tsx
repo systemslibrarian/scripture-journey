@@ -1,4 +1,6 @@
+import { Suspense } from "react"
 import ProphecySearch from "@/components/ProphecySearch"
+import ContinueCard from "@/components/ContinueCard"
 import { prophecies } from "@/data/prophecies"
 
 export default function HomePage() {
@@ -6,6 +8,8 @@ export default function HomePage() {
 
   return (
     <div className="space-y-8">
+      <ContinueCard />
+
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Top {totalLessons} Prophecies
@@ -23,7 +27,9 @@ export default function HomePage() {
         </p>
       </div>
 
-      <ProphecySearch />
+      <Suspense>
+        <ProphecySearch />
+      </Suspense>
     </div>
   )
 }

@@ -1,4 +1,12 @@
+import Link from "next/link"
+import { getAllLessons } from "@/data/lessons"
+
 export default function SourcesPage() {
+  const allLessons = getAllLessons()
+  const payneCount = allLessons.filter(l => l.scholarship?.payne?.attested).length
+  const edersheimCount = allLessons.filter(l => l.scholarship?.edersheim?.attested).length
+  const mcdowellCount = allLessons.filter(l => l.scholarship?.mcdowell?.attested).length
+
   return (
     <div className="space-y-8">
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
@@ -33,6 +41,17 @@ export default function SourcesPage() {
             <p className="mt-3 text-sm leading-6 text-[#4a4338]">
               This app uses Payne&apos;s prophecy numbering system (#1-191) to identify and cross-reference messianic predictions.
             </p>
+            <div className="mt-4 flex items-center justify-between border-t border-[#d9c9ee] pt-4">
+              <span className="text-sm font-semibold text-[#5f3a8a]">
+                {payneCount} lessons attested
+              </span>
+              <Link
+                href="/prophecies?scholar=payne"
+                className="rounded-full border border-[#5f3a8a] px-3 py-1 text-xs font-medium text-[#5f3a8a] hover:bg-[#efe8fb] transition"
+              >
+                Browse lessons →
+              </Link>
+            </div>
           </article>
 
           <article className="rounded-2xl border border-[#d8ccb8] bg-[#fffdf8] p-6">
@@ -42,8 +61,17 @@ export default function SourcesPage() {
             </p>
             <p className="mt-3 text-sm leading-6 text-[#4a4338]">
               Edersheim was a Jewish scholar and Christian theologian at Oxford. Appendix IX catalogues Old Testament passages applied to the Messiah in the Talmud and Midrash, providing authoritative evidence of pre-Christian Jewish messianic expectation.
-            </p>
-          </article>
+            </p>            <div className="mt-4 flex items-center justify-between border-t border-[#d8ccb8] pt-4">
+              <span className="text-sm font-semibold text-[#7e622a]">
+                {edersheimCount} lessons attested
+              </span>
+              <Link
+                href="/prophecies?scholar=edersheim"
+                className="rounded-full border border-[#7e622a] px-3 py-1 text-xs font-medium text-[#7e622a] hover:bg-[#f5f0e5] transition"
+              >
+                Browse lessons →
+              </Link>
+            </div>          </article>
 
           <article className="rounded-2xl border border-[#cfe0ea] bg-[#f8fbfd] p-6">
             <h3 className="text-lg font-semibold text-[#1b1a17]">Josh McDowell (b. 1939)</h3>
@@ -53,6 +81,17 @@ export default function SourcesPage() {
             <p className="mt-3 text-sm leading-6 text-[#4a4338]">
               McDowell&apos;s work synthesizes apologetic evidence for the reliability of Scripture, including a detailed treatment of Old Testament messianic prophecy and its fulfillment in Christ.
             </p>
+            <div className="mt-4 flex items-center justify-between border-t border-[#cfe0ea] pt-4">
+              <span className="text-sm font-semibold text-[#2a5a7e]">
+                {mcdowellCount} lessons attested
+              </span>
+              <Link
+                href="/prophecies?scholar=mcdowell"
+                className="rounded-full border border-[#2a5a7e] px-3 py-1 text-xs font-medium text-[#2a5a7e] hover:bg-[#e8f0f5] transition"
+              >
+                Browse lessons →
+              </Link>
+            </div>
           </article>
         </div>
       </section>

@@ -2,19 +2,25 @@
 
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
-import { useEffect, useRef } from 'react';
-import { syncOnLogin } from '@/lib/progress';
+import { useEffect, useRef, useState } from 'react';
+import { syncOnLogin, getStreak } from '@/lib/progress';
 
 const links = [
   { href: '/', label: 'Home' },
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/map', label: 'Map' },
+  { href: '/quiz', label: 'Quiz' },
   { href: '/sources', label: 'Sources' },
 ];
 
 export default function Header() {
   const { data: session, status } = useSession();
   const hasSynced = useRef(false);
+  const [streakCount, setStreakCount] = useState(0);
+
+  useEffect(() => {
+    setStreakCount(getStreak().current);
+  }, []);
 
   useEffect(() => {
     if (session?.user && !hasSynced.current) {
@@ -40,6 +46,12 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+
+          {streakCount > 0 && (
+            <span className="rounded-full bg-[#fff3e0] px-2 py-1 text-xs font-semibold text-[#e65100]">
+              🔥 {streakCount}
+            </span>
+          )}
 
           {status === 'loading' ? null : session?.user ? (
             <button

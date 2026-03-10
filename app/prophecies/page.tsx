@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import ProphecySearch from "@/components/ProphecySearch"
 import { prophecies } from "@/data/prophecies"
 
@@ -18,7 +19,9 @@ export default function PropheciesPage() {
           reference, or theme.
         </p>
       </div>
-      <ProphecySearch />
+      <Suspense>
+        <ProphecySearch />
+      </Suspense>
     </div>
   )
 }
