@@ -7,6 +7,10 @@ import MapCategoryCards from "@/components/MapCategoryCards"
 export const metadata: Metadata = {
   title: "Prophecy Map — Scripture Journey",
   description: "A visual map of 211 prophecy lessons organized by category: Lineage, Identity, Ministry, Rejection, Passion, Resurrection, and Kingdom.",
+  openGraph: {
+    title: "Prophecy Map — Scripture Journey",
+    description: "See how 211 messianic prophecies map across seven categories — from Lineage to Kingdom.",
+  },
 }
 
 const typeGuide: { type: ProphecyType; description: string }[] = [
@@ -144,6 +148,27 @@ export default function MapPage() {
         <p className="mt-5 text-sm text-[#4a4338]">
           See the full bibliography and methodology on the <Link href="/sources" className="font-semibold text-[#7e622a] underline decoration-[#c7b598] underline-offset-4">Sources page</Link>.
         </p>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Link
+          href="/timeline"
+          className="rounded-2xl border border-[#d8ccb8] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+        >
+          <div className="text-sm font-semibold text-[#7e622a]">See the Timeline</div>
+          <p className="mt-1 text-sm text-[#4a4338]">
+            Follow the messianic promise chronologically — from Genesis to the final prophets.
+          </p>
+        </Link>
+        <Link
+          href="/quiz"
+          className="rounded-2xl border border-[#d8ccb8] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+        >
+          <div className="text-sm font-semibold text-[#7e622a]">Take the Quiz</div>
+          <p className="mt-1 text-sm text-[#4a4338]">
+            Test your knowledge with 10 questions drawn from the prophecy lessons.
+          </p>
+        </Link>
       </div>
     </div>
   )

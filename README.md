@@ -7,6 +7,26 @@ Scripture Journey is a Christ-centered app that helps users explore how the whol
 
 **[Live Demo](https://www.scripturejourney.com/)**
 
+## Screenshots
+
+### Homepage
+![Homepage — welcome message, continue card, and discovery links](docs/screenshots/home.png)
+
+### Lesson Page
+![Lesson page — Scripture blocks, reflection, and Continue Your Journey section](docs/screenshots/lesson.png)
+
+### Prophecy Map
+![Prophecy Map — lessons organized by category with progress bars](docs/screenshots/map.png)
+
+### Timeline
+![Timeline — lessons grouped by biblical era from Genesis to the Prophets](docs/screenshots/timeline.png)
+
+### Dashboard
+![Dashboard — progress tracking, quiz stats, and streak](docs/screenshots/dashboard.png)
+
+### Quiz
+![Quiz — 10-question adaptive quiz with instant feedback](docs/screenshots/quiz.png)
+
 ## What This App Includes
 
 - 211 messianic prophecy lessons, each fully developed

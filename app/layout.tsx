@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Scripture Journey",
   },
+  openGraph: {
+    siteName: "Scripture Journey",
+    type: "website",
+    title: "Scripture Journey",
+    description: "Explore how the promises, prophecies, and story of Scripture point to Jesus — 211 lessons inspired by Luke 24:27.",
+  },
 }
 
 export const viewport: Viewport = {

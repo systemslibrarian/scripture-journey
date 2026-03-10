@@ -6,6 +6,7 @@ import MarkCompleteButton from "@/components/MarkCompleteButton"
 import CompletedIndicator from "@/components/CompletedIndicator"
 import ScholarCredits from "@/components/ScholarCredits"
 import ProphecyTypeBadge from "@/components/ProphecyTypeBadge"
+import ContinueJourney from "@/components/ContinueJourney"
 import { getLessonBySlug, getLessonSlugs, getAllLessons } from "@/data/lessons"
 
 export function generateStaticParams() {
@@ -15,12 +16,14 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const lesson = getLessonBySlug(params.slug)
   if (!lesson) return { title: "Lesson Not Found" }
+  const title = `${lesson.title} — Scripture Journey`
+  const description = `${lesson.otReference} → ${lesson.ntReference}. ${lesson.summary}`
   return {
-    title: `${lesson.title} — Scripture Journey`,
-    description: lesson.summary,
+    title,
+    description,
     openGraph: {
-      title: `${lesson.title} — Scripture Journey`,
-      description: lesson.summary,
+      title,
+      description,
       type: "article",
     },
   }
@@ -111,26 +114,7 @@ export default function LessonPage({ params }: Props) {
 
       <ScholarCredits scholarship={lesson.scholarship} />
 
-      <div className="flex flex-wrap gap-3">
-        <Link
-          href="/quiz"
-          className="rounded-xl border border-[#d8ccb8] px-4 py-2 text-sm font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
-        >
-          Take the Quiz
-        </Link>
-        <Link
-          href={`/map#${lesson.category.toLowerCase()}`}
-          className="rounded-xl border border-[#d8ccb8] px-4 py-2 text-sm font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
-        >
-          View on Map
-        </Link>
-        <Link
-          href="/dashboard"
-          className="rounded-xl border border-[#d8ccb8] px-4 py-2 text-sm font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
-        >
-          Your Progress
-        </Link>
-      </div>
+      <ContinueJourney lesson={lesson} nextLesson={nextLesson} />
 
       <div className="flex items-stretch gap-4">
         {prevLesson ? (
@@ -138,9 +122,8 @@ export default function LessonPage({ params }: Props) {
             href={`/lessons/${prevLesson.slug}`}
             className="flex-1 rounded-2xl border border-[#d8ccb8] bg-white px-6 py-4 transition hover:border-[#c8a84b] hover:shadow-sm"
           >
-            <span className="text-xs text-[#7e622a]">← Previous</span>
+            <span className="text-xs text-[#7e622a]">← Previous Lesson</span>
             <span className="mt-1 block font-semibold text-[#1b1a17]">{prevLesson.title}</span>
-            <span className="mt-0.5 block text-xs text-[#4a4338]">Lesson {prevLesson.id} · {prevLesson.category}</span>
           </Link>
         ) : <div className="flex-1" />}
         {nextLesson ? (
@@ -148,9 +131,8 @@ export default function LessonPage({ params }: Props) {
             href={`/lessons/${nextLesson.slug}`}
             className="flex-1 rounded-2xl border border-[#d8ccb8] bg-white px-6 py-4 text-right transition hover:border-[#c8a84b] hover:shadow-sm"
           >
-            <span className="text-xs text-[#7e622a]">Next →</span>
+            <span className="text-xs text-[#7e622a]">Next Lesson →</span>
             <span className="mt-1 block font-semibold text-[#1b1a17]">{nextLesson.title}</span>
-            <span className="mt-0.5 block text-xs text-[#4a4338]">Lesson {nextLesson.id} · {nextLesson.category}</span>
           </Link>
         ) : <div className="flex-1" />}
       </div>

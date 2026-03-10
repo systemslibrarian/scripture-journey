@@ -5,6 +5,10 @@ import { getAllLessons } from "@/data/lessons"
 export const metadata: Metadata = {
   title: "Sources and Methodology — Scripture Journey",
   description: "Academic attribution and methodology for Scripture Journey, featuring Payne, Edersheim, and McDowell scholarship.",
+  openGraph: {
+    title: "Sources and Methodology — Scripture Journey",
+    description: "Learn about the scholarly sources behind 211 messianic prophecy lessons: Payne, Edersheim, and McDowell.",
+  },
 }
 
 export default function SourcesPage() {
