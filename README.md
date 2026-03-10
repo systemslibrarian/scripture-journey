@@ -63,7 +63,7 @@ Every lesson is classified into one of four prophecy types, displayed as a color
 | Direct Prophecy | Amber | A clear predictive statement in the Old Testament that is fulfilled literally in Jesus. These are explicit "this will happen" declarations — such as the virgin birth (Isaiah 7:14) or the birthplace of Bethlehem (Micah 5:2). |
 | Messianic Psalm | Blue | A Psalm cited by New Testament authors and applied directly to Christ. These include royal psalms, lament psalms, and enthronement psalms that the early church understood as speaking of Jesus — such as Psalm 22 (crucifixion details) and Psalm 110 (seated at God's right hand). |
 | Typology | Green | A person, event, or institution in the Old Testament that structurally foreshadows Christ. The "type" is not a prediction in the strict sense but a divinely ordered pattern — such as the Passover lamb, the bronze serpent, or Jonah's three days. |
-| Thematic Foreshadowing | Purple | A broader theme, image, or motif that the New Testament or Rabbinic tradition connects to Jesus. These are not single-verse predictions but recurring ideas — such as the Suffering Servant thread, the shepherd motif, or the concept of a new covenant. |
+| Prophetic Pattern | Purple | A broader theme, image, or motif that the New Testament or Rabbinic tradition connects to Jesus. These are not single-verse predictions but recurring ideas — such as the Suffering Servant thread, the shepherd motif, or the concept of a new covenant. |
 
 ## Tech Stack
 

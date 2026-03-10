@@ -13,14 +13,14 @@ const ALL_TYPES: ProphecyType[] = [
   'Direct Prophecy',
   'Messianic Psalm',
   'Typology',
-  'Thematic Foreshadowing',
+  'Prophetic Pattern',
 ];
 
 const typeActiveStyles: Record<ProphecyType, string> = {
   'Direct Prophecy':        'bg-[#fef3c7] border-[#f59e0b] text-[#92400e]',
   'Messianic Psalm':        'bg-[#dbeafe] border-[#3b82f6] text-[#1e40af]',
   'Typology':               'bg-[#d1fae5] border-[#10b981] text-[#065f46]',
-  'Thematic Foreshadowing': 'bg-[#ede9fe] border-[#8b5cf6] text-[#4c1d95]',
+  'Prophetic Pattern':      'bg-[#ede9fe] border-[#8b5cf6] text-[#4c1d95]',
 };
 
 type SortOption = 'default' | 'category' | 'completed-first' | 'not-completed-first';

@@ -7,7 +7,7 @@ const typeGuide: { type: ProphecyType; description: string }[] = [
   { type: 'Direct Prophecy',        description: 'A clear predictive statement fulfilled literally in Jesus.' },
   { type: 'Messianic Psalm',        description: 'A Psalm cited by NT authors and applied directly to Christ.' },
   { type: 'Typology',               description: 'A person, event, or pattern that structurally foreshadows Christ.' },
-  { type: 'Thematic Foreshadowing', description: 'A theme or image the NT or Rabbinic tradition applies to Jesus.' },
+  { type: 'Prophetic Pattern',      description: 'A theme or image the NT or Rabbinic tradition applies to Jesus.' },
 ];
 
 export default function MapPage() {

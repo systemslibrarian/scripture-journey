@@ -52,7 +52,7 @@ export type ProphecyType =
   | 'Direct Prophecy'
   | 'Messianic Psalm'
   | 'Typology'
-  | 'Thematic Foreshadowing';
+  | 'Prophetic Pattern';
 
 export interface Lesson {
   id: number;
