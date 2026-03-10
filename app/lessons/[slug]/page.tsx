@@ -57,24 +57,6 @@ export default function LessonPage({ params }: Props) {
           {lesson.summary}
         </p>
 
-        <div className="mt-3 flex flex-wrap gap-2">
-          {lesson.scholarship?.payne?.attested && (
-            <span className="inline-flex items-center rounded-full bg-[#efe8fb] px-2 py-1 text-xs font-medium text-[#5f3a8a]">
-              📘 Payne ✓
-            </span>
-          )}
-          {lesson.scholarship?.edersheim?.attested && (
-            <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-2 py-1 text-xs font-medium text-[#7e622a]">
-              📚 Edersheim ✓
-            </span>
-          )}
-          {lesson.scholarship?.mcdowell?.attested && (
-            <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-2 py-1 text-xs font-medium text-[#2a5a7e]">
-              📖 McDowell ✓
-            </span>
-          )}
-        </div>
-
         <div className="mt-6">
           <MarkCompleteButton slug={lesson.slug} />
         </div>

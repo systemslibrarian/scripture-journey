@@ -4,10 +4,10 @@ import ProphecyTypeBadge from "@/components/ProphecyTypeBadge"
 import MapCategoryCards from "@/components/MapCategoryCards"
 
 const typeGuide: { type: ProphecyType; description: string }[] = [
-  { type: 'Direct Prophecy',        description: 'A clear predictive statement fulfilled literally in Jesus.' },
-  { type: 'Messianic Psalm',        description: 'A Psalm cited by NT authors and applied directly to Christ.' },
-  { type: 'Typology',               description: 'A person, event, or pattern that structurally foreshadows Christ.' },
-  { type: 'Prophetic Pattern',      description: 'A theme or image the NT or Rabbinic tradition applies to Jesus.' },
+  { type: 'Direct Prophecy',        description: 'A clear predictive statement in the OT naming or describing a future figure or event, fulfilled literally in Jesus.' },
+  { type: 'Messianic Psalm',        description: 'A Psalm applied by New Testament authors directly to Jesus, where the original context carries recognized messianic weight.' },
+  { type: 'Typology',               description: 'A person, event, or pattern in the OT that foreshadows Christ structurally. Real connection, but symbolic rather than directly predictive.' },
+  { type: 'Prophetic Pattern',      description: 'A passage carrying a theme or image applied to Jesus by NT writers or ancient Rabbinic tradition (Edersheim), understood as thematic rather than predictive.' },
 ];
 
 export default function MapPage() {

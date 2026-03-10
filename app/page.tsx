@@ -8,7 +8,12 @@ export default function HomePage() {
 
   return (
     <div className="space-y-8">
-      <ContinueCard />
+      <div className="text-center">
+        <p className="text-lg italic text-[#4a4338]">
+          &ldquo;And beginning with Moses and all the Prophets, he explained to them what was said in all the Scriptures concerning himself.&rdquo;
+        </p>
+        <p className="mt-2 text-sm font-semibold text-[#7e622a]">— Luke 24:27 (NIV)</p>
+      </div>
 
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
@@ -21,11 +26,11 @@ export default function HomePage() {
 
         <p className="mt-4 max-w-3xl text-[#4a4338]">
           Browse the full prophecy track or search by title, Scripture
-          reference, or theme. &ldquo;And beginning with Moses and all the
-          Prophets, he explained to them what was said in all the Scriptures
-          concerning himself.&rdquo; - Luke 24:27 (NIV)
+          reference, or theme.
         </p>
       </div>
+
+      <ContinueCard />
 
       <Suspense>
         <ProphecySearch />

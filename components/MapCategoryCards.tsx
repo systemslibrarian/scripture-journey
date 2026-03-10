@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { prophecies } from '@/data/prophecies'
 import { getCompletedLessons } from '@/lib/progress'
-import CompletedIndicator from '@/components/CompletedIndicator'
+import ProphecyTypeBadge from '@/components/ProphecyTypeBadge'
 import type { LessonCategory } from '@/lib/types'
 
 const categoryConfig = [
@@ -114,22 +114,8 @@ export default function MapCategoryCards() {
                   <span className="mt-0.5 block text-xs text-[#4a4338]">
                     {lesson.otReference} → {lesson.ntReference}
                   </span>
-                  <span className="mt-1 flex flex-wrap gap-1">
-                    {lesson.scholarship?.payne?.attested && (
-                      <span className="inline-flex items-center rounded-full bg-[#efe8fb] px-1.5 py-0.5 text-[10px] font-medium text-[#5f3a8a]">
-                        📘 Payne ✓
-                      </span>
-                    )}
-                    {lesson.scholarship?.edersheim?.attested && (
-                      <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-1.5 py-0.5 text-[10px] font-medium text-[#7e622a]">
-                        📚 Edersheim ✓
-                      </span>
-                    )}
-                    {lesson.scholarship?.mcdowell?.attested && (
-                      <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-1.5 py-0.5 text-[10px] font-medium text-[#2a5a7e]">
-                        📖 McDowell ✓
-                      </span>
-                    )}
+                  <span className="mt-1 block">
+                    <ProphecyTypeBadge type={lesson.prophecyType} size="xs" />
                   </span>
                   {completedSlugs.includes(lesson.slug) && (
                     <span className="absolute right-2 top-2 inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" aria-label="Completed" />

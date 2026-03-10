@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { getAllLessons } from '@/data/lessons'
-import { getCompletedLessons, saveQuizScore } from '@/lib/progress'
+import { getCompletedLessons, saveQuizScore, incrementQuizSessions } from '@/lib/progress'
 import ProphecyTypeBadge from '@/components/ProphecyTypeBadge'
 import type { Lesson } from '@/lib/types'
 
@@ -93,6 +93,7 @@ export default function QuizPage() {
           fillInBlank: undefined,
         })
       })
+      incrementQuizSessions()
       setState(prev => ({ ...prev, phase: 'results', selectedChoice: null }))
     } else {
       setState(prev => ({

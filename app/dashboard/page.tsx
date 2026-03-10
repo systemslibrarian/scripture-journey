@@ -9,7 +9,7 @@ import { getCompletionCount, getCompletionPercent, getQuizStats, getStreak, getC
 export default function DashboardPage() {
 
   const [completed, setCompleted] = useState(0)
-  const [quizStats, setQuizStats] = useState({ total: 0, perfect: 0, attempted: 0 })
+  const [quizStats, setQuizStats] = useState({ total: 0, perfect: 0, attempted: 0, sessions: 0 })
   const [streak, setStreak] = useState({ current: 0, best: 0 })
   const [completedCount, setCompletedCount] = useState(0)
 
@@ -94,29 +94,29 @@ export default function DashboardPage() {
 
           <div className="mt-3 grid grid-cols-2 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-[#1b1a17]">{quizStats.attempted}</div>
+              <div className="text-2xl font-bold text-[#1b1a17]">{quizStats.sessions}</div>
               <div className="text-xs text-[#4a4338]">Quizzes Taken</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-emerald-700">{quizStats.perfect}</div>
-              <div className="text-xs text-[#4a4338]">Perfect Scores</div>
+              <div className="text-xs text-[#4a4338]">Questions Correct</div>
             </div>
           </div>
 
-          {quizStats.attempted > 0 && (
+          {quizStats.total > 0 && (
             <div className="mt-4">
-              <div className="mb-1 text-xs text-[#5f5548]">Accuracy</div>
+              <div className="mb-1 text-xs text-[#5f5548]">Accuracy ({quizStats.perfect} / {quizStats.total} questions)</div>
               <div
                 className="h-3 overflow-hidden rounded-full bg-[#e8ddca]"
                 role="progressbar"
-                aria-valuenow={Math.round((quizStats.perfect / quizStats.attempted) * 100)}
+                aria-valuenow={Math.round((quizStats.perfect / quizStats.total) * 100)}
                 aria-valuemin={0}
                 aria-valuemax={100}
-                aria-label={`${quizStats.perfect} of ${quizStats.attempted} quizzes perfect`}
+                aria-label={`${quizStats.perfect} of ${quizStats.total} questions correct`}
               >
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-700 transition-all"
-                  style={{ width: `${Math.round((quizStats.perfect / quizStats.attempted) * 100)}%` }}
+                  style={{ width: `${Math.round((quizStats.perfect / quizStats.total) * 100)}%` }}
                 />
               </div>
             </div>

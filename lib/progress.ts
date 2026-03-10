@@ -53,6 +53,7 @@ export function clearProgress() {
 /* ── Quiz scoring ── */
 
 const QUIZ_SCORE_KEY = "scripture_journey_quiz_scores"
+const QUIZ_SESSION_KEY = "scripture_journey_quiz_sessions"
 const STREAK_KEY = "scripture_journey_streak"
 
 export interface QuizScore {
@@ -84,13 +85,26 @@ export function getQuizScore(slug: string): QuizScore | null {
   return getScoreMap()[slug] ?? null
 }
 
-export function getQuizStats(): { total: number; perfect: number; attempted: number } {
+export function getQuizStats(): { total: number; perfect: number; attempted: number; sessions: number } {
   const scores = getScoreMap()
   const entries = Object.values(scores)
   const perfect = entries.filter(
     (s) => s.multipleChoice && s.fillInBlank !== false
   ).length
-  return { total: entries.length, perfect, attempted: entries.length }
+  const sessions = getQuizSessions()
+  return { total: entries.length, perfect, attempted: entries.length, sessions }
+}
+
+export function incrementQuizSessions() {
+  if (typeof window === "undefined") return
+  const current = getQuizSessions()
+  localStorage.setItem(QUIZ_SESSION_KEY, String(current + 1))
+}
+
+function getQuizSessions(): number {
+  if (typeof window === "undefined") return 0
+  const raw = localStorage.getItem(QUIZ_SESSION_KEY)
+  return raw ? parseInt(raw, 10) || 0 : 0
 }
 
 /* ── Streak tracking ── */
