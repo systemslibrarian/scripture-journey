@@ -55,32 +55,17 @@ Inspired by Luke 24:27, the app helps users explore the unfolding promise of the
 
 ## Screenshots
 
-<table align="center">
-  <tr>
-    <td align="center"><strong>Homepage</strong></td>
-    <td align="center"><strong>Prophecy Map</strong></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/home.png" alt="Homepage" width="450"></td>
-    <td><img src="docs/screenshots/map.png" alt="Prophecy Map" width="450"></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Timeline</strong></td>
-    <td align="center"><strong>Lesson Page</strong></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/timeline.png" alt="Timeline" width="450"></td>
-    <td><img src="docs/screenshots/lesson.png" alt="Lesson Page" width="450"></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Dashboard</strong></td>
-    <td align="center"><strong>Quiz</strong></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/dashboard.png" alt="Dashboard" width="450"></td>
-    <td><img src="docs/screenshots/quiz.png" alt="Quiz" width="450"></td>
-  </tr>
-</table>
+| Homepage | Prophecy Map |
+|:---:|:---:|
+| ![Homepage](docs/screenshots/home.png) | ![Prophecy Map](docs/screenshots/map.png) |
+
+| Timeline | Lesson Page |
+|:---:|:---:|
+| ![Timeline](docs/screenshots/timeline.png) | ![Lesson Page](docs/screenshots/lesson.png) |
+
+| Dashboard | Quiz |
+|:---:|:---:|
+| ![Dashboard](docs/screenshots/dashboard.png) | ![Quiz](docs/screenshots/quiz.png) |
 
 ---
 
