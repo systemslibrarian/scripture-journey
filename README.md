@@ -5,13 +5,10 @@
 </p>
 
 <p align="center">
-  <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 14"></a>
-  &nbsp;
-  <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
-  &nbsp;
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge" alt="MIT License"></a>
-  &nbsp;
-  <img src="https://img.shields.io/badge/PWA-Installable-f97316?style=for-the-badge&logo=pwa&logoColor=white" alt="PWA Installable">
+  <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js 14"></a>
+  <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-22c55e?style=flat-square" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/PWA-Installable-f97316?style=flat-square&logo=pwa&logoColor=white" alt="PWA Installable">
 </p>
 
 <p align="center"><em>A Christ-centered learning app for exploring how the whole Bible points to Jesus.</em></p>
