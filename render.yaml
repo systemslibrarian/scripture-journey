@@ -32,4 +32,4 @@ services:
 databases:
   - name: scripture-journey-db
     plan: free
-    databaseName: scripture_journey
+    databaseName: scripture_journey    git add -A && git commit -m "Infer at least 1 quiz session when scores exist" && git push
