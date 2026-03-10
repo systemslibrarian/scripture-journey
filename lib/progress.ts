@@ -91,7 +91,7 @@ export function getQuizStats(): { total: number; perfect: number; attempted: num
   const perfect = entries.filter(
     (s) => s.multipleChoice && s.fillInBlank !== false
   ).length
-  const sessions = getQuizSessions()
+  const sessions = Math.max(getQuizSessions(), entries.length > 0 ? 1 : 0)
   return { total: entries.length, perfect, attempted: entries.length, sessions }
 }
 

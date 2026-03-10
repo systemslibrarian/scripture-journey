@@ -17,20 +17,23 @@ export default function HomePage() {
 
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
-          Top {totalLessons} Prophecies
+          {totalLessons} Prophecy Lessons
         </div>
 
         <h1 className="mt-2 text-3xl font-bold text-[#1b1a17]">
-          Search and Explore {totalLessons} Lessons That Point to Jesus
+          Explore How Scripture Points to Jesus
         </h1>
 
         <p className="mt-4 max-w-3xl text-[#4a4338]">
-          Browse the full prophecy track or search by title, Scripture
-          reference, or theme.
+          Scripture Journey walks you through the prophecies, patterns, and promises in the Old Testament that Christians believe find their fulfillment in Jesus. Start a lesson, track your progress, and go deeper with each study.
         </p>
       </div>
 
       <ContinueCard />
+
+      <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
+        Browse All Lessons
+      </div>
 
       <Suspense>
         <ProphecySearch />

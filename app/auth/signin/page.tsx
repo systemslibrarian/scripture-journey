@@ -39,7 +39,7 @@ export default function SignInPage() {
     <main className="mx-auto max-w-md px-4 py-20">
       <h1 className="text-2xl font-bold text-[#1b1a17]">Sign In</h1>
       <p className="mt-2 text-sm text-[#4a4338]">
-        Enter your email to receive a sign-in link. No password needed.
+        Sign in to save your progress and quiz scores across devices. No password needed — just enter your email.
       </p>
 
       {sent ? (

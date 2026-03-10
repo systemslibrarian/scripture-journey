@@ -4,9 +4,11 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { prophecies } from "@/data/prophecies"
 import ProgressBar from "@/components/ProgressBar"
-import { getCompletionCount, getCompletionPercent, getQuizStats, getStreak, getCompletedLessons } from "@/lib/progress"
+import { useSession } from 'next-auth/react'
+import { getCompletionCount, getQuizStats, getStreak, getCompletedLessons } from "@/lib/progress"
 
 export default function DashboardPage() {
+  const { status } = useSession()
 
   const [completed, setCompleted] = useState(0)
   const [quizStats, setQuizStats] = useState({ total: 0, perfect: 0, attempted: 0, sessions: 0 })
@@ -22,7 +24,7 @@ export default function DashboardPage() {
   }, [])
 
   const total = prophecies.length
-  const percent = getCompletionPercent(total)
+  const percent = Math.round((completed / Math.max(total, 1)) * 100)
 
   const firstLesson = prophecies[0]
 
@@ -81,6 +83,12 @@ export default function DashboardPage() {
         <div className="mt-4">
           <ProgressBar current={completed} total={total} />
         </div>
+
+        {status === 'unauthenticated' && (
+          <p className="mt-3 text-sm text-[#4a4338]">
+            <Link href="/auth/signin" className="font-semibold text-[#7e622a]">Sign in</Link> to save your progress across devices.
+          </p>
+        )}
 
       </div>
 

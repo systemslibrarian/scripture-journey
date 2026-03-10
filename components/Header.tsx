@@ -65,7 +65,7 @@ export default function Header() {
               href="/auth/signin"
               className="rounded-full border border-[#7e622a] bg-[#7e622a] px-3 py-1.5 text-xs font-medium text-white transition hover:bg-[#5e4a1f]"
             >
-              Sign In
+              Save Progress
             </Link>
           )}
         </nav>
