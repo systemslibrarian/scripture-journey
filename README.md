@@ -7,9 +7,13 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-14-black" alt="Next.js">
   <img src="https://img.shields.io/badge/TypeScript-blue" alt="TypeScript">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
   <img src="https://img.shields.io/badge/PWA-installable-orange" alt="PWA">
 </p>
+
+<p align="center"><em>A Christ-centered learning app for exploring how the whole Bible points to Jesus.</em></p>
+
+## Explore How the Bible Points to Jesus
 
 > *"And beginning with Moses and all the Prophets, he explained to them what was said in all the Scriptures concerning himself."*
 > — **Luke 24:27 (NIV)**
@@ -27,7 +31,7 @@ Each lesson connects:
 ## Quick Links
 
 🌐 [Live Demo](https://www.scripturejourney.com/) &nbsp;|&nbsp;
-📚 [Lessons](https://www.scripturejourney.com/lessons) &nbsp;|&nbsp;
+📚 [Browse Lessons](https://www.scripturejourney.com/prophecies) &nbsp;|&nbsp;
 🗺️ [Prophecy Map](https://www.scripturejourney.com/map) &nbsp;|&nbsp;
 ⏳ [Timeline](https://www.scripturejourney.com/timeline) &nbsp;|&nbsp;
 🧠 [Quiz](https://www.scripturejourney.com/quiz)
@@ -98,21 +102,6 @@ Inspired by Luke 24:27, the app helps users explore the unfolding promise of the
 
 ---
 
-## Scholarly Sources
-
-Lessons are attributed to three widely recognized works on messianic prophecy:
-
-### 📘 J. Barton Payne — *Encyclopedia of Biblical Prophecy* (1973)
-Catalogs 191 messianic prophecies and provides the numbering system used for cross-reference. **62 lessons** carry Payne attestation.
-
-### 📚 Alfred Edersheim — *The Life and Times of Jesus the Messiah* (1883)
-Appendix IX catalogs 456 OT passages applied to the Messiah. **176 lessons** carry Edersheim attestation.
-
-### 📖 Josh McDowell — *The New Evidence That Demands a Verdict* (1999)
-Provides detailed evidence for prophecy fulfillment. **60 lessons** carry McDowell attestation.
-
----
-
 ## Example Lesson
 
 | Field | Content |
@@ -125,6 +114,21 @@ Provides detailed evidence for prophecy fulfillment. **60 lessons** carry McDowe
 | **Type** | Direct Prophecy |
 
 > *"Why This Matters"* — This is the first messianic promise in Scripture, sometimes called the *Protoevangelium* ("first gospel"). From the very moment of humanity's fall, God pointed toward a Redeemer.
+
+---
+
+## Scholarly Sources
+
+Lessons are attributed to three widely recognized works on messianic prophecy:
+
+### 📘 J. Barton Payne — *Encyclopedia of Biblical Prophecy* (1973)
+Catalogs 191 messianic prophecies and provides the numbering system used for cross-reference. **62 lessons** carry Payne attestation.
+
+### 📚 Alfred Edersheim — *The Life and Times of Jesus the Messiah* (1883)
+Appendix IX catalogs 456 OT passages applied to the Messiah. **176 lessons** carry Edersheim attestation.
+
+### 📖 Josh McDowell — *The New Evidence That Demands a Verdict* (1999)
+Provides detailed evidence for prophecy fulfillment. **60 lessons** carry McDowell attestation.
 
 ---
 
