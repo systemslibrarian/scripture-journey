@@ -13,8 +13,8 @@ Scripture Journey is a Christ-centered app that helps users explore how the whol
 - Each lesson includes Old Testament prophecy, New Testament fulfillment, and a unique "Why This Matters" reflection
 - Prophecy type classification with color-coded badges (see Prophecy Types below)
 - Scholarly attribution badges from three academic sources (see below)
-- Home page with live search/filter by title, Scripture reference, theme, prophecy type, and scholar
-- "Continue Where You Left Off" card on the home page showing progress and next lesson
+- Home page with orienting welcome message, "Continue Where You Left Off" card, and browse-all lesson search
+- Prophecies page with full search/filter by title, Scripture reference, theme, prophecy type, and scholar
 - Visual Map grouping lessons by 7 categories with per-category progress bars and completion indicators
 - Dashboard with progress tracking, stats row (streak, completed, quiz, best streak), and quiz CTA
 - Streak indicator in the header navigation
@@ -105,7 +105,7 @@ npm run lint
 
 ## Main Routes
 
-- Home (Prophecy Search + Continue Card): `/`
+- Home (Welcome + Continue Card + Browse All Lessons): `/`
 - Dashboard: `/dashboard`
 - Visual Map: `/map`
 - Quiz: `/quiz`

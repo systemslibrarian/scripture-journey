@@ -54,6 +54,17 @@ export type ProphecyType =
   | 'Typology'
   | 'Prophetic Pattern';
 
+export type TimelineEra =
+  | "Beginnings"
+  | "Patriarchs"
+  | "Exodus and Wilderness"
+  | "Conquest and Judges"
+  | "Kingdom and David"
+  | "Psalms and Worship"
+  | "Divided Kingdom"
+  | "Exile and Prophetic Hope"
+  | "Return and Restoration";
+
 export interface Lesson {
   id: number;
   slug: string;
@@ -68,6 +79,8 @@ export interface Lesson {
   reflection: string;
   quiz: QuizData;
   prophecyType: ProphecyType;
+  timelineEra: TimelineEra;
+  timelineOrder: number;
   status?: 'active' | 'coming-soon';
   scholarship?: Scholarship;
 }

@@ -1,4 +1,4 @@
-import type { Lesson, PayneData, Scholarship, ProphecyType } from "@/lib/types"
+import type { Lesson, PayneData, Scholarship, ProphecyType, TimelineEra } from "@/lib/types"
 
 const reflectionTemplates: Record<Lesson["category"], string[]> = {
   Lineage: [
@@ -227,6 +227,35 @@ const _prophecyTypeMap: Record<number, ProphecyType> = {
   211: 'Messianic Psalm',
 };
 
+const _eraOrder: Record<TimelineEra, number> = {
+  'Beginnings': 1,
+  'Patriarchs': 2,
+  'Exodus and Wilderness': 3,
+  'Conquest and Judges': 4,
+  'Kingdom and David': 5,
+  'Psalms and Worship': 6,
+  'Divided Kingdom': 7,
+  'Exile and Prophetic Hope': 8,
+  'Return and Restoration': 9,
+};
+
+function deriveTimelineEra(otReference: string): TimelineEra {
+  const lower = otReference.toLowerCase();
+  if (lower.startsWith('genesis')) {
+    const m = otReference.match(/Genesis\s+(\d+)/);
+    const ch = m ? parseInt(m[1], 10) : 1;
+    return ch <= 11 ? 'Beginnings' : 'Patriarchs';
+  }
+  if (lower.startsWith('exodus') || lower.startsWith('leviticus') || lower.startsWith('numbers') || lower.startsWith('deuteronomy')) return 'Exodus and Wilderness';
+  if (lower.startsWith('joshua') || lower.startsWith('judges') || lower.startsWith('ruth')) return 'Conquest and Judges';
+  if (lower.startsWith('1 samuel') || lower.startsWith('2 samuel')) return 'Kingdom and David';
+  if (lower.startsWith('psalm')) return 'Psalms and Worship';
+  if (lower.startsWith('isaiah') || lower.startsWith('hosea') || lower.startsWith('joel') || lower.startsWith('amos') || lower.startsWith('micah') || lower.startsWith('jonah')) return 'Divided Kingdom';
+  if (lower.startsWith('jeremiah') || lower.startsWith('ezekiel') || lower.startsWith('daniel')) return 'Exile and Prophetic Hope';
+  if (lower.startsWith('zechariah') || lower.startsWith('malachi')) return 'Return and Restoration';
+  return 'Divided Kingdom';
+}
+
 function makeLesson(
   id:number,
   slug:string,
@@ -241,6 +270,7 @@ function makeLesson(
   scholarship?: Scholarship
 ):Lesson{
 
+const era = deriveTimelineEra(otReference);
 return{
 id,
 slug,
@@ -253,6 +283,8 @@ ntText,
 summary: whyItMatters.split(/(?<=[.!?])\s+/)[0] ?? whyItMatters,
 whyItMatters,
 prophecyType: _prophecyTypeMap[id] ?? 'Direct Prophecy',
+timelineEra: era,
+timelineOrder: _eraOrder[era],
 reflection:buildReflection(id, category, title, otReference, ntReference),
 quiz: buildQuiz(id, otReference, ntReference),
 ...(status ? { status } : {}),
