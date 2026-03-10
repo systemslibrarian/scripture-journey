@@ -1,7 +1,13 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import type { ProphecyType } from "@/lib/types"
 import ProphecyTypeBadge from "@/components/ProphecyTypeBadge"
 import MapCategoryCards from "@/components/MapCategoryCards"
+
+export const metadata: Metadata = {
+  title: "Prophecy Map — Scripture Journey",
+  description: "A visual map of 211 prophecy lessons organized by category: Lineage, Identity, Ministry, Rejection, Passion, Resurrection, and Kingdom.",
+}
 
 const typeGuide: { type: ProphecyType; description: string }[] = [
   { type: 'Direct Prophecy',        description: 'A clear predictive statement in the OT naming or describing a future figure or event, fulfilled literally in Jesus.' },

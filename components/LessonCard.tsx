@@ -1,6 +1,7 @@
 import Link from "next/link"
 import type { Lesson } from "@/lib/types"
 import ProphecyTypeBadge from "@/components/ProphecyTypeBadge"
+import CompletedIndicator from "@/components/CompletedIndicator"
 
 type Props = {
   lesson: Lesson
@@ -13,17 +14,20 @@ export default function LessonCard({ lesson }: Props) {
       aria-label={`Lesson ${lesson.id}: ${lesson.title}`}
       className="rounded-3xl border border-[#d8ccb8] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="text-sm font-semibold text-[#7e622a]">
-          Lesson {lesson.id}
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-semibold text-[#7e622a]">
+            Lesson {lesson.id}
+          </span>
+          <span className="rounded-full border border-[#d8ccb8] bg-[#fbf7ee] px-2 py-0.5 text-[10px] font-medium text-[#7e622a]">
+            {lesson.category}
+          </span>
         </div>
 
-        <span className="rounded-full bg-[#fbf7ee] px-3 py-1 text-xs font-semibold text-[#7e622a]">
-          {lesson.category}
-        </span>
+        <CompletedIndicator slug={lesson.slug} />
       </div>
 
-      <h3 className="mt-3 text-xl font-bold text-[#1b1a17]">
+      <h3 className="mt-2 text-xl font-bold text-[#1b1a17]">
         {lesson.title}
       </h3>
 

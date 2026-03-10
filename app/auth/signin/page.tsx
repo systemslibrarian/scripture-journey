@@ -36,7 +36,7 @@ export default function SignInPage() {
   }
 
   return (
-    <main className="mx-auto max-w-md px-4 py-20">
+    <div className="mx-auto max-w-md py-10">
       <h1 className="text-2xl font-bold text-[#1b1a17]">Sign In</h1>
       <p className="mt-2 text-sm text-[#4a4338]">
         Sign in to save your progress and quiz scores across devices. No password needed — just enter your email.
@@ -75,6 +75,6 @@ export default function SignInPage() {
           </button>
         </form>
       )}
-    </main>
+    </div>
   )
 }

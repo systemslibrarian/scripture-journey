@@ -1,16 +1,10 @@
 'use client'
 
-import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { prophecies } from "@/data/prophecies"
-import CompletedIndicator from "@/components/CompletedIndicator"
-import ProphecyTypeBadge from "@/components/ProphecyTypeBadge"
-import {
-  useLessonFilters,
-  ALL_TYPES,
-  typeActiveStyles,
-  scholarActiveStyles,
-} from "@/hooks/useLessonFilters"
+import { getAllLessons } from "@/data/lessons"
+import LessonCard from "@/components/LessonCard"
+import FilterControls from "@/components/FilterControls"
+import { useLessonFilters } from "@/hooks/useLessonFilters"
 import type { SortOption } from "@/hooks/useLessonFilters"
 
 export default function ProphecySearch() {
@@ -27,8 +21,9 @@ export default function ProphecySearch() {
   } = useLessonFilters()
 
   function handleSurpriseMe() {
-    const incomplete = prophecies.filter(l => !completedSlugs.includes(l.slug))
-    const pool = incomplete.length > 0 ? incomplete : prophecies
+    const allLessons = getAllLessons()
+    const incomplete = allLessons.filter(l => !completedSlugs.includes(l.slug))
+    const pool = incomplete.length > 0 ? incomplete : allLessons
     const random = pool[Math.floor(Math.random() * pool.length)]
     router.push(`/lessons/${random.slug}`)
   }
@@ -50,60 +45,18 @@ export default function ProphecySearch() {
           className="mt-4 w-full rounded-xl border border-[#d8ccb8] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#7e622a]"
         />
 
-        <div className="mt-3 flex flex-wrap items-center gap-2">
-          {ALL_TYPES.map((type) => (
-            <button
-              key={type}
-              onClick={() => setActiveType(activeType === type ? null : type)}
-              className={`rounded-full px-3 py-1 text-xs font-medium border transition
-                ${activeType === type
-                  ? typeActiveStyles[type]
-                  : 'bg-white border-[#d8ccb8] text-[#4a4338] hover:border-[#7e622a]'
-                }`}
-            >
-              {type}
-            </button>
-          ))}
-          {activeType && (
-            <button
-              onClick={() => setActiveType(null)}
-              className="rounded-full px-3 py-1 text-xs font-medium border border-[#d8ccb8] text-[#7e622a] hover:bg-[#fbf7ee]"
-            >
-              Clear ✕
-            </button>
-          )}
-        </div>
-
-        <div className="mt-3 flex flex-wrap items-center gap-2">
-          <span className="text-xs text-[#7e622a] font-semibold">Scholar:</span>
-          <button
-            onClick={() => setScholarFilter('all')}
-            className={`rounded-full px-3 py-1 text-xs font-medium border transition ${scholarFilter === 'all' ? 'bg-[#fbf7ee] border-[#7e622a] text-[#7e622a]' : 'bg-white border-[#d8ccb8] text-[#4a4338] hover:border-[#7e622a]'}`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setScholarFilter(scholarFilter === 'payne' ? 'all' : 'payne')}
-            className={`rounded-full px-3 py-1 text-xs font-medium border transition ${scholarFilter === 'payne' ? scholarActiveStyles.payne : 'bg-white border-[#d8ccb8] text-[#4a4338] hover:border-[#7e622a]'}`}
-          >
-            📘 Payne ({scholarCounts.payne})
-          </button>
-          <button
-            onClick={() => setScholarFilter(scholarFilter === 'edersheim' ? 'all' : 'edersheim')}
-            className={`rounded-full px-3 py-1 text-xs font-medium border transition ${scholarFilter === 'edersheim' ? scholarActiveStyles.edersheim : 'bg-white border-[#d8ccb8] text-[#4a4338] hover:border-[#7e622a]'}`}
-          >
-            📚 Edersheim ({scholarCounts.edersheim})
-          </button>
-          <button
-            onClick={() => setScholarFilter(scholarFilter === 'mcdowell' ? 'all' : 'mcdowell')}
-            className={`rounded-full px-3 py-1 text-xs font-medium border transition ${scholarFilter === 'mcdowell' ? scholarActiveStyles.mcdowell : 'bg-white border-[#d8ccb8] text-[#4a4338] hover:border-[#7e622a]'}`}
-          >
-            📖 McDowell ({scholarCounts.mcdowell})
-          </button>
-        </div>
+        <FilterControls
+          activeType={activeType}
+          onTypeChange={setActiveType}
+          scholarFilter={scholarFilter}
+          onScholarChange={setScholarFilter}
+          scholarCounts={scholarCounts}
+        />
 
         <div className="mt-3 flex flex-wrap items-center gap-3">
+          <label className="sr-only" htmlFor="sort-select">Sort lessons</label>
           <select
+            id="sort-select"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
             className="rounded-xl border border-[#d8ccb8] px-3 py-1.5 text-xs text-[#4a4338] focus:outline-none focus:ring-2 focus:ring-[#7e622a]"
@@ -127,58 +80,7 @@ export default function ProphecySearch() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
         {results.map((lesson) => (
-          <Link
-            key={lesson.slug}
-            href={`/lessons/${lesson.slug}`}
-            className="rounded-3xl border border-[#d8ccb8] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-          >
-
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-semibold text-[#7e622a]">
-                  Lesson {lesson.id}
-                </span>
-                <span className="rounded-full border border-[#d8ccb8] bg-[#fbf7ee] px-2 py-0.5 text-[10px] font-medium text-[#7e622a]">
-                  {lesson.category}
-                </span>
-              </div>
-
-              <CompletedIndicator slug={lesson.slug} />
-            </div>
-
-            <h2 className="mt-2 text-xl font-bold text-[#1b1a17]">
-              {lesson.title}
-            </h2>
-
-            <p className="mt-2 text-sm text-[#4a4338]">
-              {lesson.otReference} → {lesson.ntReference}
-            </p>
-
-            <div className="mt-2 flex flex-wrap gap-1">
-              {lesson.scholarship?.payne?.attested && (
-                <span className="inline-flex items-center rounded-full bg-[#efe8fb] px-1.5 py-0.5 text-[10px] font-medium text-[#5f3a8a]">📘 Payne ✓</span>
-              )}
-              {lesson.scholarship?.edersheim?.attested && (
-                <span className="inline-flex items-center rounded-full bg-[#f5f0e5] px-1.5 py-0.5 text-[10px] font-medium text-[#7e622a]">📚 Edersheim ✓</span>
-              )}
-              {lesson.scholarship?.mcdowell?.attested && (
-                <span className="inline-flex items-center rounded-full bg-[#e8f0f5] px-1.5 py-0.5 text-[10px] font-medium text-[#2a5a7e]">📖 McDowell ✓</span>
-              )}
-            </div>
-
-            <div className="mt-2">
-              <ProphecyTypeBadge type={lesson.prophecyType} size="xs" />
-            </div>
-
-            <p className="mt-4 text-sm leading-6 text-[#4a4338]">
-              {lesson.summary}
-            </p>
-
-            <div className="mt-4 text-sm font-semibold text-[#7e622a]">
-              Open lesson →
-            </div>
-
-          </Link>
+          <LessonCard key={lesson.slug} lesson={lesson} />
         ))}
 
         {results.length === 0 && (

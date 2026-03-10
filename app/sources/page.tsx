@@ -1,5 +1,11 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import { getAllLessons } from "@/data/lessons"
+
+export const metadata: Metadata = {
+  title: "Sources and Methodology — Scripture Journey",
+  description: "Academic attribution and methodology for Scripture Journey, featuring Payne, Edersheim, and McDowell scholarship.",
+}
 
 export default function SourcesPage() {
   const allLessons = getAllLessons()

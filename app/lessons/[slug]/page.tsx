@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import type { Metadata } from "next"
 import ScriptureBlock from "@/components/ScriptureBlock"
 import MarkCompleteButton from "@/components/MarkCompleteButton"
 import CompletedIndicator from "@/components/CompletedIndicator"
@@ -9,6 +10,20 @@ import { getLessonBySlug, getLessonSlugs, getAllLessons } from "@/data/lessons"
 
 export function generateStaticParams() {
   return getLessonSlugs()
+}
+
+export function generateMetadata({ params }: Props): Metadata {
+  const lesson = getLessonBySlug(params.slug)
+  if (!lesson) return { title: "Lesson Not Found" }
+  return {
+    title: `${lesson.title} — Scripture Journey`,
+    description: lesson.summary,
+    openGraph: {
+      title: `${lesson.title} — Scripture Journey`,
+      description: lesson.summary,
+      type: "article",
+    },
+  }
 }
 
 type Props = {
@@ -95,6 +110,27 @@ export default function LessonPage({ params }: Props) {
       </div>
 
       <ScholarCredits scholarship={lesson.scholarship} />
+
+      <div className="flex flex-wrap gap-3">
+        <Link
+          href="/quiz"
+          className="rounded-xl border border-[#d8ccb8] px-4 py-2 text-sm font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
+        >
+          Take the Quiz
+        </Link>
+        <Link
+          href={`/map#${lesson.category.toLowerCase()}`}
+          className="rounded-xl border border-[#d8ccb8] px-4 py-2 text-sm font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
+        >
+          View on Map
+        </Link>
+        <Link
+          href="/dashboard"
+          className="rounded-xl border border-[#d8ccb8] px-4 py-2 text-sm font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
+        >
+          Your Progress
+        </Link>
+      </div>
 
       <div className="flex items-stretch gap-4">
         {prevLesson ? (

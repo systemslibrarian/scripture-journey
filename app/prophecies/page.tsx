@@ -1,15 +1,21 @@
 import { Suspense } from "react"
+import type { Metadata } from "next"
 import ProphecySearch from "@/components/ProphecySearch"
-import { prophecies } from "@/data/prophecies"
+import { getAllLessons } from "@/data/lessons"
+
+export const metadata: Metadata = {
+  title: "Browse Prophecy Lessons — Scripture Journey",
+  description: "Search and explore 211 prophecy lessons that trace promises, patterns, and psalms pointing to Jesus.",
+}
 
 export default function PropheciesPage() {
-  const totalLessons = prophecies.length
+  const totalLessons = getAllLessons().length
 
   return (
     <div className="space-y-8">
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
-          Top {totalLessons} Prophecies
+          {totalLessons} Prophecy Lessons
         </div>
         <h1 className="mt-2 text-3xl font-bold text-[#1b1a17]">
           Search and Explore {totalLessons} Lessons That Point to Jesus

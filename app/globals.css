@@ -29,17 +29,6 @@ a {
   text-decoration: none;
 }
 
-/* Smooth card hover */
-
-.card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
 /* Focus visibility for keyboard navigation */
 
 :focus-visible {

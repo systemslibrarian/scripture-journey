@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { prophecies } from "@/data/prophecies"
+import { getAllLessons } from "@/data/lessons"
 import ProgressBar from "@/components/ProgressBar"
 import { useSession } from 'next-auth/react'
-import { getCompletionCount, getQuizStats, getStreak, getCompletedLessons } from "@/lib/progress"
+import { getCompletionCount, getQuizStats, getStreak } from "@/lib/progress"
 
 export default function DashboardPage() {
   const { status } = useSession()
@@ -13,20 +13,17 @@ export default function DashboardPage() {
   const [completed, setCompleted] = useState(0)
   const [quizStats, setQuizStats] = useState({ total: 0, perfect: 0, attempted: 0, sessions: 0 })
   const [streak, setStreak] = useState({ current: 0, best: 0 })
-  const [completedCount, setCompletedCount] = useState(0)
 
   useEffect(() => {
-    const count = getCompletionCount()
-    setCompleted(count)
+    setCompleted(getCompletionCount())
     setQuizStats(getQuizStats())
     setStreak(getStreak())
-    setCompletedCount(getCompletedLessons().length)
   }, [])
 
-  const total = prophecies.length
+  const total = getAllLessons().length
   const percent = Math.round((completed / Math.max(total, 1)) * 100)
 
-  const firstLesson = prophecies[0]
+  const firstLesson = getAllLessons()[0]
 
   return (
     <div className="space-y-8">
@@ -168,8 +165,8 @@ export default function DashboardPage() {
           <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">Quick Check</div>
           <div className="mt-2 text-xl font-semibold text-[#1b1a17]">Test Your Knowledge →</div>
           <div className="mt-1 text-sm text-[#4a4338]">
-            {completedCount > 0
-              ? `${completedCount} lesson${completedCount === 1 ? '' : 's'} completed — quiz yourself on what you've learned.`
+            {completed > 0
+              ? `${completed} lesson${completed === 1 ? '' : 's'} completed — quiz yourself on what you've learned.`
               : 'No lessons completed yet — try 10 random questions to get started.'}
           </div>
         </div>

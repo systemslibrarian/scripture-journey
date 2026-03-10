@@ -84,9 +84,3 @@ export interface Lesson {
   status?: 'active' | 'coming-soon';
   scholarship?: Scholarship;
 }
-
-export interface Badge {
-  id: string;
-  title: string;
-  description: string;
-}
