@@ -8,7 +8,8 @@ import AuthProvider from "@/components/AuthProvider"
 export const metadata: Metadata = {
   title: "Scripture Journey",
   description:
-    "Explore how the promises, prophecies, and story of Scripture point to Jesus.",
+    "Explore how the entire Bible points to Jesus through 211 prophecy-centered lessons inspired by Luke 24:27.",
+  metadataBase: new URL("https://scripturejourney.com"),
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -16,10 +17,28 @@ export const metadata: Metadata = {
     title: "Scripture Journey",
   },
   openGraph: {
-    siteName: "Scripture Journey",
-    type: "website",
     title: "Scripture Journey",
-    description: "Explore how the promises, prophecies, and story of Scripture point to Jesus — 211 lessons inspired by Luke 24:27.",
+    description:
+      "Explore how the entire Bible points to Jesus through 211 prophecy-centered lessons inspired by Luke 24:27.",
+    url: "https://scripturejourney.com",
+    siteName: "Scripture Journey",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Scripture Journey homepage preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scripture Journey",
+    description:
+      "Explore how the entire Bible points to Jesus through 211 prophecy-centered lessons inspired by Luke 24:27.",
+    images: ["/og-image.png"],
   },
 }
 

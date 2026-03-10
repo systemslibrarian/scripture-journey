@@ -1,5 +1,6 @@
 import Link from "next/link"
 import type { Lesson } from "@/lib/types"
+import { getTimelineEraMeta } from "@/lib/timeline"
 
 type Props = {
   lesson: Lesson
@@ -8,6 +9,7 @@ type Props = {
 
 export default function ContinueJourney({ lesson, nextLesson }: Props) {
   const categoryLessonsHref = `/map#${lesson.category.toLowerCase()}`
+  const eraMeta = getTimelineEraMeta(lesson.timelineEra)
 
   return (
     <div className="rounded-[2rem] border border-[#d8ccb8] bg-[#fffdf8] p-8 shadow-sm">
@@ -48,10 +50,10 @@ export default function ContinueJourney({ lesson, nextLesson }: Props) {
         >
           <span className="text-xs font-semibold text-[#7e622a]">Timeline</span>
           <span className="mt-1 block font-semibold text-[#1b1a17]">
-            See the Biblical Storyline
+            {eraMeta.title}
           </span>
           <span className="mt-0.5 block text-xs text-[#4a4338]">
-            Follow the messianic promise through history
+            {eraMeta.arcPhrase} · {eraMeta.dateRange}
           </span>
         </Link>
 

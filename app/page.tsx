@@ -14,6 +14,33 @@ export const metadata: Metadata = {
   },
 }
 
+const startingPaths: { label: string; title: string; description: string; href: string }[] = [
+  {
+    label: "Begin at the Beginning",
+    title: "Lesson 1: The First Promise",
+    description: "Start with the very first messianic prophecy in Genesis and follow the story forward.",
+    href: "/lessons/seed-of-the-woman",
+  },
+  {
+    label: "By Category",
+    title: "Explore the Prophecy Map",
+    description: "Choose a category — Lineage, Identity, Passion, Kingdom — and dive in.",
+    href: "/map",
+  },
+  {
+    label: "Chronologically",
+    title: "Follow the Timeline",
+    description: "See how God revealed the Messiah across nine eras of biblical history.",
+    href: "/timeline",
+  },
+  {
+    label: "Test Yourself",
+    title: "Jump into the Quiz",
+    description: "Try 10 questions drawn from the prophecy lessons — no preparation needed.",
+    href: "/quiz",
+  },
+]
+
 export default function HomePage() {
   const totalLessons = getAllLessons().length
 
@@ -42,34 +69,27 @@ export default function HomePage() {
 
       <ContinueCard />
 
-      <div className="grid gap-4 sm:grid-cols-3">
-        <Link
-          href="/map"
-          className="rounded-2xl border border-[#d8ccb8] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-        >
-          <div className="text-sm font-semibold text-[#7e622a]">Prophecy Map</div>
-          <p className="mt-1 text-sm text-[#4a4338]">
-            See all {totalLessons} lessons organized by category — from Lineage to Kingdom.
-          </p>
-        </Link>
-        <Link
-          href="/timeline"
-          className="rounded-2xl border border-[#d8ccb8] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-        >
-          <div className="text-sm font-semibold text-[#7e622a]">Timeline</div>
-          <p className="mt-1 text-sm text-[#4a4338]">
-            Follow the messianic promise from Genesis through the Prophets.
-          </p>
-        </Link>
-        <Link
-          href="/quiz"
-          className="rounded-2xl border border-[#d8ccb8] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-        >
-          <div className="text-sm font-semibold text-[#7e622a]">Quiz</div>
-          <p className="mt-1 text-sm text-[#4a4338]">
-            Test your knowledge with 10 randomized questions from the lessons.
-          </p>
-        </Link>
+      {/* ── Where to Start ── */}
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-[#fffdf8] p-8 shadow-sm">
+        <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
+          Where to Start
+        </div>
+        <p className="mt-2 text-sm text-[#4a4338]">
+          Not sure where to begin? Choose a starting path that fits your interest.
+        </p>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          {startingPaths.map((path) => (
+            <Link
+              key={path.href}
+              href={path.href}
+              className="rounded-xl border border-[#d8ccb8] bg-white px-5 py-4 transition hover:border-[#c8a84b] hover:shadow-sm"
+            >
+              <span className="text-xs font-semibold text-[#7e622a]">{path.label}</span>
+              <span className="mt-1 block font-semibold text-[#1b1a17]">{path.title}</span>
+              <span className="mt-0.5 block text-xs text-[#4a4338]">{path.description}</span>
+            </Link>
+          ))}
+        </div>
       </div>
 
       <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">

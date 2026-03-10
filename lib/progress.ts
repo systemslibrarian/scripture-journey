@@ -40,6 +40,11 @@ export function getCompletionCount(): number {
   return getCompletedLessons().length
 }
 
+export function getLastCompletedSlug(): string | null {
+  const completed = getCompletedLessons()
+  return completed.length > 0 ? completed[completed.length - 1] : null
+}
+
 export function getCompletionPercent(totalLessons: number): number {
   const safeTotal = Math.max(totalLessons, 1)
   return Math.round((getCompletionCount() / safeTotal) * 100)
