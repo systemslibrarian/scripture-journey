@@ -21,6 +21,7 @@
 Scripture Journey is a Christ-centered web app that helps readers explore how the entire Bible points to Jesus through **211 messianic prophecy lessons**.
 
 Each lesson connects:
+
 - Old Testament prophecy
 - New Testament fulfillment
 - Scholarly attribution
@@ -30,11 +31,13 @@ Each lesson connects:
 
 ## Quick Links
 
-🌐 [Live Demo](https://www.scripturejourney.com/) &nbsp;|&nbsp;
-📚 [Browse Lessons](https://www.scripturejourney.com/prophecies) &nbsp;|&nbsp;
-🗺️ [Prophecy Map](https://www.scripturejourney.com/map) &nbsp;|&nbsp;
-⏳ [Timeline](https://www.scripturejourney.com/timeline) &nbsp;|&nbsp;
-🧠 [Quiz](https://www.scripturejourney.com/quiz)
+<p align="center">
+  🌐 <a href="https://www.scripturejourney.com/">Live Demo</a> &nbsp;|&nbsp;
+  📚 <a href="https://www.scripturejourney.com/prophecies">Browse Lessons</a> &nbsp;|&nbsp;
+  🗺️ <a href="https://www.scripturejourney.com/map">Prophecy Map</a> &nbsp;|&nbsp;
+  ⏳ <a href="https://www.scripturejourney.com/timeline">Timeline</a> &nbsp;|&nbsp;
+  🧠 <a href="https://www.scripturejourney.com/quiz">Quiz</a>
+</p>
 
 ---
 
