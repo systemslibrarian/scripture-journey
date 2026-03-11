@@ -7,10 +7,10 @@ import { getAllLessons } from "@/data/lessons"
 
 export const metadata: Metadata = {
   title: "Scripture Journey — Explore How Scripture Points to Jesus",
-  description: "Walk through 211 prophecies, patterns, and promises in the Old Testament that Christians believe find their fulfillment in Jesus.",
+  description: "Walk through 193 prophecies, patterns, and promises in the Old Testament that Christians believe find their fulfillment in Jesus.",
   openGraph: {
     title: "Scripture Journey — Explore How Scripture Points to Jesus",
-    description: "Walk through 211 prophecies, patterns, and promises that point to Jesus. Inspired by Luke 24:27.",
+    description: "Walk through 193 prophecies, patterns, and promises that point to Jesus. Inspired by Luke 24:27.",
   },
 }
 

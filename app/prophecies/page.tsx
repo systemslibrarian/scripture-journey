@@ -5,10 +5,10 @@ import { getAllLessons } from "@/data/lessons"
 
 export const metadata: Metadata = {
   title: "Browse Prophecy Lessons — Scripture Journey",
-  description: "Search and explore 211 prophecy lessons that trace promises, patterns, and psalms pointing to Jesus.",
+  description: "Search and explore 193 prophecy lessons that trace promises, patterns, and psalms pointing to Jesus.",
   openGraph: {
     title: "Browse Prophecy Lessons — Scripture Journey",
-    description: "Search and filter 211 messianic prophecy lessons by type, scholar, and category.",
+    description: "Search and filter 193 messianic prophecy lessons by type, scholar, and category.",
   },
 }
 

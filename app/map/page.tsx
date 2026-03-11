@@ -6,10 +6,10 @@ import MapCategoryCards from "@/components/MapCategoryCards"
 
 export const metadata: Metadata = {
   title: "Prophecy Map — Scripture Journey",
-  description: "A visual map of 211 prophecy lessons organized by category: Lineage, Identity, Ministry, Rejection, Passion, Resurrection, and Kingdom.",
+  description: "A visual map of 193 prophecy lessons organized by category: Lineage, Identity, Ministry, Rejection, Passion, Resurrection, and Kingdom.",
   openGraph: {
     title: "Prophecy Map — Scripture Journey",
-    description: "See how 211 messianic prophecies map across seven categories — from Lineage to Kingdom.",
+    description: "See how 193 messianic prophecies map across seven categories — from Lineage to Kingdom.",
   },
 }
 
