@@ -104,7 +104,7 @@ Sorted by lesson number.
 | 98 | Hosea 1:10 | Romans 9:26 |
 | 99 | Genesis 9:27 | Ephesians 2:13 |
 | 100 | Exodus 16:33 | Revelation 2:17 |
-| 101 | Numbers 27:16 | John 3:34 |
+| 101 | Numbers 11:17 | John 3:34 |
 | 102 | Deuteronomy 33:17 | Revelation 5:5 |
 | 103 | Ruth 4:18 | Matthew 1:3 |
 | 104 | 1 Samuel 2:10 | Luke 1:69 |
@@ -115,12 +115,12 @@ Sorted by lesson number.
 | 109 | Psalm 18:31 | John 10:38 |
 | 110 | Psalm 18:50 | Matthew 1:1 |
 | 111 | Psalm 21:3 | Revelation 19:12 |
-| 112 | Psalm 45:2 | Hebrews 1:8 |
+| 112 | Psalm 45:2 | Luke 4:22 |
 | 113 | Psalm 60:7 | Revelation 7:4 |
 | 114 | Psalm 61:6 | Revelation 11:15 |
-| 115 | Psalm 72:1 | Luke 1:33 |
+| 115 | Psalm 72:5 | Luke 1:33 |
 | 116 | Psalm 90:15 | Revelation 21:4 |
-| 117 | Psalm 92:8 | Hebrews 1:13 |
+| 117 | Psalm 110:1 | Hebrews 1:13 |
 | 118 | Psalm 95:7 | Hebrews 3:15 |
 | 119 | Psalm 102:16 | Revelation 21:2 |
 | 120 | Psalm 106:44 | Luke 1:54 |
@@ -131,7 +131,7 @@ Sorted by lesson number.
 | 125 | Isaiah 8:14 | 1 Peter 2:8 |
 | 126 | Isaiah 24:23 | Revelation 5:13 |
 | 127 | Isaiah 28:5 | 1 Peter 5:4 |
-| 128 | Isaiah 32:14 | Acts 2:17 |
+| 128 | Isaiah 32:15 | Acts 2:17 |
 | 129 | Isaiah 40:1 | Luke 2:25 |
 | 130 | Isaiah 49:8 | 2 Corinthians 6:2 |
 | 131 | Isaiah 49:9 | Luke 4:18 |
@@ -140,7 +140,7 @@ Sorted by lesson number.
 | 134 | Isaiah 54:5 | Revelation 21:9 |
 | 135 | Isaiah 54:11 | Revelation 21:19 |
 | 136 | Isaiah 60:1 | John 8:12 |
-| 137 | Isaiah 63:1 | Revelation 19:13 |
+| 137 | Isaiah 59:17 | Revelation 19:13 |
 | 138 | Isaiah 64:4 | 1 Corinthians 2:9 |
 | 139 | Isaiah 65:17 | Revelation 21:1 |
 | 140 | Isaiah 66:7 | Revelation 12:5 |
@@ -160,7 +160,7 @@ Sorted by lesson number.
 | 154 | Hosea 13:14 | 1 Corinthians 15:55 |
 | 155 | Hosea 14:7 | John 12:24 |
 | 156 | Joel 3:2 | Matthew 25:32 |
-| 157 | Zechariah 1:20 | Revelation 7:4 |
+| 157 | Zechariah 1:20 | Revelation 7:2–3 |
 | 158 | Zechariah 2:10 | John 1:14 |
 | 159 | Zechariah 8:23 | John 12:20 |
 | 160 | Zechariah 10:4 | Ephesians 2:20 |
@@ -170,7 +170,7 @@ Sorted by lesson number.
 | 164 | Psalm 21:1 | Matthew 28:18 |
 | 165 | Psalm 80:17 | Mark 14:62 |
 | 166 | Psalm 89:22 | Matthew 28:18 |
-| 167 | Isaiah 35:1 | Matthew 11:5 |
+| 167 | Isaiah 35:1 | Romans 8:19–21 |
 | 168 | Isaiah 52:13 | Philippians 2:9 |
 | 169 | Jeremiah 30:9 | Luke 1:32 |
 | 170 | Ezekiel 17:22 | Matthew 13:32 |
@@ -178,31 +178,29 @@ Sorted by lesson number.
 | 172 | Daniel 2:34 | Matthew 21:44 |
 | 173 | Micah 2:13 | John 10:4 |
 | 174 | Isaiah 11:2 | Luke 3:22 |
-| 175 | Zechariah 3:8 | Luke 1:78 |
-| 176 | Genesis 22:18 | Galatians 3:16 |
-| 177 | Genesis 21:12 | Luke 3:34 |
-| 178 | Isaiah 33:22 | John 5:30 |
-| 179 | Psalm 2:6 | Matthew 27:37 |
-| 180 | Psalm 109:24 | John 19:17 |
-| 181 | Psalm 38:11 | Luke 23:49 |
-| 182 | Psalm 109:25 | Matthew 27:39 |
-| 183 | Psalm 22:17 | Luke 23:35 |
-| 184 | Psalm 34:20 | John 19:33 |
-| 185 | Psalm 22:14 | John 19:34 |
-| 186 | 2 Samuel 7:14 | Hebrews 1:5 |
-| 187 | Psalm 118:26 | Matthew 21:9 |
-| 188 | Psalm 132:11 | Acts 2:30 |
-| 189 | Psalm 22:15 | John 19:28 |
-| 190 | Isaiah 53:1 | John 12:38 |
-| 191 | Isaiah 45:23 | Philippians 2:10–11 |
-| 192 | Psalm 69:8 | John 7:5 |
-| 193 | Hosea 6:2 | Luke 24:46 |
-| 194 | Psalm 69:20 | Mark 14:34 |
-| 195 | Psalm 118:24 | Acts 2:32–36 |
-| 196 | Isaiah 42:3 | Matthew 12:20 |
-| 197 | Zechariah 9:10 | Matthew 21:9 |
-| 198 | Isaiah 52:15 | Romans 15:21 |
-| 199 | Hosea 11:1 | Matthew 2:15 |
-| 200 | Psalm 118:22 | Acts 4:11 |
-| 201 | Isaiah 11:4 | Revelation 19:15 |
-| 202 | Zechariah 14:9 | Revelation 11:15 |
+| 175 | Genesis 22:18 | Galatians 3:16 |
+| 176 | Genesis 21:12 | Luke 3:34 |
+| 177 | Isaiah 33:22 | John 5:30 |
+| 178 | Psalm 2:6 | Matthew 27:37 |
+| 179 | Isaiah 53:4 | John 19:17 |
+| 180 | Psalm 38:11 | Luke 23:49 |
+| 181 | Psalm 109:25 | Matthew 27:39 |
+| 182 | Psalm 22:17 | Luke 23:35 |
+| 183 | Psalm 34:20 | John 19:33 |
+| 184 | Psalm 22:14 | John 19:34 |
+| 185 | 2 Samuel 7:14 | Hebrews 1:5 |
+| 186 | Psalm 118:26 | Matthew 21:9 |
+| 187 | Psalm 132:11 | Acts 2:30 |
+| 188 | Psalm 22:15 | John 19:28 |
+| 189 | Isaiah 53:1 | John 12:38 |
+| 190 | Isaiah 45:23 | Philippians 2:10–11 |
+| 191 | Psalm 69:8 | John 7:5 |
+| 192 | Hosea 6:2 | Luke 24:46 |
+| 193 | Psalm 69:20 | Mark 14:34 |
+| 194 | Psalm 118:24 | Acts 2:32–36 |
+| 195 | Isaiah 42:3 | Matthew 12:20 |
+| 196 | Zechariah 9:10 | Ephesians 2:14–15 |
+| 197 | Isaiah 52:15 | Romans 15:21 |
+| 198 | Hosea 11:1 | Matthew 2:15 |
+| 199 | Isaiah 11:4 | Revelation 19:15 |
+| 200 | Zechariah 14:9 | Revelation 11:15 |

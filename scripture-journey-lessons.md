@@ -2347,7 +2347,7 @@ Lord of Life, where I feel weary, breathe new courage into me. Let Isaiah 55:3 a
 ---
 
 ## Lesson 88 — Rachel Weeping for Her Children
-**Category:** Passion · Direct Prophecy
+**Category:** Passion · Prophetic Pattern
 
 ### Old Testament
 **Jeremiah 31:15** — This is what the LORD says: "A voice is heard in Ramah, mourning and great weeping, Rachel weeping for her children and refusing to be comforted, because they are no more."
@@ -2689,16 +2689,16 @@ King eternal, let the promise in Exodus 16:33 fulfilled in Revelation 2:17 stir 
 **Category:** Identity · Prophetic Pattern
 
 ### Old Testament
-**Numbers 27:16** — Moses said to the LORD, "May the LORD, the God who gives breath to all living things, appoint someone over this community."
+**Numbers 11:17** — I will come down and speak with you there, and I will take some of the power of the Spirit that is on you and put that Spirit on them.
 
 ### New Testament
 **John 3:34** — For the one whom God has sent speaks the words of God, for God gives the Spirit without limit.
 
 ### Why This Matters
-Moses asked God to raise a leader empowered by God's Spirit. Jesus is that leader, and unlike every prophet before Him, He received the Spirit without measure.
+God gave the Spirit to Moses' seventy elders in measured portions — taking from the Spirit on Moses and distributing it among them. But Jesus received the Spirit without any such limit. John declares that God gives the Spirit to His Son without measure, setting Him apart from every prophet and leader who came before.
 
 ### Reflection
-Lord Jesus, as I study Spirit Without Measure, anchor my identity in You, the promised King revealed from Numbers 27:16 to John 3:34.
+Lord Jesus, as I study Spirit Without Measure, anchor my identity in You, the promised King revealed from Numbers 11:17 to John 3:34.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -2837,11 +2837,11 @@ Lord Jesus, through David Final Vision I see how Your coming was no accident —
 
 ### Timeline
 **Era:** Kingdom and David · c. 1050 – 970 BC
-**Next:** Lesson 107 — Messiah Raises the Dead
+**Next:** Lesson 107 — The Righteous Ruler
 
 ---
 
-## Lesson 107 — Messiah Raises the Dead
+## Lesson 107 — The Righteous Ruler
 **Category:** Kingdom · Prophetic Pattern
 
 ### Old Testament
@@ -2978,13 +2978,13 @@ King Jesus, through Crowned with Gold I see that Your reign has no end. Let Psal
 **Psalm 45:2** — You are the most excellent of men and your lips have been anointed with grace, since God has forever blessed you.
 
 ### New Testament
-**Hebrews 1:8** — But about the Son he says, "Your throne, O God, will last for ever and ever; a scepter of justice will be the scepter of your kingdom."
+**Luke 4:22** — All spoke well of him and were amazed at the gracious words that came from his lips.
 
 ### Why This Matters
 Psalm 45 praises the king as most excellent, anointed with grace. Hebrews applies this directly to Jesus — the Son whose throne is eternal and whose kingdom is ruled by justice.
 
 ### Reflection
-Jesus, teach me to trust who You are, not just what I feel. Let Psalm 45:2 and Hebrews 1:8 deepen my confidence in Your name.
+Jesus, teach me to trust who You are, not just what I feel. Let Psalm 45:2 and Luke 4:22 deepen my confidence in Your name.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -3053,7 +3053,7 @@ Lord of the future, as I study Days Without End, anchor my hope not in circumsta
 **Category:** Kingdom · Prophetic Pattern
 
 ### Old Testament
-**Psalm 72:1** — Endow the king with your justice, O God, the royal son with your righteousness.
+**Psalm 72:5** — May he endure as long as the sun, as long as the moon, through all generations.
 
 ### New Testament
 **Luke 1:33** — He will reign over Jacob's descendants forever; his kingdom will never end.
@@ -3062,7 +3062,7 @@ Lord of the future, as I study Days Without End, anchor my hope not in circumsta
 Psalm 72 prays for a king who rules with God's own justice — a reign enduring as long as the sun. Gabriel told Mary her son would reign over Jacob's descendants forever.
 
 ### Reflection
-King eternal, let the promise in Psalm 72:1 fulfilled in Luke 1:33 stir in me longing for Your return and the restoration of all things.
+King eternal, let the promise in Psalm 72:5 fulfilled in Luke 1:33 stir in me longing for Your return and the restoration of all things.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -3105,16 +3105,16 @@ King Jesus, through Sorrow Repaid with Joy I see that Your reign has no end. Let
 **Category:** Kingdom · Prophetic Pattern
 
 ### Old Testament
-**Psalm 92:8** — The LORD is on high, yet he regards the lowly; but the proud he knows from afar.
+**Psalm 110:1** — The LORD says to my lord: 'Sit at my right hand until I make your enemies a footstool for your feet.'
 
 ### New Testament
 **Hebrews 1:13** — Sit at my right hand until I make your enemies a footstool for your feet.
 
 ### Why This Matters
-The psalmist celebrates God's supreme authority over all. Hebrews declares that Christ sits at God's right hand while His enemies are made His footstool — ultimate vindication for the risen King.
+David heard God address his Lord: 'Sit at my right hand until I make your enemies a footstool.' Hebrews applies this directly to Christ — the risen King enthroned at God's right hand while His enemies are subdued beneath Him.
 
 ### Reflection
-Lord, the kingdom You promised in Psalm 92:8 is breaking in through Hebrews 1:13. Make me a faithful citizen of that kingdom today.
+Lord, the kingdom You promised in Psalm 110:1 is breaking in through Hebrews 1:13. Make me a faithful citizen of that kingdom today.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -3392,7 +3392,7 @@ Lord, the kingdom You promised in Isaiah 28:5 is breaking in through 1 Peter 5:4
 **Category:** Kingdom · Prophetic Pattern
 
 ### Old Testament
-**Isaiah 32:14** — Till the Spirit is poured on us from on high, and the desert becomes a fertile field, and the fertile field seems like a forest.
+**Isaiah 32:15** — till the Spirit is poured on us from on high, and the desert becomes a fertile field, and the fertile field seems like a forest.
 
 ### New Testament
 **Acts 2:17** — In the last days, God says, I will pour out my Spirit on all people. Your sons and daughters will prophesy, your young men will see visions, your old men will dream dreams.
@@ -3626,7 +3626,7 @@ Lord Jesus, shape my daily life after Your ministry. As Isaiah 60:1 meets John 8
 **Category:** Kingdom · Prophetic Pattern
 
 ### Old Testament
-**Isaiah 63:1** — He put on righteousness as his breastplate, and the helmet of salvation on his head; he put on the garments of vengeance and wrapped himself in zeal as in a cloak.
+**Isaiah 59:17** — He put on righteousness as his breastplate, and the helmet of salvation on his head; he put on the garments of vengeance and wrapped himself in zeal as in a cloak.
 
 ### New Testament
 **Revelation 19:13** — He is dressed in a robe dipped in blood, and his name is the Word of God.
@@ -3635,7 +3635,7 @@ Lord Jesus, shape my daily life after Your ministry. As Isaiah 60:1 meets John 8
 Isaiah described God clothing Himself in righteousness and vengeance. Revelation shows Christ robed in blood-dipped garments — the Word of God who fights for justice and defeats every enemy.
 
 ### Reflection
-Lord, the kingdom You promised in Isaiah 63:1 is breaking in through Revelation 19:13. Make me a faithful citizen of that kingdom today.
+Lord, the kingdom You promised in Isaiah 59:17 is breaking in through Revelation 19:13. Make me a faithful citizen of that kingdom today.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4403,7 +4403,7 @@ Risen Jesus, fill me with resurrection hope. Through God Anointed Exalted, teach
 ---
 
 ## Lesson 167 — Desert Blooming
-**Category:** Ministry · Direct Prophecy
+**Category:** Ministry · Prophetic Pattern
 
 ### Old Testament
 **Isaiah 35:1** — The desert and the parched land will be glad; the wilderness will rejoice and blossom. Like the crocus, it will burst into bloom.
@@ -4412,7 +4412,7 @@ Risen Jesus, fill me with resurrection hope. Through God Anointed Exalted, teach
 **Matthew 11:5** — Go back and report to John what you hear and see: The blind receive sight, the lame walk, those who have leprosy are cleansed, the deaf hear, the dead are raised.
 
 ### Why This Matters
-Isaiah prophesied the desert blooming and the weak being strengthened. Jesus pointed to His miracles as evidence — the blind see, the lame walk, the deaf hear. Isaiah's desert has burst into bloom through Christ's ministry.
+Isaiah prophesied the desert blooming and the weak being strengthened. Paul declared that all creation groans in anticipation of the new world God is bringing. Isaiah's desert has burst into bloom — and one day the whole creation will share in the freedom and glory of God's children.
 
 ### Reflection
 Jesus, send me with Your heart for people. Let Desert Blooming move me from admiration into obedience.
@@ -4607,37 +4607,11 @@ Christ our King, when my identity feels uncertain, remind me that Your promises 
 
 ### Timeline
 **Era:** Divided Kingdom · c. 930 – 586 BC
-**Next:** Lesson 175 — Branch and the Engraved Stone
+**Next:** Lesson 175 — Seed of Abraham
 
 ---
 
-## Lesson 175 — Branch and the Engraved Stone
-**Category:** Identity · Prophetic Pattern
-
-### Old Testament
-**Zechariah 3:8** — Listen, High Priest Joshua, you and your associates seated before you, who are men symbolic of things to come: I am going to bring my servant, the Branch. See, the stone I have set in front of Joshua!
-
-### New Testament
-**Luke 1:78** — because of the tender mercy of our God, by which the rising sun will come to us from heaven.
-
-### Why This Matters
-Zechariah presented the Branch and the stone — twin images of the coming Messiah. Luke connects this to Christ as the rising sun from heaven, dawning on those in darkness. The Branch Zechariah foresaw is the sunrise of salvation.
-
-### Reflection
-Lord, as I reflect on Branch and the Engraved Stone, make me steady in faith, humble in spirit, and rooted in Your unchanging identity.
-
-### Scholar Credits
-| Scholar | Source | Note |
-|---------|--------|------|
-| Edersheim | The Life and Times of Jesus the Messiah | My Servant the Branch plus stone with seven eyes applied to Messiah in Zechariah Targum |
-
-### Timeline
-**Era:** Return and Restoration · c. 538 – 400 BC
-**Next:** Lesson 176 — Seed of Abraham
-
----
-
-## Lesson 176 — Seed of Abraham
+## Lesson 175 — Seed of Abraham
 **Category:** Lineage · Direct Prophecy
 
 ### Old Testament
@@ -4650,7 +4624,7 @@ Lord, as I reflect on Branch and the Engraved Stone, make me steady in faith, hu
 God promised Abraham that all nations would be blessed through his seed. Paul identifies this seed as Christ — the singular offspring through whom every nation receives blessing. The Abrahamic covenant finds its fulfillment in Jesus.
 
 ### Reflection
-Lord Jesus, through Seed of Abraham I see how Your coming was no accident — a covenant line stretching from Genesis 22:18 to Galatians 3:16.
+God of the covenant, as I trace Your promises in Seed of Abraham, fill me with confidence that You finish what You start.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4661,11 +4635,11 @@ Lord Jesus, through Seed of Abraham I see how Your coming was no accident — a 
 
 ### Timeline
 **Era:** Patriarchs · c. 2100 – 1800 BC
-**Next:** Lesson 177 — Son of Isaac
+**Next:** Lesson 176 — Son of Isaac
 
 ---
 
-## Lesson 177 — Son of Isaac
+## Lesson 176 — Son of Isaac
 **Category:** Lineage · Prophetic Pattern
 
 ### Old Testament
@@ -4678,7 +4652,7 @@ Lord Jesus, through Seed of Abraham I see how Your coming was no accident — a 
 God specified that the promised line would flow through Isaac, not Ishmael. Luke's genealogy confirms Jesus descends through Isaac — the child of promise. God's covenant faithfulness is traced through every generation.
 
 ### Reflection
-Father, You kept every genealogical promise. Let Genesis 21:12 fulfilled in Luke 3:34 assure me that Your word never fails.
+Lord Jesus, through Son of Isaac I see how Your coming was no accident — a covenant line stretching from Genesis 21:12 to Luke 3:34.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4687,11 +4661,11 @@ Father, You kept every genealogical promise. Let Genesis 21:12 fulfilled in Luke
 
 ### Timeline
 **Era:** Patriarchs · c. 2100 – 1800 BC
-**Next:** Lesson 178 — Judge, Lawgiver, King
+**Next:** Lesson 177 — Judge, Lawgiver, King
 
 ---
 
-## Lesson 178 — Judge, Lawgiver, King
+## Lesson 177 — Judge, Lawgiver, King
 **Category:** Ministry · Prophetic Pattern
 
 ### Old Testament
@@ -4704,7 +4678,7 @@ Father, You kept every genealogical promise. Let Genesis 21:12 fulfilled in Luke
 Isaiah declared God as judge, lawgiver, and king — the one who saves. Jesus exercises all three roles — judging justly, fulfilling the law, and reigning as king — yet always in submission to the Father.
 
 ### Reflection
-Savior, open my eyes to the people around me. As You fulfilled Isaiah 33:22 in John 5:30, make me faithful in small acts of love.
+Jesus, send me with Your heart for people. Let Judge, Lawgiver, King move me from admiration into obedience.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4713,11 +4687,11 @@ Savior, open my eyes to the people around me. As You fulfilled Isaiah 33:22 in J
 
 ### Timeline
 **Era:** Divided Kingdom · c. 930 – 586 BC
-**Next:** Lesson 179 — King on Holy Hill
+**Next:** Lesson 178 — King on Holy Hill
 
 ---
 
-## Lesson 179 — King on Holy Hill
+## Lesson 178 — King on Holy Hill
 **Category:** Identity · Messianic Psalm
 
 ### Old Testament
@@ -4730,7 +4704,7 @@ Savior, open my eyes to the people around me. As You fulfilled Isaiah 33:22 in J
 God declared in Psalm 2 that He installed His king on Zion. At Calvary, the sign above Jesus read "King of the Jews" — what Pilate meant as mockery, God meant as coronation. The cross was His throne.
 
 ### Reflection
-Christ our King, when my identity feels uncertain, remind me that Your promises in Psalm 2:6 stand fulfilled in Matthew 27:37.
+Son of God, form my heart around Your truth. Through King on Holy Hill, help me live as one who belongs to You.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4739,24 +4713,24 @@ Christ our King, when my identity feels uncertain, remind me that Your promises 
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 180 — Fell under the Cross
+**Next:** Lesson 179 — He Bore Our Suffering
 
 ---
 
-## Lesson 180 — Fell under the Cross
-**Category:** Passion · Messianic Psalm
+## Lesson 179 — He Bore Our Suffering
+**Category:** Passion · Direct Prophecy
 
 ### Old Testament
-**Psalm 109:24** — My knees give way from fasting; my body is thin and gaunt.
+**Isaiah 53:4** — Surely he took up our pain and bore our suffering, yet we considered him punished by God, stricken by him, and afflicted.
 
 ### New Testament
 **John 19:17** — Carrying his own cross, he went out to the place of the Skull (which in Aramaic is called Golgotha).
 
 ### Why This Matters
-The psalmist described physical collapse under suffering — weakened knees, a wasted body. Jesus carried His own cross to Golgotha, His body broken by scourging and exhaustion. The psalmist's agony prefigured Christ's.
+Isaiah declared that the Servant would bear our suffering — taking up our pain though we thought him punished by God. Jesus carried His own cross to Golgotha, bearing the weight of human sin and sorrow. What Isaiah foretold, Christ fulfilled in His body on the way to Calvary.
 
 ### Reflection
-Lord, as I meditate on Your Passion, make me patient in trials and faithful in love.
+Lamb of God, keep the cross central in my heart. Let Isaiah 53:4 fulfilled in John 19:17 shape my worship and repentance.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4764,12 +4738,12 @@ Lord, as I meditate on Your Passion, make me patient in trials and faithful in l
 | McDowell | The New Evidence That Demands a Verdict | Knees weak from fasting, flesh feeble — physical collapse under weight of the cross on the way to Golgotha |
 
 ### Timeline
-**Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 181 — Friends Stood Afar Off
+**Era:** Divided Kingdom · c. 930 – 586 BC
+**Next:** Lesson 180 — Friends Stood Afar Off
 
 ---
 
-## Lesson 181 — Friends Stood Afar Off
+## Lesson 180 — Friends Stood Afar Off
 **Category:** Passion · Messianic Psalm
 
 ### Old Testament
@@ -4782,7 +4756,7 @@ Lord, as I meditate on Your Passion, make me patient in trials and faithful in l
 The psalmist lamented that friends and companions withdrew because of his suffering. At the cross, those who knew Jesus stood at a distance, watching. The isolation of suffering was part of the Messiah's cost.
 
 ### Reflection
-Lord Jesus, Your suffering was not wasted. As I read Psalm 38:11 and Luke 23:49, make me reverent before the cost of my redemption.
+Lord, as I meditate on Your Passion, make me patient in trials and faithful in love.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4791,11 +4765,11 @@ Lord Jesus, Your suffering was not wasted. As I read Psalm 38:11 and Luke 23:49,
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 182 — They Wagged Their Heads
+**Next:** Lesson 181 — They Wagged Their Heads
 
 ---
 
-## Lesson 182 — They Wagged Their Heads
+## Lesson 181 — They Wagged Their Heads
 **Category:** Passion · Messianic Psalm
 
 ### Old Testament
@@ -4808,7 +4782,7 @@ Lord Jesus, Your suffering was not wasted. As I read Psalm 38:11 and Luke 23:49,
 The psalmist described onlookers shaking their heads in contempt. Matthew records the same scene at Calvary — passersby hurled insults and shook their heads at Jesus. The psalm was a script, and the cross was its stage.
 
 ### Reflection
-Crucified Savior, let They Wagged Their Heads humble me. Teach me to hate sin, love holiness, and trust Your mercy fully.
+Lord Jesus, Your suffering was not wasted. As I read Psalm 109:25 and Matthew 27:39, make me reverent before the cost of my redemption.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4817,11 +4791,11 @@ Crucified Savior, let They Wagged Their Heads humble me. Teach me to hate sin, l
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 183 — They Look and Stare
+**Next:** Lesson 182 — They Look and Stare
 
 ---
 
-## Lesson 183 — They Look and Stare
+## Lesson 182 — They Look and Stare
 **Category:** Passion · Messianic Psalm
 
 ### Old Testament
@@ -4834,7 +4808,7 @@ Crucified Savior, let They Wagged Their Heads humble me. Teach me to hate sin, l
 The psalmist described being stared at and gloated over. Luke records the crowd watching and sneering at Jesus on the cross. Every detail of Psalm 22 was lived out in Christ's crucifixion.
 
 ### Reflection
-Jesus, thank You for bearing what I could never bear. Through this lesson, grow gratitude that changes how I live.
+Crucified Savior, let They Look and Stare humble me. Teach me to hate sin, love holiness, and trust Your mercy fully.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4843,11 +4817,11 @@ Jesus, thank You for bearing what I could never bear. Through this lesson, grow 
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 184 — Not One Bone Broken
+**Next:** Lesson 183 — Not One Bone Broken
 
 ---
 
-## Lesson 184 — Not One Bone Broken
+## Lesson 183 — Not One Bone Broken
 **Category:** Passion · Messianic Psalm
 
 ### Old Testament
@@ -4860,7 +4834,7 @@ Jesus, thank You for bearing what I could never bear. Through this lesson, grow 
 The psalmist declared that God protects His righteous one — not a bone will be broken. At the cross, the soldiers broke the legs of the two criminals but found Jesus already dead. God protected His Son's bones, fulfilling the psalm.
 
 ### Reflection
-Lamb of God, keep the cross central in my heart. Let Psalm 34:20 fulfilled in John 19:33 shape my worship and repentance.
+Jesus, thank You for bearing what I could never bear. Through this lesson, grow gratitude that changes how I live.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4870,11 +4844,11 @@ Lamb of God, keep the cross central in my heart. Let Psalm 34:20 fulfilled in Jo
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 185 — Heart Poured Out
+**Next:** Lesson 184 — Heart Poured Out
 
 ---
 
-## Lesson 185 — Heart Poured Out
+## Lesson 184 — Heart Poured Out
 **Category:** Passion · Messianic Psalm
 
 ### Old Testament
@@ -4887,7 +4861,7 @@ Lamb of God, keep the cross central in my heart. Let Psalm 34:20 fulfilled in Jo
 The psalmist described a heart melted like wax within him. When the soldier pierced Jesus' side, blood and water flowed — medical evidence of a heart that literally burst. Psalm 22 described the Messiah's death a thousand years before the cross.
 
 ### Reflection
-Lord, as I meditate on Your Passion, make me patient in trials and faithful in love.
+Lamb of God, keep the cross central in my heart. Let Psalm 22:14 fulfilled in John 19:34 shape my worship and repentance.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4896,11 +4870,11 @@ Lord, as I meditate on Your Passion, make me patient in trials and faithful in l
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 186 — Son of the Father
+**Next:** Lesson 185 — Son of the Father
 
 ---
 
-## Lesson 186 — Son of the Father
+## Lesson 185 — Son of the Father
 **Category:** Lineage · Direct Prophecy
 
 ### Old Testament
@@ -4913,7 +4887,7 @@ Lord, as I meditate on Your Passion, make me patient in trials and faithful in l
 God's covenant with David included a father-son relationship with his successor. The author of Hebrews applies this promise exclusively to Jesus — not to angels, not to any earthly king — as evidence of the Son's unique divine status.
 
 ### Reflection
-Lord Jesus, through Son of the Father I see how Your coming was no accident — a covenant line stretching from 2 Samuel 7:14 to Hebrews 1:5.
+God of the covenant, as I trace Your promises in Son of the Father, fill me with confidence that You finish what You start.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4922,11 +4896,11 @@ Lord Jesus, through Son of the Father I see how Your coming was no accident — 
 
 ### Timeline
 **Era:** Kingdom and David · c. 1050 – 970 BC
-**Next:** Lesson 187 — Blessed Is He Who Comes
+**Next:** Lesson 186 — Blessed Is He Who Comes
 
 ---
 
-## Lesson 187 — Blessed Is He Who Comes
+## Lesson 186 — Blessed Is He Who Comes
 **Category:** Identity · Messianic Psalm
 
 ### Old Testament
@@ -4939,7 +4913,7 @@ Lord Jesus, through Son of the Father I see how Your coming was no accident — 
 Psalm 118 was sung at Passover as pilgrims processed to the temple. When the crowd greeted Jesus with these exact words on Palm Sunday, they were identifying him as the expected king coming in God's name — a fulfillment the religious leaders understood immediately.
 
 ### Reflection
-Jesus, teach me to trust who You are, not just what I feel. Let Psalm 118:26 and Matthew 21:9 deepen my confidence in Your name.
+Lord Jesus, as I study Blessed Is He Who Comes, anchor my identity in You, the promised King revealed from Psalm 118:26 to Matthew 21:9.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4948,11 +4922,11 @@ Jesus, teach me to trust who You are, not just what I feel. Let Psalm 118:26 and
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 188 — Throne of His Body
+**Next:** Lesson 187 — Throne of His Body
 
 ---
 
-## Lesson 188 — Throne of His Body
+## Lesson 187 — Throne of His Body
 **Category:** Lineage · Messianic Psalm
 
 ### Old Testament
@@ -4965,7 +4939,7 @@ Jesus, teach me to trust who You are, not just what I feel. Let Psalm 118:26 and
 Psalm 132 affirms the unconditional nature of the Davidic covenant — God swore an oath that David's bodily descendant would occupy his throne. Peter at Pentecost declared that Jesus' resurrection fulfilled this oath, establishing the Davidic heir on an eternal throne beyond the reach of death.
 
 ### Reflection
-Jesus, Son of David, Son of Abraham — through Throne of His Body, deepen my trust in the faithfulness of God across generations.
+Father, You kept every genealogical promise. Let Psalm 132:11 fulfilled in Acts 2:30 assure me that Your word never fails.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -4974,11 +4948,11 @@ Jesus, Son of David, Son of Abraham — through Throne of His Body, deepen my tr
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 189 — Tongue Cleaves, "I Thirst"
+**Next:** Lesson 188 — Tongue Cleaves, "I Thirst"
 
 ---
 
-## Lesson 189 — Tongue Cleaves, "I Thirst"
+## Lesson 188 — Tongue Cleaves, "I Thirst"
 **Category:** Passion · Messianic Psalm
 
 ### Old Testament
@@ -4991,7 +4965,7 @@ Jesus, Son of David, Son of Abraham — through Throne of His Body, deepen my tr
 The psalmist described a mouth dried like pottery and a tongue stuck fast — the agony of dehydration in death. On the cross, Jesus said 'I am thirsty,' and John explicitly notes it was to fulfill Scripture. The Passion Psalm's details were lived out in Christ's final hours.
 
 ### Reflection
-Lamb of God, keep the cross central in my heart. Let Psalm 22:15 fulfilled in John 19:28 shape my worship and repentance.
+Jesus, thank You for bearing what I could never bear. Through this lesson, grow gratitude that changes how I live.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5002,11 +4976,11 @@ Lamb of God, keep the cross central in my heart. Let Psalm 22:15 fulfilled in Jo
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 190 — Who Has Believed
+**Next:** Lesson 189 — Who Has Believed
 
 ---
 
-## Lesson 190 — Who Has Believed
+## Lesson 189 — Who Has Believed
 **Category:** Rejection · Direct Prophecy
 
 ### Old Testament
@@ -5019,7 +4993,7 @@ Lamb of God, keep the cross central in my heart. Let Psalm 22:15 fulfilled in Jo
 Isaiah opened the Suffering Servant passage with a grieving question — who has believed? John cites this verse to explain why so many refused to believe in Jesus despite His signs. The rejection was not an accident; it was woven into the prophetic pattern from the start.
 
 ### Reflection
-Jesus, in seasons of rejection, keep my eyes on Your kingdom and my spirit steady in grace.
+Lord, where others turned away from You, help me draw nearer. Make my loyalty deeper and my worship truer.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5030,11 +5004,11 @@ Jesus, in seasons of rejection, keep my eyes on Your kingdom and my spirit stead
 
 ### Timeline
 **Era:** Divided Kingdom · c. 930 – 586 BC
-**Next:** Lesson 191 — Every Knee Shall Bow
+**Next:** Lesson 190 — Every Knee Shall Bow
 
 ---
 
-## Lesson 191 — Every Knee Shall Bow
+## Lesson 190 — Every Knee Shall Bow
 **Category:** Kingdom · Direct Prophecy
 
 ### Old Testament
@@ -5047,7 +5021,7 @@ Jesus, in seasons of rejection, keep my eyes on Your kingdom and my spirit stead
 Through Isaiah, God swore an irrevocable oath that every knee would bow to Him alone. Paul applies this oath directly to Jesus — at His name every knee in heaven, earth, and under the earth will bow. What God declared of Himself, the apostle declares of Christ.
 
 ### Reflection
-King Jesus, through Every Knee Shall Bow I see that Your reign has no end. Let Isaiah 45:23 and Philippians 2:10–11 lift my eyes to Your eternal throne.
+King eternal, let the promise in Isaiah 45:23 fulfilled in Philippians 2:10–11 stir in me longing for Your return and the restoration of all things.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5058,11 +5032,11 @@ King Jesus, through Every Knee Shall Bow I see that Your reign has no end. Let I
 
 ### Timeline
 **Era:** Divided Kingdom · c. 930 – 586 BC
-**Next:** Lesson 192 — Stranger to His Brothers
+**Next:** Lesson 191 — Stranger to His Brothers
 
 ---
 
-## Lesson 192 — Stranger to His Brothers
+## Lesson 191 — Stranger to His Brothers
 **Category:** Rejection · Messianic Psalm
 
 ### Old Testament
@@ -5075,7 +5049,7 @@ King Jesus, through Every Knee Shall Bow I see that Your reign has no end. Let I
 The psalmist lamented being treated as a stranger by his own siblings. Jesus experienced the same — His own brothers did not believe in Him during His earthly ministry. The Messiah's rejection began not with enemies, but at home.
 
 ### Reflection
-Jesus, when I face disappointment or opposition, remind me that You walked this road first from Psalm 69:8 to John 7:5.
+Lord Jesus, You were rejected and still loved to the end. Through Stranger to His Brothers, teach me to remain faithful when misunderstood.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5084,11 +5058,11 @@ Jesus, when I face disappointment or opposition, remind me that You walked this 
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 193 — Raised on the Third Day
+**Next:** Lesson 192 — Raised on the Third Day
 
 ---
 
-## Lesson 193 — Raised on the Third Day
+## Lesson 192 — Raised on the Third Day
 **Category:** Resurrection · Prophetic Pattern
 
 ### Old Testament
@@ -5101,7 +5075,7 @@ Jesus, when I face disappointment or opposition, remind me that You walked this 
 Hosea's prophecy of revival after two days and restoration on the third established a prophetic pattern that Jesus directly cited. When He explained the Scriptures after His resurrection, He pointed to this very pattern — that it was written the Messiah would rise on the third day. This is one of the most direct prophetic anticipations of the resurrection in the entire Old Testament.
 
 ### Reflection
-Jesus, because You rose, my future is secure. Make this truth in Raised on the Third Day reshape my fears and my prayers.
+Lord of Life, where I feel weary, breathe new courage into me. Let Hosea 6:2 and Luke 24:46 remind me death is not the end.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5111,11 +5085,11 @@ Jesus, because You rose, my future is secure. Make this truth in Raised on the T
 
 ### Timeline
 **Era:** Divided Kingdom · c. 930 – 586 BC
-**Next:** Lesson 194 — No Comforters in His Suffering
+**Next:** Lesson 193 — No Comforters in His Suffering
 
 ---
 
-## Lesson 194 — No Comforters in His Suffering
+## Lesson 193 — No Comforters in His Suffering
 **Category:** Passion · Messianic Psalm
 
 ### Old Testament
@@ -5128,7 +5102,7 @@ Jesus, because You rose, my future is secure. Make this truth in Raised on the T
 The psalmist cried out that scorn had broken his heart and no comforter could be found. In the Garden of Gethsemane, Jesus poured out His anguish to Peter, James, and John — yet they fell asleep while He suffered alone. The Messiah's deepest agony was met not with comfort but with the solitude foretold centuries earlier.
 
 ### Reflection
-Lamb of God, keep the cross central in my heart. Let Psalm 69:20 fulfilled in Mark 14:34 shape my worship and repentance.
+Jesus, thank You for bearing what I could never bear. Through this lesson, grow gratitude that changes how I live.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5137,11 +5111,11 @@ Lamb of God, keep the cross central in my heart. Let Psalm 69:20 fulfilled in Ma
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 195 — The Day the Lord Has Made
+**Next:** Lesson 194 — The Day the Lord Has Made
 
 ---
 
-## Lesson 195 — The Day the Lord Has Made
+## Lesson 194 — The Day the Lord Has Made
 **Category:** Resurrection · Messianic Psalm
 
 ### Old Testament
@@ -5154,7 +5128,7 @@ Lamb of God, keep the cross central in my heart. Let Psalm 69:20 fulfilled in Ma
 The psalmist celebrated the day the LORD had acted decisively — a day of joy and vindication. Peter at Pentecost declared that Resurrection Sunday was that day: the day God raised Jesus from the dead, exalted Him, and poured out His Spirit. What the psalm anticipated as praise, the apostles proclaimed as history.
 
 ### Reflection
-Risen Christ, turn this lesson into worship. Let hope rise in me as surely as You rose in glory.
+King eternal, help me walk in resurrection power today - with joy, endurance, and holy expectation.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5163,11 +5137,11 @@ Risen Christ, turn this lesson into worship. Let hope rise in me as surely as Yo
 
 ### Timeline
 **Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 196 — The Servant Brings Justice
+**Next:** Lesson 195 — The Servant Brings Justice
 
 ---
 
-## Lesson 196 — The Servant Brings Justice
+## Lesson 195 — The Servant Brings Justice
 **Category:** Ministry · Direct Prophecy
 
 ### Old Testament
@@ -5180,7 +5154,7 @@ Risen Christ, turn this lesson into worship. Let hope rise in me as surely as Yo
 Isaiah described God's Servant as one who would not crush the weak or extinguish the faint. Matthew applied these words to Jesus, whose ministry was marked by tenderness toward the broken. Where the world discards what is damaged, Jesus restores it — bringing justice not through force but through faithful compassion.
 
 ### Reflection
-Lord Jesus, shape my daily life after Your ministry. As Isaiah 42:3 meets Matthew 12:20, teach me to serve with compassion and truth.
+Jesus, keep me close to You in service. Let this lesson turn knowledge into prayerful action.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5189,11 +5163,11 @@ Lord Jesus, shape my daily life after Your ministry. As Isaiah 42:3 meets Matthe
 
 ### Timeline
 **Era:** Divided Kingdom · c. 930 – 586 BC
-**Next:** Lesson 197 — The King Comes Bringing Peace
+**Next:** Lesson 196 — The King Comes Bringing Peace
 
 ---
 
-## Lesson 197 — The King Comes Bringing Peace
+## Lesson 196 — The King Comes Bringing Peace
 **Category:** Kingdom · Direct Prophecy
 
 ### Old Testament
@@ -5203,10 +5177,10 @@ Lord Jesus, shape my daily life after Your ministry. As Isaiah 42:3 meets Matthe
 **Matthew 21:9** — The crowds that went ahead of him and those that followed shouted, "Hosanna to the Son of David!" "Blessed is he who comes in the name of the Lord!" "Hosanna in the highest heaven!"
 
 ### Why This Matters
-Zechariah envisioned a king who would abolish weapons of war and proclaim peace to every nation. When Jesus entered Jerusalem to shouts of 'Hosanna,' the crowd unknowingly announced that peace-bringing king. His kingdom is established not by chariots and warhorses but by the disarming power of sacrificial love.
+Zechariah envisioned a king who would abolish weapons of war and proclaim peace to every nation. Paul declares that Christ is our peace — He has destroyed the wall of hostility between peoples. His kingdom is established not by chariots and warhorses but by the disarming power of reconciling love.
 
 ### Reflection
-Lord, the kingdom You promised in Zechariah 9:10 is breaking in through Matthew 21:9. Make me a faithful citizen of that kingdom today.
+King Jesus, through The King Comes Bringing Peace I see that Your reign has no end. Let Zechariah 9:10 and Matthew 21:9 lift my eyes to Your eternal throne.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5215,11 +5189,11 @@ Lord, the kingdom You promised in Zechariah 9:10 is breaking in through Matthew 
 
 ### Timeline
 **Era:** Return and Restoration · c. 538 – 400 BC
-**Next:** Lesson 198 — The Servant Will Be Exalted
+**Next:** Lesson 197 — The Servant Will Be Exalted
 
 ---
 
-## Lesson 198 — The Servant Will Be Exalted
+## Lesson 197 — The Servant Will Be Exalted
 **Category:** Ministry · Direct Prophecy
 
 ### Old Testament
@@ -5232,7 +5206,7 @@ Lord, the kingdom You promised in Zechariah 9:10 is breaking in through Matthew 
 Isaiah declared that the Servant's mission would reach nations that had never heard of Him — even kings would be silenced. Paul quoted this passage to explain why he preached where Christ was not yet known. The gospel's reach to the ends of the earth was not an afterthought — it was written into the Servant's mission from the start.
 
 ### Reflection
-Savior, open my eyes to the people around me. As You fulfilled Isaiah 52:15 in Romans 15:21, make me faithful in small acts of love.
+Jesus, send me with Your heart for people. Let The Servant Will Be Exalted move me from admiration into obedience.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5241,12 +5215,12 @@ Savior, open my eyes to the people around me. As You fulfilled Isaiah 52:15 in R
 
 ### Timeline
 **Era:** Divided Kingdom · c. 930 – 586 BC
-**Next:** Lesson 199 — Out of Egypt I Called My Son
+**Next:** Lesson 198 — Out of Egypt I Called My Son
 
 ---
 
-## Lesson 199 — Out of Egypt I Called My Son
-**Category:** Lineage · Direct Prophecy
+## Lesson 198 — Out of Egypt I Called My Son
+**Category:** Lineage · Typology
 
 ### Old Testament
 **Hosea 11:1** — When Israel was a child, I loved him, and out of Egypt I called my son.
@@ -5258,7 +5232,7 @@ Savior, open my eyes to the people around me. As You fulfilled Isaiah 52:15 in R
 Hosea described God's love for Israel as His son, called out of Egypt in the Exodus. Matthew saw this pattern fulfilled in a deeper way when the infant Jesus returned from Egypt after Herod's death. Just as God called His people out of Egypt, He called His Son — the true Israel — along the same path, reliving and redeeming the nation's story.
 
 ### Reflection
-Lord, the line from Hosea 11:1 to Matthew 2:15 reminds me that You work through real families and real history. Ground my faith in Your covenant.
+Jesus, Son of David, Son of Abraham — through Out of Egypt I Called My Son, deepen my trust in the faithfulness of God across generations.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5267,37 +5241,11 @@ Lord, the line from Hosea 11:1 to Matthew 2:15 reminds me that You work through 
 
 ### Timeline
 **Era:** Divided Kingdom · c. 930 – 586 BC
-**Next:** Lesson 200 — The Stone the Builders Rejected Becomes the Cornerstone
+**Next:** Lesson 199 — He Will Strike the Earth with the Rod of His Mouth
 
 ---
 
-## Lesson 200 — The Stone the Builders Rejected Becomes the Cornerstone
-**Category:** Rejection · Messianic Psalm
-
-### Old Testament
-**Psalm 118:22** — The stone the builders rejected has become the cornerstone.
-
-### New Testament
-**Acts 4:11** — Jesus is "the stone you builders rejected, which has become the cornerstone."
-
-### Why This Matters
-The psalmist marveled that what the LORD had done was beyond human expectation — the rejected stone had become the cornerstone. Peter declared this fulfilled when the religious leaders rejected Jesus, yet God made Him the foundation of everything. What men discarded, God exalted — and it remains the most marvelous reversal in all of history.
-
-### Reflection
-Jesus, in seasons of rejection, keep my eyes on Your kingdom and my spirit steady in grace.
-
-### Scholar Credits
-| Scholar | Source | Note |
-|---------|--------|------|
-| Payne | Encyclopedia of Biblical Prophecy | Payne's #20 covers the Psalm 118 cornerstone passage; verse 23 ('the LORD has done this') is the direct continuation applied by Peter in Acts 4:11 |
-
-### Timeline
-**Era:** Psalms and Worship · c. 1000 – 500 BC
-**Next:** Lesson 201 — He Will Strike the Earth with the Rod of His Mouth
-
----
-
-## Lesson 201 — He Will Strike the Earth with the Rod of His Mouth
+## Lesson 199 — He Will Strike the Earth with the Rod of His Mouth
 **Category:** Kingdom · Direct Prophecy
 
 ### Old Testament
@@ -5310,7 +5258,7 @@ Jesus, in seasons of rejection, keep my eyes on Your kingdom and my spirit stead
 Isaiah foresaw a Messianic ruler who would judge the earth not by military might but by the word of His mouth. In Revelation, John sees the returning Christ with a sharp sword proceeding from His mouth, striking down the nations. The Messiah's justice is absolute — His word alone is sufficient to overthrow all wickedness.
 
 ### Reflection
-King Jesus, through He Will Strike the Earth with the Rod of His Mouth I see that Your reign has no end. Let Isaiah 11:4 and Revelation 19:15 lift my eyes to Your eternal throne.
+Lord of the future, as I study He Will Strike the Earth with the Rod of His Mouth, anchor my hope not in circumstances but in Your coming reign.
 
 ### Scholar Credits
 | Scholar | Source | Note |
@@ -5319,11 +5267,11 @@ King Jesus, through He Will Strike the Earth with the Rod of His Mouth I see tha
 
 ### Timeline
 **Era:** Divided Kingdom · c. 930 – 586 BC
-**Next:** Lesson 202 — The Lord Will Be King Over All the Earth
+**Next:** Lesson 200 — The Lord Will Be King Over All the Earth
 
 ---
 
-## Lesson 202 — The Lord Will Be King Over All the Earth
+## Lesson 200 — The Lord Will Be King Over All the Earth
 **Category:** Kingdom · Direct Prophecy
 
 ### Old Testament
@@ -5336,7 +5284,7 @@ King Jesus, through He Will Strike the Earth with the Rod of His Mouth I see tha
 Zechariah proclaimed the day when the LORD alone would reign as King over all the earth, with no rival and no divided loyalty. Revelation echoes this vision: the kingdoms of this world become the kingdom of our Lord and of His Christ. The prophecy points to the final, uncontested reign of the Messiah over every nation.
 
 ### Reflection
-Lord, the kingdom You promised in Zechariah 14:9 is breaking in through Revelation 11:15. Make me a faithful citizen of that kingdom today.
+King eternal, let the promise in Zechariah 14:9 fulfilled in Revelation 11:15 stir in me longing for Your return and the restoration of all things.
 
 ### Scholar Credits
 | Scholar | Source | Note |

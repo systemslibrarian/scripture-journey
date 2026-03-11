@@ -166,7 +166,7 @@ const _prophecyTypeMap: Record<number, ProphecyType> = {
   79: 'Direct Prophecy', 80: 'Direct Prophecy', 81: 'Direct Prophecy',
   82: 'Direct Prophecy', 83: 'Direct Prophecy', 84: 'Direct Prophecy',
   85: 'Direct Prophecy', 86: 'Prophetic Pattern', 87: 'Direct Prophecy',
-  88: 'Direct Prophecy', 89: 'Direct Prophecy', 90: 'Direct Prophecy',
+  88: 'Prophetic Pattern', 89: 'Direct Prophecy', 90: 'Direct Prophecy',
   91: 'Typology', 92: 'Direct Prophecy', 93: 'Direct Prophecy',
   94: 'Direct Prophecy', 95: 'Direct Prophecy', 96: 'Direct Prophecy',
   97: 'Direct Prophecy', 98: 'Direct Prophecy', 99: 'Typology',
@@ -203,25 +203,24 @@ const _prophecyTypeMap: Record<number, ProphecyType> = {
   160: 'Direct Prophecy', 161: 'Direct Prophecy',
   162: 'Direct Prophecy', 163: 'Messianic Psalm',
   164: 'Messianic Psalm', 165: 'Messianic Psalm',
-  166: 'Messianic Psalm', 167: 'Direct Prophecy',
+  166: 'Messianic Psalm', 167: 'Prophetic Pattern',
   168: 'Direct Prophecy', 169: 'Direct Prophecy',
   170: 'Typology', 171: 'Direct Prophecy',
   172: 'Direct Prophecy', 173: 'Prophetic Pattern',
-  174: 'Direct Prophecy', 175: 'Prophetic Pattern',
-  176: 'Direct Prophecy', 177: 'Prophetic Pattern',
-  178: 'Prophetic Pattern', 179: 'Messianic Psalm',
-  180: 'Messianic Psalm', 181: 'Messianic Psalm',
-  182: 'Messianic Psalm', 183: 'Messianic Psalm',
-  184: 'Messianic Psalm', 185: 'Messianic Psalm',
-  186: 'Direct Prophecy', 187: 'Messianic Psalm',
-  188: 'Messianic Psalm', 189: 'Messianic Psalm',
-  190: 'Direct Prophecy', 191: 'Direct Prophecy',
-  192: 'Messianic Psalm', 193: 'Prophetic Pattern',
-  194: 'Messianic Psalm', 195: 'Messianic Psalm',
-  196: 'Direct Prophecy', 197: 'Direct Prophecy',
-  198: 'Direct Prophecy', 199: 'Direct Prophecy',
-  200: 'Messianic Psalm',
-  201: 'Direct Prophecy', 202: 'Direct Prophecy',
+  174: 'Direct Prophecy',
+  175: 'Direct Prophecy', 176: 'Prophetic Pattern',
+  177: 'Prophetic Pattern', 178: 'Messianic Psalm',
+  179: 'Direct Prophecy', 180: 'Messianic Psalm',
+  181: 'Messianic Psalm', 182: 'Messianic Psalm',
+  183: 'Messianic Psalm', 184: 'Messianic Psalm',
+  185: 'Direct Prophecy', 186: 'Messianic Psalm',
+  187: 'Messianic Psalm', 188: 'Messianic Psalm',
+  189: 'Direct Prophecy', 190: 'Direct Prophecy',
+  191: 'Messianic Psalm', 192: 'Prophetic Pattern',
+  193: 'Messianic Psalm', 194: 'Messianic Psalm',
+  195: 'Direct Prophecy', 196: 'Direct Prophecy',
+  197: 'Direct Prophecy', 198: 'Typology',
+  199: 'Direct Prophecy', 200: 'Direct Prophecy',
 };
 
 const _eraOrder: Record<TimelineEra, number> = {
@@ -1009,14 +1008,13 @@ const _scholarshipMap: Record<number, Scholarship> = {
   96: { ...edersheim("Feet on Mount of Olives applied to Messianic advent in Targum on Zechariah 14") },
   97: { ...edersheim("Cut off from the living in full Messianic treatment of Isaiah 53") },
   98: { ...edersheim("Sons of the living God applied to Messianic restoration of Israel in Midrash") },
-  176: { ...payne(2, "Gen 22:18", "Through Abraham's seed all nations blessed; Payne points to the singular 'seed' as anticipating Gal 3:16") },
-  184: { ...payne(15, "Ps 34:20", "Not one bone broken; Payne connects this to the Passover lamb's bones (Exod 12:46) as a dual fulfillment") },
-  193: { ...payne(78, "Hos 6:2", "Revival after two days and raising on the third day; Payne treats this as a prophetic pattern directly fulfilled in Christ's resurrection — listed as #78 in his 191 messianic prophecies"), ...edersheim("Hos. vi. 2 is Messianically applied in the Targum — explicitly confirmed in Appendix IX of The Life and Times of Jesus the Messiah") },
-  195: { ...payne(20, "Psalm 118:22–26", "Payne's #20 covers the Psalm 118 cornerstone passage; verse 24 ('This is the day the LORD has made') is part of that same psalm cluster applied messianically") },
-  196: { ...payne(30, "Isaiah 42:1–4", "Payne #30 identifies Isaiah 42:1–4 as messianic; Matthew 12:18–21 quotes the full passage including verse 3 as fulfilled in Jesus's gentle ministry") },
-  197: { ...payne(97, "Zechariah 9:10", "Payne #97 identifies Zechariah 9:10 as messianic, describing the universal peace and dominion of the coming King") },
-  198: { ...payne(64, "Isaiah 52:15", "Payne #64 identifies Isaiah 52:15 as messianic; Paul quotes it in Romans 15:21 regarding the gospel going to those who had not heard") },
-  200: { ...payne(20, "Psalm 118:22–23", "Payne's #20 covers the Psalm 118 cornerstone passage; verse 23 ('the LORD has done this') is the direct continuation applied by Peter in Acts 4:11") },
+  175: { ...payne(2, "Gen 22:18", "Through Abraham's seed all nations blessed; Payne points to the singular 'seed' as anticipating Gal 3:16") },
+  183: { ...payne(15, "Ps 34:20", "Not one bone broken; Payne connects this to the Passover lamb's bones (Exod 12:46) as a dual fulfillment") },
+  192: { ...payne(78, "Hos 6:2", "Revival after two days and raising on the third day; Payne treats this as a prophetic pattern directly fulfilled in Christ's resurrection — listed as #78 in his 191 messianic prophecies"), ...edersheim("Hos. vi. 2 is Messianically applied in the Targum — explicitly confirmed in Appendix IX of The Life and Times of Jesus the Messiah") },
+  194: { ...payne(20, "Psalm 118:22–26", "Payne's #20 covers the Psalm 118 cornerstone passage; verse 24 ('This is the day the LORD has made') is part of that same psalm cluster applied messianically") },
+  195: { ...payne(30, "Isaiah 42:1–4", "Payne #30 identifies Isaiah 42:1–4 as messianic; Matthew 12:18–21 quotes the full passage including verse 3 as fulfilled in Jesus's gentle ministry") },
+  196: { ...payne(97, "Zechariah 9:10", "Payne #97 identifies Zechariah 9:10 as messianic, describing the universal peace and dominion of the coming King") },
+  197: { ...payne(64, "Isaiah 52:15", "Payne #64 identifies Isaiah 52:15 as messianic; Paul quotes it in Romans 15:21 regarding the gospel going to those who had not heard") },
   45: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Messianic shepherd-ruler prophecy strongly attested across all three scholars. Closely tied to the Bethlehem context of Micah 5:2.", ntUsage: "John 10:11" },
   61: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Recognized messianic healing imagery across all three scholars. The title 'Sun of Righteousness' is a formal messianic designation.", ntUsage: null },
   65: { scholarlyStrength: 'Typology', scholarsWhoList: ['McDowell'], scholarNote: "Jesus explicitly invokes this as a type of his own lifting up in John 3:14. McDowell lists it; Payne and Edersheim do not treat it as formal prophecy.", ntUsage: "John 3:14" },
@@ -1028,10 +1026,10 @@ const _scholarshipMap: Record<number, Scholarship> = {
   92: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Strong messianic restoration prophecy appearing in all three major scholarly lists. Cited in Acts 15:16–17 at the Jerusalem Council.", ntUsage: "Acts 15:16-17" },
   93: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Direct messianic title 'the Branch' is a recognized prophetic designation for the Messiah across all three scholars.", ntUsage: null },
   95: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Fulfilled in John the Baptist as forerunner of the Messiah. All three scholars list this as a formal messianic prophecy.", ntUsage: "Matthew 11:14; Luke 1:17" },
-  194: { scholarlyStrength: 'NT Application', scholarsWhoList: ['Edersheim', 'McDowell'], scholarNote: "Suffering Messiah theme recognized by Edersheim and McDowell. Applied in NT passion narrative but not listed formally by Payne.", ntUsage: "Romans 15:3; John 15:25" },
-  199: { scholarlyStrength: 'NT Application', scholarsWhoList: ['Edersheim', 'McDowell'], scholarNote: "Matthew applies this typologically to Jesus' return from Egypt. Edersheim and McDowell treat it as fulfillment; Payne does not list it.", ntUsage: "Matthew 2:15" },
-  201: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim'], scholarNote: "Classic Messianic kingdom prophecy referenced by Payne and Edersheim. Describes the righteous judgment of the Messianic ruler, fulfilled eschatologically in Revelation 19:15.", ntUsage: "Revelation 19:15" },
-  202: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim'], scholarNote: "Messianic kingdom prophecy describing the universal reign of the Lord. Referenced by Payne and Edersheim. Fulfilled in the proclamation of Christ's kingdom in Revelation 11:15.", ntUsage: "Revelation 11:15" },
+  193: { scholarlyStrength: 'NT Application', scholarsWhoList: ['Edersheim', 'McDowell'], scholarNote: "Suffering Messiah theme recognized by Edersheim and McDowell. Applied in NT passion narrative but not listed formally by Payne.", ntUsage: "Romans 15:3; John 15:25" },
+  198: { scholarlyStrength: 'NT Application', scholarsWhoList: ['Edersheim', 'McDowell'], scholarNote: "Matthew applies this typologically to Jesus' return from Egypt. Edersheim and McDowell treat it as fulfillment; Payne does not list it.", ntUsage: "Matthew 2:15" },
+  199: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim'], scholarNote: "Classic Messianic kingdom prophecy referenced by Payne and Edersheim. Describes the righteous judgment of the Messianic ruler, fulfilled eschatologically in Revelation 19:15.", ntUsage: "Revelation 19:15" },
+  200: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim'], scholarNote: "Messianic kingdom prophecy describing the universal reign of the Lord. Referenced by Payne and Edersheim. Fulfilled in the proclamation of Christ's kingdom in Revelation 11:15.", ntUsage: "Revelation 11:15" },
 
 };
 
@@ -1048,7 +1046,7 @@ prophecies.push(makeLesson(100, "hidden-manna-revealed", "Hidden Manna Revealed"
   { ...edersheim("Preserved manna to be revealed by Messiah in Mechilta") }));
 
 prophecies.push(makeLesson(101, "spirit-without-measure", "Spirit Without Measure", "Identity",
-  "Numbers 27:16", "John 3:34", "Moses said to the LORD, \"May the LORD, the God who gives breath to all living things, appoint someone over this community.\"", "For the one whom God has sent speaks the words of God, for God gives the Spirit without limit.", "Moses asked God to raise a leader empowered by God's Spirit. Jesus is that leader, and unlike every prophet before Him, He received the Spirit without measure.",
+  "Numbers 11:17", "John 3:34", "I will come down and speak with you there, and I will take some of the power of the Spirit that is on you and put that Spirit on them.", "For the one whom God has sent speaks the words of God, for God gives the Spirit without limit.", "God gave the Spirit to Moses' seventy elders in measured portions — taking from the Spirit on Moses and distributing it among them. But Jesus received the Spirit without any such limit. John declares that God gives the Spirit to His Son without measure, setting Him apart from every prophet and leader who came before.",
   undefined,
   { ...edersheim("Spirit of God — His Spirit worth all others combined; Messianic application") }));
 
@@ -1077,7 +1075,7 @@ prophecies.push(makeLesson(106, "david-final-vision", "David Final Vision", "Lin
   undefined,
   { ...edersheim("Targum applies David last words to Messianic prophecy") }));
 
-prophecies.push(makeLesson(107, "messiah-raises-the-dead", "Messiah Raises the Dead", "Kingdom",
+prophecies.push(makeLesson(107, "the-righteous-ruler", "The Righteous Ruler", "Kingdom",
   "2 Samuel 23:3", "John 5:28", "He said concerning the God of Israel, the Rock of Israel spoke to me: \"He who rules over people must be just, ruling in the fear of God.\"", "Do not be amazed at this, for a time is coming when all who are in their graves will hear his voice and come out.", "David spoke of a coming righteous ruler appointed by God. Jesus declared He would exercise the ultimate act of righteous rule — calling the dead from their graves.",
   undefined,
   { ...edersheim("Ruling in fear of God — Targum applies to Messiah raising the dead") }));
@@ -1103,7 +1101,7 @@ prophecies.push(makeLesson(111, "crowned-with-gold", "Crowned with Gold", "Kingd
   { ...edersheim("Crown of pure gold and length of days applied to King Messiah in Midrash") }));
 
 prophecies.push(makeLesson(112, "fairer-than-the-sons-of-men", "Fairer Than the Sons of Men", "Identity",
-  "Psalm 45:2", "Hebrews 1:8", "You are the most excellent of men and your lips have been anointed with grace, since God has forever blessed you.", "But about the Son he says, \"Your throne, O God, will last for ever and ever; a scepter of justice will be the scepter of your kingdom.\"", "Psalm 45 praises the king as most excellent, anointed with grace. Hebrews applies this directly to Jesus — the Son whose throne is eternal and whose kingdom is ruled by justice.",
+  "Psalm 45:2", "Luke 4:22", "You are the most excellent of men and your lips have been anointed with grace, since God has forever blessed you.", "All spoke well of him and were amazed at the gracious words that came from his lips.", "Psalm 45 praises the king as most excellent, anointed with grace. Hebrews applies this directly to Jesus — the Son whose throne is eternal and whose kingdom is ruled by justice.",
   undefined,
   { ...edersheim("Targum: Thy beauty O King Messiah surpasses that of human children") }));
 
@@ -1118,7 +1116,7 @@ prophecies.push(makeLesson(114, "days-without-end", "Days Without End", "Kingdom
   { ...edersheim("Days added to the King — Targum applies to eternal Messianic reign") }));
 
 prophecies.push(makeLesson(115, "sun-and-moon-endure", "Sun and Moon Endure", "Kingdom",
-  "Psalm 72:1", "Luke 1:33", "Endow the king with your justice, O God, the royal son with your righteousness.", "He will reign over Jacob's descendants forever; his kingdom will never end.", "Psalm 72 prays for a king who rules with God's own justice — a reign enduring as long as the sun. Gabriel told Mary her son would reign over Jacob's descendants forever.",
+  "Psalm 72:5", "Luke 1:33", "May he endure as long as the sun, as long as the moon, through all generations.", "He will reign over Jacob's descendants forever; his kingdom will never end.", "Psalm 72 prays for a king who rules with God's own justice — a reign enduring as long as the sun. Gabriel told Mary her son would reign over Jacob's descendants forever.",
   undefined,
   { ...edersheim("Entire Psalm 72 viewed as Messianic in Yalkut and ancient Synagogue commentary") }));
 
@@ -1128,7 +1126,7 @@ prophecies.push(makeLesson(116, "sorrow-repaid-with-joy", "Sorrow Repaid with Jo
   { ...edersheim("Days of affliction repaid in Messianic days — Midrash on Ps 90") }));
 
 prophecies.push(makeLesson(117, "enemies-made-a-footstool", "Enemies Made a Footstool", "Kingdom",
-  "Psalm 92:8", "Hebrews 1:13", "The LORD is on high, yet he regards the lowly; but the proud he knows from afar.", "Sit at my right hand until I make your enemies a footstool for your feet.", "The psalmist celebrates God's supreme authority over all. Hebrews declares that Christ sits at God's right hand while His enemies are made His footstool — ultimate vindication for the risen King.",
+  "Psalm 110:1", "Hebrews 1:13", "The LORD says to my lord: 'Sit at my right hand until I make your enemies a footstool for your feet.'", "Sit at my right hand until I make your enemies a footstool for your feet.", "David heard God address his Lord: 'Sit at my right hand until I make your enemies a footstool.' Hebrews applies this directly to Christ — the risen King enthroned at God's right hand while His enemies are subdued beneath Him.",
   undefined,
   { ...edersheim("Verses 8, 11, 13 Messianically interpreted in Pirque de R. El.") }));
 
@@ -1183,7 +1181,7 @@ prophecies.push(makeLesson(127, "crown-of-glory", "Crown of Glory", "Kingdom",
   { ...edersheim("Targum: Messiah of the LORD of hosts will be a crown of glory") }));
 
 prophecies.push(makeLesson(128, "spirit-on-the-waste-places", "Spirit on the Waste Places", "Kingdom",
-  "Isaiah 32:14", "Acts 2:17", "Till the Spirit is poured on us from on high, and the desert becomes a fertile field, and the fertile field seems like a forest.", "In the last days, God says, I will pour out my Spirit on all people. Your sons and daughters will prophesy, your young men will see visions, your old men will dream dreams.", "Isaiah foresaw God's Spirit transforming desolation into abundance. At Pentecost, Peter declared this outpouring fulfilled — the Spirit poured on all people, turning spiritual deserts into flourishing life through Christ.",
+  "Isaiah 32:15", "Acts 2:17", "till the Spirit is poured on us from on high, and the desert becomes a fertile field, and the fertile field seems like a forest.", "In the last days, God says, I will pour out my Spirit on all people. Your sons and daughters will prophesy, your young men will see visions, your old men will dream dreams.", "Isaiah foresaw God's Spirit transforming desolation into abundance. At Pentecost, Peter declared this outpouring fulfilled — the Spirit poured on all people, turning spiritual deserts into flourishing life through Christ.",
   undefined,
   { ...edersheim("Midrash of Lamentations: Spirit poured out in Messianic days") }));
 
@@ -1228,7 +1226,7 @@ prophecies.push(makeLesson(136, "i-am-the-light", "I Am the Light", "Ministry",
   { ...edersheim("Targum and Ber. R. — arise shine applied to Messiah bringing light") }));
 
 prophecies.push(makeLesson(137, "garments-of-vengeance", "Garments of Vengeance", "Kingdom",
-  "Isaiah 63:1", "Revelation 19:13", "He put on righteousness as his breastplate, and the helmet of salvation on his head; he put on the garments of vengeance and wrapped himself in zeal as in a cloak.", "He is dressed in a robe dipped in blood, and his name is the Word of God.", "Isaiah described God clothing Himself in righteousness and vengeance. Revelation shows Christ robed in blood-dipped garments — the Word of God who fights for justice and defeats every enemy.",
+  "Isaiah 59:17", "Revelation 19:13", "He put on righteousness as his breastplate, and the helmet of salvation on his head; he put on the garments of vengeance and wrapped himself in zeal as in a cloak.", "He is dressed in a robe dipped in blood, and his name is the Word of God.", "Isaiah described God clothing Himself in righteousness and vengeance. Revelation shows Christ robed in blood-dipped garments — the Word of God who fights for justice and defeats every enemy.",
   undefined,
   { ...edersheim("Applied to Messiah coming after destruction of Gentiles in Midrash") }));
 
@@ -1378,7 +1376,7 @@ prophecies.push(makeLesson(166, "god-anointed-exalted", "God Anointed Exalted", 
   { ...edersheim("Promise of God anointed applied to the Messiah in Yalkut on Isaiah 60") }));
 
 prophecies.push(makeLesson(167, "desert-blooming", "Desert Blooming", "Ministry",
-  "Isaiah 35:1", "Matthew 11:5", "The desert and the parched land will be glad; the wilderness will rejoice and blossom. Like the crocus, it will burst into bloom.", "Go back and report to John what you hear and see: The blind receive sight, the lame walk, those who have leprosy are cleansed, the deaf hear, the dead are raised.", "Isaiah prophesied the desert blooming and the weak being strengthened. Jesus pointed to His miracles as evidence — the blind see, the lame walk, the deaf hear. Isaiah's desert has burst into bloom through Christ's ministry.",
+  "Isaiah 35:1", "Matthew 11:5", "The desert and the parched land will be glad; the wilderness will rejoice and blossom. Like the crocus, it will burst into bloom.", "Go back and report to John what you hear and see: The blind receive sight, the lame walk, those who have leprosy are cleansed, the deaf hear, the dead are raised.", "Isaiah prophesied the desert blooming and the weak being strengthened. Paul declared that all creation groans in anticipation of the new world God is bringing. Isaiah's desert has burst into bloom — and one day the whole creation will share in the freedom and glory of God's children.",
   undefined,
   { ...edersheim("Desert blossoming and healing applied to Messianic era in Yalkut and Talmud") }));
 
@@ -1417,102 +1415,98 @@ prophecies.push(makeLesson(174, "spirit-resting-on-the-branch", "Spirit Resting 
   undefined,
   { ...edersheim("Seven spirits of wisdom resting on Messiah extensively cited in Talmud, Targum, and Midrash"), ...mcdowell(20, "Special Anointing of Holy Spirit", "Targum Isaiah on Isa 11:1-4 cited verbatim; seven-fold Spirit at baptism") }));
 
-prophecies.push(makeLesson(175, "branch-and-the-engraved-stone", "Branch and the Engraved Stone", "Identity",
-  "Zechariah 3:8", "Luke 1:78", "Listen, High Priest Joshua, you and your associates seated before you, who are men symbolic of things to come: I am going to bring my servant, the Branch. See, the stone I have set in front of Joshua!", "because of the tender mercy of our God, by which the rising sun will come to us from heaven.", "Zechariah presented the Branch and the stone — twin images of the coming Messiah. Luke connects this to Christ as the rising sun from heaven, dawning on those in darkness. The Branch Zechariah foresaw is the sunrise of salvation.",
-  undefined,
-  { ...edersheim("My Servant the Branch plus stone with seven eyes applied to Messiah in Zechariah Targum") }));
 
 // Gen 22:18 — dual Edersheim + McDowell
-prophecies.push(makeLesson(176, "seed-of-abraham-edersheim", "Seed of Abraham", "Lineage",
+prophecies.push(makeLesson(175, "seed-of-abraham-edersheim", "Seed of Abraham", "Lineage",
   "Genesis 22:18", "Galatians 3:16", "and through your offspring all nations on earth will be blessed, because you have obeyed me.", "The promises were spoken to Abraham and to his seed. Scripture does not say \"and to seeds,\" meaning many people, but \"and to your seed,\" meaning one person, who is Christ.", "God promised Abraham that all nations would be blessed through his seed. Paul identifies this seed as Christ — the singular offspring through whom every nation receives blessing. The Abrahamic covenant finds its fulfillment in Jesus.",
   undefined,
   { ...edersheim("Bemidbar R. 13 — universal blessing through Messiah"), ...mcdowell(4, "Seed of Abraham", "Matthew Henry: 'in thy Seed one particular person' — Gal 3:16 singular seed argument") }));
 
 // === NEW COMING-SOON LESSONS (McDowell) ===
 
-prophecies.push(makeLesson(177, "son-of-isaac", "Son of Isaac", "Lineage",
+prophecies.push(makeLesson(176, "son-of-isaac", "Son of Isaac", "Lineage",
   "Genesis 21:12", "Luke 3:34", "Through Isaac that your offspring will be reckoned.", "the son of Jacob, the son of Isaac, the son of Abraham, the son of Terah.", "God specified that the promised line would flow through Isaac, not Ishmael. Luke's genealogy confirms Jesus descends through Isaac — the child of promise. God's covenant faithfulness is traced through every generation.",
   undefined,
   { ...mcdowell(5, "Son of Isaac", "God eliminates half of Abraham lineage — Ishmael excluded, Isaac chosen; narrows Messianic line") }));
 
-prophecies.push(makeLesson(178, "judge-lawgiver-king", "Judge, Lawgiver, King", "Ministry",
+prophecies.push(makeLesson(177, "judge-lawgiver-king", "Judge, Lawgiver, King", "Ministry",
   "Isaiah 33:22", "John 5:30", "For the LORD is our judge, the LORD is our lawgiver, the LORD is our king; it is he who will save us.", "By myself I can do nothing; I judge only as I hear, and my judgment is just, for I seek not to please myself but him who sent me.", "Isaiah declared God as judge, lawgiver, and king — the one who saves. Jesus exercises all three roles — judging justly, fulfilling the law, and reigning as king — yet always in submission to the Father.",
   undefined,
   { ...mcdowell(18, "Judge", "LORD as Judge, Lawgiver, and King in one verse; Targum Isaiah cited; John 5:30 — righteous judgment") }));
 
-prophecies.push(makeLesson(179, "king-on-holy-hill", "King on Holy Hill", "Identity",
+prophecies.push(makeLesson(178, "king-on-holy-hill", "King on Holy Hill", "Identity",
   "Psalm 2:6", "Matthew 27:37", "I have installed my king on Zion, my holy mountain.", "Above his head they placed the written charge against him: THIS IS JESUS, THE KING OF THE JEWS.", "God declared in Psalm 2 that He installed His king on Zion. At Calvary, the sign above Jesus read \"King of the Jews\" — what Pilate meant as mockery, God meant as coronation. The cross was His throne.",
   undefined,
   { ...mcdowell(19, "King", "Set as King on Zion; Jer 23:5 and Zech 9:9 cited as parallels; cross placard 'King of the Jews'") }));
 
-prophecies.push(makeLesson(180, "fell-under-the-cross", "Fell under the Cross", "Passion",
-  "Psalm 109:24", "John 19:17", "My knees give way from fasting; my body is thin and gaunt.", "Carrying his own cross, he went out to the place of the Skull (which in Aramaic is called Golgotha).", "The psalmist described physical collapse under suffering — weakened knees, a wasted body. Jesus carried His own cross to Golgotha, His body broken by scourging and exhaustion. The psalmist's agony prefigured Christ's.",
+prophecies.push(makeLesson(179, "he-bore-our-suffering", "He Bore Our Suffering", "Passion",
+  "Isaiah 53:4", "John 19:17", "Surely he took up our pain and bore our suffering, yet we considered him punished by God, stricken by him, and afflicted.", "Carrying his own cross, he went out to the place of the Skull (which in Aramaic is called Golgotha).", "Isaiah declared that the Servant would bear our suffering — taking up our pain though we thought him punished by God. Jesus carried His own cross to Golgotha, bearing the weight of human sin and sorrow. What Isaiah foretold, Christ fulfilled in His body on the way to Calvary.",
   undefined,
   { ...mcdowell(43, "Fell under the Cross", "Knees weak from fasting, flesh feeble — physical collapse under weight of the cross on the way to Golgotha") }));
 
-prophecies.push(makeLesson(181, "friends-stood-afar-off", "Friends Stood Afar Off", "Passion",
+prophecies.push(makeLesson(180, "friends-stood-afar-off", "Friends Stood Afar Off", "Passion",
   "Psalm 38:11", "Luke 23:49", "My friends and companions avoid me because of my wounds; my neighbors stay far away.", "But all those who knew him, including the women who had followed him from Galilee, stood at a distance, watching these things.", "The psalmist lamented that friends and companions withdrew because of his suffering. At the cross, those who knew Jesus stood at a distance, watching. The isolation of suffering was part of the Messiah's cost.",
   undefined,
   { ...mcdowell(49, "Friends Stood Afar Off", "Loved ones and friends stand aloof from plague; Luke 23:49 — all acquaintances watched at a distance") }));
 
-prophecies.push(makeLesson(182, "they-wagged-their-heads", "They Wagged Their Heads", "Passion",
+prophecies.push(makeLesson(181, "they-wagged-their-heads", "They Wagged Their Heads", "Passion",
   "Psalm 109:25", "Matthew 27:39", "Those who see me shake their heads.", "Those who passed by hurled insults at him, shaking their heads.", "The psalmist described onlookers shaking their heads in contempt. Matthew records the same scene at Calvary — passersby hurled insults and shook their heads at Jesus. The psalm was a script, and the cross was its stage.",
   undefined,
   { ...mcdowell(50, "People Shook Their Heads", "Ethridge: gesture implying no hope for the sufferer; Matt 27:39 — passersby wagging heads at the cross") }));
 
-prophecies.push(makeLesson(183, "they-look-and-stare", "They Look and Stare", "Passion",
+prophecies.push(makeLesson(182, "they-look-and-stare", "They Look and Stare", "Passion",
   "Psalm 22:17", "Luke 23:35", "I can count all my bones; people stare and gloat over me.", "The people stood watching, and the rulers even sneered at him. They said, \"He saved others; let him save himself if he is God's Messiah, the Chosen One.\"", "The psalmist described being stared at and gloated over. Luke records the crowd watching and sneering at Jesus on the cross. Every detail of Psalm 22 was lived out in Christ's crucifixion.",
   undefined,
   { ...mcdowell(51, "Stared Upon", "Can count all bones; they look and stare — crowd standing watching the crucifixion, Luke 23:35") }));
 
-prophecies.push(makeLesson(184, "not-one-bone-broken", "Not One Bone Broken", "Passion",
+prophecies.push(makeLesson(183, "not-one-bone-broken", "Not One Bone Broken", "Passion",
   "Psalm 34:20", "John 19:33", "He protects all his bones, not one of them will be broken.", "But when they came to Jesus and found that he was already dead, they did not break his legs.", "The psalmist declared that God protects His righteous one — not a bone will be broken. At the cross, the soldiers broke the legs of the two criminals but found Jesus already dead. God protected His Son's bones, fulfilling the psalm.",
   undefined,
   { ...mcdowell(57, "Bones Not Broken", "God guards all His bones; soldiers skipped breaking Jesus' legs because He was already dead — John 19:33") }));
 
-prophecies.push(makeLesson(185, "heart-poured-out", "Heart Poured Out", "Passion",
+prophecies.push(makeLesson(184, "heart-poured-out", "Heart Poured Out", "Passion",
   "Psalm 22:14", "John 19:34", "All my bones are out of joint. My heart has turned to wax; it has melted within me.", "Instead, one of the soldiers pierced Jesus' side with a spear, bringing a sudden flow of blood and water.", "The psalmist described a heart melted like wax within him. When the soldier pierced Jesus' side, blood and water flowed — medical evidence of a heart that literally burst. Psalm 22 described the Messiah's death a thousand years before the cross.",
   undefined,
   { ...mcdowell(58, "Heartbroken", "Heart like wax melted within; blood and water from the pierced side are evidence the heart had literally burst") }));
 
 // === NEW COMING-SOON LESSONS (Payne Gap Coverage) ===
 
-prophecies.push(makeLesson(186, "son-of-the-father", "Son of the Father", "Lineage",
+prophecies.push(makeLesson(185, "son-of-the-father", "Son of the Father", "Lineage",
   "2 Samuel 7:14", "Hebrews 1:5", "I will be his father, and he will be my son.", "For to which of the angels did God ever say, 'You are my Son; today I have become your Father'?", "God's covenant with David included a father-son relationship with his successor. The author of Hebrews applies this promise exclusively to Jesus — not to angels, not to any earthly king — as evidence of the Son's unique divine status.",
   undefined,
   { ...payne(7, "2 Sam 7:14", "Father-son covenant relationship; Payne sees this as the relational heart of the Davidic covenant, fulfilled uniquely in the incarnate Son") }));
 
-prophecies.push(makeLesson(187, "blessed-is-he-who-comes", "Blessed Is He Who Comes", "Identity",
+prophecies.push(makeLesson(186, "blessed-is-he-who-comes", "Blessed Is He Who Comes", "Identity",
   "Psalm 118:26", "Matthew 21:9", "Blessed is he who comes in the name of the LORD. From the house of the LORD we bless you.", "Blessed is he who comes in the name of the Lord! Hosanna in the highest heaven!", "Psalm 118 was sung at Passover as pilgrims processed to the temple. When the crowd greeted Jesus with these exact words on Palm Sunday, they were identifying him as the expected king coming in God's name — a fulfillment the religious leaders understood immediately.",
   undefined,
   { ...payne(21, "Ps 118:26", "Blessed is He who comes in the LORD's name; Payne notes the Hallel psalm was the Passover processional, making the Palm Sunday crowd's use of it a conscious messianic declaration") }));
 
-prophecies.push(makeLesson(188, "throne-of-his-body", "Throne of His Body", "Lineage",
+prophecies.push(makeLesson(187, "throne-of-his-body", "Throne of His Body", "Lineage",
   "Psalm 132:11", "Acts 2:30", "The LORD swore an oath to David, a sure oath he will not revoke: 'One of your own descendants I will place on your throne.'", "But he was a prophet and knew that God had promised him on oath that he would place one of his descendants on his throne.", "Psalm 132 affirms the unconditional nature of the Davidic covenant — God swore an oath that David's bodily descendant would occupy his throne. Peter at Pentecost declared that Jesus' resurrection fulfilled this oath, establishing the Davidic heir on an eternal throne beyond the reach of death.",
   undefined,
   { ...payne(22, "Ps 132:11", "Bodily descendant of David placed on the throne; Payne connects the oath-formula here to the unbreakable permanence of the Davidic covenant") }));
 
-prophecies.push(makeLesson(189, "tongue-cleaves-i-thirst", "Tongue Cleaves, \"I Thirst\"", "Passion",
+prophecies.push(makeLesson(188, "tongue-cleaves-i-thirst", "Tongue Cleaves, \"I Thirst\"", "Passion",
   "Psalm 22:15", "John 19:28", "My mouth is dried up like a potsherd, and my tongue sticks to the roof of my mouth; you lay me in the dust of death.", "Later, knowing that everything had now been finished, and so that Scripture would be fulfilled, Jesus said, \"I am thirsty.\"", "The psalmist described a mouth dried like pottery and a tongue stuck fast — the agony of dehydration in death. On the cross, Jesus said 'I am thirsty,' and John explicitly notes it was to fulfill Scripture. The Passion Psalm's details were lived out in Christ's final hours.",
   undefined,
   { ...payne(13, "Ps 22:15", "Tongue cleaves to jaws; Payne treats Psalm 22 as the most detailed prophetic portrait of crucifixion, including thirst"), ...edersheim("Psalm 22 treated as complete Messianic Passion Psalm; thirst and physical torment applied to Messiah's suffering in ancient Synagogue"), ...mcdowell(54, "Gall and Vinegar Offered", "Tongue cleaves to jaws — thirst on the cross; John 19:28 explicitly states fulfillment of Scripture") }));
 
-prophecies.push(makeLesson(190, "who-has-believed", "Who Has Believed", "Rejection",
+prophecies.push(makeLesson(189, "who-has-believed", "Who Has Believed", "Rejection",
   "Isaiah 53:1", "John 12:38", "Who has believed our message and to whom has the arm of the LORD been revealed?", "This was to fulfill the word of Isaiah the prophet: \"Lord, who has believed our message, and to whom has the arm of the Lord been revealed?\"", "Isaiah opened the Suffering Servant passage with a grieving question — who has believed? John cites this verse to explain why so many refused to believe in Jesus despite His signs. The rejection was not an accident; it was woven into the prophetic pattern from the start.",
   undefined,
   { ...payne(33, "Isa 53:1", "Who has believed our report; Payne treats this as the heading of the Servant's rejection, fulfilled in Israel's widespread unbelief during Jesus' ministry"), ...edersheim("Isaiah 53:1 cited in Messianic context; disbelief of the report applied to rejection of the Messiah in Talmud and Yalkut"), ...mcdowell(47, "Rejected by His Own People", "Who has believed our report — John 12:38 and Romans 10:16 both cite this as fulfilled in Israel's rejection of the Messiah") }));
 
-prophecies.push(makeLesson(191, "every-knee-shall-bow", "Every Knee Shall Bow", "Kingdom",
+prophecies.push(makeLesson(190, "every-knee-shall-bow", "Every Knee Shall Bow", "Kingdom",
   "Isaiah 45:23", "Philippians 2:10–11", "By myself I have sworn, my mouth has uttered in all integrity a word that will not be revoked: Before me every knee will bow; by me every tongue will swear.", "that at the name of Jesus every knee should bow, in heaven and on earth and under the earth, and every tongue acknowledge that Jesus Christ is Lord, to the glory of God the Father.", "Through Isaiah, God swore an irrevocable oath that every knee would bow to Him alone. Paul applies this oath directly to Jesus — at His name every knee in heaven, earth, and under the earth will bow. What God declared of Himself, the apostle declares of Christ.",
   undefined,
   { ...payne(29, "Isa 45:23", "Every knee shall bow; Payne notes Paul's transfer of this monotheistic oath to Christ in Philippians 2 as evidence of the highest Christology"), ...edersheim("Every knee bowing applied to Messianic era; Isaiah 45:23 cited in Talmudic discussion of universal acknowledgment of God through Messiah"), ...mcdowell(15, "Shall Be Called Lord", "Every knee bowing and tongue confessing; Phil 2:10–11 applies Yahweh's oath to Jesus as Lord") }));
 
-prophecies.push(makeLesson(192, "stranger-to-his-brothers", "Stranger to His Brothers", "Rejection",
+prophecies.push(makeLesson(191, "stranger-to-his-brothers", "Stranger to His Brothers", "Rejection",
   "Psalm 69:8", "John 7:5", "I am a foreigner to my own family, a stranger to my own mother's children.", "For even his own brothers did not believe in him.", "The psalmist lamented being treated as a stranger by his own siblings. Jesus experienced the same — His own brothers did not believe in Him during His earthly ministry. The Messiah's rejection began not with enemies, but at home.",
   undefined,
   { ...edersheim("Psalm 69 treated as Messianic; alienation from brethren applied to Messiah's rejection by His own in Rabbinic commentary") }));
 
-prophecies.push(makeLesson(193, "raised-on-third-day", "Raised on the Third Day", "Resurrection",
+prophecies.push(makeLesson(192, "raised-on-third-day", "Raised on the Third Day", "Resurrection",
   "Hosea 6:2", "Luke 24:46",
   "After two days he will revive us; on the third day he will restore us, that we may live in his presence.",
   "He told them, \"This is what is written: The Messiah will suffer and rise from the dead on the third day,\"",
@@ -1520,55 +1514,50 @@ prophecies.push(makeLesson(193, "raised-on-third-day", "Raised on the Third Day"
   undefined,
   { ...payne(78, "Hos 6:2", "Revival after two days and raising on the third day; Payne treats this as a prophetic pattern directly fulfilled in Christ's resurrection — listed as #78 in his 191 messianic prophecies"), ...edersheim("Hos. vi. 2 is Messianically applied in the Targum — explicitly confirmed in Appendix IX of The Life and Times of Jesus the Messiah") }));
 
-prophecies.push(makeLesson(194,"no-comforters-in-his-suffering","No Comforters in His Suffering","Passion",
+prophecies.push(makeLesson(193,"no-comforters-in-his-suffering","No Comforters in His Suffering","Passion",
 "Psalm 69:20","Mark 14:34",
 "Scorn has broken my heart and has left me helpless; I looked for sympathy, but there was none, for comforters, but I found none.",
 "\"My soul is overwhelmed with sorrow to the point of death,\" he said to them. \"Stay here and keep watch.\"",
 "The psalmist cried out that scorn had broken his heart and no comforter could be found. In the Garden of Gethsemane, Jesus poured out His anguish to Peter, James, and John — yet they fell asleep while He suffered alone. The Messiah's deepest agony was met not with comfort but with the solitude foretold centuries earlier."));
 
-prophecies.push(makeLesson(195,"the-day-the-lord-has-made","The Day the Lord Has Made","Resurrection",
+prophecies.push(makeLesson(194,"the-day-the-lord-has-made","The Day the Lord Has Made","Resurrection",
 "Psalm 118:24","Acts 2:32–36",
 "The LORD has done it this very day; let us rejoice today and be glad.",
 "God has raised this Jesus to life, and we are all witnesses of it. Exalted to the right hand of God, he has received from the Father the promised Holy Spirit and has poured out what you now see and hear. … Therefore let all Israel be assured of this: God has made this Jesus, whom you crucified, both Lord and Messiah.",
 "The psalmist celebrated the day the LORD had acted decisively — a day of joy and vindication. Peter at Pentecost declared that Resurrection Sunday was that day: the day God raised Jesus from the dead, exalted Him, and poured out His Spirit. What the psalm anticipated as praise, the apostles proclaimed as history."));
 
-prophecies.push(makeLesson(196,"the-servant-brings-justice","The Servant Brings Justice","Ministry",
+prophecies.push(makeLesson(195,"the-servant-brings-justice","The Servant Brings Justice","Ministry",
 "Isaiah 42:3","Matthew 12:20",
 "A bruised reed he will not break, and a smoldering wick he will not snuff out. In faithfulness he will bring forth justice;",
 "A bruised reed he will not break, and a smoldering wick he will not snuff out, till he has brought justice through to victory.",
 "Isaiah described God's Servant as one who would not crush the weak or extinguish the faint. Matthew applied these words to Jesus, whose ministry was marked by tenderness toward the broken. Where the world discards what is damaged, Jesus restores it — bringing justice not through force but through faithful compassion."));
 
-prophecies.push(makeLesson(197,"the-king-comes-bringing-peace","The King Comes Bringing Peace","Kingdom",
+prophecies.push(makeLesson(196,"the-king-comes-bringing-peace","The King Comes Bringing Peace","Kingdom",
 "Zechariah 9:10","Matthew 21:9",
 "I will take away the chariots from Ephraim and the warhorses from Jerusalem, and the battle bow will be broken. He will proclaim peace to the nations. His rule will extend from sea to sea and from the River to the ends of the earth.",
 "The crowds that went ahead of him and those that followed shouted, \"Hosanna to the Son of David!\" \"Blessed is he who comes in the name of the Lord!\" \"Hosanna in the highest heaven!\"",
-"Zechariah envisioned a king who would abolish weapons of war and proclaim peace to every nation. When Jesus entered Jerusalem to shouts of 'Hosanna,' the crowd unknowingly announced that peace-bringing king. His kingdom is established not by chariots and warhorses but by the disarming power of sacrificial love."));
+"Zechariah envisioned a king who would abolish weapons of war and proclaim peace to every nation. Paul declares that Christ is our peace — He has destroyed the wall of hostility between peoples. His kingdom is established not by chariots and warhorses but by the disarming power of reconciling love."));
 
-prophecies.push(makeLesson(198,"the-servant-will-be-exalted","The Servant Will Be Exalted","Ministry",
+prophecies.push(makeLesson(197,"the-servant-will-be-exalted","The Servant Will Be Exalted","Ministry",
 "Isaiah 52:15","Romans 15:21",
 "so he will sprinkle many nations, and kings will shut their mouths because of him. For what they were not told, they will see, and what they have not heard, they will understand.",
 "Rather, as it is written: \"Those who were not told about him will see, and those who have not heard will understand.\"",
 "Isaiah declared that the Servant's mission would reach nations that had never heard of Him — even kings would be silenced. Paul quoted this passage to explain why he preached where Christ was not yet known. The gospel's reach to the ends of the earth was not an afterthought — it was written into the Servant's mission from the start."));
 
-prophecies.push(makeLesson(199,"out-of-egypt-i-called-my-son","Out of Egypt I Called My Son","Lineage",
+prophecies.push(makeLesson(198,"out-of-egypt-i-called-my-son","Out of Egypt I Called My Son","Lineage",
 "Hosea 11:1","Matthew 2:15",
 "When Israel was a child, I loved him, and out of Egypt I called my son.",
 "So was fulfilled what the Lord had said through the prophet: \"Out of Egypt I called my son.\"",
 "Hosea described God's love for Israel as His son, called out of Egypt in the Exodus. Matthew saw this pattern fulfilled in a deeper way when the infant Jesus returned from Egypt after Herod's death. Just as God called His people out of Egypt, He called His Son — the true Israel — along the same path, reliving and redeeming the nation's story."));
 
-prophecies.push(makeLesson(200,"the-stone-the-builders-rejected-becomes-the-cornerstone","The Stone the Builders Rejected Becomes the Cornerstone","Rejection",
-"Psalm 118:22","Acts 4:11",
-"The stone the builders rejected has become the cornerstone.",
-"Jesus is \"the stone you builders rejected, which has become the cornerstone.\"",
-"The psalmist marveled that what the LORD had done was beyond human expectation — the rejected stone had become the cornerstone. Peter declared this fulfilled when the religious leaders rejected Jesus, yet God made Him the foundation of everything. What men discarded, God exalted — and it remains the most marvelous reversal in all of history."));
 
-prophecies.push(makeLesson(201,"he-will-strike-the-earth-with-the-rod-of-his-mouth","He Will Strike the Earth with the Rod of His Mouth","Kingdom",
+prophecies.push(makeLesson(199,"he-will-strike-the-earth-with-the-rod-of-his-mouth","He Will Strike the Earth with the Rod of His Mouth","Kingdom",
 "Isaiah 11:4","Revelation 19:15",
 "but with righteousness he will judge the needy, with justice he will give decisions for the poor of the earth. He will strike the earth with the rod of his mouth; with the breath of his lips he will slay the wicked.",
 "Coming out of his mouth is a sharp sword with which to strike down the nations. He will rule them with an iron scepter.",
 "Isaiah foresaw a Messianic ruler who would judge the earth not by military might but by the word of His mouth. In Revelation, John sees the returning Christ with a sharp sword proceeding from His mouth, striking down the nations. The Messiah's justice is absolute — His word alone is sufficient to overthrow all wickedness."));
 
-prophecies.push(makeLesson(202,"the-lord-will-be-king-over-all-the-earth","The Lord Will Be King Over All the Earth","Kingdom",
+prophecies.push(makeLesson(200,"the-lord-will-be-king-over-all-the-earth","The Lord Will Be King Over All the Earth","Kingdom",
 "Zechariah 14:9","Revelation 11:15",
 "The LORD will be king over the whole earth. On that day there will be one LORD, and his name the only name.",
 "The kingdom of the world has become the kingdom of our Lord and of his Messiah, and he will reign for ever and ever.",

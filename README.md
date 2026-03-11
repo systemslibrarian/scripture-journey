@@ -18,7 +18,7 @@
 > *"And beginning with Moses and all the Prophets, he explained to them what was said in all the Scriptures concerning himself."*
 > — **Luke 24:27 (NIV)**
 
-Scripture Journey is a Christ-centered web app that helps readers explore how the entire Bible points to Jesus through **202 messianic prophecy lessons**.
+Scripture Journey is a Christ-centered web app that helps readers explore how the entire Bible points to Jesus through **200 messianic prophecy lessons**.
 
 Each lesson connects:
 
@@ -71,12 +71,12 @@ Inspired by Luke 24:27, the app helps users explore the unfolding promise of the
 
 ## Features
 
-- **202 prophecy-centered lessons**, each including:
+- **200 prophecy-centered lessons**, each including:
   - Old Testament prophecy + New Testament fulfillment
   - A unique *"Why This Matters"* reflection
   - Scholarly source badges
 - **7 prophetic categories**: Lineage, Identity, Ministry, Rejection, Passion, Resurrection, Kingdom
-- **4 prophecy types**: Direct Prophecy, Messianic Psalm, Typology, Prophetic Pattern
+- **5 prophecy types**: Direct Prophecy, Messianic Psalm, Typology, Prophetic Pattern, Applied Psalm
 - Visual **Prophecy Map** and **Timeline**
 - **Dashboard** with progress tracking and study streak
 - **Adaptive quiz** drawn from completed lessons
@@ -123,13 +123,13 @@ Inspired by Luke 24:27, the app helps users explore the unfolding promise of the
 Lessons are attributed to three widely recognized works on messianic prophecy:
 
 ### 📘 J. Barton Payne — *Encyclopedia of Biblical Prophecy* (1973)
-Catalogs 191 messianic prophecies and provides the numbering system used for cross-reference. Referenced in **62 lessons**.
+Catalogs 191 messianic prophecies and provides the numbering system used for cross-reference. Referenced in **66 lessons**.
 
 ### 📚 Alfred Edersheim — *The Life and Times of Jesus the Messiah* (1883)
-Appendix IX catalogs 456 Old Testament passages applied to the Messiah. Referenced in **176 lessons**.
+Appendix IX catalogs 456 Old Testament passages applied to the Messiah. Referenced in **155 lessons**.
 
 ### 📖 Josh McDowell — *The New Evidence That Demands a Verdict* (1999)
-Provides detailed evidence for prophecy fulfillment. Referenced in **60 lessons**.
+Provides detailed evidence for prophecy fulfillment. Referenced in **59 lessons**.
 
 ---
 
