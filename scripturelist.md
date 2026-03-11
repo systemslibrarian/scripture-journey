@@ -203,6 +203,6 @@ Sorted by lesson number.
 | 197 | Zechariah 9:10 | Matthew 21:9 |
 | 198 | Isaiah 52:15 | Romans 15:21 |
 | 199 | Hosea 11:1 | Matthew 2:15 |
-| 200 | Psalm 118:23 | Acts 4:11 |
+| 200 | Psalm 118:22 | Acts 4:11 |
 | 201 | Isaiah 11:4 | Revelation 19:15 |
 | 202 | Zechariah 14:9 | Revelation 11:15 |
