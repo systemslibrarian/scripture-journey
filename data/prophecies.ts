@@ -1558,7 +1558,7 @@ prophecies.push(makeLesson(199,"out-of-egypt-i-called-my-son","Out of Egypt I Ca
 
 prophecies.push(makeLesson(200,"the-stone-the-builders-rejected-becomes-the-cornerstone","The Stone the Builders Rejected Becomes the Cornerstone","Rejection",
 "Psalm 118:22","Acts 4:11",
-"the LORD has done this, and it is marvelous in our eyes.",
+"The stone the builders rejected has become the cornerstone.",
 "Jesus is \"the stone you builders rejected, which has become the cornerstone.\"",
 "The psalmist marveled that what the LORD had done was beyond human expectation — the rejected stone had become the cornerstone. Peter declared this fulfilled when the religious leaders rejected Jesus, yet God made Him the foundation of everything. What men discarded, God exalted — and it remains the most marvelous reversal in all of history."));
 

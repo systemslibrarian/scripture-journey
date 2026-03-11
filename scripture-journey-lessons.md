@@ -5275,7 +5275,7 @@ Lord, the line from Hosea 11:1 to Matthew 2:15 reminds me that You work through 
 **Category:** Rejection · Messianic Psalm
 
 ### Old Testament
-**Psalm 118:22** — the LORD has done this, and it is marvelous in our eyes.
+**Psalm 118:22** — The stone the builders rejected has become the cornerstone.
 
 ### New Testament
 **Acts 4:11** — Jesus is "the stone you builders rejected, which has become the cornerstone."
