@@ -12,6 +12,7 @@ export const ALL_TYPES: ProphecyType[] = [
   'Messianic Psalm',
   'Typology',
   'Prophetic Pattern',
+  'Applied Psalm',
 ];
 
 export const typeActiveStyles: Record<ProphecyType, string> = {
@@ -19,6 +20,7 @@ export const typeActiveStyles: Record<ProphecyType, string> = {
   'Messianic Psalm':        'bg-[#dbeafe] border-[#3b82f6] text-[#1e40af]',
   'Typology':               'bg-[#d1fae5] border-[#10b981] text-[#065f46]',
   'Prophetic Pattern':      'bg-[#ede9fe] border-[#8b5cf6] text-[#4c1d95]',
+  'Applied Psalm':          'bg-[#f0f9ff] border-[#0ea5e9] text-[#0c4a6e]',
 };
 
 export const scholarActiveStyles: Record<Exclude<ScholarFilter, 'all'>, string> = {
