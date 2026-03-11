@@ -159,10 +159,10 @@ const _prophecyTypeMap: Record<number, ProphecyType> = {
   58: 'Direct Prophecy', 59: 'Typology', 60: 'Direct Prophecy',
   61: 'Prophetic Pattern', 62: 'Messianic Psalm', 63: 'Typology',
   64: 'Direct Prophecy', 65: 'Typology', 66: 'Typology',
-  67: 'Direct Prophecy', 68: 'Messianic Psalm', 69: 'Messianic Psalm',
+  67: 'Direct Prophecy', 68: 'Messianic Psalm', 69: 'Applied Psalm',
   70: 'Messianic Psalm', 71: 'Messianic Psalm', 72: 'Messianic Psalm',
   73: 'Messianic Psalm', 74: 'Messianic Psalm', 75: 'Messianic Psalm',
-  76: 'Messianic Psalm', 77: 'Messianic Psalm', 78: 'Direct Prophecy',
+  76: 'Messianic Psalm', 77: 'Applied Psalm', 78: 'Direct Prophecy',
   79: 'Direct Prophecy', 80: 'Direct Prophecy', 81: 'Direct Prophecy',
   82: 'Direct Prophecy', 83: 'Direct Prophecy', 84: 'Direct Prophecy',
   85: 'Direct Prophecy', 86: 'Prophetic Pattern', 87: 'Direct Prophecy',
@@ -217,6 +217,11 @@ const _prophecyTypeMap: Record<number, ProphecyType> = {
   188: 'Messianic Psalm', 189: 'Messianic Psalm',
   190: 'Direct Prophecy', 191: 'Direct Prophecy',
   192: 'Messianic Psalm', 193: 'Prophetic Pattern',
+  194: 'Messianic Psalm', 195: 'Messianic Psalm',
+  196: 'Direct Prophecy', 197: 'Direct Prophecy',
+  198: 'Direct Prophecy', 199: 'Direct Prophecy',
+  200: 'Messianic Psalm',
+  201: 'Direct Prophecy', 202: 'Direct Prophecy',
 };
 
 const _eraOrder: Record<TimelineEra, number> = {
@@ -1007,6 +1012,26 @@ const _scholarshipMap: Record<number, Scholarship> = {
   176: { ...payne(2, "Gen 22:18", "Through Abraham's seed all nations blessed; Payne points to the singular 'seed' as anticipating Gal 3:16") },
   184: { ...payne(15, "Ps 34:20", "Not one bone broken; Payne connects this to the Passover lamb's bones (Exod 12:46) as a dual fulfillment") },
   193: { ...payne(78, "Hos 6:2", "Revival after two days and raising on the third day; Payne treats this as a prophetic pattern directly fulfilled in Christ's resurrection — listed as #78 in his 191 messianic prophecies"), ...edersheim("Hos. vi. 2 is Messianically applied in the Targum — explicitly confirmed in Appendix IX of The Life and Times of Jesus the Messiah") },
+  195: { ...payne(20, "Psalm 118:22–26", "Payne's #20 covers the Psalm 118 cornerstone passage; verse 24 ('This is the day the LORD has made') is part of that same psalm cluster applied messianically") },
+  196: { ...payne(30, "Isaiah 42:1–4", "Payne #30 identifies Isaiah 42:1–4 as messianic; Matthew 12:18–21 quotes the full passage including verse 3 as fulfilled in Jesus's gentle ministry") },
+  197: { ...payne(97, "Zechariah 9:10", "Payne #97 identifies Zechariah 9:10 as messianic, describing the universal peace and dominion of the coming King") },
+  198: { ...payne(64, "Isaiah 52:15", "Payne #64 identifies Isaiah 52:15 as messianic; Paul quotes it in Romans 15:21 regarding the gospel going to those who had not heard") },
+  200: { ...payne(20, "Psalm 118:22–23", "Payne's #20 covers the Psalm 118 cornerstone passage; verse 23 ('the LORD has done this') is the direct continuation applied by Peter in Acts 4:11") },
+  45: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Messianic shepherd-ruler prophecy strongly attested across all three scholars. Closely tied to the Bethlehem context of Micah 5:2.", ntUsage: "John 10:11" },
+  61: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Recognized messianic healing imagery across all three scholars. The title 'Sun of Righteousness' is a formal messianic designation.", ntUsage: null },
+  65: { scholarlyStrength: 'Typology', scholarsWhoList: ['McDowell'], scholarNote: "Jesus explicitly invokes this as a type of his own lifting up in John 3:14. McDowell lists it; Payne and Edersheim do not treat it as formal prophecy.", ntUsage: "John 3:14" },
+  67: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Core Davidic covenant prophecy foundational to all messianic expectation. Universally listed by all three scholars.", ntUsage: "Luke 1:32-33; Acts 2:30" },
+  69: { scholarlyStrength: 'Applied Psalm', scholarsWhoList: [], scholarNote: "Applied messianically by Jesus in Matthew 21:16 but not a predictive prophecy. Represents apostolic interpretation of a Psalm rather than a formal Messianic prophecy. Retained for NT theological completeness.", ntUsage: "Matthew 21:16" },
+  77: { scholarlyStrength: 'Applied Psalm', scholarsWhoList: [], scholarNote: "Applied to Judas in Acts 1:20 but not listed as a formal Messianic prophecy by Payne, Edersheim, or McDowell. Represents apostolic typological use of a Psalm rather than predictive prophecy.", ntUsage: "Acts 1:20" },
+  90: { scholarlyStrength: 'NT Application', scholarsWhoList: ['Edersheim', 'McDowell'], scholarNote: "Messianic era prophecy cited by Peter at Pentecost (Acts 2:17). Listed by Edersheim and McDowell; Payne does not formally include it.", ntUsage: "Acts 2:17-18" },
+  91: { scholarlyStrength: 'Typology', scholarsWhoList: ['McDowell'], scholarNote: "Treated as Christological type by McDowell and by Jesus himself in Matthew 12:40. Not a direct predictive prophecy but a recognized messianic type.", ntUsage: "Matthew 12:40" },
+  92: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Strong messianic restoration prophecy appearing in all three major scholarly lists. Cited in Acts 15:16–17 at the Jerusalem Council.", ntUsage: "Acts 15:16-17" },
+  93: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Direct messianic title 'the Branch' is a recognized prophetic designation for the Messiah across all three scholars.", ntUsage: null },
+  95: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim', 'McDowell'], scholarNote: "Fulfilled in John the Baptist as forerunner of the Messiah. All three scholars list this as a formal messianic prophecy.", ntUsage: "Matthew 11:14; Luke 1:17" },
+  194: { scholarlyStrength: 'NT Application', scholarsWhoList: ['Edersheim', 'McDowell'], scholarNote: "Suffering Messiah theme recognized by Edersheim and McDowell. Applied in NT passion narrative but not listed formally by Payne.", ntUsage: "Romans 15:3; John 15:25" },
+  199: { scholarlyStrength: 'NT Application', scholarsWhoList: ['Edersheim', 'McDowell'], scholarNote: "Matthew applies this typologically to Jesus' return from Egypt. Edersheim and McDowell treat it as fulfillment; Payne does not list it.", ntUsage: "Matthew 2:15" },
+  201: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim'], scholarNote: "Classic Messianic kingdom prophecy referenced by Payne and Edersheim. Describes the righteous judgment of the Messianic ruler, fulfilled eschatologically in Revelation 19:15.", ntUsage: "Revelation 19:15" },
+  202: { scholarlyStrength: 'Strong', scholarsWhoList: ['Payne', 'Edersheim'], scholarNote: "Messianic kingdom prophecy describing the universal reign of the Lord. Referenced by Payne and Edersheim. Fulfilled in the proclamation of Christ's kingdom in Revelation 11:15.", ntUsage: "Revelation 11:15" },
 
 };
 
@@ -1494,6 +1519,60 @@ prophecies.push(makeLesson(193, "raised-on-third-day", "Raised on the Third Day"
   "Hosea's prophecy of revival after two days and restoration on the third established a prophetic pattern that Jesus directly cited. When He explained the Scriptures after His resurrection, He pointed to this very pattern — that it was written the Messiah would rise on the third day. This is one of the most direct prophetic anticipations of the resurrection in the entire Old Testament.",
   undefined,
   { ...payne(78, "Hos 6:2", "Revival after two days and raising on the third day; Payne treats this as a prophetic pattern directly fulfilled in Christ's resurrection — listed as #78 in his 191 messianic prophecies"), ...edersheim("Hos. vi. 2 is Messianically applied in the Targum — explicitly confirmed in Appendix IX of The Life and Times of Jesus the Messiah") }));
+
+prophecies.push(makeLesson(194,"no-comforters-in-his-suffering","No Comforters in His Suffering","Passion",
+"Psalm 69:20","Mark 14:34",
+"Scorn has broken my heart and has left me helpless; I looked for sympathy, but there was none, for comforters, but I found none.",
+"\"My soul is overwhelmed with sorrow to the point of death,\" he said to them. \"Stay here and keep watch.\"",
+"The psalmist cried out that scorn had broken his heart and no comforter could be found. In the Garden of Gethsemane, Jesus poured out His anguish to Peter, James, and John — yet they fell asleep while He suffered alone. The Messiah's deepest agony was met not with comfort but with the solitude foretold centuries earlier."));
+
+prophecies.push(makeLesson(195,"the-day-the-lord-has-made","The Day the Lord Has Made","Resurrection",
+"Psalm 118:24","Acts 2:32–36",
+"The LORD has done it this very day; let us rejoice today and be glad.",
+"God has raised this Jesus to life, and we are all witnesses of it. Exalted to the right hand of God, he has received from the Father the promised Holy Spirit and has poured out what you now see and hear. … Therefore let all Israel be assured of this: God has made this Jesus, whom you crucified, both Lord and Messiah.",
+"The psalmist celebrated the day the LORD had acted decisively — a day of joy and vindication. Peter at Pentecost declared that Resurrection Sunday was that day: the day God raised Jesus from the dead, exalted Him, and poured out His Spirit. What the psalm anticipated as praise, the apostles proclaimed as history."));
+
+prophecies.push(makeLesson(196,"the-servant-brings-justice","The Servant Brings Justice","Ministry",
+"Isaiah 42:3","Matthew 12:20",
+"A bruised reed he will not break, and a smoldering wick he will not snuff out. In faithfulness he will bring forth justice;",
+"A bruised reed he will not break, and a smoldering wick he will not snuff out, till he has brought justice through to victory.",
+"Isaiah described God's Servant as one who would not crush the weak or extinguish the faint. Matthew applied these words to Jesus, whose ministry was marked by tenderness toward the broken. Where the world discards what is damaged, Jesus restores it — bringing justice not through force but through faithful compassion."));
+
+prophecies.push(makeLesson(197,"the-king-comes-bringing-peace","The King Comes Bringing Peace","Kingdom",
+"Zechariah 9:10","Matthew 21:9",
+"I will take away the chariots from Ephraim and the warhorses from Jerusalem, and the battle bow will be broken. He will proclaim peace to the nations. His rule will extend from sea to sea and from the River to the ends of the earth.",
+"The crowds that went ahead of him and those that followed shouted, \"Hosanna to the Son of David!\" \"Blessed is he who comes in the name of the Lord!\" \"Hosanna in the highest heaven!\"",
+"Zechariah envisioned a king who would abolish weapons of war and proclaim peace to every nation. When Jesus entered Jerusalem to shouts of 'Hosanna,' the crowd unknowingly announced that peace-bringing king. His kingdom is established not by chariots and warhorses but by the disarming power of sacrificial love."));
+
+prophecies.push(makeLesson(198,"the-servant-will-be-exalted","The Servant Will Be Exalted","Ministry",
+"Isaiah 52:15","Romans 15:21",
+"so he will sprinkle many nations, and kings will shut their mouths because of him. For what they were not told, they will see, and what they have not heard, they will understand.",
+"Rather, as it is written: \"Those who were not told about him will see, and those who have not heard will understand.\"",
+"Isaiah declared that the Servant's mission would reach nations that had never heard of Him — even kings would be silenced. Paul quoted this passage to explain why he preached where Christ was not yet known. The gospel's reach to the ends of the earth was not an afterthought — it was written into the Servant's mission from the start."));
+
+prophecies.push(makeLesson(199,"out-of-egypt-i-called-my-son","Out of Egypt I Called My Son","Lineage",
+"Hosea 11:1","Matthew 2:15",
+"When Israel was a child, I loved him, and out of Egypt I called my son.",
+"So was fulfilled what the Lord had said through the prophet: \"Out of Egypt I called my son.\"",
+"Hosea described God's love for Israel as His son, called out of Egypt in the Exodus. Matthew saw this pattern fulfilled in a deeper way when the infant Jesus returned from Egypt after Herod's death. Just as God called His people out of Egypt, He called His Son — the true Israel — along the same path, reliving and redeeming the nation's story."));
+
+prophecies.push(makeLesson(200,"the-stone-the-builders-rejected-becomes-the-cornerstone","The Stone the Builders Rejected Becomes the Cornerstone","Rejection",
+"Psalm 118:23","Acts 4:11",
+"the LORD has done this, and it is marvelous in our eyes.",
+"Jesus is \"the stone you builders rejected, which has become the cornerstone.\"",
+"The psalmist marveled that what the LORD had done was beyond human expectation — the rejected stone had become the cornerstone. Peter declared this fulfilled when the religious leaders rejected Jesus, yet God made Him the foundation of everything. What men discarded, God exalted — and it remains the most marvelous reversal in all of history."));
+
+prophecies.push(makeLesson(201,"he-will-strike-the-earth-with-the-rod-of-his-mouth","He Will Strike the Earth with the Rod of His Mouth","Kingdom",
+"Isaiah 11:4","Revelation 19:15",
+"but with righteousness he will judge the needy, with justice he will give decisions for the poor of the earth. He will strike the earth with the rod of his mouth; with the breath of his lips he will slay the wicked.",
+"Coming out of his mouth is a sharp sword with which to strike down the nations. He will rule them with an iron scepter.",
+"Isaiah foresaw a Messianic ruler who would judge the earth not by military might but by the word of His mouth. In Revelation, John sees the returning Christ with a sharp sword proceeding from His mouth, striking down the nations. The Messiah's justice is absolute — His word alone is sufficient to overthrow all wickedness."));
+
+prophecies.push(makeLesson(202,"the-lord-will-be-king-over-all-the-earth","The Lord Will Be King Over All the Earth","Kingdom",
+"Zechariah 14:9","Revelation 11:15",
+"The LORD will be king over the whole earth. On that day there will be one LORD, and his name the only name.",
+"The kingdom of the world has become the kingdom of our Lord and of his Messiah, and he will reign for ever and ever.",
+"Zechariah proclaimed the day when the LORD alone would reign as King over all the earth, with no rival and no divided loyalty. Revelation echoes this vision: the kingdoms of this world become the kingdom of our Lord and of His Christ. The prophecy points to the final, uncontested reign of the Messiah over every nation."));
 
 for (const p of prophecies) {
   const s = _scholarshipMap[p.id];

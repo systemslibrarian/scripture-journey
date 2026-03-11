@@ -46,13 +46,18 @@ export interface Scholarship {
   payne?: PayneData;
   edersheim?: EdersheimData;
   mcdowell?: McDowellData;
+  scholarlyStrength?: 'Strong' | 'Typology' | 'NT Application' | 'Applied Psalm';
+  scholarNote?: string;
+  scholarsWhoList?: ('Payne' | 'Edersheim' | 'McDowell')[];
+  ntUsage?: string | null;
 }
 
 export type ProphecyType =
   | 'Direct Prophecy'
   | 'Messianic Psalm'
   | 'Typology'
-  | 'Prophetic Pattern';
+  | 'Prophetic Pattern'
+  | 'Applied Psalm';
 
 export type TimelineEra =
   | "Beginnings"

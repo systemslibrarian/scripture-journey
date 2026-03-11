@@ -18,7 +18,7 @@
 > *"And beginning with Moses and all the Prophets, he explained to them what was said in all the Scriptures concerning himself."*
 > — **Luke 24:27 (NIV)**
 
-Scripture Journey is a Christ-centered web app that helps readers explore how the entire Bible points to Jesus through **193 messianic prophecy lessons**.
+Scripture Journey is a Christ-centered web app that helps readers explore how the entire Bible points to Jesus through **202 messianic prophecy lessons**.
 
 Each lesson connects:
 
@@ -71,7 +71,7 @@ Inspired by Luke 24:27, the app helps users explore the unfolding promise of the
 
 ## Features
 
-- **193 prophecy-centered lessons**, each including:
+- **202 prophecy-centered lessons**, each including:
   - Old Testament prophecy + New Testament fulfillment
   - A unique *"Why This Matters"* reflection
   - Scholarly source badges

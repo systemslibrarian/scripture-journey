@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Academic attribution and methodology for Scripture Journey, featuring Payne, Edersheim, and McDowell scholarship.",
   openGraph: {
     title: "Sources and Methodology — Scripture Journey",
-    description: "Learn about the scholarly sources behind 193 messianic prophecy lessons: Payne, Edersheim, and McDowell.",
+    description: "Learn about the scholarly sources behind 202 messianic prophecy lessons: Payne, Edersheim, and McDowell.",
   },
 }
 
