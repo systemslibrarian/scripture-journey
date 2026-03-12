@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Fuse from 'fuse.js'
 import { Command } from 'cmdk'
 import { getAllLessons } from '@/data/lessons'
+import { safeGetItem, safeSetItem } from '@/lib/browser'
 import type { Lesson } from '@/lib/types'
 import CopyVerseLink from '@/components/CopyVerseLink'
 
@@ -14,9 +15,8 @@ const MAX_RESULTS = 8
 const DEBOUNCE_MS = 300
 
 function getRecentSlugs(): string[] {
-  if (typeof window === 'undefined') return []
   try {
-    const raw = localStorage.getItem(RECENT_KEY)
+    const raw = safeGetItem(RECENT_KEY)
     return raw ? JSON.parse(raw) : []
   } catch {
     return []
@@ -24,14 +24,9 @@ function getRecentSlugs(): string[] {
 }
 
 function addRecentSlug(slug: string) {
-  if (typeof window === 'undefined') return
-  try {
-    const slugs = getRecentSlugs().filter(s => s !== slug)
-    slugs.unshift(slug)
-    localStorage.setItem(RECENT_KEY, JSON.stringify(slugs.slice(0, MAX_RECENT)))
-  } catch {
-    // localStorage may be unavailable in in-app browsers
-  }
+  const slugs = getRecentSlugs().filter(s => s !== slug)
+  slugs.unshift(slug)
+  safeSetItem(RECENT_KEY, JSON.stringify(slugs.slice(0, MAX_RECENT)))
 }
 
 function highlightMatch(text: string, query: string): React.ReactNode {
@@ -103,13 +98,13 @@ export default function SearchAutocomplete() {
 
   // Close on outside click
   useEffect(() => {
-    function handleClick(e: MouseEvent) {
+    function handleClick(e: PointerEvent) {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setOpen(false)
       }
     }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
+    document.addEventListener('pointerdown', handleClick)
+    return () => document.removeEventListener('pointerdown', handleClick)
   }, [])
 
   const results = useMemo(() => {
@@ -161,7 +156,7 @@ export default function SearchAutocomplete() {
         </div>
 
         {(showRecent || showResults) && (
-          <Command.List className="absolute left-0 right-0 top-[calc(100%+4px)] z-50 max-h-[420px] overflow-y-auto rounded-xl border border-[#d8ccb8] bg-white shadow-lg">
+          <Command.List className="absolute left-0 right-0 top-[calc(100%+4px)] z-50 max-h-[min(420px,60vh)] overflow-y-auto rounded-xl border border-[#d8ccb8] bg-white shadow-lg">
             {showRecent && (
               <Command.Group
                 heading={
@@ -175,7 +170,7 @@ export default function SearchAutocomplete() {
                     key={lesson.slug}
                     value={lesson.slug}
                     onSelect={() => selectLesson(lesson)}
-                    className="flex cursor-pointer items-start gap-3 px-3 py-2.5 text-sm transition data-[selected=true]:bg-[#fbf7ee]"
+                    className="flex min-h-[44px] cursor-pointer items-start gap-3 px-3 py-2.5 text-sm transition data-[selected=true]:bg-[#fbf7ee]"
                   >
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
@@ -209,11 +204,11 @@ export default function SearchAutocomplete() {
                     key={lesson.slug}
                     value={lesson.slug}
                     onSelect={() => selectLesson(lesson)}
-                    className="flex cursor-pointer items-start gap-3 px-3 py-2.5 text-sm transition data-[selected=true]:bg-[#fbf7ee]"
+                    className="flex min-h-[44px] cursor-pointer items-start gap-3 px-3 py-2.5 text-sm transition data-[selected=true]:bg-[#fbf7ee]"
                   >
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-[#1b1a17]">
+                        <span className="font-semibold text-[#1b1a17] overflow-wrap-anywhere">
                           {highlightMatch(lesson.title, debouncedQuery)}
                         </span>
                         <span className={`inline-flex shrink-0 items-center rounded-full border px-1.5 py-0.5 text-[10px] font-medium ${typeBadgeStyles[lesson.prophecyType] ?? ''}`}>

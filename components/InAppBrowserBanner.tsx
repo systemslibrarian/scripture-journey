@@ -1,22 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
-
-function detectInAppBrowser(): boolean {
-  try {
-    if (typeof window === "undefined") return false
-    const ua = navigator.userAgent || ""
-    return /FBAN|FBAV|Messenger|Instagram|; wv\)/.test(ua)
-  } catch {
-    return false
-  }
-}
+import { isInAppBrowser } from "@/lib/browser"
 
 export function InAppBrowserBanner() {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    setShow(detectInAppBrowser())
+    setShow(isInAppBrowser())
   }, [])
 
   if (!show) return null

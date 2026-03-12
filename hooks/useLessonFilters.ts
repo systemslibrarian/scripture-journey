@@ -29,7 +29,7 @@ export const scholarActiveStyles: Record<Exclude<ScholarFilter, 'all'>, string> 
   mcdowell:  'bg-[#e8f0f5] border-[#2a5a7e] text-[#2a5a7e]',
 };
 
-function matchesScholar(lesson: Lesson, filter: ScholarFilter): boolean {
+export function matchesScholar(lesson: Lesson, filter: ScholarFilter): boolean {
   if (filter === 'all') return true;
   if (filter === 'payne') return !!lesson.scholarship?.payne?.attested;
   if (filter === 'edersheim') return !!lesson.scholarship?.edersheim?.attested;

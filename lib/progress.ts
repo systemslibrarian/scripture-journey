@@ -1,6 +1,9 @@
+import { safeGetItem, safeSetItem, safeRemoveItem } from '@/lib/browser'
+
 const STORAGE_KEY = "scripture_journey_progress"
 
-function parseStoredProgress(raw: string | null): string[] {
+/** @internal exported for testing */
+export function parseStoredProgress(raw: string | null): string[] {
   if (!raw) return []
 
   try {
@@ -15,26 +18,16 @@ function parseStoredProgress(raw: string | null): string[] {
 }
 
 export function getCompletedLessons(): string[] {
-  if (typeof window === "undefined") return []
-  try {
-    return parseStoredProgress(localStorage.getItem(STORAGE_KEY))
-  } catch {
-    return []
-  }
+  return parseStoredProgress(safeGetItem(STORAGE_KEY))
 }
 
 export function markLessonComplete(slug: string) {
-  if (typeof window === "undefined") return
-  try {
-    const completed = getCompletedLessons()
+  const completed = getCompletedLessons()
 
-    if (!completed.includes(slug)) {
-      completed.push(slug)
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(completed))
-      syncProgressToServer(slug, true)
-    }
-  } catch {
-    // localStorage may be unavailable in in-app browsers
+  if (!completed.includes(slug)) {
+    completed.push(slug)
+    safeSetItem(STORAGE_KEY, JSON.stringify(completed))
+    syncProgressToServer(slug, true)
   }
 }
 
@@ -57,12 +50,7 @@ export function getCompletionPercent(totalLessons: number): number {
 }
 
 export function clearProgress() {
-  if (typeof window === "undefined") return
-  try {
-    localStorage.removeItem(STORAGE_KEY)
-  } catch {
-    // localStorage may be unavailable
-  }
+  safeRemoveItem(STORAGE_KEY)
 }
 
 /* ── Quiz scoring ── */
@@ -78,9 +66,8 @@ export interface QuizScore {
 }
 
 function getScoreMap(): Record<string, QuizScore> {
-  if (typeof window === "undefined") return {}
   try {
-    const raw = localStorage.getItem(QUIZ_SCORE_KEY)
+    const raw = safeGetItem(QUIZ_SCORE_KEY)
     return raw ? JSON.parse(raw) : {}
   } catch {
     return {}
@@ -88,16 +75,11 @@ function getScoreMap(): Record<string, QuizScore> {
 }
 
 export function saveQuizScore(slug: string, result: { multipleChoice: boolean; fillInBlank?: boolean }) {
-  if (typeof window === "undefined") return
-  try {
-    const scores = getScoreMap()
-    scores[slug] = { ...result, timestamp: Date.now() }
-    localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(scores))
-    updateStreak(result.multipleChoice && (result.fillInBlank !== false))
-    syncQuizToServer(slug, result)
-  } catch {
-    // localStorage may be unavailable in in-app browsers
-  }
+  const scores = getScoreMap()
+  scores[slug] = { ...result, timestamp: Date.now() }
+  safeSetItem(QUIZ_SCORE_KEY, JSON.stringify(scores))
+  updateStreak(result.multipleChoice && (result.fillInBlank !== false))
+  syncQuizToServer(slug, result)
 }
 
 export function getQuizScore(slug: string): QuizScore | null {
@@ -115,19 +97,13 @@ export function getQuizStats(): { total: number; perfect: number; attempted: num
 }
 
 export function incrementQuizSessions() {
-  if (typeof window === "undefined") return
-  try {
-    const current = getQuizSessions()
-    localStorage.setItem(QUIZ_SESSION_KEY, String(current + 1))
-  } catch {
-    // localStorage may be unavailable
-  }
+  const current = getQuizSessions()
+  safeSetItem(QUIZ_SESSION_KEY, String(current + 1))
 }
 
 function getQuizSessions(): number {
-  if (typeof window === "undefined") return 0
   try {
-    const raw = localStorage.getItem(QUIZ_SESSION_KEY)
+    const raw = safeGetItem(QUIZ_SESSION_KEY)
     return raw ? parseInt(raw, 10) || 0 : 0
   } catch {
     return 0
@@ -143,9 +119,8 @@ interface StreakData {
 }
 
 function getStreakData(): StreakData {
-  if (typeof window === "undefined") return { current: 0, best: 0, lastDate: "" }
   try {
-    const raw = localStorage.getItem(STREAK_KEY)
+    const raw = safeGetItem(STREAK_KEY)
     return raw ? JSON.parse(raw) : { current: 0, best: 0, lastDate: "" }
   } catch {
     return { current: 0, best: 0, lastDate: "" }
@@ -153,39 +128,43 @@ function getStreakData(): StreakData {
 }
 
 function todayStr(): string {
-  return new Date().toISOString().slice(0, 10)
+  const d = new Date()
+  const yyyy = d.getFullYear()
+  const mm = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate()).padStart(2, '0')
+  return `${yyyy}-${mm}-${dd}`
+}
+
+function yesterdayStr(): string {
+  const d = new Date()
+  d.setDate(d.getDate() - 1)
+  const yyyy = d.getFullYear()
+  const mm = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate()).padStart(2, '0')
+  return `${yyyy}-${mm}-${dd}`
 }
 
 function updateStreak(correct: boolean) {
-  if (typeof window === "undefined") return
-  try {
-    const data = getStreakData()
-    const today = todayStr()
-    if (data.lastDate === today) return // already counted today
+  const data = getStreakData()
+  const today = todayStr()
+  if (data.lastDate === today) return // already counted today
 
-    if (correct) {
-      const yesterday = new Date()
-      yesterday.setDate(yesterday.getDate() - 1)
-      const yStr = yesterday.toISOString().slice(0, 10)
+  if (correct) {
+    const yStr = yesterdayStr()
 
-      data.current = data.lastDate === yStr ? data.current + 1 : 1
-      data.best = Math.max(data.best, data.current)
-    } else {
-      data.current = 0
-    }
-    data.lastDate = today
-    localStorage.setItem(STREAK_KEY, JSON.stringify(data))
-  } catch {
-    // localStorage may be unavailable
+    data.current = data.lastDate === yStr ? data.current + 1 : 1
+    data.best = Math.max(data.best, data.current)
+  } else {
+    data.current = 0
   }
+  data.lastDate = today
+  safeSetItem(STREAK_KEY, JSON.stringify(data))
 }
 
 export function getStreak(): { current: number; best: number } {
   const data = getStreakData()
   const today = todayStr()
-  const yesterday = new Date()
-  yesterday.setDate(yesterday.getDate() - 1)
-  const yStr = yesterday.toISOString().slice(0, 10)
+  const yStr = yesterdayStr()
 
   // If lastDate is not today or yesterday, streak has been broken
   if (data.lastDate !== today && data.lastDate !== yStr) {
@@ -243,33 +222,29 @@ export async function syncOnLogin(): Promise<void> {
     if (!res.ok) return
     const merged = await res.json()
 
-    try {
-      // Update localStorage with merged server state
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(merged.completedSlugs))
+    // Update localStorage with merged server state
+    safeSetItem(STORAGE_KEY, JSON.stringify(merged.completedSlugs))
 
-      const mergedScores: Record<string, QuizScore> = {}
-      for (const [slug, s] of Object.entries(merged.quizScores)) {
-        const score = s as { multipleChoice: boolean; fillInBlank?: boolean }
-        mergedScores[slug] = {
-          multipleChoice: score.multipleChoice,
-          fillInBlank: score.fillInBlank,
-          timestamp: quizScores[slug]?.timestamp ?? Date.now(),
-        }
+    const mergedScores: Record<string, QuizScore> = {}
+    for (const [slug, s] of Object.entries(merged.quizScores)) {
+      const score = s as { multipleChoice: boolean; fillInBlank?: boolean }
+      mergedScores[slug] = {
+        multipleChoice: score.multipleChoice,
+        fillInBlank: score.fillInBlank,
+        timestamp: quizScores[slug]?.timestamp ?? Date.now(),
       }
-      localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(mergedScores))
+    }
+    safeSetItem(QUIZ_SCORE_KEY, JSON.stringify(mergedScores))
 
-      if (merged.streak) {
-        localStorage.setItem(
-          STREAK_KEY,
-          JSON.stringify({
-            current: merged.streak.currentStreak,
-            best: merged.streak.bestStreak,
-            lastDate: merged.streak.lastActiveDate ?? '',
-          })
-        )
-      }
-    } catch {
-      // localStorage may be unavailable in in-app browsers
+    if (merged.streak) {
+      safeSetItem(
+        STREAK_KEY,
+        JSON.stringify({
+          current: merged.streak.currentStreak,
+          best: merged.streak.bestStreak,
+          lastDate: merged.streak.lastActiveDate ?? '',
+        })
+      )
     }
   } catch {
     // Sync failed silently — localStorage remains source of truth

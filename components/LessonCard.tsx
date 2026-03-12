@@ -28,11 +28,11 @@ export default function LessonCard({ lesson }: Props) {
         <CompletedIndicator slug={lesson.slug} />
       </div>
 
-      <h3 className="mt-2 text-xl font-bold text-[#1b1a17]">
+      <h3 className="mt-2 text-xl font-bold text-[#1b1a17] overflow-wrap-anywhere">
         {lesson.title}
       </h3>
 
-      <p className="mt-2 text-sm text-[#4a4338]">
+      <p className="mt-2 text-sm text-[#4a4338] overflow-wrap-anywhere">
         {lesson.otReference} → {lesson.ntReference}
       </p>
 

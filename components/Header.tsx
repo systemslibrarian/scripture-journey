@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
 import { syncOnLogin, getStreak } from '@/lib/progress';
@@ -17,8 +18,11 @@ const links = [
 
 export default function Header() {
   const { data: session, status } = useSession();
+  const pathname = usePathname();
   const hasSynced = useRef(false);
   const [streakCount, setStreakCount] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setStreakCount(getStreak().current);
@@ -31,14 +35,33 @@ export default function Header() {
     }
   }, [session]);
 
+  // Close menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  // Close menu on outside tap
+  useEffect(() => {
+    if (!menuOpen) return;
+    function handleOutside(e: PointerEvent) {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener('pointerdown', handleOutside);
+    return () => document.removeEventListener('pointerdown', handleOutside);
+  }, [menuOpen]);
+
   return (
     <header className="sticky top-0 z-30 border-b border-[#d8ccb8] bg-[#fefcf8]/90 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-4">
         <Link href="/" className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7e622a]">
           <span className="block text-xs uppercase tracking-[0.26em] text-[#7e622a]">Scripture</span>
           <span className="block text-2xl font-semibold leading-none text-[#1b1a17]">Journey</span>
         </Link>
-        <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-2 text-sm text-[#4a4338] sm:gap-3">
+
+        {/* Desktop nav — hidden below md */}
+        <nav aria-label="Main navigation" className="hidden md:flex flex-wrap items-center gap-2 text-sm text-[#4a4338] sm:gap-3">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -73,7 +96,68 @@ export default function Header() {
 
           <ThemeToggle />
         </nav>
+
+        {/* Mobile controls — visible below md */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            className="rounded-lg border border-[#d8ccb8] px-2.5 py-1.5 text-lg text-[#4a4338] transition hover:bg-[#fbf7ee]"
+          >
+            {menuOpen ? '✕' : '☰'}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile slide-down menu */}
+      {menuOpen && (
+        <div
+          ref={menuRef}
+          className="border-t border-[#d8ccb8] bg-[#fefcf8] px-4 pb-4 pt-2 md:hidden"
+        >
+          <nav aria-label="Mobile navigation" className="flex flex-col">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg py-3 px-3 text-sm text-[#4a4338] transition hover:bg-[#fbf7ee] hover:text-[#1b1a17]"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            {streakCount > 0 && (
+              <div className="py-3 px-3">
+                <span className="rounded-full bg-[#fff3e0] px-2 py-1 text-xs font-semibold text-[#e65100]">
+                  🔥 {streakCount}
+                </span>
+              </div>
+            )}
+
+            <div className="mt-1 px-3">
+              {status === 'loading' ? null : session?.user ? (
+                <button
+                  onClick={() => { signOut(); setMenuOpen(false); }}
+                  className="rounded-full border border-[#d8ccb8] px-3 py-2 text-xs font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <Link
+                  href="/auth/signin"
+                  onClick={() => setMenuOpen(false)}
+                  className="inline-block rounded-full border border-[#7e622a] bg-[#7e622a] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#5e4a1f]"
+                >
+                  Save Progress
+                </Link>
+              )}
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

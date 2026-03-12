@@ -67,7 +67,7 @@ export default function LessonPage({ params }: Props) {
           <CompletedIndicator slug={lesson.slug} compact />
         </div>
 
-        <h1 className="mt-2 text-3xl font-bold text-[#1b1a17]">
+        <h1 className="mt-2 text-3xl font-bold text-[#1b1a17] overflow-wrap-anywhere">
           {lesson.title}
         </h1>
 

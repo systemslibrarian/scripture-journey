@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { isInAppBrowser } from '@/lib/browser'
 
 // Type for the beforeinstallprompt event
 interface BeforeInstallPromptEvent extends Event {
@@ -13,16 +14,34 @@ export default function ServiceWorkerRegistration() {
   const [showBanner, setShowBanner] = useState(false)
 
   useEffect(() => {
+    if (process.env.NODE_ENV !== 'production') return
+
     // Register service worker
     if ('serviceWorker' in navigator) {
+      let reloaded = false
+
       navigator.serviceWorker
         .register('/sw.js')
+        .then((reg) => {
+          if (reg.waiting) {
+            reg.waiting.postMessage({ type: 'SKIP_WAITING' })
+          }
+
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!reloaded) {
+              reloaded = true
+              window.location.reload()
+            }
+          })
+        })
         .catch(() => {
           // SW registration failed silently
         })
     }
 
-    // Capture install prompt
+    // Capture install prompt — suppress in in-app browsers
+    if (isInAppBrowser()) return
+
     const handler = (e: Event) => {
       e.preventDefault()
       setInstallPrompt(e as BeforeInstallPromptEvent)
@@ -52,6 +71,7 @@ export default function ServiceWorkerRegistration() {
   return (
     <div
       className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-md rounded-2xl border border-[#d8ccb8] bg-white p-4 shadow-lg sm:left-auto sm:right-6"
+      style={{ paddingBottom: 'calc(1rem + env(safe-area-inset-bottom))' }}
       role="alert"
       aria-label="Install app prompt"
     >
