@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
 
     if (
       typeof message !== 'string' || !message.trim() ||
-      typeof stack !== 'string' || !stack.trim() ||
+      typeof stack !== 'string' ||
       typeof route !== 'string' || !route.trim() ||
       typeof userAgent !== 'string' || !userAgent.trim() ||
       typeof timestamp !== 'string' || !timestamp.trim()
@@ -15,7 +15,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid payload' }, { status: 400 })
     }
 
-    console.error(`[CLIENT ERROR] route=${route} ua=${userAgent} message=${message}`)
+    console.error(`[CLIENT ERROR] route=${route} ua=${userAgent} ts=${timestamp} message=${message}`)
+    if (stack.trim()) {
+      console.error(stack)
+    }
 
     return NextResponse.json({ ok: true })
   } catch {

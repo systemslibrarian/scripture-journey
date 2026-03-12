@@ -29,6 +29,7 @@ export default function ErrorPage({
           route: window.location.pathname,
           userAgent: navigator.userAgent,
           timestamp: String(Date.now()),
+          ...(error.digest ? { digest: error.digest } : {}),
         }),
       }).catch(() => {})
     } catch {

@@ -29,6 +29,7 @@ export default function GlobalError({
           route: window.location.pathname,
           userAgent: navigator.userAgent,
           timestamp: String(Date.now()),
+          ...(error.digest ? { digest: error.digest } : {}),
         }),
       }).catch(() => {})
     } catch {

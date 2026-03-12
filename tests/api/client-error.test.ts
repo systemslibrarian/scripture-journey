@@ -59,16 +59,19 @@ describe('POST /api/client-error', () => {
     expect(res.status).toBe(400)
   })
 
-  it('returns 400 when stack is empty string', async () => {
+  it('returns 200 when stack is empty string', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
     const req = makeRequest({
       message: 'err',
-      stack: '   ',
+      stack: '',
       route: '/',
       userAgent: 'UA',
       timestamp: '123',
     })
     const res = await POST(req)
-    expect(res.status).toBe(400)
+    const json = await res.json()
+    expect(res.status).toBe(200)
+    expect(json).toEqual({ ok: true })
   })
 
   it('returns 400 when field is a number instead of string', async () => {

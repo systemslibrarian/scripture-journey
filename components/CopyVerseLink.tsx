@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { safeCopyText } from '@/lib/browser'
 import type { Lesson } from '@/lib/types'
 
@@ -12,10 +12,13 @@ type Props = {
 export default function CopyVerseLink({ lesson, size = 'md' }: Props) {
   const [copied, setCopied] = useState(false)
   const [failed, setFailed] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
   async function handleCopy(e: React.MouseEvent) {
     e.preventDefault()
     e.stopPropagation()
+
+    clearTimeout(timerRef.current)
 
     const url = `https://www.scripturejourney.com/lessons/${lesson.slug}`
     const text = `${lesson.title}\n${lesson.otReference} → ${lesson.ntReference}\n${url}`
@@ -23,10 +26,12 @@ export default function CopyVerseLink({ lesson, size = 'md' }: Props) {
     const ok = await safeCopyText(text)
     if (ok) {
       setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      setFailed(false)
+      timerRef.current = setTimeout(() => setCopied(false), 2000)
     } else {
       setFailed(true)
-      setTimeout(() => setFailed(false), 3000)
+      setCopied(false)
+      timerRef.current = setTimeout(() => setFailed(false), 3000)
     }
   }
 
