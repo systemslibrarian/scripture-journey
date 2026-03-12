@@ -49,7 +49,7 @@ export default function HomePage() {
     <div className="space-y-8">
       <div className="overflow-hidden rounded-2xl">
         <Image
-          src="/docs/banner2forwebsite.png"
+          src="/docs/banner3forwebsite.png"
           alt="Scripture Journey banner"
           width={1536}
           height={1024}
