@@ -65,12 +65,12 @@ export default function TimelinePage() {
         </p>
 
         {/* Arc summary — visual progression of the whole story */}
-        <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#7e622a]">
+        <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-[#7e622a] sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:gap-x-3 md:gap-y-1">
           {TIMELINE_ERAS.map((era, i) => (
-            <span key={era.id} className="flex items-center gap-3">
+            <span key={era.id} className="flex items-center gap-2 md:gap-3">
               <span className="font-medium">{era.arcPhrase}</span>
               {i < TIMELINE_ERAS.length - 1 && (
-                <span className="text-[#d8ccb8]">→</span>
+                <span className="hidden text-[#d8ccb8] md:inline">→</span>
               )}
             </span>
           ))}

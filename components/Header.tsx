@@ -104,7 +104,7 @@ export default function Header() {
             onClick={() => setMenuOpen((v) => !v)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            className="rounded-lg border border-[#d8ccb8] px-2.5 py-1.5 text-lg text-[#4a4338] transition hover:bg-[#fbf7ee]"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#d8ccb8] text-lg text-[#4a4338] transition hover:bg-[#fbf7ee]"
           >
             {menuOpen ? '✕' : '☰'}
           </button>

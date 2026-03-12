@@ -70,8 +70,8 @@ export default function ServiceWorkerRegistration() {
 
   return (
     <div
-      className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-md rounded-2xl border border-[#d8ccb8] bg-white p-4 shadow-lg sm:left-auto sm:right-6"
-      style={{ paddingBottom: 'calc(1rem + env(safe-area-inset-bottom))' }}
+      className="fixed left-4 right-4 z-50 mx-auto max-w-md rounded-2xl border border-[#d8ccb8] bg-white p-4 shadow-lg sm:left-auto sm:right-6"
+      style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
       role="alert"
       aria-label="Install app prompt"
     >

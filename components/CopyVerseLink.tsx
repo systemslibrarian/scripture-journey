@@ -35,7 +35,7 @@ export default function CopyVerseLink({ lesson, size = 'md' }: Props) {
     }
   }
 
-  const sizeClasses = size === 'sm' ? 'h-6 w-6 text-xs' : 'h-8 w-8 text-sm'
+  const sizeClasses = size === 'sm' ? 'h-8 w-8 text-xs md:h-6 md:w-6' : 'h-11 w-11 text-sm md:h-8 md:w-8'
 
   return (
     <>

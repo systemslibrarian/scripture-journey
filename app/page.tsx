@@ -53,6 +53,7 @@ export default function HomePage() {
           alt="Scripture Journey banner"
           width={1536}
           height={1024}
+          sizes="(max-width: 768px) 100vw, 50vw"
           priority
           className="h-auto w-full max-h-[280px] object-cover object-center"
         />

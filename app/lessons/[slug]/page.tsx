@@ -71,7 +71,7 @@ export default function LessonPage({ params }: Props) {
           {lesson.title}
         </h1>
 
-        <p className="mt-4 max-w-2xl text-[#4a4338]">
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#4a4338] sm:text-lg">
           {lesson.summary}
         </p>
 
@@ -92,22 +92,22 @@ export default function LessonPage({ params }: Props) {
         text={lesson.ntText}
       />
 
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 py-6 shadow-sm md:py-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Why This Matters
         </div>
 
-        <p className="mt-4 leading-7 text-[#4a4338]">
+        <p className="mt-4 text-base leading-relaxed text-[#4a4338] sm:text-lg">
           {lesson.whyItMatters}
         </p>
       </div>
 
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 py-6 shadow-sm md:py-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Reflection
         </div>
 
-        <p className="mt-4 leading-7 text-[#4a4338]">
+        <p className="mt-4 text-base leading-relaxed text-[#4a4338] sm:text-lg">
           {lesson.reflection}
         </p>
       </div>
@@ -116,25 +116,25 @@ export default function LessonPage({ params }: Props) {
 
       <ContinueJourney lesson={lesson} nextLesson={nextLesson} />
 
-      <div className="flex items-stretch gap-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-4">
         {prevLesson ? (
           <Link
             href={`/lessons/${prevLesson.slug}`}
-            className="flex-1 rounded-2xl border border-[#d8ccb8] bg-white px-6 py-4 transition hover:border-[#c8a84b] hover:shadow-sm"
+            className="min-h-[44px] flex-1 rounded-2xl border border-[#d8ccb8] bg-white px-6 py-4 transition hover:border-[#c8a84b] hover:shadow-sm"
           >
             <span className="text-xs text-[#7e622a]">← Previous Lesson</span>
-            <span className="mt-1 block font-semibold text-[#1b1a17]">{prevLesson.title}</span>
+            <span className="mt-1 block font-semibold text-[#1b1a17] overflow-wrap-anywhere">{prevLesson.title}</span>
           </Link>
-        ) : <div className="flex-1" />}
+        ) : <div className="hidden flex-1 sm:block" />}
         {nextLesson ? (
           <Link
             href={`/lessons/${nextLesson.slug}`}
-            className="flex-1 rounded-2xl border border-[#d8ccb8] bg-white px-6 py-4 text-right transition hover:border-[#c8a84b] hover:shadow-sm"
+            className="min-h-[44px] flex-1 rounded-2xl border border-[#d8ccb8] bg-white px-6 py-4 text-right transition hover:border-[#c8a84b] hover:shadow-sm"
           >
             <span className="text-xs text-[#7e622a]">Next Lesson →</span>
-            <span className="mt-1 block font-semibold text-[#1b1a17]">{nextLesson.title}</span>
+            <span className="mt-1 block font-semibold text-[#1b1a17] overflow-wrap-anywhere">{nextLesson.title}</span>
           </Link>
-        ) : <div className="flex-1" />}
+        ) : <div className="hidden flex-1 sm:block" />}
       </div>
     </div>
   )

@@ -204,7 +204,7 @@ export default function QuizPage() {
           {/* Choices */}
           <div className="mt-6 space-y-3">
             {quiz.choices.map((choice, i) => {
-              let classes = 'w-full rounded-xl border px-4 py-3 text-left text-sm transition'
+              let classes = 'w-full rounded-xl border px-4 py-3 min-h-[44px] text-left text-sm transition'
 
               if (isFeedback) {
                 if (i === quiz.answer) {
