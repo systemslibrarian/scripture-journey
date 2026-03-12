@@ -16,19 +16,25 @@ function parseStoredProgress(raw: string | null): string[] {
 
 export function getCompletedLessons(): string[] {
   if (typeof window === "undefined") return []
-
-  return parseStoredProgress(localStorage.getItem(STORAGE_KEY))
+  try {
+    return parseStoredProgress(localStorage.getItem(STORAGE_KEY))
+  } catch {
+    return []
+  }
 }
 
 export function markLessonComplete(slug: string) {
   if (typeof window === "undefined") return
+  try {
+    const completed = getCompletedLessons()
 
-  const completed = getCompletedLessons()
-
-  if (!completed.includes(slug)) {
-    completed.push(slug)
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(completed))
-    syncProgressToServer(slug, true)
+    if (!completed.includes(slug)) {
+      completed.push(slug)
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(completed))
+      syncProgressToServer(slug, true)
+    }
+  } catch {
+    // localStorage may be unavailable in in-app browsers
   }
 }
 
@@ -52,7 +58,11 @@ export function getCompletionPercent(totalLessons: number): number {
 
 export function clearProgress() {
   if (typeof window === "undefined") return
-  localStorage.removeItem(STORAGE_KEY)
+  try {
+    localStorage.removeItem(STORAGE_KEY)
+  } catch {
+    // localStorage may be unavailable
+  }
 }
 
 /* ── Quiz scoring ── */
@@ -79,11 +89,15 @@ function getScoreMap(): Record<string, QuizScore> {
 
 export function saveQuizScore(slug: string, result: { multipleChoice: boolean; fillInBlank?: boolean }) {
   if (typeof window === "undefined") return
-  const scores = getScoreMap()
-  scores[slug] = { ...result, timestamp: Date.now() }
-  localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(scores))
-  updateStreak(result.multipleChoice && (result.fillInBlank !== false))
-  syncQuizToServer(slug, result)
+  try {
+    const scores = getScoreMap()
+    scores[slug] = { ...result, timestamp: Date.now() }
+    localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(scores))
+    updateStreak(result.multipleChoice && (result.fillInBlank !== false))
+    syncQuizToServer(slug, result)
+  } catch {
+    // localStorage may be unavailable in in-app browsers
+  }
 }
 
 export function getQuizScore(slug: string): QuizScore | null {
@@ -102,14 +116,22 @@ export function getQuizStats(): { total: number; perfect: number; attempted: num
 
 export function incrementQuizSessions() {
   if (typeof window === "undefined") return
-  const current = getQuizSessions()
-  localStorage.setItem(QUIZ_SESSION_KEY, String(current + 1))
+  try {
+    const current = getQuizSessions()
+    localStorage.setItem(QUIZ_SESSION_KEY, String(current + 1))
+  } catch {
+    // localStorage may be unavailable
+  }
 }
 
 function getQuizSessions(): number {
   if (typeof window === "undefined") return 0
-  const raw = localStorage.getItem(QUIZ_SESSION_KEY)
-  return raw ? parseInt(raw, 10) || 0 : 0
+  try {
+    const raw = localStorage.getItem(QUIZ_SESSION_KEY)
+    return raw ? parseInt(raw, 10) || 0 : 0
+  } catch {
+    return 0
+  }
 }
 
 /* ── Streak tracking ── */
@@ -136,22 +158,26 @@ function todayStr(): string {
 
 function updateStreak(correct: boolean) {
   if (typeof window === "undefined") return
-  const data = getStreakData()
-  const today = todayStr()
-  if (data.lastDate === today) return // already counted today
+  try {
+    const data = getStreakData()
+    const today = todayStr()
+    if (data.lastDate === today) return // already counted today
 
-  if (correct) {
-    const yesterday = new Date()
-    yesterday.setDate(yesterday.getDate() - 1)
-    const yStr = yesterday.toISOString().slice(0, 10)
+    if (correct) {
+      const yesterday = new Date()
+      yesterday.setDate(yesterday.getDate() - 1)
+      const yStr = yesterday.toISOString().slice(0, 10)
 
-    data.current = data.lastDate === yStr ? data.current + 1 : 1
-    data.best = Math.max(data.best, data.current)
-  } else {
-    data.current = 0
+      data.current = data.lastDate === yStr ? data.current + 1 : 1
+      data.best = Math.max(data.best, data.current)
+    } else {
+      data.current = 0
+    }
+    data.lastDate = today
+    localStorage.setItem(STREAK_KEY, JSON.stringify(data))
+  } catch {
+    // localStorage may be unavailable
   }
-  data.lastDate = today
-  localStorage.setItem(STREAK_KEY, JSON.stringify(data))
 }
 
 export function getStreak(): { current: number; best: number } {
@@ -217,29 +243,33 @@ export async function syncOnLogin(): Promise<void> {
     if (!res.ok) return
     const merged = await res.json()
 
-    // Update localStorage with merged server state
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(merged.completedSlugs))
+    try {
+      // Update localStorage with merged server state
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(merged.completedSlugs))
 
-    const mergedScores: Record<string, QuizScore> = {}
-    for (const [slug, s] of Object.entries(merged.quizScores)) {
-      const score = s as { multipleChoice: boolean; fillInBlank?: boolean }
-      mergedScores[slug] = {
-        multipleChoice: score.multipleChoice,
-        fillInBlank: score.fillInBlank,
-        timestamp: quizScores[slug]?.timestamp ?? Date.now(),
+      const mergedScores: Record<string, QuizScore> = {}
+      for (const [slug, s] of Object.entries(merged.quizScores)) {
+        const score = s as { multipleChoice: boolean; fillInBlank?: boolean }
+        mergedScores[slug] = {
+          multipleChoice: score.multipleChoice,
+          fillInBlank: score.fillInBlank,
+          timestamp: quizScores[slug]?.timestamp ?? Date.now(),
+        }
       }
-    }
-    localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(mergedScores))
+      localStorage.setItem(QUIZ_SCORE_KEY, JSON.stringify(mergedScores))
 
-    if (merged.streak) {
-      localStorage.setItem(
-        STREAK_KEY,
-        JSON.stringify({
-          current: merged.streak.currentStreak,
-          best: merged.streak.bestStreak,
-          lastDate: merged.streak.lastActiveDate ?? '',
-        })
-      )
+      if (merged.streak) {
+        localStorage.setItem(
+          STREAK_KEY,
+          JSON.stringify({
+            current: merged.streak.currentStreak,
+            best: merged.streak.bestStreak,
+            lastDate: merged.streak.lastActiveDate ?? '',
+          })
+        )
+      }
+    } catch {
+      // localStorage may be unavailable in in-app browsers
     }
   } catch {
     // Sync failed silently — localStorage remains source of truth

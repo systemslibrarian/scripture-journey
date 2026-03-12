@@ -24,9 +24,14 @@ function getRecentSlugs(): string[] {
 }
 
 function addRecentSlug(slug: string) {
-  const slugs = getRecentSlugs().filter(s => s !== slug)
-  slugs.unshift(slug)
-  localStorage.setItem(RECENT_KEY, JSON.stringify(slugs.slice(0, MAX_RECENT)))
+  if (typeof window === 'undefined') return
+  try {
+    const slugs = getRecentSlugs().filter(s => s !== slug)
+    slugs.unshift(slug)
+    localStorage.setItem(RECENT_KEY, JSON.stringify(slugs.slice(0, MAX_RECENT)))
+  } catch {
+    // localStorage may be unavailable in in-app browsers
+  }
 }
 
 function highlightMatch(text: string, query: string): React.ReactNode {

@@ -17,21 +17,31 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   const [theme, setTheme] = useState<Theme>('light')
 
   useEffect(() => {
-    const stored = localStorage.getItem('sj-theme') as Theme | null
-    if (stored === 'dark') {
-      setTheme('dark')
-      document.documentElement.classList.add('dark')
+    try {
+      const stored = localStorage.getItem('sj-theme') as Theme | null
+      if (stored === 'dark') {
+        setTheme('dark')
+        document.documentElement.classList.add('dark')
+      }
+    } catch {
+      // localStorage may be unavailable in in-app browsers
     }
   }, [])
 
   function toggleTheme() {
     const next = theme === 'light' ? 'dark' : 'light'
     setTheme(next)
-    localStorage.setItem('sj-theme', next)
-    if (next === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+    try {
+      localStorage.setItem('sj-theme', next)
+    } catch {
+      // localStorage may be unavailable in in-app browsers
+    }
+    if (typeof document !== 'undefined') {
+      if (next === 'dark') {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
     }
   }
 

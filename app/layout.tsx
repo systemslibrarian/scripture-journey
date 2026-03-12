@@ -5,6 +5,8 @@ import Header from "@/components/Header"
 import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration"
 import AuthProvider from "@/components/AuthProvider"
 import ThemeProvider from "@/components/ThemeProvider"
+import { ErrorBoundary } from "@/components/ErrorBoundary"
+import { InAppBrowserBanner } from "@/components/InAppBrowserBanner"
 
 export const metadata: Metadata = {
   title: "Scripture Journey",
@@ -55,10 +57,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-[#fefcf8] text-[#1b1a17] antialiased">
+        <ErrorBoundary>
         <AuthProvider>
         <ThemeProvider>
 
+        <InAppBrowserBanner />
         <a href="#main-content" className="skip-link">Skip to content</a>
+
+        <noscript>
+          <div style={{ padding: "1rem", textAlign: "center" }}>
+            Please enable JavaScript to use Scripture Journey.
+          </div>
+        </noscript>
 
         <Header />
 
@@ -81,6 +91,7 @@ export default function RootLayout({
 
         </ThemeProvider>
         </AuthProvider>
+        </ErrorBoundary>
       </body>
     </html>
   )

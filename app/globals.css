@@ -125,6 +125,15 @@
 .dark .bg-\[\#f8fafc\]  { background-color: #1e2a30 !important; }
 .dark .decoration-\[\#c7b598\] { text-decoration-color: var(--sj-border) !important; }
 
+/* Sources page */
+.dark .text-\[\#3f2a5f\] { color: #b48cde !important; }
+.dark .text-\[\#7a6f60\] { color: var(--sj-text-faint) !important; }
+.dark .bg-\[\#f8fbfd\]  { background-color: #1e2a30 !important; }
+.dark .border-\[\#cfe0ea\] { border-color: #2a4060 !important; }
+.dark .hover\:bg-\[\#efe8fb\]:hover { background-color: #2e2540 !important; }
+.dark .hover\:bg-\[\#f5f0e5\]:hover { background-color: #3a3020 !important; }
+.dark .hover\:bg-\[\#e8f0f5\]:hover { background-color: #1e2e3a !important; }
+
 /* CTA buttons */
 .dark .bg-\[\#1b1a17\] { background-color: #e8e4dc !important; color: #1b1a17 !important; }
 .dark .bg-\[\#7e622a\] { background-color: var(--sj-accent) !important; }
