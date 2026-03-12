@@ -36,7 +36,7 @@ function highlightMatch(text: string, query: string): React.ReactNode {
   const parts = text.split(re)
   return parts.map((part, i) =>
     re.test(part) ? (
-      <mark key={i} className="bg-[#fef08a] text-inherit rounded-sm dark:bg-[#854d0e] dark:text-[#fef9c3]">
+      <mark key={i} className="bg-[#fef08a] text-inherit rounded-sm">
         {part}
       </mark>
     ) : (
@@ -130,7 +130,7 @@ export default function SearchAutocomplete() {
       <Command shouldFilter={false} className="w-full">
         <div className="relative">
           <svg
-            className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9a8e7e] dark:text-[#888]"
+            className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9a8e7e]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -151,16 +151,16 @@ export default function SearchAutocomplete() {
             }}
             onFocus={() => setOpen(true)}
             placeholder="Search prophecy, verse, or topic…"
-            className="w-full rounded-xl border border-[#d8ccb8] bg-white py-3 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#7e622a] dark:border-[#555] dark:bg-[#2a2a2a] dark:text-[#e8e4dc] dark:placeholder-[#888]"
+            className="w-full rounded-xl border border-[#d8ccb8] bg-white py-3 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#7e622a]"
           />
         </div>
 
         {(showRecent || showResults) && (
-          <Command.List className="absolute left-0 right-0 top-[calc(100%+4px)] z-50 max-h-[420px] overflow-y-auto rounded-xl border border-[#d8ccb8] bg-white shadow-lg dark:border-[#555] dark:bg-[#2a2a2a]">
+          <Command.List className="absolute left-0 right-0 top-[calc(100%+4px)] z-50 max-h-[420px] overflow-y-auto rounded-xl border border-[#d8ccb8] bg-white shadow-lg">
             {showRecent && (
               <Command.Group
                 heading={
-                  <span className="px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-[#9a8e7e] dark:text-[#888]">
+                  <span className="px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-[#9a8e7e]">
                     Recently Viewed
                   </span>
                 }
@@ -170,18 +170,18 @@ export default function SearchAutocomplete() {
                     key={lesson.slug}
                     value={lesson.slug}
                     onSelect={() => selectLesson(lesson)}
-                    className="flex cursor-pointer items-start gap-3 px-3 py-2.5 text-sm transition data-[selected=true]:bg-[#fbf7ee] dark:data-[selected=true]:bg-[#333]"
+                    className="flex cursor-pointer items-start gap-3 px-3 py-2.5 text-sm transition data-[selected=true]:bg-[#fbf7ee]"
                   >
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-[#1b1a17] dark:text-[#e8e4dc]">
+                        <span className="font-semibold text-[#1b1a17]">
                           {lesson.title}
                         </span>
                         <span className={`inline-flex shrink-0 items-center rounded-full border px-1.5 py-0.5 text-[10px] font-medium ${typeBadgeStyles[lesson.prophecyType] ?? ''}`}>
                           {lesson.prophecyType}
                         </span>
                       </div>
-                      <div className="mt-0.5 text-xs text-[#7e622a] dark:text-[#b5a27a]">
+                      <div className="mt-0.5 text-xs text-[#7e622a]">
                         {lesson.otReference} → {lesson.ntReference}
                       </div>
                     </div>
@@ -194,7 +194,7 @@ export default function SearchAutocomplete() {
             {showResults && results.length > 0 && (
               <Command.Group
                 heading={
-                  <span className="px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-[#9a8e7e] dark:text-[#888]">
+                  <span className="px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-[#9a8e7e]">
                     Results
                   </span>
                 }
@@ -204,23 +204,23 @@ export default function SearchAutocomplete() {
                     key={lesson.slug}
                     value={lesson.slug}
                     onSelect={() => selectLesson(lesson)}
-                    className="flex cursor-pointer items-start gap-3 px-3 py-2.5 text-sm transition data-[selected=true]:bg-[#fbf7ee] dark:data-[selected=true]:bg-[#333]"
+                    className="flex cursor-pointer items-start gap-3 px-3 py-2.5 text-sm transition data-[selected=true]:bg-[#fbf7ee]"
                   >
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-[#1b1a17] dark:text-[#e8e4dc]">
+                        <span className="font-semibold text-[#1b1a17]">
                           {highlightMatch(lesson.title, debouncedQuery)}
                         </span>
                         <span className={`inline-flex shrink-0 items-center rounded-full border px-1.5 py-0.5 text-[10px] font-medium ${typeBadgeStyles[lesson.prophecyType] ?? ''}`}>
                           {lesson.prophecyType}
                         </span>
                       </div>
-                      <div className="mt-0.5 text-xs text-[#7e622a] dark:text-[#b5a27a]">
+                      <div className="mt-0.5 text-xs text-[#7e622a]">
                         {highlightMatch(lesson.otReference, debouncedQuery)} →{' '}
                         {highlightMatch(lesson.ntReference, debouncedQuery)}
                       </div>
                       <div className="mt-0.5 flex items-center gap-1.5">
-                        <span className="rounded-full border border-[#d8ccb8] bg-[#fbf7ee] px-2 py-0.5 text-[10px] font-medium text-[#7e622a] dark:border-[#555] dark:bg-[#333] dark:text-[#b5a27a]">
+                        <span className="rounded-full border border-[#d8ccb8] bg-[#fbf7ee] px-2 py-0.5 text-[10px] font-medium text-[#7e622a]">
                           {lesson.category}
                         </span>
                         <span className="text-[10px] text-[#9a8e7e]">

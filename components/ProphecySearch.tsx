@@ -32,9 +32,9 @@ export default function ProphecySearch() {
   return (
     <div className="space-y-6">
 
-      <div className="rounded-2xl border border-[#d8ccb8] bg-white p-6 shadow-sm dark:border-[#555] dark:bg-[#2a2a2a]">
+      <div className="rounded-2xl border border-[#d8ccb8] bg-white p-6 shadow-sm">
 
-        <div className="text-sm font-semibold text-[#7e622a] dark:text-[#b5a27a]">
+        <div className="text-sm font-semibold text-[#7e622a]">
           Search the {totalLessons} Prophecies
         </div>
 
@@ -47,7 +47,7 @@ export default function ProphecySearch() {
           placeholder="Filter results below…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="mt-3 w-full rounded-xl border border-[#d8ccb8] px-4 py-2 text-xs text-[#4a4338] focus:outline-none focus:ring-2 focus:ring-[#7e622a] dark:border-[#555] dark:bg-[#2a2a2a] dark:text-[#e8e4dc] dark:placeholder-[#888]"
+          className="mt-3 w-full rounded-xl border border-[#d8ccb8] px-4 py-2 text-xs text-[#4a4338] focus:outline-none focus:ring-2 focus:ring-[#7e622a]"
         />
 
         <FilterControls
@@ -64,7 +64,7 @@ export default function ProphecySearch() {
             id="sort-select"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="rounded-xl border border-[#d8ccb8] px-3 py-1.5 text-xs text-[#4a4338] focus:outline-none focus:ring-2 focus:ring-[#7e622a] dark:border-[#555] dark:bg-[#2a2a2a] dark:text-[#e8e4dc]"
+            className="rounded-xl border border-[#d8ccb8] px-3 py-1.5 text-xs text-[#4a4338] focus:outline-none focus:ring-2 focus:ring-[#7e622a]"
           >
             <option value="default">Sort: Default</option>
             <option value="category">Sort: By Category</option>
@@ -74,7 +74,7 @@ export default function ProphecySearch() {
 
           <button
             onClick={handleSurpriseMe}
-            className="rounded-full border border-[#d8ccb8] px-3 py-1.5 text-xs text-[#7e622a] hover:bg-[#fbf7ee] transition dark:border-[#555] dark:text-[#b5a27a] dark:hover:bg-[#333]"
+            className="rounded-full border border-[#d8ccb8] px-3 py-1.5 text-xs text-[#7e622a] hover:bg-[#fbf7ee] transition"
           >
             ✦ Surprise Me
           </button>

@@ -2,6 +2,139 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Color system (light / dark) ── */
+
+:root {
+  --sj-bg:          #fefcf8;
+  --sj-bg-card:     #ffffff;
+  --sj-bg-hover:    #fbf7ee;
+  --sj-bg-muted:    #fffdf8;
+  --sj-border:      #d8ccb8;
+  --sj-text:        #1b1a17;
+  --sj-text-muted:  #4a4338;
+  --sj-text-faint:  #9a8e7e;
+  --sj-accent:      #7e622a;
+  --sj-accent-hover:#5e4a1f;
+}
+
+.dark {
+  --sj-bg:          #181818;
+  --sj-bg-card:     #242424;
+  --sj-bg-hover:    #2e2e2e;
+  --sj-bg-muted:    #1e1e1e;
+  --sj-border:      #3a3a3a;
+  --sj-text:        #e8e4dc;
+  --sj-text-muted:  #c4b898;
+  --sj-text-faint:  #998e7a;
+  --sj-accent:      #c9a84c;
+  --sj-accent-hover:#dabb66;
+}
+
+/*
+ * Dark-mode overrides — remap every hardcoded colour that appears
+ * in Tailwind utility classes across the codebase so we don't have
+ * to add dark: to every single element.
+ */
+.dark {
+  /* Page / card backgrounds */
+  --tw-bg-opacity: 1;
+}
+.dark .bg-white         { background-color: var(--sj-bg-card) !important; }
+.dark .bg-\[\#fefcf8\]  { background-color: var(--sj-bg) !important; }
+.dark .bg-\[\#fbf7ee\]  { background-color: var(--sj-bg-hover) !important; }
+.dark .bg-\[\#fffdf8\]  { background-color: var(--sj-bg-muted) !important; }
+.dark .bg-\[\#fffdf5\]  { background-color: var(--sj-bg-muted) !important; }
+.dark .bg-\[\#f5f0e5\]  { background-color: #3a3020 !important; }
+.dark .bg-\[\#efe8fb\]  { background-color: #2e2540 !important; }
+.dark .bg-\[\#e8f0f5\]  { background-color: #1e2e3a !important; }
+.dark .bg-\[\#fff3e0\]  { background-color: #3a2e1e !important; }
+.dark .bg-\[\#e8e0d0\]  { background-color: #333 !important; }
+
+/* Borders */
+.dark .border-\[\#d8ccb8\] { border-color: var(--sj-border) !important; }
+.dark .border-\[\#c8a84b\] { border-color: #8a7530 !important; }
+.dark .border-\[\#bba989\] { border-color: var(--sj-border) !important; }
+
+/* Text */
+.dark .text-\[\#1b1a17\] { color: var(--sj-text) !important; }
+.dark .text-\[\#4a4338\] { color: var(--sj-text-muted) !important; }
+.dark .text-\[\#7e622a\] { color: var(--sj-accent) !important; }
+.dark .text-\[\#9a8e7e\] { color: var(--sj-text-faint) !important; }
+.dark .text-\[\#5f3a8a\] { color: #b48cde !important; }
+.dark .text-\[\#2a5a7e\] { color: #7ab4d4 !important; }
+.dark .text-\[\#e65100\] { color: #ff8a3d !important; }
+
+/* Decorations */
+.dark .decoration-\[\#bba989\] { text-decoration-color: var(--sj-border) !important; }
+
+/* Hover overrides */
+.dark .hover\:bg-\[\#fbf7ee\]:hover { background-color: var(--sj-bg-hover) !important; }
+.dark .hover\:bg-\[\#f0e8d8\]:hover { background-color: var(--sj-bg-hover) !important; }
+.dark .hover\:bg-\[\#333\]:hover { background-color: #333 !important; }
+.dark .hover\:text-\[\#1b1a17\]:hover { color: var(--sj-text) !important; }
+.dark .hover\:text-\[\#7e622a\]:hover { color: var(--sj-accent) !important; }
+.dark .hover\:border-\[\#d8ccb8\]:hover { border-color: var(--sj-border) !important; }
+.dark .hover\:border-\[\#c8a84b\]:hover { border-color: #8a7530 !important; }
+.dark .hover\:border-\[\#7e622a\]:hover { border-color: var(--sj-accent) !important; }
+
+/* Focus rings */
+.dark .focus\:ring-\[\#7e622a\]:focus { --tw-ring-color: var(--sj-accent) !important; }
+
+/* Header transparency */
+.dark .bg-\[\#fefcf8\]\/90 { background-color: rgba(24, 24, 24, 0.9) !important; }
+
+/* Inputs and selects */
+.dark input, .dark select, .dark textarea {
+  background-color: var(--sj-bg-card);
+  color: var(--sj-text);
+  border-color: var(--sj-border);
+}
+.dark input::placeholder { color: var(--sj-text-faint); }
+.dark option { background-color: var(--sj-bg-card); color: var(--sj-text); }
+
+/* Border-dashed empty states */
+.dark .border-dashed { border-color: var(--sj-border) !important; }
+
+/* Prophecy type badges — keep their colours but darken backgrounds */
+.dark .bg-\[\#fef3c7\]  { background-color: #3a3010 !important; }
+.dark .text-\[\#92400e\] { color: #f0c060 !important; }
+.dark .border-\[\#fde68a\] { border-color: #6a5820 !important; }
+.dark .bg-\[\#dbeafe\]  { background-color: #1a2a3e !important; }
+.dark .text-\[\#1e40af\] { color: #7cacf0 !important; }
+.dark .border-\[\#bfdbfe\] { border-color: #2a4060 !important; }
+.dark .bg-\[\#d1fae5\]  { background-color: #102e20 !important; }
+.dark .text-\[\#065f46\] { color: #60d0a0 !important; }
+.dark .border-\[\#a7f3d0\] { border-color: #1a4a30 !important; }
+.dark .bg-\[\#ede9fe\]  { background-color: #2a2040 !important; }
+.dark .text-\[\#4c1d95\] { color: #b090e0 !important; }
+.dark .border-\[\#ddd6fe\] { border-color: #3a2a5a !important; }
+.dark .bg-\[\#f0f9ff\]  { background-color: #1a2530 !important; }
+.dark .text-\[\#0c4a6e\] { color: #70b8d8 !important; }
+.dark .border-\[\#bae6fd\] { border-color: #1a3a50 !important; }
+
+/* Scholar filter active styles */
+.dark .bg-\[\#efe8fb\] { background-color: #2e2540 !important; }
+.dark .border-\[\#5f3a8a\] { border-color: #7a50b0 !important; }
+.dark .border-\[\#7e622a\] { border-color: var(--sj-accent) !important; }
+.dark .bg-\[\#e8f0f5\] { background-color: #1e2e3a !important; }
+.dark .border-\[\#2a5a7e\] { border-color: #4080a0 !important; }
+
+/* CTA buttons */
+.dark .bg-\[\#1b1a17\] { background-color: #e8e4dc !important; color: #1b1a17 !important; }
+.dark .bg-\[\#7e622a\] { background-color: var(--sj-accent) !important; }
+.dark .hover\:bg-\[\#5e4a1f\]:hover { background-color: var(--sj-accent-hover) !important; }
+
+/* Emerald completed badges */
+.dark .bg-emerald-50 { background-color: #0a2a1a !important; }
+.dark .text-emerald-800 { color: #6ee7b7 !important; }
+
+/* cmdk highlight */
+.dark mark { background-color: #854d0e !important; color: #fef9c3 !important; }
+.dark .bg-\[\#fef08a\] { background-color: #854d0e !important; color: #fef9c3 !important; }
+
+/* cmdk selected item */
+.dark [data-selected=true] { background-color: var(--sj-bg-hover) !important; }
+
 /* Base page styling */
 
 html {
@@ -13,8 +146,9 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
     "Segoe UI Emoji";
-  background: #fefcf8;
-  color: #1b1a17;
+  background: var(--sj-bg);
+  color: var(--sj-text);
+  transition: background 0.2s, color 0.2s;
 }
 
 /* Utility improvements */

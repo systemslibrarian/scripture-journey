@@ -54,7 +54,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-[#fefcf8] text-[#1b1a17] antialiased dark:bg-[#1a1a1a] dark:text-[#e8e4dc]">
+      <body className="min-h-screen bg-[#fefcf8] text-[#1b1a17] antialiased">
         <AuthProvider>
         <ThemeProvider>
 
@@ -66,12 +66,12 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="mx-auto max-w-4xl px-4 py-8 text-center text-xs leading-relaxed text-[#9a8e7e] dark:text-[#777]">
+        <footer className="mx-auto max-w-4xl px-4 py-8 text-center text-xs leading-relaxed text-[#9a8e7e]">
           Scripture quotations taken from The Holy Bible, New International
           Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™
           Used by permission. All rights reserved worldwide.
           <div className="mt-3">
-            <Link href="/sources" className="underline decoration-[#bba989] underline-offset-4 hover:text-[#7e622a] dark:decoration-[#555] dark:hover:text-[#b5a27a]">
+            <Link href="/sources" className="underline decoration-[#bba989] underline-offset-4 hover:text-[#7e622a]">
               Sources and Methodology
             </Link>
           </div>

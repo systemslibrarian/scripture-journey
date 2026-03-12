@@ -44,7 +44,7 @@ export default function CopyVerseLink({ lesson, size = 'md' }: Props) {
       onClick={handleCopy}
       aria-label={copied ? 'Copied!' : `Copy verse and link for ${lesson.title}`}
       title={copied ? 'Copied!' : 'Copy verse + link'}
-      className={`inline-flex shrink-0 items-center justify-center rounded-full border border-[#d8ccb8] text-[#7e622a] transition hover:bg-[#fbf7ee] dark:border-[#555] dark:text-[#b5a27a] dark:hover:bg-[#333] ${sizeClasses}`}
+      className={`inline-flex shrink-0 items-center justify-center rounded-full border border-[#d8ccb8] text-[#7e622a] transition hover:bg-[#fbf7ee] ${sizeClasses}`}
     >
       {copied ? '✓' : '📋'}
     </button>
