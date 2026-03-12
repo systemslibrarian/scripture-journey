@@ -23,7 +23,7 @@ const typeGuide: { type: ProphecyType; description: string }[] = [
 export default function MapPage() {
   return (
     <div className="space-y-8">
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Prophecy Map
         </div>
@@ -56,7 +56,7 @@ export default function MapPage() {
       <MapCategoryCards />
 
       {/* Scholarly Sources Section */}
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Scholarly Sources
         </div>

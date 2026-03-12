@@ -150,6 +150,23 @@
 /* cmdk selected item */
 .dark [data-selected=true] { background-color: var(--sj-bg-hover) !important; }
 
+/* Quiz feedback dark mode */
+.dark .bg-\[\#fee2e2\]  { background-color: #3a1a1a !important; }
+.dark .text-\[\#991b1b\] { color: #f87171 !important; }
+.dark .border-\[\#ef4444\] { border-color: #b91c1c !important; }
+.dark .border-\[\#f59e0b\] { border-color: #b45309 !important; }
+.dark .border-\[\#10b981\] { border-color: #059669 !important; }
+
+/* Progress bar track */
+.dark .bg-\[\#e8ddca\]  { background-color: #3a3530 !important; }
+
+/* MarkCompleteButton */
+.dark .bg-emerald-100 { background-color: #0a2a1a !important; }
+.dark .text-emerald-900 { color: #6ee7b7 !important; }
+
+/* ProgressBar muted text */
+.dark .text-\[\#5f5548\] { color: var(--sj-text-faint) !important; }
+
 /* Base page styling */
 
 html {
@@ -186,6 +203,16 @@ a {
   outline: 2px solid #7e622a;
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+.dark :focus-visible {
+  outline-color: #c9a84c;
+}
+
+/* Touch optimisation — remove 300ms tap delay on mobile */
+
+button, a, [role="button"], input, select, textarea, label {
+  touch-action: manipulation;
 }
 
 /* Skip navigation link */

@@ -49,7 +49,7 @@ export default function LessonPage({ params }: Props) {
 
   return (
     <div className="space-y-8">
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
@@ -92,7 +92,7 @@ export default function LessonPage({ params }: Props) {
         text={lesson.ntText}
       />
 
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 py-6 shadow-sm md:py-8">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Why This Matters
         </div>
@@ -102,7 +102,7 @@ export default function LessonPage({ params }: Props) {
         </p>
       </div>
 
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 py-6 shadow-sm md:py-8">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Reflection
         </div>

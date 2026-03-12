@@ -19,7 +19,7 @@ export default function SourcesPage() {
 
   return (
     <div className="space-y-8">
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 md:p-8 shadow-sm">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Sources
         </div>
@@ -29,14 +29,14 @@ export default function SourcesPage() {
         </p>
       </div>
 
-      <section className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <section className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 md:p-8 shadow-sm">
         <h2 className="text-xl font-bold text-[#1b1a17]">Primary Sources (Scripture)</h2>
         <p className="mt-4 leading-7 text-[#4a4338]">
           The Holy Bible, New International Version (NIV). Biblica, Inc., 1973, 1978, 1984, 2011. Used for educational and devotional purposes.
         </p>
       </section>
 
-      <section className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <section className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 md:p-8 shadow-sm">
         <h2 className="text-xl font-bold text-[#1b1a17]">Scholarly Sources</h2>
 
         <div className="mt-6 grid gap-6 md:grid-cols-3">
@@ -106,7 +106,7 @@ export default function SourcesPage() {
         </div>
       </section>
 
-      <section className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <section className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 md:p-8 shadow-sm">
         <h2 className="text-xl font-bold text-[#1b1a17]">A Note On Methodology</h2>
         <p className="mt-4 leading-7 text-[#4a4338]">
           Scripture Journey uses these three scholars in combination: Payne provides the canonical list of messianic prophecies; Edersheim establishes that these passages were understood as messianic by Jewish interpreters before Jesus; and McDowell provides apologetic context for each fulfillment.

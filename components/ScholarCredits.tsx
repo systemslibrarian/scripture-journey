@@ -14,7 +14,7 @@ export default function ScholarCredits({ scholarship }: Props) {
   }
 
   return (
-    <section className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+    <section className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
       <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
         Scholar Credits
       </div>

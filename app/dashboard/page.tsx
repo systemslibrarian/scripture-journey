@@ -58,7 +58,7 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
 
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Dashboard
         </div>
@@ -71,7 +71,7 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Resume Your Journey ── */}
-      <div className="rounded-[2rem] border-2 border-[#c8a84b] bg-[#fffdf5] p-8 shadow-sm">
+      <div className="rounded-[2rem] border-2 border-[#c8a84b] bg-[#fffdf5] p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           {completed === 0 ? 'Start Your Journey' : completed >= total ? 'Journey Complete' : 'Resume Your Journey'}
         </div>

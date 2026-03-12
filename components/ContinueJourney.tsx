@@ -12,7 +12,7 @@ export default function ContinueJourney({ lesson, nextLesson }: Props) {
   const eraMeta = getTimelineEraMeta(lesson.timelineEra)
 
   return (
-    <div className="rounded-[2rem] border border-[#d8ccb8] bg-[#fffdf8] p-8 shadow-sm">
+    <div className="rounded-[2rem] border border-[#d8ccb8] bg-[#fffdf8] p-6 shadow-sm md:p-8">
       <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
         Continue Your Journey
       </div>

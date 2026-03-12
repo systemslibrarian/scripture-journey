@@ -129,7 +129,7 @@ export default function QuizPage() {
   if (state.phase === 'intro') {
     return (
       <div className="mx-auto max-w-2xl space-y-8">
-        <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm text-center">
+        <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm text-center md:p-8">
           <div className="text-4xl">📖</div>
           <h1 className="mt-3 text-3xl font-bold text-[#1b1a17]">Quick Check</h1>
           <p className="mt-4 text-[#4a4338]">
@@ -168,7 +168,7 @@ export default function QuizPage() {
 
     return (
       <div className="mx-auto max-w-2xl space-y-8">
-        <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+        <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
           {/* Header */}
           <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
             Quick Check
@@ -278,7 +278,7 @@ export default function QuizPage() {
 
     return (
       <div className="mx-auto max-w-2xl space-y-8">
-        <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+        <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
           <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
             Quiz Complete
           </div>

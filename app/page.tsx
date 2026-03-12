@@ -59,7 +59,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           {totalLessons} Prophecy Lessons
         </div>
@@ -76,7 +76,7 @@ export default function HomePage() {
       <ContinueCard />
 
       {/* ── Where to Start ── */}
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-[#fffdf8] p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-[#fffdf8] p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Where to Start
         </div>

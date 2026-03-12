@@ -50,7 +50,7 @@ export default function TimelinePage() {
     <div className="space-y-8">
 
       {/* ── Header ── */}
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Scripture Journey
         </div>
@@ -123,7 +123,7 @@ export default function TimelinePage() {
         <div className="flex justify-end">
           <button
             onClick={toggleAll}
-            className="rounded-lg border border-[#d8ccb8] bg-white px-3 py-1.5 text-xs font-semibold text-[#7e622a] transition hover:bg-[#fbf7ee]"
+            className="rounded-lg border border-[#d8ccb8] bg-white px-4 py-2 text-xs font-semibold text-[#7e622a] transition hover:bg-[#fbf7ee] min-h-[44px] md:min-h-0 md:px-3 md:py-1.5"
           >
             {allExpanded ? 'Collapse All' : 'Expand All'}
           </button>
@@ -205,7 +205,7 @@ export default function TimelinePage() {
       )}
 
       {/* ── Continue Exploring ── */}
-      <div className="rounded-[2rem] border border-[#d8ccb8] bg-[#fffdf8] p-8 shadow-sm">
+      <div className="rounded-[2rem] border border-[#d8ccb8] bg-[#fffdf8] p-6 shadow-sm md:p-8">
         <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7e622a]">
           Continue Exploring
         </div>

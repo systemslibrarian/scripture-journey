@@ -141,7 +141,7 @@ export default function Header() {
               {status === 'loading' ? null : session?.user ? (
                 <button
                   onClick={() => { signOut(); setMenuOpen(false); }}
-                  className="rounded-full border border-[#d8ccb8] px-3 py-2 text-xs font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
+                  className="min-h-[44px] rounded-full border border-[#d8ccb8] px-4 py-2.5 text-xs font-medium text-[#7e622a] transition hover:bg-[#fbf7ee]"
                 >
                   Sign Out
                 </button>
@@ -149,7 +149,7 @@ export default function Header() {
                 <Link
                   href="/auth/signin"
                   onClick={() => setMenuOpen(false)}
-                  className="inline-block rounded-full border border-[#7e622a] bg-[#7e622a] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#5e4a1f]"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-[#7e622a] bg-[#7e622a] px-4 py-2.5 text-xs font-medium text-white transition hover:bg-[#5e4a1f]"
                 >
                   Save Progress
                 </Link>
