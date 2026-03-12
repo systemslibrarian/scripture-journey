@@ -47,14 +47,14 @@ export default function HomePage() {
 
   return (
     <div className="space-y-8">
-      <div className="text-center">
+      <div className="overflow-hidden rounded-2xl">
         <Image
           src="/docs/bannerforwebpage.png"
           alt="Scripture Journey banner"
-          width={1800}
-          height={800}
-          className="mx-auto max-h-24 w-auto"
+          width={1536}
+          height={1024}
           priority
+          className="h-auto w-full max-h-[280px] object-cover object-center"
         />
       </div>
 
