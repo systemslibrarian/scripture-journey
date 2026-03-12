@@ -53,7 +53,7 @@ export default function HomePage() {
           alt="Scripture Journey banner"
           width={1800}
           height={800}
-          className="mx-auto max-h-48 w-auto"
+          className="mx-auto max-h-24 w-auto"
           priority
         />
       </div>
