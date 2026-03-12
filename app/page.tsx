@@ -49,9 +49,9 @@ export default function HomePage() {
     <div className="space-y-8">
       <div className="overflow-hidden rounded-2xl">
         <Image
-          src="/docs/bannerforwebpage.png"
+          src="/docs/banner2forwebsite.png"
           alt="Scripture Journey banner"
-          width={1792}
+          width={1536}
           height={1024}
           priority
           className="h-auto w-full max-h-[280px] object-cover object-center"
