@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import type { Metadata } from "next"
 import ProphecySearch from "@/components/ProphecySearch"
 import ContinueCard from "@/components/ContinueCard"
@@ -7,10 +8,10 @@ import { getAllLessons } from "@/data/lessons"
 
 export const metadata: Metadata = {
   title: "Scripture Journey — Explore How Scripture Points to Jesus",
-  description: "Walk through 202 prophecies, patterns, and promises in the Old Testament that Christians believe find their fulfillment in Jesus.",
+  description: "Walk through 200 prophecies, patterns, and promises in the Old Testament that Christians believe find their fulfillment in Jesus.",
   openGraph: {
     title: "Scripture Journey — Explore How Scripture Points to Jesus",
-    description: "Walk through 202 prophecies, patterns, and promises that point to Jesus. Inspired by Luke 24:27.",
+    description: "Walk through 200 prophecies, patterns, and promises that point to Jesus. Inspired by Luke 24:27.",
   },
 }
 
@@ -47,10 +48,14 @@ export default function HomePage() {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <p className="text-lg italic text-[#4a4338]">
-          &ldquo;And beginning with Moses and all the Prophets, he explained to them what was said in all the Scriptures concerning himself.&rdquo;
-        </p>
-        <p className="mt-2 text-sm font-semibold text-[#7e622a]">— Luke 24:27 (NIV)</p>
+        <Image
+          src="/docs/bannerforwebpage.png"
+          alt="Scripture Journey banner"
+          width={1800}
+          height={800}
+          style={{ width: "100%", height: "auto" }}
+          priority
+        />
       </div>
 
       <div className="rounded-[2rem] border border-[#d8ccb8] bg-white p-8 shadow-sm">
