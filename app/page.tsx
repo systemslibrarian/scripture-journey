@@ -51,7 +51,7 @@ export default function HomePage() {
         <Image
           src="/docs/bannerforwebpage.png"
           alt="Scripture Journey banner"
-          width={1536}
+          width={1792}
           height={1024}
           priority
           className="h-auto w-full max-h-[280px] object-cover object-center"
