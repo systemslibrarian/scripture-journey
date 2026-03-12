@@ -2,6 +2,7 @@ import Link from "next/link"
 import type { Lesson } from "@/lib/types"
 import ProphecyTypeBadge from "@/components/ProphecyTypeBadge"
 import CompletedIndicator from "@/components/CompletedIndicator"
+import CopyVerseLink from "@/components/CopyVerseLink"
 
 type Props = {
   lesson: Lesson
@@ -12,7 +13,7 @@ export default function LessonCard({ lesson }: Props) {
     <Link
       href={`/lessons/${lesson.slug}`}
       aria-label={`Lesson ${lesson.id}: ${lesson.title}`}
-      className="rounded-3xl border border-[#d8ccb8] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+      className="rounded-3xl border border-[#d8ccb8] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-[#555] dark:bg-[#2a2a2a]"
     >
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
@@ -55,8 +56,11 @@ export default function LessonCard({ lesson }: Props) {
         {lesson.summary}
       </p>
 
-      <div className="mt-4 text-sm font-semibold text-[#7e622a]">
-        Open lesson →
+      <div className="mt-4 flex items-center justify-between">
+        <span className="text-sm font-semibold text-[#7e622a] dark:text-[#b5a27a]">
+          Open lesson →
+        </span>
+        <CopyVerseLink lesson={lesson} size="sm" />
       </div>
     </Link>
   )

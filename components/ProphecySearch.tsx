@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { getAllLessons } from "@/data/lessons"
 import LessonCard from "@/components/LessonCard"
 import FilterControls from "@/components/FilterControls"
+import SearchAutocomplete from "@/components/SearchAutocomplete"
 import { useLessonFilters } from "@/hooks/useLessonFilters"
 import type { SortOption } from "@/hooks/useLessonFilters"
 
@@ -31,18 +32,22 @@ export default function ProphecySearch() {
   return (
     <div className="space-y-6">
 
-      <div className="rounded-2xl border border-[#d8ccb8] bg-white p-6 shadow-sm">
+      <div className="rounded-2xl border border-[#d8ccb8] bg-white p-6 shadow-sm dark:border-[#555] dark:bg-[#2a2a2a]">
 
-        <div className="text-sm font-semibold text-[#7e622a]">
+        <div className="text-sm font-semibold text-[#7e622a] dark:text-[#b5a27a]">
           Search the {totalLessons} Prophecies
+        </div>
+
+        <div className="mt-4">
+          <SearchAutocomplete />
         </div>
 
         <input
           type="text"
-          placeholder="Search prophecy, verse, or topic..."
+          placeholder="Filter results below…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="mt-4 w-full rounded-xl border border-[#d8ccb8] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#7e622a]"
+          className="mt-3 w-full rounded-xl border border-[#d8ccb8] px-4 py-2 text-xs text-[#4a4338] focus:outline-none focus:ring-2 focus:ring-[#7e622a] dark:border-[#555] dark:bg-[#2a2a2a] dark:text-[#e8e4dc] dark:placeholder-[#888]"
         />
 
         <FilterControls
@@ -59,7 +64,7 @@ export default function ProphecySearch() {
             id="sort-select"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="rounded-xl border border-[#d8ccb8] px-3 py-1.5 text-xs text-[#4a4338] focus:outline-none focus:ring-2 focus:ring-[#7e622a]"
+            className="rounded-xl border border-[#d8ccb8] px-3 py-1.5 text-xs text-[#4a4338] focus:outline-none focus:ring-2 focus:ring-[#7e622a] dark:border-[#555] dark:bg-[#2a2a2a] dark:text-[#e8e4dc]"
           >
             <option value="default">Sort: Default</option>
             <option value="category">Sort: By Category</option>
@@ -69,7 +74,7 @@ export default function ProphecySearch() {
 
           <button
             onClick={handleSurpriseMe}
-            className="rounded-full border border-[#d8ccb8] px-3 py-1.5 text-xs text-[#7e622a] hover:bg-[#fbf7ee] transition"
+            className="rounded-full border border-[#d8ccb8] px-3 py-1.5 text-xs text-[#7e622a] hover:bg-[#fbf7ee] transition dark:border-[#555] dark:text-[#b5a27a] dark:hover:bg-[#333]"
           >
             ✦ Surprise Me
           </button>
