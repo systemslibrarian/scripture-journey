@@ -47,7 +47,7 @@ export default function HomePage() {
 
   return (
     <div className="space-y-8">
-      <div className="text-center">
+      <div className="mx-auto max-w-2xl text-center">
         <Image
           src="/docs/bannerforwebpage.png"
           alt="Scripture Journey banner"
