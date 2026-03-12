@@ -46,13 +46,13 @@ const categoryConfig = [
 ]
 
 const categoryColors: Record<LessonCategory, string> = {
-  Lineage: "border-amber-400 bg-amber-50",
-  Identity: "border-amber-300 bg-amber-50",
-  Ministry: "border-sky-300 bg-sky-50",
-  Rejection: "border-rose-300 bg-rose-50",
-  Passion: "border-purple-300 bg-purple-50",
-  Resurrection: "border-emerald-300 bg-emerald-50",
-  Kingdom: "border-indigo-300 bg-indigo-50",
+  Lineage: "border-amber-400 bg-amber-50 dark:bg-amber-950/40 dark:border-amber-700",
+  Identity: "border-amber-300 bg-amber-50 dark:bg-amber-950/40 dark:border-amber-700",
+  Ministry: "border-sky-300 bg-sky-50 dark:bg-sky-950/40 dark:border-sky-700",
+  Rejection: "border-rose-300 bg-rose-50 dark:bg-rose-950/40 dark:border-rose-700",
+  Passion: "border-purple-300 bg-purple-50 dark:bg-purple-950/40 dark:border-purple-700",
+  Resurrection: "border-emerald-300 bg-emerald-50 dark:bg-emerald-950/40 dark:border-emerald-700",
+  Kingdom: "border-indigo-300 bg-indigo-50 dark:bg-indigo-950/40 dark:border-indigo-700",
 }
 
 export default function MapCategoryCards() {

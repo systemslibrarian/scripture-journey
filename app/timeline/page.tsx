@@ -1,11 +1,12 @@
 'use client'
 
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import Link from "next/link"
 import LessonCard from "@/components/LessonCard"
 import FilterControls from "@/components/FilterControls"
 import { useLessonFilters } from "@/hooks/useLessonFilters"
 import { TIMELINE_ERAS, groupLessonsByTimelineEra } from "@/lib/timeline"
+import type { TimelineEra } from "@/lib/types"
 
 export default function TimelinePage() {
   const {
@@ -24,6 +25,26 @@ export default function TimelinePage() {
   const visibleEras = TIMELINE_ERAS.filter(
     (era) => (grouped.get(era.id)?.length ?? 0) > 0
   )
+
+  const [collapsed, setCollapsed] = useState<Set<TimelineEra>>(new Set())
+
+  function toggleEra(id: TimelineEra) {
+    setCollapsed((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+  }
+
+  const allExpanded = collapsed.size === 0
+  function toggleAll() {
+    if (allExpanded) {
+      setCollapsed(new Set(visibleEras.map((e) => e.id)))
+    } else {
+      setCollapsed(new Set())
+    }
+  }
 
   return (
     <div className="space-y-8">
@@ -98,6 +119,16 @@ export default function TimelinePage() {
       </div>
 
       {/* ── Timeline ── */}
+      {hasResults && (
+        <div className="flex justify-end">
+          <button
+            onClick={toggleAll}
+            className="rounded-lg border border-[#d8ccb8] bg-white px-3 py-1.5 text-xs font-semibold text-[#7e622a] transition hover:bg-[#fbf7ee]"
+          >
+            {allExpanded ? 'Collapse All' : 'Expand All'}
+          </button>
+        </div>
+      )}
       {hasResults ? (
         <div className="relative ml-3 border-l-2 border-[#d8ccb8] sm:ml-5">
           {visibleEras.map((era, visibleIndex) => {
@@ -116,9 +147,20 @@ export default function TimelinePage() {
                 </div>
 
                 {/* Era header */}
-                <div className="rounded-2xl border border-[#d8ccb8] bg-white p-5 shadow-sm">
-                  <div className="text-xs font-semibold uppercase tracking-widest text-[#7e622a]">
-                    {era.arcPhrase}
+                <button
+                  onClick={() => toggleEra(era.id)}
+                  className="w-full rounded-2xl border border-[#d8ccb8] bg-white p-5 shadow-sm text-left transition hover:border-[#c8a84b] cursor-pointer"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="text-xs font-semibold uppercase tracking-widest text-[#7e622a]">
+                      {era.arcPhrase}
+                    </div>
+                    <svg
+                      className={`h-5 w-5 text-[#7e622a] transition-transform duration-200 ${collapsed.has(era.id) ? '' : 'rotate-180'}`}
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
                   </div>
                   <h2 className="mt-1 text-2xl font-bold text-[#1b1a17]">
                     {era.title}
@@ -132,17 +174,21 @@ export default function TimelinePage() {
                       {sorted.length} {sorted.length === 1 ? 'lesson' : 'lessons'}
                     </span>
                   </div>
-                  <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#4a4338]">
-                    {era.description}
-                  </p>
-                </div>
+                  {!collapsed.has(era.id) && (
+                    <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#4a4338]">
+                      {era.description}
+                    </p>
+                  )}
+                </button>
 
                 {/* Lesson cards */}
-                <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                  {sorted.map((lesson) => (
-                    <LessonCard key={lesson.slug} lesson={lesson} />
-                  ))}
-                </div>
+                {!collapsed.has(era.id) && (
+                  <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    {sorted.map((lesson) => (
+                      <LessonCard key={lesson.slug} lesson={lesson} />
+                    ))}
+                  </div>
+                )}
               </section>
             )
           })}

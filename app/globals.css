@@ -119,6 +119,12 @@
 .dark .bg-\[\#e8f0f5\] { background-color: #1e2e3a !important; }
 .dark .border-\[\#2a5a7e\] { border-color: #4080a0 !important; }
 
+/* Map page — scholar source cards */
+.dark .bg-\[\#fbf8ff\]  { background-color: #2a2040 !important; }
+.dark .border-\[\#d9c9ee\] { border-color: #3a2a5a !important; }
+.dark .bg-\[\#f8fafc\]  { background-color: #1e2a30 !important; }
+.dark .decoration-\[\#c7b598\] { text-decoration-color: var(--sj-border) !important; }
+
 /* CTA buttons */
 .dark .bg-\[\#1b1a17\] { background-color: #e8e4dc !important; color: #1b1a17 !important; }
 .dark .bg-\[\#7e622a\] { background-color: var(--sj-accent) !important; }
