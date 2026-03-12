@@ -47,13 +47,13 @@ export default function HomePage() {
 
   return (
     <div className="space-y-8">
-      <div className="mx-auto max-w-2xl text-center">
+      <div className="text-center">
         <Image
           src="/docs/bannerforwebpage.png"
           alt="Scripture Journey banner"
           width={1800}
           height={800}
-          style={{ width: "100%", height: "auto" }}
+          className="mx-auto max-h-48 w-auto"
           priority
         />
       </div>
