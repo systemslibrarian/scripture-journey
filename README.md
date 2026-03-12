@@ -1,7 +1,7 @@
 # Scripture Journey
 
 <p align="center">
-  <img src="docs/banner.png" alt="Scripture Journey" width="100%">
+  <img src="docs/banner.png" alt="Scripture Journey" width="500" height="263"/>
 </p>
 
 <p align="center">
